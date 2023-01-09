@@ -1,0 +1,106 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import IntlMessages from '@crema/helpers/IntlMessages';
+import CreateContact from '../CreateContact';
+import AppsSideBarFolderItem from '@crema/components/AppsSideBarFolderItem';
+import AppList from '@crema/components/AppList';
+import ListEmptyResult from '@crema/components/AppList/ListEmptyResult';
+import SidebarPlaceholder from '@crema/components/SidebarListSkeleton';
+import { Button } from 'antd';
+import { AppAnimates } from '@crema/constants/AppEnums';
+import { PlusOutlined } from '@ant-design/icons';
+import {
+  StyledContactSidebarContent,
+  StyledContactSidebarHeader,
+  StyledContactSidebarList,
+  StyledContactSidebarScroll,
+  StyledContactSidebarTitle,
+} from './index.styled';
+import { ContactListLabelItem } from '@crema/modules/apps/Contact';
+import { useSelector } from 'react-redux';
+
+const SideBarContent = () => {
+  const labelList = useSelector(({ contactApp }) => contactApp.labelList);
+
+  const folderList = useSelector(({ contactApp }) => contactApp.folderList);
+
+  const [isAddContact, onSetIsAddContact] = useState(false);
+
+  const handleAddContactOpen = () => {
+    onSetIsAddContact(true);
+  };
+
+  const handleAddContactClose = () => {
+    onSetIsAddContact(false);
+  };
+
+  return (
+    <>
+      <StyledContactSidebarHeader>
+        <Button
+          ghost
+          type='primary'
+          icon={<PlusOutlined style={{ marginRight: 8 }} />}
+          onClick={handleAddContactOpen}
+        >
+          <IntlMessages id='contactApp.createContact' />
+        </Button>
+      </StyledContactSidebarHeader>
+
+      <StyledContactSidebarScroll>
+        <StyledContactSidebarContent>
+          <StyledContactSidebarList>
+            <AppList
+              animation={AppAnimates.SLIDELEFTIN}
+              data={folderList}
+              ListEmptyComponent={
+                <ListEmptyResult
+                  loading={true}
+                  placeholder={<SidebarPlaceholder />}
+                />
+              }
+              renderItem={(item) => (
+                <AppsSideBarFolderItem
+                  key={item.id}
+                  item={item}
+                  path={`/apps/contact/folder/${item.alias}`}
+                />
+              )}
+            />
+          </StyledContactSidebarList>
+
+          <StyledContactSidebarTitle>
+            <IntlMessages id='common.labels' />
+          </StyledContactSidebarTitle>
+
+          <AppList
+            animation={AppAnimates.SLIDELEFTIN}
+            data={labelList}
+            ListEmptyComponent={
+              <ListEmptyResult
+                loading={true}
+                placeholder={<SidebarPlaceholder />}
+              />
+            }
+            renderItem={(label) => (
+              <ContactListLabelItem key={label.id} label={label} />
+            )}
+          />
+
+          {isAddContact ? (
+            <CreateContact
+              isAddContact={isAddContact}
+              handleAddContactClose={handleAddContactClose}
+            />
+          ) : null}
+        </StyledContactSidebarContent>
+      </StyledContactSidebarScroll>
+    </>
+  );
+};
+
+export default SideBarContent;
+
+SideBarContent.propTypes = {
+  reCallAPI: PropTypes.func,
+};
