@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import moment from 'moment';
 import clsx from 'clsx';
@@ -47,6 +47,7 @@ const MailListItem = (props) => {
     onViewMailDetail,
   } = props;
 
+  const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
   const messages = mail.messages.length;
 
@@ -96,8 +97,10 @@ const MailListItem = (props) => {
         <StyledMailListCheckbox onClick={(event) => event.stopPropagation()}>
           <Checkbox
             checked={checkedMails.includes(mail.id)}
-            onChange={(event) => onChangeCheckedMails(event, mail.id)}
-            color='primary'
+            onChange={() => {
+              setIsChecked(!isChecked);
+              onChangeCheckedMails(!isChecked, mail.id);
+            }}
           />
         </StyledMailListCheckbox>
         <StyledMailListStarted onClick={(event) => event.stopPropagation()}>

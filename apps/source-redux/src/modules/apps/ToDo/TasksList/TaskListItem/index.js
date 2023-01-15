@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import clsx from 'clsx';
@@ -32,6 +32,7 @@ const TaskListItem = ({
   checkedTasks,
   onChangeStarred,
 }) => {
+  const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
   const { name } = useParams();
   const dispatch = useDispatch();
@@ -59,8 +60,10 @@ const TaskListItem = ({
         >
           <Checkbox
             checked={checkedTasks.includes(task.id)}
-            onChange={(event) => onChangeCheckedTasks(event, task.id)}
-            color='primary'
+            onChange={() => {
+              setIsChecked(!isChecked);
+              onChangeCheckedTasks(!isChecked, task.id);
+            }}
           />
         </StyledTodoListCheckboxView>
 

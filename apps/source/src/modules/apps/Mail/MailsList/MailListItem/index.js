@@ -124,7 +124,6 @@ const MailListItem = (props) => {
               setIsChecked(!isChecked);
               onChangeCheckedMails(!isChecked, mail.id);
             }}
-            color='primary'
           />
         </StyledMailListCheckbox>
         <StyledMailListStarted onClick={(event) => event.stopPropagation()}>

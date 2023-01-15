@@ -75,7 +75,6 @@ const TaskListItem = ({
               setIsChecked(!isChecked);
               onChangeCheckedTasks(!isChecked, task.id);
             }}
-            color='primary'
           />
         </StyledTodoListCheckboxView>
 
