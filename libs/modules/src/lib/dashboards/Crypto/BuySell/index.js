@@ -1,25 +1,24 @@
 import React from 'react';
 import TabForm from './TabForm';
 import PropTypes from 'prop-types';
-import { Tabs } from 'antd';
-import IntlMessages from '@crema/helpers/IntlMessages';
-import { StyledBuyCellCard } from './index.styled';
+import { StyledBuyCellCard, StyledTabs } from './index.styled';
 
 const BuySell = ({ buySell }) => {
   const items = [
-    { label: 'Buy', key: '1', children: <TabForm data={buySell.buyData} /> }, // remember to pass the key prop
-    { label: 'Sell', key: '2', children: <TabForm data={buySell.sellData} /> },
+    {
+      label: 'Buy',
+      key: '1',
+      children: <TabForm coinList={buySell.coinList} type='buy' />,
+    }, // remember to pass the key prop
+    {
+      label: 'Sell',
+      key: '2',
+      children: <TabForm coinList={buySell.coinList} type='sell' />,
+    },
   ];
   return (
-    <StyledBuyCellCard
-      heightFull
-      actions={[
-        <a href='#' key={1}>
-          <IntlMessages id='dashboard.buyNow' />
-        </a>,
-      ]}
-    >
-      <Tabs defaultActiveKey='1' items={items}></Tabs>
+    <StyledBuyCellCard style={{ padding: 0 }} heightFull>
+      <StyledTabs centered defaultActiveKey='1' items={items} />
     </StyledBuyCellCard>
   );
 };

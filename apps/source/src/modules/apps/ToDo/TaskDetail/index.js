@@ -16,6 +16,7 @@ const TaskDetail = () => {
   }, [id]);
 
   const onUpdateSelectedTask = (data) => {
+    console.log('onUpdateSelectedTask: ', data);
     setData(data);
   };
 

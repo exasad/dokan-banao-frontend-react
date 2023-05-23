@@ -11,18 +11,29 @@ import PropTypes from 'prop-types';
 const AppVerticalNav = ({ routesConfig }) => {
   const { menuStyle, sidebarColorSet } = useSidebarContext();
   const { pathname } = useLocation();
-  const selectedKeys = pathname.substr(1).split('/');
-  const [openKeys, setOpenKeys] = useState([selectedKeys[0]]);
 
+  const selectedKeys = pathname.substr(1);
+  const [openKeys, setOpenKeys] = useState([selectedKeys[0]]);
+  const defaultOpenKeys = selectedKeys.split('/')[1];
   useEffect(() => {
     setOpenKeys([selectedKeys[selectedKeys.length - 2]]);
   }, []);
+
+  useEffect(() => {
+    if (pathname && document.getElementById(pathname)) {
+      setTimeout(() => {
+        document
+          .getElementById(pathname)
+          .scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1);
+    }
+  }, [pathname]);
 
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
     setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
   };
-
+  console.log([selectedKeys[selectedKeys.length - 1]]);
   return (
     <StyledVerticalNav
       theme={sidebarColorSet.mode}
@@ -41,7 +52,10 @@ const AppVerticalNav = ({ routesConfig }) => {
       })}
       openKeys={openKeys}
       onOpenChange={onOpenChange}
-      defaultSelectedKeys={[selectedKeys[selectedKeys.length - 1]]}
+      selectedKeys={selectedKeys.split('/')}
+      defaultOpenKeys={[defaultOpenKeys]} /*
+      selectedKeys={[selectedKeys[selectedKeys.length - 1]]}
+      defaultSelectedKeys={[selectedKeys[selectedKeys.length - 1]]}*/
       items={getRouteMenus(routesConfig)}
     />
   );

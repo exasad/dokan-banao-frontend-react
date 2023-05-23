@@ -76,10 +76,10 @@ const ContactDetail = (props) => {
       <StyledContactDetailScrollbar>
         <StyledContactDetailContent>
           <AppRowContainer>
-            <Col item xs={24} md={12}>
+            <Col xs={24} md={12}>
               <PersonalDetails contact={contact} />
             </Col>
-            <Col item xs={24} md={12}>
+            <Col xs={24} md={12}>
               <OtherDetails contact={contact} />
             </Col>
           </AppRowContainer>

@@ -24,7 +24,7 @@ const items = [
 
 const AppHeader = ({ showDrawer }) => {
   const { messages } = useIntl();
-
+  console.log('testing');
   return (
     <StyledDrawerLayoutHeader>
       <a className='trigger' onClick={showDrawer}>

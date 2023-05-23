@@ -5,3 +5,5 @@ export * from './DateHelper';
 export * from './RouteHelper';
 export * from './StringHelper';
 export * from './ThemeHelper';
+export * from './UrlHelper';
+export * from './FileHelper';

@@ -9,7 +9,7 @@ const PackageOne = ({ pricing }) => {
     <StyledPackageOneCard title='Pricing Package Style 1'>
       <StyledPackageOneRow>
         {pricing.map((data, index) => (
-          <Col item xs={24} md={12} lg={8} key={index}>
+          <Col xs={24} md={12} lg={8} key={index}>
             <PackageCard pricing={data} />
           </Col>
         ))}

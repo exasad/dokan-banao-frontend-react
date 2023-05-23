@@ -8,7 +8,12 @@ import {
   FaRegStar,
 } from 'react-icons/fa';
 import { BiArchiveIn, BiCalendarMinus, BiUser } from 'react-icons/bi';
-import { AiOutlineDelete, AiOutlineSchedule } from 'react-icons/ai';
+import {
+  AiOutlineDelete,
+  AiOutlineSchedule,
+  AiOutlineSend,
+  AiOutlineStop,
+} from 'react-icons/ai';
 import { FiInfo, FiRefreshCw } from 'react-icons/fi';
 
 import {
@@ -16,9 +21,18 @@ import {
   StyledListItemIcon,
   StyledListItemText,
 } from './index.styled';
+import { MdOutlineCancel, MdOutlinePayment } from 'react-icons/md';
 
 const getIconByName = (iconName) => {
   switch (iconName) {
+    case 'sent':
+      return <AiOutlineSend />;
+    case 'paid':
+      return <MdOutlinePayment />;
+    case 'declined':
+      return <AiOutlineStop />;
+    case 'cancelled':
+      return <MdOutlineCancel />;
     case 'check-circle':
       return <FaRegCheckCircle />;
     case 'envelope':

@@ -35,6 +35,9 @@
         "libs/components/src/lib/AppBadge/index.js"
       ],
       "@crema/components/AppCard": ["libs/components/src/lib/AppCard/index.js"],
+      "@crema/components/AppCardMedia": [
+        "libs/components/src/lib/AppCard/AppCardMedia.js"
+      ],
       "@crema/components/AppCircularProgress": [
         "libs/components/src/lib/AppCircularProgress/index.js"
       ],
@@ -247,6 +250,7 @@
       "@crema/context/ThemeContextProvider": [
         "libs/context/src/AppContextProvider/ThemeContextProvider.js"
       ],
+      "@crema/db/dashboard/*": ["libs/mockapi/src/fakedb/dashboard/*"],
       "@crema/fakedb": ["libs/fakedb/src/index.js"],
       "@crema/fakedb/chat/connectionList": [
         "libs/mockapi/src/fakedb/apps/chat/connectionList.js"
@@ -265,7 +269,11 @@
         "libs/mockapi/src/fakedb/navigationStyle.js"
       ],
       "@crema/helpers": ["libs/helpers/src/index.js"],
+      "@crema/helpers/IntlMessages": ["libs/helpers/src/IntlMessages.js"],
+      "@crema/helpers/RouteGenerator": ["libs/helpers/src/RouteGenerator.js"],
       "@crema/hooks": ["libs/hooks/src/index.js"],
+      "@crema/hooks/APIHooks": ["libs/hooks/src/APIHooks.js"],
+      "@crema/hooks/AuthHooks": ["libs/hooks/src/AuthHooks.js"],
       "@crema/mockapi": ["libs/mockapi/src/index.js"],
       "@crema/modules": ["libs/modules/src/index.js"],
       "@crema/modules/ErrorPages/ComingSoon": [
@@ -291,6 +299,9 @@
       ],
       "@crema/modules/UserProfile": [
         "libs/modules/src/lib/profile/UserProfile/index.js"
+      ],
+      "@crema/modules/apps/Calendar": [
+        "libs/modules/src/lib/apps/Calendar/index.js"
       ],
       "@crema/modules/apps/Chat": ["libs/modules/src/lib/apps/Chat/index.js"],
       "@crema/modules/apps/Contact": [
@@ -344,6 +355,9 @@
       "@crema/modules/dashboards/CRM": [
         "libs/modules/src/lib/dashboards/CRM/index.js"
       ],
+      "@crema/modules/dashboards/CommonComponents": [
+        "libs/modules/src/lib/dashboards/CommonComponents/index.js"
+      ],
       "@crema/modules/dashboards/Crypto": [
         "libs/modules/src/lib/dashboards/Crypto/index.js"
       ],
@@ -358,6 +372,9 @@
       ],
       "@crema/modules/dashboards/Widgets": [
         "libs/modules/src/lib/dashboards/Widgets/index.js"
+      ],
+      "@crema/modules/ecommerce/Admin": [
+        "libs/modules/src/lib/ecommerce/Admin/index.js"
       ],
       "@crema/modules/ecommerce/Carts": [
         "libs/modules/src/lib/ecommerce/Carts/index.js"
@@ -395,6 +412,9 @@
       "@crema/modules/extraPages/AboutUs": [
         "libs/modules/src/lib/extraPages/AboutUs/index.js"
       ],
+      "@crema/modules/extraPages/Blog": [
+        "libs/modules/src/lib/extraPages/Blog/index.js"
+      ],
       "@crema/modules/extraPages/ContactUs": [
         "libs/modules/src/lib/extraPages/ContactUs/index.js"
       ],
@@ -410,6 +430,7 @@
       "@crema/modules/extraPages/Pricing": [
         "libs/modules/src/lib/extraPages/Pricing/index.js"
       ],
+      "@crema/modules/invoice": ["libs/modules/src/lib/invoice/index.js"],
       "@crema/modules/thirdParty": ["libs/modules/src/lib/thirdParty/index.js"],
       "@crema/modules/userList/Flat": [
         "libs/modules/src/lib/userList/Flat/index.js"
@@ -440,10 +461,7 @@
         "libs/services/localization/src/index.js"
       ],
       "@crema/svg-icons": ["libs/svg-icons/src/index.ts"],
-      "@crema/hooks/APIHooks": ["libs/hooks/src/APIHooks.js"],
-      "@crema/hooks/AuthHooks": ["libs/hooks/src/AuthHooks.js"],
-      "@crema/helpers/IntlMessages": ["libs/helpers/src/IntlMessages.js"],
-      "@crema/helpers/RouteGenerator": ["libs/helpers/src/RouteGenerator.js"]
+      "@crema/utility": ["libs/hooks/src/APIHooks.js"]
     }
   },
   "exclude": ["node_modules", "tmp"]

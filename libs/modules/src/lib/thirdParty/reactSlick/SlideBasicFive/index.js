@@ -17,7 +17,7 @@ const settings = {
 
 const SlideBasicFive = ({ slideBasicFive }) => {
   return (
-    <AppCard sxStyle={{ height: '100%' }}>
+    <AppCard>
       <MediaSlider>
         <Slider {...settings}>
           {slideBasicFive.map((slide, index) => (

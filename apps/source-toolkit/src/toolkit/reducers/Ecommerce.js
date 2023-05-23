@@ -9,6 +9,8 @@ import {
   SET_PRODUCT_DATA,
   SET_PRODUCT_VIEW_TYPE,
   UPDATE_CART_ITEM,
+  ADD_PRODUCT_ITEM,
+  UPDATE_PRODUCT_ITEM,
 } from '@crema/constants/ActionTypes';
 import { cartItems } from '@crema/fakedb/data';
 import { createReducer } from '@reduxjs/toolkit';
@@ -36,6 +38,12 @@ const initialState = {
 const ecommerceReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(GET_ECOMMERCE_LIST, (state, action) => {
+      state.ecommerceList = action.payload;
+    })
+    .addCase(ADD_PRODUCT_ITEM, (state, action) => {
+      state.ecommerceList = action.payload;
+    })
+    .addCase(UPDATE_PRODUCT_ITEM, (state, action) => {
       state.ecommerceList = action.payload;
     })
     .addCase(SET_PRODUCT_VIEW_TYPE, (state, action) => {

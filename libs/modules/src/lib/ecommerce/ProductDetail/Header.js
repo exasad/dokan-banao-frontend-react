@@ -26,7 +26,7 @@ const Header = ({ product }) => {
       <StyledProductDetailHeaderInfo>
         <h3>{product.title}</h3>
         <StyledProductDetailHeaderContent>
-          <Rate defaultValue={product.rating} readOnly />
+          <Rate defaultValue={product.rating} disabled />
           <StyledProfileReviewText>
             {product.reviews + ' reviews'}
           </StyledProfileReviewText>

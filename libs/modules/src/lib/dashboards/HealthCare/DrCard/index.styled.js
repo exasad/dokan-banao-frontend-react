@@ -38,12 +38,13 @@ export const StyledDrCardContentMain = styled.div`
   & h5 {
     font-size: ${({ theme }) => theme.font.size.base};
     font-weight: ${({ theme }) => theme.font.weight.bold};
-    color: ${({ theme }) => theme.palette.primary.contrastText};
+    color: ${({ theme }) => theme.palette.text.primary};
     margin-bottom: 2px;
   }
 
   & p {
     margin-bottom: 0;
+    color: ${({ theme }) => theme.palette.text.secondary};
   }
 `;
 

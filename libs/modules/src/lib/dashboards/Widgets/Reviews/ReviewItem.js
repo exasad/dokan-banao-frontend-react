@@ -12,7 +12,7 @@ const ReviewItem = ({ item }) => {
   return (
     <StyledReviewItem className='item-hover' key={item.id}>
       <StyledReviewItemHeader>
-        <Rate value={item.rating} readOnly />
+        <Rate value={item.rating} />
         <StyledReviewBy>{item.time}</StyledReviewBy>
       </StyledReviewItemHeader>
       <p>{item.content}</p>

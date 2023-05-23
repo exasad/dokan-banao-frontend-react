@@ -3,14 +3,16 @@ import { Col } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import AppAnimate from '@crema/components/AppAnimate';
 import {
-  Bitcoin,
-  BtcVolumeCurrency,
+  ATCStatics,
   BuySell,
+  CardDetails,
   Coins,
-  CryptoMarketActivity,
-  LatestNews,
-  PopularCoins,
+  GainerLooser,
+  OrdersActivities,
+  QuickTransfer,
+  TopStories,
   TotalBalance,
+  TradingChart,
 } from '@crema/modules/dashboards/Crypto';
 import AppLoader from '@crema/components/AppLoader';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,7 +25,11 @@ const Crypto = () => {
     dispatch(onGetCryptoData());
   }, [dispatch]);
 
+  const analyti = useSelector(({ dashboard }) => dashboard);
   const cryptoData = useSelector(({ dashboard }) => dashboard.cryptoData);
+  const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
+
+  console.log('cryptoData', analyti, analyticsData);
 
   return cryptoData ? (
     <AppAnimate animation='transition.slideUpIn' delay={200}>
@@ -36,28 +42,33 @@ const Crypto = () => {
           <Coins coinsData={cryptoData.coinsData} />
         </Col>
 
-        <Col xs={24} md={16}>
-          <Bitcoin coinGraphData={cryptoData.coinGraphData} />
+        <Col xs={24} md={16} lg={18}>
+          <TradingChart />
         </Col>
 
-        <Col xs={24} md={8}>
+        <Col xs={24} md={8} lg={6}>
           <BuySell buySell={cryptoData.buySell} />
         </Col>
 
-        <Col xs={24} md={8}>
-          <BtcVolumeCurrency data={cryptoData.btcChartData} />
+        <Col xs={24} md={12} lg={16}>
+          <OrdersActivities ordersActivities={cryptoData.ordersActivities} />
         </Col>
 
-        <Col xs={24} md={16}>
-          <PopularCoins popularCoins={cryptoData.popularCoins} />
-        </Col>
-
-        <Col xs={24} md={12}>
-          <LatestNews newsData={cryptoData.newsData} />
+        <Col xs={24} md={12} lg={8}>
+          <TopStories stories={cryptoData.stories} />
         </Col>
 
         <Col xs={24} md={12}>
-          <CryptoMarketActivity marketGraphData={cryptoData.marketGraphData} />
+          <GainerLooser data={cryptoData.gainerLooser} />
+        </Col>
+        <Col xs={24} md={12}>
+          <ATCStatics data={cryptoData.atcStatics} />
+        </Col>
+        <Col xs={24} md={12}>
+          <CardDetails cardDetails={cryptoData.cardDetails} />
+        </Col>
+        <Col xs={24} md={12}>
+          <QuickTransfer quickTransfer={cryptoData.quickTransfer} />
         </Col>
       </AppRowContainer>
     </AppAnimate>

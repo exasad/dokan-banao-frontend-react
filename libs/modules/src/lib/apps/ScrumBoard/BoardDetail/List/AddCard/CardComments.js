@@ -82,7 +82,7 @@ const CardComments = (props) => {
 
       <StyledCardCommentFooter>
         <TextArea
-          autoSize={{ minRows: 1, maxRows: 2 }}
+          autoSize={{ minRows: 2, maxRows: 3 }}
           // onKeyDown={onAddComment}
           value={comment}
           placeholder={messages['common.pressEnter']}

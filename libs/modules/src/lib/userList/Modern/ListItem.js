@@ -88,7 +88,7 @@ const ListItem = (props) => {
               <StyledUserFooterHireBtn type='primary'>
                 <IntlMessages id='common.hire' />
               </StyledUserFooterHireBtn>
-              <StyledUserFooterRemoveBtn variant='contained'>
+              <StyledUserFooterRemoveBtn>
                 <IntlMessages id='mailApp.remove' />
               </StyledUserFooterRemoveBtn>
             </StyledUserFooterAction>

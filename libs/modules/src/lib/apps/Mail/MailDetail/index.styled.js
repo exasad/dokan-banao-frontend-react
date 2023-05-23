@@ -82,7 +82,6 @@ export const StyledMailDetailBtn = styled(Button)`
   padding-left: 32px;
   padding-right: 32px;
   background-color: transparent;
-  color: ${({ theme }) => theme.palette.primary.main};
 
   &:hover,
   &:focus {

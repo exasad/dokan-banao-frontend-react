@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';
 import ItemMenu from './ItemMenu';
@@ -29,6 +29,7 @@ const ContactGridItem = (props) => {
     onViewContactDetail,
   } = props;
 
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <StyledContactGridCard
       className='card-hover'
@@ -40,7 +41,10 @@ const ContactGridItem = (props) => {
         >
           <Checkbox
             checked={checkedContacts.includes(contact.id)}
-            onChange={(event) => onChangeCheckedContacts(event, contact.id)}
+            onChange={() => {
+              setIsChecked(!isChecked);
+              onChangeCheckedContacts(!isChecked, contact.id);
+            }}
             color='primary'
           />
         </StyledContactGridHeaderCheckbox>

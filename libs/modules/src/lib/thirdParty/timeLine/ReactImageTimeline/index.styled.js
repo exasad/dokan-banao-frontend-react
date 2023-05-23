@@ -133,7 +133,7 @@ export const StyledTimelineImage = styled.div`
 
   .rt-timeline-container {
     padding: 1em;
-    font-family: 'Poppins', serif !important;
+    font-family: 'Be Vietnam', serif !important;
     justify-content: center;
     align-items: center;
     display: flex;

@@ -6,7 +6,7 @@ import { StyledProductCell, StyledProductCellContent } from './index.styled';
 const ProductCell = ({ data }) => {
   return (
     <StyledProductCell key={data.id} className='item-hover'>
-      <Avatar variant='rounded' alt='' src={data.icon} />
+      <Avatar alt='' src={data.icon} />
 
       <StyledProductCellContent>
         <h3>{data.name}</h3>

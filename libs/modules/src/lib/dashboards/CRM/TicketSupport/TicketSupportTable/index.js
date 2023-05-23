@@ -18,11 +18,11 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (name) => (
+    render: (name, record) => (
       <StyledTicketSupportUserInfo>
-        <Avatar src={name.image} />
+        <Avatar src={record.image} />
         <StyledTicketSupportUserInfoContent>
-          <h3>{name.name}</h3>
+          <h3>{record.name}</h3>
         </StyledTicketSupportUserInfoContent>
       </StyledTicketSupportUserInfo>
     ),
@@ -57,6 +57,7 @@ const TicketSupportTable = (props) => {
 
   return (
     <StyledTicketSupportTable
+      scroll={{ x: 'auto', y: 340 }}
       hoverColor
       data={ticketSupportData}
       columns={columns}

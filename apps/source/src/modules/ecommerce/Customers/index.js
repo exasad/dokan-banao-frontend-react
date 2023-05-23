@@ -77,10 +77,6 @@ const Customers = () => {
               />
             </StyledCustomerInputView>
             <StyledCustomerHeaderRight>
-              <Button type='primary' onClick={showModal}>
-                Add Customer
-              </Button>
-
               <StyledCustomerHeaderPagination
                 pageSize={10}
                 count={customerCount}

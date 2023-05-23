@@ -29,7 +29,7 @@ const SocialMediaGraph = ({ socialMediaData }) => {
 
   return (
     <StyledSocialMediaGraph>
-      <ResponsiveContainer width='100%' height={370}>
+      <ResponsiveContainer width='100%' height={240}>
         <BarChart
           barSize={10}
           data={socialMediaData}

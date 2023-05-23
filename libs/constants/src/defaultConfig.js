@@ -9,7 +9,7 @@ import {
 } from '@crema/constants/AppEnums';
 
 export const appThemeFont = {
-  family: ['Poppins', 'sans-serif'].join(','),
+  family: ['Be Vietnam', 'sans-serif'].join(','),
   weight: {
     light: Fonts.LIGHT,
     regular: Fonts.REGULAR,

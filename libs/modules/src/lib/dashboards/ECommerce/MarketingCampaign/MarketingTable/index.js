@@ -14,29 +14,40 @@ const OrderTable = ({ marketingCampaignData }) => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: (name) => (
+      render: (name, record) => (
         <StyledMarketingUserInfo>
-          <Avatar src={name.icon} />
+          <Avatar src={record.icon} />
           <StyledMarketingUserInfoContent>
-            <h3>{name.name}</h3>
-            <p>{name.description}</p>
+            <h3>{record.name}</h3>
+            <p>{record.description}</p>
           </StyledMarketingUserInfoContent>
         </StyledMarketingUserInfo>
       ),
     },
     {
+      title: 'Duration',
+      dataIndex: 'duration',
+      key: 'duration',
+    },
+    {
       title: 'Spend',
-      dataIndex: 'spend',
-      key: 'spend',
+      dataIndex: 'spent',
+      key: 'spent',
+    },
+    {
+      title: 'Budget',
+      dataIndex: 'budget',
+      key: 'budget',
     },
     {
       title: 'Graph',
       dataIndex: 'graph',
       key: 'graph',
-      render: (graph) => (
+      align: 'center',
+      render: (graph, record) => (
         <StyledGraphItem>
           <span>
-            {graph.growth ? (
+            {record.growth ? (
               <img
                 src={'/assets/images/dashboard/growth_icon.svg'}
                 alt='growth_icon'
@@ -48,10 +59,10 @@ const OrderTable = ({ marketingCampaignData }) => {
               />
             )}
           </span>
-          <span style={{ color: `${graph.growth ? '#0A8FDC' : '#F44D50'}` }}>
-            {graph.graph}
+          <span style={{ color: `${record.growth ? '#0A8FDC' : '#F44D50'}` }}>
+            {record.graph}
           </span>
-          <span>{graph.growth ? 'Up' : 'Down'}</span>
+          <span>{record.growth ? 'Up' : 'Down'}</span>
         </StyledGraphItem>
       ),
     },
@@ -59,6 +70,7 @@ const OrderTable = ({ marketingCampaignData }) => {
 
   return (
     <StyledMarketingCampaignTable
+      scroll={{ x: 'auto', y: 320 }}
       data={marketingCampaignData}
       columns={columns}
     />

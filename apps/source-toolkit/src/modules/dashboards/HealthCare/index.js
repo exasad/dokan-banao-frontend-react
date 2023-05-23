@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import AppAnimate from '@crema/components/AppAnimate';
 import {
+  Activities,
   AppointmentCard,
-  CancelVisits,
   DrCard,
   HealthStatics,
   HeartRate,
   HospitalActivity,
   HospitalStatics,
   InfoWidget,
-  NewPatients,
   Notifications,
   ProfileCard,
   RecentPatients,
@@ -55,6 +54,15 @@ const HealthCare = () => {
             ))}
           </AppRowContainer>
         </Col>
+        <Col sm={24} lg={8} key={'k'}>
+          <TopDoctors data={healthCare.topDoctors} />
+        </Col>
+        <Col xs={24} sm={24} lg={8} key={'l'}>
+          <UpcomingAppointments data={healthCare.upcomingAppointment} />
+        </Col>
+        <Col xs={24} sm={24} lg={8} key={'o'}>
+          <Notifications data={healthCare.notifications} />
+        </Col>
         <Col xs={24} sm={12} lg={6} key={'f'}>
           <HeartRate data={healthCare.heartCard} />
         </Col>
@@ -73,23 +81,11 @@ const HealthCare = () => {
             ))}
           </AppRowContainer>
         </Col>
-        <Col xs={24} sm={24} lg={8} key={'k'}>
-          <TopDoctors data={healthCare.topDoctors} />
-        </Col>
-        <Col xs={24} sm={24} lg={8} key={'l'}>
-          <UpcomingAppointments data={healthCare.upcomingAppointment} />
-        </Col>
-        <Col xs={24} sm={24} lg={8} key={'o'}>
-          <Notifications data={healthCare.notifications} />
-        </Col>
         <Col xs={24} md={24} lg={12} key={'m'}>
           <HealthStatics data={healthCare.heathStatics} />
         </Col>
-        <Col xs={24} sm={12} md={12} lg={6} key={'n'}>
-          <NewPatients data={healthCare.newPatients} />
-        </Col>
-        <Col xs={24} sm={12} md={12} lg={6} key={'p'}>
-          <CancelVisits data={healthCare.cancelVisits} />
+        <Col xs={24} md={12}>
+          <Activities activities={healthCare.activities} />
         </Col>
         {healthCare.hospitalStatics.map((data, index) => (
           <Col xs={24} sm={12} lg={6} key={'q' + index}>

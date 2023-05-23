@@ -3,7 +3,7 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { allowMultiLanguage } from '@crema/constants';
 
-const renderMenuItemChildren = (item) => {
+const MenuItemChildren = (item) => {
   const { icon, messageId, path } = item;
   const { messages } = useIntl();
 
@@ -13,12 +13,14 @@ const renderMenuItemChildren = (item) => {
       icon:
         icon &&
         (React.isValidElement(icon) ? (
-          <span className='ant-menu-item-icon'>{icon}</span>
+          <span id={path} className='ant-menu-item-icon'>
+            {icon}
+          </span>
         ) : (
-          <icon className='ant-menu-item-icon' />
+          <icon id={path} className='ant-menu-item-icon' />
         )),
       label: (
-        <Link to={path}>
+        <Link to={path} id={path}>
           <span data-testid={messageId.toLowerCase + '-nav'}>
             {allowMultiLanguage ? messages[messageId] : item.title}
           </span>
@@ -31,12 +33,14 @@ const renderMenuItemChildren = (item) => {
       icon:
         icon &&
         (React.isValidElement(icon) ? (
-          <span className='ant-menu-item-icon'>{icon}</span>
+          <span id={path} className='ant-menu-item-icon'>
+            {icon}
+          </span>
         ) : (
-          <icon className='ant-menu-item-icon' />
+          <icon id={path} className='ant-menu-item-icon' />
         )),
       label: (
-        <span data-testid={messageId.toLowerCase + '-nav'}>
+        <span id={path} data-testid={messageId.toLowerCase + '-nav'}>
           {allowMultiLanguage ? messages[messageId] : item.title}
         </span>
       ),
@@ -48,13 +52,13 @@ const renderMenuItem = (item) => {
   return item.type === 'collapse'
     ? {
         key: item.id,
-        ...renderMenuItemChildren(item),
+        ...MenuItemChildren(item),
         children: item.children.map((item) => renderMenuItem(item)),
         type: 'collapse',
       }
     : {
         key: item.id,
-        ...renderMenuItemChildren(item),
+        ...MenuItemChildren(item),
       };
 };
 
@@ -62,14 +66,16 @@ const renderMenu = (item) => {
   return item.type === 'group'
     ? {
         key: item.path ? item.path : item.id,
-        ...renderMenuItemChildren(item),
+        id: item.url,
+        ...MenuItemChildren(item),
         children: item.children.map((item) => renderMenuItem(item)),
         type: 'group',
       }
     : {
         key: item.id,
+        id: item.url,
         exact: item.exact,
-        ...renderMenuItemChildren(item),
+        ...MenuItemChildren(item),
       };
 };
 

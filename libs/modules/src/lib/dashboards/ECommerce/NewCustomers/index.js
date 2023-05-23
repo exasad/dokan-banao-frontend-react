@@ -13,7 +13,7 @@ const NewCustomers = (props) => {
       className='no-card-space-ltr-rtl'
       title={messages['eCommerce.newCustomers']}
     >
-      <StyledCustomerScrollbar>
+      <StyledCustomerScrollbar style={{ height: 350 }}>
         <List
           dataSource={props.newCustomers}
           renderItem={(item) => <CustomerItem key={item.id} item={item} />}

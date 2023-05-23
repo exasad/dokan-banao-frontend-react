@@ -62,8 +62,8 @@ export const StyledSalesStateItem = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
@@ -84,12 +84,6 @@ export const StyledSalesStateItem = styled.div`
     [dir='rtl'] & {
       margin-right: 0;
       margin-left: 16px;
-    }
-
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
-      height: 60px;
-      width: 60px;
-      min-width: 60px;
     }
   }
 `;

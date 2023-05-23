@@ -27,16 +27,10 @@ export const StyledGeneralStatsAvatar = styled(Avatar)`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.lg}px) {
-    min-width: 54px;
-    height: 54px;
-    width: 54px;
     font-size: 20px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
-    min-width: 60px;
-    height: 60px;
-    width: 60px;
     font-size: 24px;
   }
 `;

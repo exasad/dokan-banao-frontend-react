@@ -24,12 +24,12 @@ export const StyledCard = styled(Card)`
 
     & .ant-card-head-title {
       line-height: 1.4993rem;
-      padding-bottom: 4px;
+      padding: 12px 0 0 0;
     }
 
     & .ant-card-extra {
       padding-bottom: 4px;
-      padding-top: 16px !important;
+      padding-top: 8px !important;
 
       & a {
         color: ${({ theme }) => theme.palette.secondary.main};
@@ -38,7 +38,7 @@ export const StyledCard = styled(Card)`
   }
 
   & > .ant-card-body {
-    padding: 16px 20px;
+    padding: 8px 20px 16px 20px;
   }
 
   &.heightFull {

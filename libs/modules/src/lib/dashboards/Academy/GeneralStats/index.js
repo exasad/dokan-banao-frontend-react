@@ -24,8 +24,8 @@ const getIcon = (iconType) => {
       return <FcReading color='#9E49E6' className='icon' />;
   }
 };
+
 const GeneralStats = ({ stats }) => {
-  console.log('icon', stats.icon);
   return (
     <AppCard heightFull className='card-hover'>
       <StyledGeneralStats>

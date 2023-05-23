@@ -21,10 +21,10 @@ const ContactUs = () => {
         </StyledContactSimpleMap>
         <SendMessage sendMessage={contactUsData.sendMessage} />
         <AppRowContainer>
-          <Col item xs={24} md={12}>
+          <Col xs={24} md={12}>
             <ContactUsForm />
           </Col>
-          <Col item xs={24} md={12}>
+          <Col xs={24} md={12}>
             <Address />
           </Col>
         </AppRowContainer>

@@ -104,7 +104,7 @@ const TaskDetailBody = (props) => {
       task,
     })
       .then((data) => {
-        onUpdateSelectedTask(data[0]);
+        onUpdateSelectedTask(data);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {
@@ -240,7 +240,7 @@ const TaskDetailBody = (props) => {
 
       <StyledTodoDetailFooter>
         <Input.TextArea
-          autoSize={{ minRows: 1, maxRows: 2 }}
+          autoSize={{ minRows: 2, maxRows: 3 }}
           placeholder={messages['common.writeComment']}
           value={comment}
           onChange={({ target: { value } }) => setComment(value)}

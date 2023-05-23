@@ -1,8 +1,8 @@
 export const getAntTheme = (theme) => {
   return {
     colorPrimary: theme.palette.primary.main,
+    fontFamily: 'Be Vietnam, sans-serif',
     // colorTextBase: theme.palette.text.primary,
-    // fontFamilyBase: theme.font.family,
     // fontSizeBase: theme.font.size.base,
     // borderRadius: theme.cardRadius,
     // colorBgBase: theme.palette.background.paper,

@@ -1,5 +1,5 @@
 import axios from '@crema/services/axios';
 
-const MockAdapter = require('axios-mock-adapter');
+import MockAdapter from 'axios-mock-adapter';
 
 export default new MockAdapter(axios, { delayResponse: 200 });

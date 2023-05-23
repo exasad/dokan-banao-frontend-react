@@ -15,6 +15,8 @@ import {
   BiData,
   BiDollar,
   BiErrorCircle,
+  BiRss,
+  BiTask,
 } from 'react-icons/bi';
 import {
   MdDevicesOther,
@@ -43,6 +45,8 @@ import { FiMail, FiMap, FiUsers } from 'react-icons/fi';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import { DiHtml5Multimedia } from 'react-icons/di';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
+import { GrUserAdmin } from 'react-icons/gr';
+import { TbFileInvoice } from 'react-icons/tb';
 
 const routesConfig = [
   {
@@ -125,6 +129,13 @@ const routesConfig = [
         path: '/apps/mail',
       },
       {
+        id: 'calender',
+        title: 'Calender',
+        messageId: 'sidebar.apps.calender',
+        icon: <BiTask />,
+        path: '/apps/calender',
+      },
+      {
         id: 'todo',
         title: 'ToDo',
         messageId: 'sidebar.apps.todo',
@@ -187,12 +198,6 @@ const routesConfig = [
             path: '/apps/ecommerce/orders',
           },
           {
-            id: 'customers',
-            title: 'Customers',
-            messageId: 'sidebar.ecommerce.customers',
-            path: '/apps/ecommerce/customers',
-          },
-          {
             id: 'cart',
             title: 'Cart',
             messageId: 'sidebar.ecommerce.cart',
@@ -221,6 +226,93 @@ const routesConfig = [
             title: 'Invoice 2',
             messageId: 'sidebar.ecommerce.invoice2',
             path: '/apps/ecommerce/invoice-2',
+          },
+        ],
+      },
+      {
+        id: 'admin-ecommerce',
+        title: 'Ecommerce Admin',
+        messageId: 'sidebar.ecommerceAdmin',
+        type: 'collapse',
+        icon: <GrUserAdmin />,
+        children: [
+          {
+            id: 'productListing',
+            title: 'Product Listing',
+            messageId: 'sidebar.ecommerceAdmin.productListing',
+            path: '/apps/ecommerce/product-listing',
+          },
+          {
+            id: 'addProducts',
+            title: 'Add Products',
+            messageId: 'sidebar.ecommerceAdmin.addProducts',
+            path: '/apps/ecommerce/add-products',
+          },
+          {
+            id: 'customers',
+            title: 'Customers',
+            messageId: 'sidebar.ecommerce.customers',
+            path: '/apps/ecommerce/customers',
+          },
+        ],
+      },
+      {
+        id: 'invoice',
+        title: 'Invoice',
+        messageId: 'sidebar.invoice',
+        type: 'collapse',
+        icon: <TbFileInvoice />,
+        children: [
+          {
+            id: 'addInvoice',
+            title: 'Add Invoices',
+            messageId: 'sidebar.invoice.addInvoice',
+            path: '/invoice/list/add',
+          },
+          {
+            id: 'invoices',
+            title: 'Invoices',
+            messageId: 'sidebar.invoice.home',
+            path: '/invoice/home',
+          },
+          {
+            id: 'clients',
+            title: 'Clients',
+            messageId: 'sidebar.invoice.clients',
+            path: '/invoice/clients',
+          },
+          {
+            id: 'settings',
+            title: 'Settings',
+            messageId: 'sidebar.invoice.settings',
+            path: '/invoice/settings',
+          },
+        ],
+      },
+      {
+        id: 'blog',
+        title: 'Blog',
+        messageId: 'sidebar.pages.extraPages.blog',
+        type: 'collapse',
+        icon: <BiRss />,
+        children: [
+          {
+            id: 'bloglist',
+            title: 'Blog List',
+            messageId: 'sidebar.pages.extraPages.blogList',
+            path: '/extra-pages/blog',
+          },
+          {
+            id: 'blogdetail',
+            title: 'Blog Detail',
+            messageId: 'sidebar.pages.extraPages.blogDetail',
+            path: '/extra-pages/blog-details',
+          },
+          {
+            id: 'blogcreate',
+            title: 'Create Blog',
+            messageId: 'sidebar.pages.extraPages.blogCreate',
+            path: '/extra-pages/create/blog',
           },
         ],
       },
@@ -890,7 +982,22 @@ const routesConfig = [
         title: 'Pricing',
         messageId: 'sidebar.pages.extraPages.pricing',
         icon: <BiDollar />,
-        path: '/extra-pages/pricing',
+        path: 'pricing',
+        type: 'collapse',
+        children: [
+          {
+            id: 'pricingListing',
+            title: 'Pricing Listing',
+            messageId: 'sidebar.pages.extraPages.pricingListing',
+            path: '/extra-pages/pricing-listing',
+          },
+          {
+            id: 'pricingDetail',
+            title: 'Pricing Detail',
+            messageId: 'sidebar.pages.extraPages.pricingDetail',
+            path: '/extra-pages/pricing-detail',
+          },
+        ],
       },
       {
         id: 'user',

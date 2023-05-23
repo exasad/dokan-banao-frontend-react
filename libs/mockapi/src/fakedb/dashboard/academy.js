@@ -1,14 +1,14 @@
-import { getCustomDateTime } from '@crema/helpers';
+import { getFormattedDateTime } from '@crema/helpers';
 
 const academyData = {
   academicStats: [
     {
       id: 1,
-      title: 'Total Sales',
-      count: '$350',
+      title: 'Resources',
+      count: '45',
       new: 'New $50',
-      badgeColor: '#9E49E6',
-      bgcolor: '#F5EDFC',
+      badgeColor: '#0A8FDC',
+      bgcolor: '#E7F4FB',
       icon: 'BiBasket',
     },
     {
@@ -16,27 +16,27 @@ const academyData = {
       title: 'Total Enroll',
       count: '1500',
       new: 'New 125',
-      badgeColor: '#0A8FDC',
-      bgcolor: '#E7F4FB',
+      badgeColor: '#9E49E6',
+      bgcolor: '#F5EDFC',
       icon: 'FcGraduationCap',
-    },
-    {
-      id: 3,
-      title: 'Total Courses',
-      count: '130',
-      new: 'New 5',
-      badgeColor: '#F44D50',
-      bgcolor: '#EDF8F0',
-      icon: 'GiBookshelf',
     },
     {
       id: 4,
       title: 'Total Students',
       count: '2650',
       new: 'New 245',
+      badgeColor: '#F44D50',
+      bgcolor: '#F04F4733',
+      icon: 'FcReading',
+    },
+    {
+      id: 3,
+      title: 'Total Courses',
+      count: '130',
+      new: 'New 5',
       badgeColor: '#49BD65',
       bgcolor: '#EAF7EE',
-      icon: 'FcReading',
+      icon: 'GiBookshelf',
     },
   ],
   courseCategories: [
@@ -48,15 +48,15 @@ const academyData = {
       xp: 45,
       images: [
         {
-          image: '/assets/images/dashboard/academy/design.png',
+          image: '/assets/images/dashboard/academy/design.jpg',
           title: 'image 1',
         },
         {
-          image: '/assets/images/dashboard/academy/design.png',
+          image: '/assets/images/dashboard/academy/design.jpg',
           title: 'image 2',
         },
         {
-          image: '/assets/images/dashboard/academy/design.png',
+          image: '/assets/images/dashboard/academy/design.jpg',
           title: 'image 3',
         },
       ],
@@ -69,15 +69,15 @@ const academyData = {
       xp: 45,
       images: [
         {
-          image: '/assets/images/dashboard/academy/development.png',
+          image: '/assets/images/dashboard/academy/development.jpg',
           title: 'image 1',
         },
         {
-          image: '/assets/images/dashboard/academy/development.png',
+          image: '/assets/images/dashboard/academy/development.jpg',
           title: 'image 2',
         },
         {
-          image: '/assets/images/dashboard/academy/development.png',
+          image: '/assets/images/dashboard/academy/development.jpg',
           title: 'image 3',
         },
       ],
@@ -90,15 +90,15 @@ const academyData = {
       xp: 45,
       images: [
         {
-          image: '/assets/images/dashboard/academy/marketing.png',
+          image: '/assets/images/dashboard/academy/marketing.jpg',
           title: 'image 1',
         },
         {
-          image: '/assets/images/dashboard/academy/marketing.png',
+          image: '/assets/images/dashboard/academy/marketing.jpg',
           title: 'image 2',
         },
         {
-          image: '/assets/images/dashboard/academy/marketing.png',
+          image: '/assets/images/dashboard/academy/marketing.jpg',
           title: 'image 3',
         },
       ],
@@ -111,15 +111,15 @@ const academyData = {
       xp: 45,
       images: [
         {
-          image: '/assets/images/dashboard/academy/it.png',
+          image: '/assets/images/dashboard/academy/it.jpg',
           title: 'image 1',
         },
         {
-          image: '/assets/images/dashboard/academy/it.png',
+          image: '/assets/images/dashboard/academy/it.jpg',
           title: 'image 2',
         },
         {
-          image: '/assets/images/dashboard/academy/it.png',
+          image: '/assets/images/dashboard/academy/it.jpg',
           title: 'image 3',
         },
       ],
@@ -156,7 +156,7 @@ const academyData = {
         duration: '4 Mar 2020 - 22 Mar 2020',
         rating: 8.7,
         isCompleted: false,
-        thumb: '/assets/images/dashboard/academy/logoDsign.png',
+        thumb: '/assets/images/dashboard/academy/logoDesign.jpg',
       },
       {
         id: 3,
@@ -164,7 +164,7 @@ const academyData = {
         duration: '4 Apr 2020 - 22 Apr 2020',
         rating: 8.7,
         isCompleted: true,
-        thumb: '/assets/images/dashboard/academy/digitalMarketing.png',
+        thumb: '/assets/images/dashboard/academy/digitalmarketing.jpg',
       },
       {
         id: 4,
@@ -172,7 +172,7 @@ const academyData = {
         duration: '4 May 2020 - 22 May 2020',
         rating: 8.7,
         isCompleted: false,
-        thumb: '/assets/images/dashboard/academy/webDevelopment.png',
+        thumb: '/assets/images/dashboard/academy/webdevelopment.jpg',
       },
     ],
   },
@@ -183,7 +183,7 @@ const academyData = {
       color: '#F88333',
       letter: 'B',
       content: 'You had 1 class on 28 August',
-      date: getCustomDateTime(-5, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
+      date: getFormattedDateTime(-5, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
     },
     {
       id: 2,
@@ -191,7 +191,7 @@ const academyData = {
       color: '#0A8FDC',
       letter: 'A',
       content: 'Mighel sent you a message',
-      date: getCustomDateTime(-10, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
+      date: getFormattedDateTime(-10, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
     },
     {
       id: 3,
@@ -199,7 +199,7 @@ const academyData = {
       color: '#FE8EB9',
       letter: 'G',
       content: 'You have taken AI class',
-      date: getCustomDateTime(-15, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
+      date: getFormattedDateTime(-15, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
     },
     {
       id: 4,
@@ -207,7 +207,7 @@ const academyData = {
       color: '#47B46B',
       letter: 'W',
       content: 'You have registered for Python',
-      date: getCustomDateTime(-25, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
+      date: getFormattedDateTime(-25, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
     },
     {
       id: 5,
@@ -215,7 +215,7 @@ const academyData = {
       color: '#FCA7A4',
       letter: 'J',
       content: 'Nancy sent you a message',
-      date: getCustomDateTime(-50, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
+      date: getFormattedDateTime(-50, 'minutes', 'MMMM DD, YYYY, h:mm:ss a'),
     },
   ],
   courseDetails: [
@@ -244,7 +244,7 @@ const academyData = {
     {
       id: 2,
       title: 'Logo Design',
-      thumb: '/assets/images/dashboard/academy/logoDsign.png',
+      thumb: '/assets/images/dashboard/academy/logoDesign.jpg',
       level: 'Elementary level',
       coveredDuration: '35 hours',
       totalDuration: '75 hours',
@@ -266,7 +266,7 @@ const academyData = {
     {
       id: 3,
       title: 'Typography',
-      thumb: '/assets/images/dashboard/academy/digitalMarketing.png',
+      thumb: '/assets/images/dashboard/academy/digitalmarketing.jpg',
       level: 'Elementary level',
       coveredDuration: '35 hours',
       totalDuration: '75 hours',
@@ -361,10 +361,8 @@ const academyData = {
   studentRankings: [
     {
       id: 1,
-      name: {
-        title: 'Suzanna J. Fowler',
-        profile_pic: '/assets/images/avatar/A1.jpg',
-      },
+      name: 'Suzanna J. Fowler',
+      profile_pic: '/assets/images/avatar/A1.jpg',
       courseId: 34878234,
       courseName: 'Watercolor Class',
       totalGrade: 97.4,
@@ -373,10 +371,8 @@ const academyData = {
     },
     {
       id: 2,
-      name: {
-        title: 'Julie Taylor',
-        profile_pic: '/assets/images/avatar/A2.jpg',
-      },
+      name: 'Julie Taylor',
+      profile_pic: '/assets/images/avatar/A2.jpg',
       courseId: 345453444,
       courseName: 'Python Class',
       totalGrade: 91.4,
@@ -385,10 +381,8 @@ const academyData = {
     },
     {
       id: 3,
-      name: {
-        title: 'John Doe',
-        profile_pic: '/assets/images/avatar/A3.jpg',
-      },
+      name: 'John Doe',
+      profile_pic: '/assets/images/avatar/A3.jpg',
       courseId: 455644556,
       courseName: 'JS Class',
       totalGrade: 98.4,
@@ -397,10 +391,8 @@ const academyData = {
     },
     {
       id: 4,
-      name: {
-        title: 'Angelina Joew',
-        profile_pic: '/assets/images/avatar/A5.jpg',
-      },
+      name: 'Angelina Joew',
+      profile_pic: '/assets/images/avatar/A5.jpg',
       courseId: 455644556,
       courseName: 'React Class',
       totalGrade: 95.3,

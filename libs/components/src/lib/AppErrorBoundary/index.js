@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ErrorIcon from './ErrorIcon';
-import { StyledAppBoundary } from './index.styled';
 
 class AppErrorBoundary extends React.Component {
   constructor(props) {
@@ -24,18 +22,22 @@ class AppErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <StyledAppBoundary>
-          <ErrorIcon />
-          <div style={{ fontSize: 30, marginTop: 4 }}>
-            Ah! Something went wrong.
-          </div>
-          <div style={{ fontSize: 18, textAlign: 'center' }}>
-            Brace yourself till we get the error fixed.
-          </div>
-          <div style={{ fontSize: 18, textAlign: 'center' }}>
-            You may also refresh the page or try again latter
-          </div>
-        </StyledAppBoundary>
+        <ErrorBoundaryWrapper>
+          <WarningOutlinedStyled />
+          <SomethingWentWrong>Ah! Something went wrong.</SomethingWentWrong>
+          <TextWrapper>Brace yourself till we get the error fixed.</TextWrapper>
+          <TextWrapper>
+            You may also refresh the page or try again later
+          </TextWrapper>
+
+          <ErrorBtn
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            Try Again
+          </ErrorBtn>
+        </ErrorBoundaryWrapper>
       );
     } else {
       return this.props.children;

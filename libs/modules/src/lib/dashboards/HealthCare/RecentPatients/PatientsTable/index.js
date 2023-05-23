@@ -14,11 +14,11 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (name) => (
+    render: (name, record) => (
       <StyledRecentPatientUserInfo>
-        <Avatar src={name.profile_pic} />
+        <Avatar src={record.profile_pic} />
         <StyledRecentPatientUserInfoContent>
-          <h3>{name.title}</h3>
+          <h3>{record.name}</h3>
         </StyledRecentPatientUserInfoContent>
       </StyledRecentPatientUserInfo>
     ),

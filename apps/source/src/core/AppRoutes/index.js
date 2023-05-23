@@ -12,40 +12,46 @@ import { userPagesConfig } from './UserPagesRoutes';
 import { thirdPartyConfigs } from './ThirdPartyRoutes';
 import { appsConfig } from './AppsRoutes';
 import { accountPagesConfigs } from './AccountRoutes';
+import { invoiceConfig } from './InvoiceRoutes';
 import { componentsConfigs } from '../../modules/components';
-import { initialUrl } from '@crema/constants/AppConst';
 
-const authorizedStructure = {
-  fallbackPath: '/signin',
-  unAuthorizedComponent: <Error403 />,
-  routes: [
-    ...dashboardConfig,
-    ...accountPagesConfigs,
-    ...appsConfig,
-    ...thirdPartyConfigs,
-    ...extraPagesConfigs,
-    ...ecommerceConfig,
-    ...componentsConfigs,
-    ...userPagesConfig,
-    ...userListConfig,
-  ],
+export const authorizedStructure = (loginUrl) => {
+  return {
+    fallbackPath: loginUrl,
+    unAuthorizedComponent: <Error403 />,
+    routes: [
+      ...dashboardConfig,
+      ...accountPagesConfigs,
+      ...appsConfig,
+      ...thirdPartyConfigs,
+      ...extraPagesConfigs,
+      ...ecommerceConfig,
+      ...componentsConfigs,
+      ...userPagesConfig,
+      ...userListConfig,
+      ...invoiceConfig,
+    ],
+  };
 };
 
-const unAuthorizedStructure = {
-  fallbackPath: initialUrl,
-  routes: authRouteConfig,
-};
-const anonymousStructure = {
-  routes: errorPagesConfigs.concat([
-    {
-      path: '/',
-      element: <Navigate to={initialUrl} />,
-    },
-    {
-      path: '*',
-      element: <Navigate to='/error-pages/error-404' />,
-    },
-  ]),
+export const unAuthorizedStructure = (initialUrl) => {
+  return {
+    fallbackPath: initialUrl,
+    routes: authRouteConfig,
+  };
 };
 
-export { authorizedStructure, unAuthorizedStructure, anonymousStructure };
+export const anonymousStructure = (initialUrl) => {
+  return {
+    routes: errorPagesConfigs.concat([
+      {
+        path: '/',
+        element: <Navigate to={initialUrl} />,
+      },
+      {
+        path: '*',
+        element: <Navigate to='/error-pages/error-404' />,
+      },
+    ]),
+  };
+};

@@ -9,7 +9,7 @@ mock.onGet('/api/mailApp/mail/').reply((config) => {
   const params = config.params;
   mailList = mailList.map((mail) => {
     if (params.id === mail.id) {
-      mail.isRead = status;
+      mail.isRead = false;
       return mail;
     } else {
       return mail;

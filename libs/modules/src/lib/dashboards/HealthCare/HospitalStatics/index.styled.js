@@ -4,10 +4,8 @@ export const StyledHospitalStatistics = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
-  margin-bottom: 10px;
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
     margin-top: 8px;
-    margin-bottom: 8px;
   }
 `;
 

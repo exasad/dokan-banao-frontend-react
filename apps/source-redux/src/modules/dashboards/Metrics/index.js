@@ -7,15 +7,10 @@ import {
   EarningInMonth,
   FloatingGraphs,
   MetricTitleLineGraphCard,
-  Orders,
   ProfileViews,
   Sales,
-  Share,
-  SocialDataCard,
   SocialVisitors,
   Stats,
-  StatsCard,
-  StatsCardSecond,
   StatsCardWithGraph,
   Subscriptions,
   Visits,
@@ -27,10 +22,18 @@ import { blue, geekblue, green, grey, red } from '@ant-design/colors';
 import { StyledMetricTitleLineView } from './index.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { onGetMetricsData } from '../../../redux/actions';
-import AppLoader from '@crema/components/AppLoader';
+import {
+  StatsDirCard,
+  StatsItemCard,
+} from '@crema/modules/dashboards/CommonComponents';
+import { ReportCard } from '@crema/modules/dashboards/ECommerce';
+import { VisitorPageView } from '@crema/modules/dashboards/Analytics';
+import { HeartRate, YourActivity } from '@crema/modules/dashboards/HealthCare';
+import { useIntl } from 'react-intl';
 
 const Metrics = () => {
   const dispatch = useDispatch();
+  const { messages } = useIntl();
 
   useEffect(() => {
     dispatch(onGetMetricsData());
@@ -48,39 +51,47 @@ const Metrics = () => {
           </h2>
 
           <AppRowContainer ease={'easeInSine'}>
-            <Col xs={24} sm={12} lg={6} key={'a'}>
-              <StatsCard
-                text={<IntlMessages id='dashboard.ordersThisYear' />}
-                value={metricsData.ordersThisYear}
-                bgColor={red[5]}
-                icon={'/assets/images/metricsIcons/order.svg'}
+            {metricsData.metricsStats.map((item, index) => (
+              <Col xs={12} sm={12} lg={6} key={index}>
+                <StatsItemCard stats={item} />
+              </Col>
+            ))}
+
+            {metricsData.stateData.map((data) => (
+              <Col xs={12} sm={12} lg={6} key={data.id}>
+                <StatsDirCard data={data} />
+              </Col>
+            ))}
+            {metricsData.reportData.map((data) => (
+              <Col xs={12} sm={12} lg={6} key={data.id}>
+                <ReportCard data={data} />
+              </Col>
+            ))}
+            <Col xs={24} md={6}>
+              <FloatingGraphs
+                title={messages['dashboard.sales']}
+                data={metricsData.metricsFloatingGraphData.salesData}
               />
             </Col>
 
-            <Col xs={24} sm={12} lg={6} key={'b'}>
-              <StatsCard
-                text={<IntlMessages id='dashboard.revenueThisYear' />}
-                value={metricsData.revenueThisYear}
-                bgColor={blue[3]}
-                icon={'/assets/images/metricsIcons/revenue.svg'}
+            <Col xs={24} md={6}>
+              <FloatingGraphs
+                title={messages['dashboard.clients']}
+                data={metricsData.metricsFloatingGraphData.clientsData}
               />
             </Col>
 
-            <Col xs={24} sm={12} lg={6} key={'c'}>
-              <StatsCard
-                text={<IntlMessages id='dashboard.visitsThisYear' />}
-                value={metricsData.visitsThisYear}
-                bgColor={geekblue[6]}
-                icon={'/assets/images/metricsIcons/visits.svg'}
+            <Col xs={24} md={6}>
+              <FloatingGraphs
+                title={messages['dashboard.revenue']}
+                data={metricsData.metricsFloatingGraphData.revenueData}
               />
             </Col>
 
-            <Col xs={24} sm={12} lg={6} key={'d'}>
-              <StatsCard
-                text={<IntlMessages id='dashboard.queriesThisYear' />}
-                value={metricsData.queriesThisYear}
-                bgColor={green[5]}
-                icon={'/assets/images/metricsIcons/querries.svg'}
+            <Col xs={24} md={6}>
+              <FloatingGraphs
+                title={messages['dashboard.newUser']}
+                data={metricsData.metricsFloatingGraphData.newUserData}
               />
             </Col>
 
@@ -191,76 +202,12 @@ const Metrics = () => {
               </div>
             </Col>
 
-            <Col xs={24} sm={12} lg={6} key={'q'}>
-              <StatsCardSecond
-                text={<IntlMessages id='dashboard.revenueThisYear' />}
-                value={metricsData.revenueThisYear}
-                bgColor={blue[5]}
-                icon={'/assets/images/metricsIcons/revenue.svg'}
-              />
-            </Col>
-
-            <Col xs={24} sm={12} lg={6} key={'r'}>
-              <StatsCardSecond
-                text={<IntlMessages id='dashboard.ordersThisYear' />}
-                value={metricsData.ordersThisYear}
-                bgColor={red[5]}
-                icon={'/assets/images/metricsIcons/order.svg'}
-              />
-            </Col>
-
-            <Col xs={24} sm={12} lg={6} key={'s'}>
-              <StatsCardSecond
-                text={<IntlMessages id='dashboard.visitsThisYear' />}
-                value={metricsData.visitsThisYear}
-                bgColor={geekblue[6]}
-                icon={'/assets/images/metricsIcons/visits.svg'}
-              />
-            </Col>
-
-            <Col xs={24} sm={12} lg={6} key={'t'}>
-              <StatsCardSecond
-                text={<IntlMessages id='dashboard.queriesThisYear' />}
-                value={metricsData.queriesThisYear}
-                bgColor={green[5]}
-                icon={'/assets/images/metricsIcons/querries.svg'}
-              />
-            </Col>
-
-            <Col xs={24} lg={6} key={'u'}>
-              <FloatingGraphs
-                title={<IntlMessages id='dashboard.sales' />}
-                data={metricsData.metricsFloatingGraphData.salesData}
-              />
-            </Col>
-
-            <Col xs={24} lg={6} key={'v'}>
-              <FloatingGraphs
-                title={<IntlMessages id='dashboard.clients' />}
-                data={metricsData.metricsFloatingGraphData.clientsData}
-              />
-            </Col>
-
-            <Col xs={24} lg={6} key={'x'}>
-              <FloatingGraphs
-                title={<IntlMessages id='dashboard.revenue' />}
-                data={metricsData.metricsFloatingGraphData.revenueData}
-              />
-            </Col>
-
-            <Col xs={24} lg={6} key={'y'}>
-              <FloatingGraphs
-                title={<IntlMessages id='dashboard.newUser' />}
-                data={metricsData.metricsFloatingGraphData.newUserData}
-              />
-            </Col>
-
             <Col xs={24} lg={12} key={'z'}>
               <Visits data={metricsData.visitsData} />
             </Col>
 
             <Col xs={24} lg={12} key={'aa'}>
-              <Orders data={metricsData.ordersData} />
+              <VisitorPageView data={metricsData.visitorsPageView} />
             </Col>
 
             <Col xs={24} lg={12} xl={6} key={'ab'}>
@@ -272,11 +219,11 @@ const Metrics = () => {
             </Col>
 
             <Col xs={24} lg={12} xl={6} key={'ad'}>
-              <SocialDataCard data={metricsData.socialData} />
+              <HeartRate data={metricsData.heartCard} />
             </Col>
 
             <Col xs={24} lg={12} xl={6} key={'ae'}>
-              <Share data={metricsData.shareData} />
+              <YourActivity data={metricsData.yourActivity} />
             </Col>
 
             <Col xs={24} lg={12} key={'af'}>
@@ -288,9 +235,7 @@ const Metrics = () => {
             </Col>
           </AppRowContainer>
         </div>
-      ) : (
-        <AppLoader />
-      )}
+      ) : null}
     </>
   );
 };

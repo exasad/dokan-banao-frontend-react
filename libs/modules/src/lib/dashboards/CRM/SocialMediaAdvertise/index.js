@@ -15,7 +15,7 @@ const SocialMediaAdvertise = (props) => {
   const { messages } = useIntl();
 
   return (
-    <AppCard heightFull title={messages['dashboard.socialMedia']}>
+    <AppCard title={messages['dashboard.socialMedia']}>
       <SocialMediaGraph socialMediaData={socialMediaData} />
       <StyledSocialMediaAdvertise>
         {socialMediaData.map((item) => {

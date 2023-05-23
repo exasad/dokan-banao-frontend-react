@@ -17,6 +17,7 @@ import {
 import { useRoutes } from 'react-router-dom';
 import routesConfig from '../AppRoutes/routeConfig';
 import AuthWrapper from './AuthWrapper';
+import { initialUrl } from '@crema/constants';
 
 const AppLayout = () => {
   const { navStyle } = useLayoutContext();
@@ -26,14 +27,20 @@ const AppLayout = () => {
   const { updateMenuStyle, setSidebarBgImage } = useSidebarActionsContext();
   const AppLayout = Layouts[navStyle];
   const [params] = useUrlSearchParams();
+
+  const initURL = params?.redirect ? params?.redirect : initialUrl;
+  const loginUrl = `/signin?redirect=${window.location.pathname}`;
+
   const generatedRoutes = generateRoutes({
     isAuthenticated: isAuthenticated,
     userRole: user?.role,
-    unAuthorizedStructure,
-    authorizedStructure,
-    anonymousStructure,
+    anonymousStructure: anonymousStructure(initURL),
+    authorizedStructure: authorizedStructure(loginUrl),
+    unAuthorizedStructure: unAuthorizedStructure(initURL),
   });
+
   const routes = useRoutes(generatedRoutes);
+
   useEffect(() => {
     if (params.layout) updateNavStyle(params.layout);
     if (params.menuStyle) updateMenuStyle(params.menuStyle);

@@ -6,6 +6,7 @@ const { Option } = Select;
 export const StyledAppSelect = styled(Select)`
   margin-left: 8px;
   cursor: pointer;
+  min-width: 100px;
   font-size: ${({ theme }) => theme.font.size.base};
 
   color: ${({ theme }) => theme.palette.text.primary};

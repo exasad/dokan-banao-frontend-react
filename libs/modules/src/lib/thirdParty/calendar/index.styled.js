@@ -124,12 +124,12 @@ export const StyledCalendar = styled(Calendar)`
   }
 
   .rbc-calendar {
-    font-family: 'Poppins', serif;
+    font-family: 'Be Vietnam', serif;
     width: 100%;
   }
 
   .cr-app-calendar {
-    font-family: 'Poppins', serif;
+    font-family: 'Be Vietnam', serif;
     width: 100%;
   }
 

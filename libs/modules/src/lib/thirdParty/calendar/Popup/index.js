@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const localizer = momentLocalizer(moment);
 
 export const AppCalendarWrapper = styled.div`
-  font-family: 'Poppins', serif;
+  font-family: 'Be Vietnam', serif;
   width: 100%;
 
   & .rbc-calendar {

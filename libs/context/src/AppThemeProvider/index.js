@@ -26,6 +26,7 @@ const AppThemeProvider = (props) => {
         locale={antLocale}
         theme={{
           token: getAntTheme(theme),
+          fontFamily: 'Be Vietnam, sans-serif',
         }}
       >
         {props.children}

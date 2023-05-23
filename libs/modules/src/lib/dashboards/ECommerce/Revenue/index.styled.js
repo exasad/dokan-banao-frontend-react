@@ -25,11 +25,17 @@ export const StyledRevCircularProgressContent = styled.div`
   align-items: center;
   text-align: center;
 
+  .ant-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
   & h3 {
     color: ${({ theme }) => theme.palette.text.primary};
     font-size: 18px;
     font-weight: ${({ theme }) => theme.font.weight.medium};
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
 
   & p {
@@ -39,6 +45,8 @@ export const StyledRevCircularProgressContent = styled.div`
 
 export const StyledDollerIcon = styled.span`
   font-weight: ${({ theme }) => theme.font.weight.medium};
+  margin-right: 5px;
+  font-size: 16px;
 `;
 
 export const StyledAppProgressCircular = styled(AppCircularProgress)`

@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'antd';
-import { MoreOutlined } from '@ant-design/icons';
 import {
+  StyledAction,
   StyledAnChar,
   StyledBadgeRoot,
   StyledOrderTable,
 } from '../index.styled';
+import { AiOutlineEye } from 'react-icons/ai';
+import { BiArchiveIn } from 'react-icons/bi';
 
 const OrderTable = ({ orderData }) => {
   const getPaymentStatusColor = (status) => {
@@ -69,12 +71,31 @@ const OrderTable = ({ orderData }) => {
       title: 'Actions',
       dataIndex: 'id',
       key: 'id',
-      render: (id) => (
-        <Button key={id} shape='circle' icon={<MoreOutlined />} />
+      render: () => (
+        <StyledAction>
+          <Button
+            type='primary'
+            shape='circle'
+            className='icon-btn icon-btn-eye'
+            icon={<AiOutlineEye />}
+          />
+          <Button
+            type='primary'
+            shape='circle'
+            className='icon-btn'
+            icon={<BiArchiveIn />}
+          />
+        </StyledAction>
       ),
     },
   ];
-  return <StyledOrderTable data={orderData} columns={columns} />;
+  return (
+    <StyledOrderTable
+      scroll={{ x: 'auto', y: 320 }}
+      data={orderData}
+      columns={columns}
+    />
+  );
 };
 
 export default OrderTable;

@@ -17,10 +17,12 @@ const CreateContact = ({
 
   return (
     <StyledContactModal
+      width={900}
       open={isAddContact}
       onOk={isAddContact}
       footer={false}
       onCancel={handleAddContactClose}
+      bodyStyle={{ height: 600 }}
     >
       <AddContactForm
         selectContact={selectContact}

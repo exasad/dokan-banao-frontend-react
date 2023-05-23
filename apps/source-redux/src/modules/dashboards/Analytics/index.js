@@ -48,7 +48,7 @@ const Analytics = () => {
         <Col xs={24} lg={12} key={'e'}>
           <SalesState
             salesState={analyticsData.salesState}
-            saleChartData={analyticsData.saleChartData}
+            saleChartData={analyticsData.salesChartData}
           />
         </Col>
         <Col xs={24} lg={16} xxl={18} key={'f'}>

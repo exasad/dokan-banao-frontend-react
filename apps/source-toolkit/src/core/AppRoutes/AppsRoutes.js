@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 const Mail = React.lazy(() => import('../../modules/apps/Mail'));
 const ToDo = React.lazy(() => import('../../modules/apps/ToDo'));
+const Calendar = React.lazy(() => import('../../modules/apps/Calendar'));
 const Contact = React.lazy(() => import('../../modules/apps/Contact'));
 const ScrumBoard = React.lazy(() => import('../../modules/apps/ScrumBoard'));
 const Chat = React.lazy(() => import('../../modules/apps/Chat'));
@@ -33,6 +34,19 @@ export const appsConfig = [
   {
     path: '/apps/todo',
     element: <Navigate to='/apps/todo/folder/all' />,
+  },
+  {
+    path: [
+      '/apps/calender/label/:label',
+      '/apps/calender/label/:label/:id',
+      '/apps/calender/:folder',
+      '/apps/calender/:folder/:id',
+    ],
+    element: <Calendar />,
+  },
+  {
+    path: '/apps/calender',
+    element: <Navigate to='/apps/calender/all' />,
   },
   {
     path: ['/apps/contact/folder/:name', '/apps/contact/label/:name'],

@@ -1,41 +1,53 @@
 import React from 'react';
-import StaticsGraph from './StaticsGraph';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import AppCard from '@crema/components/AppCard';
 import PropTypes from 'prop-types';
+import StatGraphs from './StatGraphs';
 import {
-  StyledRechartAction,
-  StyledRechartContainer,
-  StyledReportCard,
-  StyledReportContent,
-  StyledReportFlex,
+  StyledContainer,
+  StyledFlex,
+  StyledFlex2,
+  StyledPercentage,
+  StyledSecondary,
+  StyledSuccess,
+  StyledTitle,
 } from './index.styled';
+import Icon from '@ant-design/icons';
+import { rgba } from 'polished';
 
 const ReportCard = ({ data }) => {
   return (
-    <StyledReportCard className='card-hover' heightFull>
-      <StyledReportFlex>
-        <StyledReportContent>
-          <h3>{data.value}</h3>
-          <p>{data.type}</p>
-        </StyledReportContent>
-        <StyledRechartContainer>
-          <StaticsGraph
-            id={data.id}
-            graphData={data.graphData}
-            growth={data.growth}
-            strokeColor={data.strokeColor}
-          />
-          <StyledRechartAction style={{ color: data.strokeColor }}>
-            {data.growth > 0 ? (
-              <ArrowUpOutlined style={{ color: data.strokeColor }} />
-            ) : (
-              <ArrowDownOutlined style={{ color: data.strokeColor }} />
+    <AppCard>
+      <StyledFlex>
+        <StyledContainer>
+          <StyledFlex2>
+            <StyledTitle>{data.value}</StyledTitle>
+            {data?.percentageChange && (
+              <StyledSuccess>
+                <StyledPercentage
+                  style={{
+                    color: data.percentageChange > 0 ? '#11C15B' : '#F04F47',
+                  }}
+                >
+                  {data.percentageChange > 0 ? '+' : ''}
+                  {data.percentageChange}%
+                </StyledPercentage>
+              </StyledSuccess>
             )}
-            {data.growth}
-          </StyledRechartAction>
-        </StyledRechartContainer>
-      </StyledReportFlex>
-    </StyledReportCard>
+          </StyledFlex2>
+          <StyledSecondary>{data.type}</StyledSecondary>
+        </StyledContainer>
+        <div
+          style={{
+            color: data.color,
+            padding: 8,
+            backgroundColor: rgba(data.color, 0.1),
+          }}
+        >
+          <Icon style={{ fontSize: 30 }}>{data.icon}</Icon>
+        </div>
+      </StyledFlex>
+      <StatGraphs id={data.id} data={data.graphData} strokeColor={data.color} />
+    </AppCard>
   );
 };
 

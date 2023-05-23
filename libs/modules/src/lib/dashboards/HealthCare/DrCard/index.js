@@ -10,6 +10,7 @@ import {
 } from './index.styled';
 
 const DrCard = ({ data }) => {
+  console.log('data: ', data);
   const { bgColor, icon, time, category, name } = data;
 
   return (

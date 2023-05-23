@@ -10,7 +10,7 @@ const GoalProgressGraph = (props) => {
     <StyledGoalChart>
       <BarChart
         barGap={5}
-        barSize={25}
+        barSize={8}
         data={progressGraphData}
         margin={{ top: 50 }}
       >
