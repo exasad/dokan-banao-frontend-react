@@ -15,7 +15,7 @@ const Header = () => {
       heightFull
       title={messages['dashboard.jombie']}
       style={{
-        backgroundImage: 'url(/assets/images/dashboard/widgets/jombie.png)',
+        backgroundImage: 'url(/assets/images/widgets/jombie.png)',
       }}
     >
       <StyledHeaderImgContent>

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'antd';
-import { StyledHeading, StyledText } from './index.styled.js';
+import { Card } from 'antd';
+import { StyledHeading, StyledLearnBtn, StyledText } from './index.styled.js';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const PeopleCard = ({ data }) => {
   console.log(data);
@@ -10,9 +11,10 @@ const PeopleCard = ({ data }) => {
       <img src={data.src} alt='crema-logo' />
       <StyledHeading>{data.heading}</StyledHeading>
       <StyledText>{data.text}</StyledText>
-      <Button type='link' style={{ paddingLeft: 0, fontWeight: 'bolder' }}>
-        Learn More &#8614;
-      </Button>
+      <StyledLearnBtn type='link'>
+        <span className='btn-text'>Learn More</span>
+        <AiOutlineArrowRight className='icon' size={16} />
+      </StyledLearnBtn>
     </Card>
   );
 };

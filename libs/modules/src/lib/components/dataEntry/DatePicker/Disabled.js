@@ -1,31 +1,31 @@
 import React from 'react';
 import { DatePicker, Space } from 'antd';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 const { RangePicker } = DatePicker;
 
-const dateFormat = 'YYYY-MM-DD';
+const dateFormat = 'MMM DD,YYYY';
 
 const Disabled = () => {
   return (
     <Space direction='vertical' size={12}>
-      <DatePicker defaultValue={moment('2015-06-06', dateFormat)} disabled />
+      <DatePicker defaultValue={dayjs('2015-06-06', dateFormat)} disabled />
       <DatePicker
         picker='month'
-        defaultValue={moment('2015-06', 'YYYY-MM')}
+        defaultValue={dayjs('2015-06', 'YYYY-MM')}
         disabled
       />
       <RangePicker
         defaultValue={[
-          moment('2015-06-06', dateFormat),
-          moment('2015-06-06', dateFormat),
+          dayjs('2015-06-06', dateFormat),
+          dayjs('2015-06-06', dateFormat),
         ]}
         disabled
       />
       <RangePicker
         defaultValue={[
-          moment('2021-09-03', dateFormat),
-          moment('2021-11-22', dateFormat),
+          dayjs('2021-09-03', dateFormat),
+          dayjs('2021-11-22', dateFormat),
         ]}
         disabled={[false, true]}
       />

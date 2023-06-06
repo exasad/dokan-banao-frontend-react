@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -39,6 +39,7 @@ import {
 } from '@crema/modules/apps/ToDo';
 import { useDispatch, useSelector } from 'react-redux';
 import { onUpdateSelectedTask } from '../../../../../redux/actions';
+import { getDateObject, getFormattedDate } from '@crema/helpers';
 
 const TaskDetailBody = (props) => {
   const { selectedTask } = props;
@@ -55,7 +56,7 @@ const TaskDetailBody = (props) => {
   const [comment, setComment] = useState('');
 
   const [scheduleDate, setScheduleDate] = useState(
-    moment(selectedTask.scheduleDate).format('YYYY/MM/DD'),
+    getDateObject(selectedTask.startDate),
   );
 
   const [selectedStaff, setStaff] = useState(selectedTask.assignedTo);
@@ -76,7 +77,7 @@ const TaskDetailBody = (props) => {
     const task = selectedTask;
     task.content = content;
     task.title = title;
-    task.scheduleDate = scheduleDate;
+    task.startDate = getFormattedDate(scheduleDate);
     task.assignedTo = selectedStaff;
     dispatch(onUpdateSelectedTask(task));
     setEdit(!isEdit);
@@ -88,7 +89,7 @@ const TaskDetailBody = (props) => {
       comment: comment,
       name: user.displayName ? user.displayName : 'User',
       image: user.photoURL,
-      date: moment().format('ll'),
+      date: dayjs().format('ll'),
     });
     dispatch(onUpdateSelectedTask(task));
     setComment('');

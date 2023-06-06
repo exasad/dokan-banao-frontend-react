@@ -3479,7 +3479,7 @@
     ignore "^5.0.4"
     tslib "^2.3.0"
 
-"@nx/webpack@16.2.1", "@nx/webpack@^16.2.1":
+"@nx/webpack@16.2.1":
   version "16.2.1"
   resolved "https://registry.yarnpkg.com/@nx/webpack/-/webpack-16.2.1.tgz#9f574fcab282d00a0387af4d89fd152c6a8ce868"
   integrity sha512-lsjHvUM1iEc8NNKXGQSeWY7tXaQMYt4qFqwOMIK5V8+02mtKg+H5uGItyooTkLe3mfXHrrkLarwFpA8xYddneA==
@@ -11785,7 +11785,7 @@ nwsapi@^2.2.0, nwsapi@^2.2.2:
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.4.tgz#fd59d5e904e8e1f03c25a7d5a15cfa16c714a1e5"
   integrity sha512-NHj4rzRo0tQdijE9ZqAx6kYDcoRwYwSYzCA8MY3JzfxlrvEU0jhnhJT9BhqhJs7I/dKcrDm6TyulaRqZPIhN5g==
 
-nx-cloud@16.0.5:
+nx-cloud@16.0.5, nx-cloud@latest:
   version "16.0.5"
   resolved "https://registry.yarnpkg.com/nx-cloud/-/nx-cloud-16.0.5.tgz#fa0b0185d254405ec47fcbcdbbd8b12ff1add096"
   integrity sha512-13P7r0aKikjBtmdZrNorwXzVPeVIV4MLEwqGY+DEG6doLBtI5KqEQk/d5B5l2dCF2BEi/LXEmLYCmf9gwbOJ+Q==

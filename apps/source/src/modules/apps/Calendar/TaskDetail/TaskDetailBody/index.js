@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -37,8 +37,9 @@ import {
   TodoDatePicker,
   TaskCreatedByInfo,
   TaskLabels,
-} from '@crema/modules/apps/ToDo';
+} from '@crema/modules/apps/Calendar';
 import { useCalendarContext } from '../../../context/CalendarContextProvider';
+import { getDateObject, getFormattedDate } from '@crema/helpers';
 
 const TaskDetailBody = (props) => {
   const { selectedTask, onUpdateSelectedTask } = props;
@@ -54,7 +55,10 @@ const TaskDetailBody = (props) => {
   const [comment, setComment] = useState('');
 
   const [scheduleDate, setScheduleDate] = useState(
-    moment(selectedTask.scheduleDate).format('YYYY/MM/DD'),
+    getDateObject(selectedTask.startDate),
+  );
+  const [scheduleEndDate, setScheduleEndDate] = useState(
+    getDateObject(selectedTask.endDate),
   );
 
   const [selectedStaff, setStaff] = useState(selectedTask.assignedTo);
@@ -75,7 +79,8 @@ const TaskDetailBody = (props) => {
     const task = selectedTask;
     task.content = content;
     task.title = title;
-    task.scheduleDate = scheduleDate;
+    task.startDate = getFormattedDate(scheduleDate);
+    task.endDate = getFormattedDate(scheduleEndDate);
     task.assignedTo = selectedStaff;
     putDataApi('/api/calendar/task/', infoViewActionsContext, {
       task,
@@ -97,13 +102,13 @@ const TaskDetailBody = (props) => {
       comment: comment,
       name: user.displayName ? user.displayName : 'User',
       image: user.photoURL,
-      date: moment().format('ll'),
+      date: dayjs().format('ll'),
     });
     putDataApi('/api/calendar/task/', infoViewActionsContext, {
       task,
     })
       .then((data) => {
-        onUpdateSelectedTask(data[0]);
+        onUpdateSelectedTask(data);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {
@@ -174,7 +179,9 @@ const TaskDetailBody = (props) => {
               </StyledTodoDetailStaff>
               <TodoDatePicker
                 scheduleDate={scheduleDate}
+                scheduleEndDate={scheduleEndDate}
                 setScheduleDate={setScheduleDate}
+                setScheduleEndDate={setScheduleEndDate}
               />
             </>
           ) : (

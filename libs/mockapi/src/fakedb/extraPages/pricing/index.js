@@ -205,40 +205,40 @@ export const pricingData = {
         },
       ],
     },
-    // {
-    //   id: 4,
-    //   tag: 'Growth',
-    //   tagColor: '#F77568',
-    //   title: 'Growth',
-    //   btnText: 'Contact Sales',
-    //   price: 149,
-    //   pricingList: [
-    //     {
-    //       id: 1,
-    //       title: 'All features from previous plan',
-    //     },
-    //     {
-    //       id: 2,
-    //       title: 'Memberships and bundles',
-    //     },
-    //     {
-    //       id: 3,
-    //       title: 'Advanced quizzes',
-    //     },
-    //     {
-    //       id: 4,
-    //       title: 'Private & hidden courses',
-    //     },
-    //     {
-    //       id: 5,
-    //       title: '2 Site admin accounts',
-    //     },
-    //     {
-    //       id: 6,
-    //       title: '5 Course admins/authors',
-    //     },
-    //   ],
-    // },
+    {
+      id: 4,
+      tag: 'Growth',
+      tagColor: '#F77568',
+      title: 'Growth',
+      btnText: 'Contact Sales',
+      price: 149,
+      pricingList: [
+        {
+          id: 1,
+          title: 'All features from previous plan',
+        },
+        {
+          id: 2,
+          title: 'Memberships and bundles',
+        },
+        {
+          id: 3,
+          title: 'Advanced quizzes',
+        },
+        {
+          id: 4,
+          title: 'Private & hidden courses',
+        },
+        {
+          id: 5,
+          title: '2 Site admin accounts',
+        },
+        {
+          id: 6,
+          title: '5 Course admins/authors',
+        },
+      ],
+    },
   ],
   pricingFour: [
     {

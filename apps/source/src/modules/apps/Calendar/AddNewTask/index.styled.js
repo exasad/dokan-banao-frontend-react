@@ -50,7 +50,7 @@ export const StyledTodoSelectName = styled.span`
   width: calc(100% - 60px);
 `;
 
-export const StyledAddTaskFormDate = styled(DatePicker)`
+export const StyledAddTaskFormDate = styled(DatePicker.RangePicker)`
   width: 100%;
 `;
 

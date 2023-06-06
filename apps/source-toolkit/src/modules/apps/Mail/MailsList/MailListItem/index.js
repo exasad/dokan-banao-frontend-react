@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import moment from 'moment';
+import dayjs from 'dayjs';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Checkbox, Tooltip } from 'antd';
@@ -54,10 +54,10 @@ const MailListItem = (props) => {
   const onGetMailDate = () => {
     const date = mail.messages[messages - 1].sentOn;
     if (
-      moment(date, 'ddd, MMM DD, YYYY').format() ===
-      moment('ddd, MMM DD, YYYY').format()
+      dayjs(date, 'ddd, MMM DD, YYYY').format() ===
+      dayjs('ddd, MMM DD, YYYY').format()
     ) {
-      return moment(date).format('LT');
+      return dayjs(date).format('LT');
     } else {
       return date.split(',')[1];
     }
@@ -87,6 +87,16 @@ const MailListItem = (props) => {
     dispatch(onUpdateSelectedMail({ ...mail, isRead: !mail.isRead }));
   };
 
+  const getSenderImage = () => {
+    if (messages === 1) {
+      return mail.messages[0].sender.profilePic;
+    } else if (messages === 2) {
+      return mail.messages[1].sender.profilePic;
+    } else {
+      return mail.messages[2].sender.profilePic;
+    }
+  };
+
   return (
     <StyledMailListItem
       key={mail.id}
@@ -109,9 +119,7 @@ const MailListItem = (props) => {
             onChange={() => onChangeStarred(!mail.isStarred, mail)}
           />
         </StyledMailListStarted>
-        <StyledMailListAvatar>
-          {getSenderName().charAt(0).toUpperCase()}
-        </StyledMailListAvatar>
+        <StyledMailListAvatar src={getSenderImage()} alt={getSenderImage()} />
         <StyledMailListTitle className='text-truncate'>
           {getSenderName()}
         </StyledMailListTitle>

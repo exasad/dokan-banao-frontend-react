@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Col, Input, Button } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { StyledFormWrapper } from '../index.styled';
 import { useIntl } from 'react-intl';
 
@@ -17,7 +17,7 @@ const BlogCommentForm = ({ comments, setComments }) => {
       id: Math.floor(Math.random() * 1000),
       name: data.name,
       image: user.photoURL,
-      duration: moment().format('ll'),
+      duration: dayjs().format('ll'),
       comment: data.comment,
     };
     const newList = comments.concat(item);

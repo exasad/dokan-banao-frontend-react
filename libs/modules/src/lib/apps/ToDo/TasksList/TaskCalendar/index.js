@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Badge, Calendar } from 'antd';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import ViewEditTodo from './ViewEditTodo';
 import AddNewTask from '../../AddNewTask';
 import { StyledTodoEvents } from './index.styled';
@@ -10,7 +10,7 @@ const getListData = (value, data) => {
   let listData = [];
   data.map((task) => {
     if (
-      value.format('MM-DD-YYYY') === moment(task.startDate).format('MM-DD-YYYY')
+      value.format('MM-DD-YYYY') === dayjs(task.startDate).format('MM-DD-YYYY')
     ) {
       listData = listData.concat({
         color: task.priority ? task.priority.color : '#7c7c7c',
@@ -27,7 +27,7 @@ const TaskCalender = ({ taskList }) => {
   const [isViewTodo, setIsViewToDo] = useState(false);
   const [toDoId, setToDoId] = useState('');
   const [isAddTaskOpen, setAddTaskOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(moment(new Date()));
+  const [selectedDate, setSelectedDate] = useState(dayjs(new Date()));
 
   const onSelectDate = (value) => {
     setSelectedDate(value);

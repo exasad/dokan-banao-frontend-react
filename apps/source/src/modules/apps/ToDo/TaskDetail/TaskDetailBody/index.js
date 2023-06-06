@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -40,6 +40,7 @@ import {
   TaskLabels,
 } from '@crema/modules/apps/ToDo';
 import { useTodoContext } from '../../../context/TodoContextProvider';
+import { getDateObject, getFormattedDate } from '@crema/helpers';
 
 const TaskDetailBody = (props) => {
   const { selectedTask, onUpdateSelectedTask } = props;
@@ -55,7 +56,7 @@ const TaskDetailBody = (props) => {
   const [comment, setComment] = useState('');
 
   const [scheduleDate, setScheduleDate] = useState(
-    moment(selectedTask.scheduleDate).format('YYYY/MM/DD'),
+    getDateObject(selectedTask.startDate),
   );
 
   const [selectedStaff, setStaff] = useState(selectedTask.assignedTo);
@@ -76,7 +77,7 @@ const TaskDetailBody = (props) => {
     const task = selectedTask;
     task.content = content;
     task.title = title;
-    task.scheduleDate = scheduleDate;
+    task.startDate = getFormattedDate(scheduleDate);
     task.assignedTo = selectedStaff;
     putDataApi('/api/todoApp/task/', infoViewActionsContext, {
       task,
@@ -98,7 +99,7 @@ const TaskDetailBody = (props) => {
       comment: comment,
       name: user.displayName ? user.displayName : 'User',
       image: user.photoURL,
-      date: moment().format('ll'),
+      date: dayjs().format('ll'),
     });
     putDataApi('/api/todoApp/task/', infoViewActionsContext, {
       task,

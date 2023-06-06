@@ -1,7 +1,7 @@
 import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { useIntl } from 'react-intl';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { Avatar, Button, Col, Form, Input, Select } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
@@ -88,7 +88,7 @@ const AddCardForm = (props) => {
           name: authUser.displayName ? authUser.displayName : 'User',
           image: authUser.photoURL,
         },
-        date: moment().format('ll'),
+        date: dayjs().format('ll'),
       }),
     );
   };
@@ -168,7 +168,7 @@ const AddCardForm = (props) => {
         desc: selectedCard?.desc,
         date:
           selectedCard && selectedCard.date
-            ? moment(selectedCard.date, 'DD-MM-YYYY')
+            ? dayjs(selectedCard.date, 'DD-MM-YYYY')
             : '',
         label: selectedCard?.label.map((data) => data.id),
         members: selectedCard?.members.map((data) => data.id),

@@ -3,10 +3,7 @@ import styled from 'styled-components';
 export const StyledHospitalStatistics = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}px) {
-    margin-top: 8px;
-  }
+  margin: 0;
 `;
 
 export const StyledHospitalStaticsThumb = styled.div`

@@ -4,7 +4,6 @@ import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Col, Form, Input, Select } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
-import moment from 'moment';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import {
   StyledAddTaskFormDate,
@@ -23,11 +22,13 @@ import {
   useCalendarContext,
   useCalendarActionsContext,
 } from '../../context/CalendarContextProvider';
+import { getFormattedDate } from '@crema/helpers';
 
-const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
+const AddTaskForm = ({ onCloseAddTask }) => {
   const { labelList, priorityList, staffList } = useCalendarContext();
   const { reCallAPI } = useCalendarActionsContext();
 
+  const [form] = Form.useForm();
   const infoViewActionsContext = useInfoViewActionsContext();
   const { user } = useAuthUser();
 
@@ -37,7 +38,9 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
     const priority = priorityList.find(
       (label) => +values.priorityList === label.id,
     );
-    const label = labelList.filter((label) => +values.labelList === label.id);
+    const label = labelList.filter((label) =>
+      values.labelList.includes(label.id),
+    );
 
     const newTask = {
       ...values,
@@ -51,19 +54,19 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
         name: user.displayName ? user.displayName : 'user',
         image: user.photoURL ? user.photoURL : '/assets/images/dummy2.jpg',
       },
-      scheduleDate: moment(values.scheduleDate).format('lll'),
+      startDate: getFormattedDate(values.dateRange[0]),
+      endDate: getFormattedDate(values.dateRange[1]),
       assignedTo: staff,
-      createdOn: moment().format('ll'),
-      status: 1,
+      status: 1002,
       comments: [],
       label: label,
       priority: priority,
     };
-    console.log(newTask);
     postDataApi('/api/calendar/compose', infoViewActionsContext, {
       task: newTask,
     })
       .then(() => {
+        form.resetFields();
         reCallAPI();
         infoViewActionsContext.showMessage(
           'New Task has been created successfully!',
@@ -88,9 +91,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
   return (
     <StyledTodoAddTaskForm
       name='basic'
-      initialValues={{
-        scheduleDate: selectedDate ? moment(selectedDate, 'YYYY-MM-DD') : '',
-      }}
+      form={form}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
@@ -104,7 +105,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
         </Form.Item>
 
         <AppRowContainer>
-          <Col xs={24} sm={12} md={6}>
+          <Col xs={24} sm={12} md={8}>
             <Form.Item name='staffList' className='form-field'>
               <Select placeholder={messages['common.staff']}>
                 {staffList.map((staff) => {
@@ -129,13 +130,13 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
             </Form.Item>
           </Col>
 
-          <Col xs={24} sm={12} md={6}>
-            <Form.Item className='form-field' name='scheduleDate'>
+          <Col xs={24} sm={12} md={8}>
+            <Form.Item className='form-field' name='dateRange'>
               <StyledAddTaskFormDate />
             </Form.Item>
           </Col>
 
-          <Col xs={24} sm={12} md={6}>
+          <Col xs={24} sm={12} md={8}>
             <Form.Item className='form-field' name='priorityList'>
               <Select placeholder={messages['common.priority']}>
                 {priorityList.map((priority) => {
@@ -149,7 +150,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
             </Form.Item>
           </Col>
 
-          <Col xs={24} sm={12} md={6}>
+          <Col xs={24} sm={12} md={8}>
             <Form.Item className='form-field' name='labelList'>
               <Select
                 placeholder={messages['common.label']}
@@ -168,7 +169,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
           </Col>
         </AppRowContainer>
 
-        <Form.Item className='form-field' name='description'>
+        <Form.Item className='form-field' name='content'>
           <Input.TextArea
             placeholder={messages['common.description']}
             autoSize={{ minRows: 3, maxRows: 5 }}

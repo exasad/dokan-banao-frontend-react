@@ -15,4 +15,7 @@ export const StyledFormWrapper = styled.div`
   .mb-20 {
     margin-bottom: 20px;
   }
+  .mr-10 {
+    margin-right: 10px;
+  }
 `;

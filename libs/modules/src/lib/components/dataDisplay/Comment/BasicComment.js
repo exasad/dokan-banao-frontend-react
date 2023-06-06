@@ -1,7 +1,7 @@
 import React, { createElement, useState } from 'react';
 import { Comment } from '@ant-design/compatible';
 import { Avatar, Tooltip } from 'antd';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import {
   DislikeFilled,
   DislikeOutlined,
@@ -59,8 +59,8 @@ const BasicComment = () => {
         </p>
       }
       datetime={
-        <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-          <span>{moment().fromNow()}</span>
+        <Tooltip title={dayjs().format('MMM DD,YYYY HH:mm:ss')}>
+          <span>{dayjs().fromNow()}</span>
         </Tooltip>
       }
     />

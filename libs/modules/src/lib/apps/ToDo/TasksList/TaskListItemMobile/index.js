@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import Priority from './Priority';
 import AppsStarredIcon from '@crema/components/AppsStarredIcon';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { CheckOutlined } from '@ant-design/icons';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
@@ -73,7 +73,7 @@ const TaskListItemMobile = ({
 
       <StyledTodoListMobileAction>
         <StyledTodoListMobileDate>
-          {moment(task.startDate).format('HH:mm A')}
+          {dayjs(task.startDate).format('HH:mm A')}
         </StyledTodoListMobileDate>
         <StyledTodoListStarMobile onClick={(event) => event.stopPropagation()}>
           <AppsStarredIcon item={task} onChange={onChangeStarred} />

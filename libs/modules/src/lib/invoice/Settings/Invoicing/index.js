@@ -35,6 +35,7 @@ const Invoicing = ({ settings, onUpdateSettings }) => {
 
   return (
     <Form
+      layout='vertical'
       initialValues={settings}
       onFinish={(data) => {
         onUpdateSettings('invoicing', data);
@@ -70,22 +71,22 @@ const Invoicing = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='language'>
+                <Form.Item label='Language' name='language'>
                   <Input placeholder='Language' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='dateFormat'>
+                <Form.Item label='Date Format' name='dateFormat'>
                   <Input placeholder='Date Format' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='currency'>
+                <Form.Item label='Default Currency' name='currency'>
                   <Input placeholder='Default Currency' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='decimalSeparator'>
+                <Form.Item label='Decimal Separator' name='decimalSeparator'>
                   <Input placeholder='Decimal Separator' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -136,7 +137,7 @@ const Invoicing = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='clientName'>
+                <Form.Item label='Client & Recipient Name' name='clientName'>
                   <Input
                     placeholder='Client & Recipient Name'
                     readOnly={!isEdit}
@@ -144,7 +145,7 @@ const Invoicing = ({ settings, onUpdateSettings }) => {
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='email'>
+                <Form.Item label='Email' name='email'>
                   <Input type='email' placeholder='Email' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -162,7 +163,7 @@ const Invoicing = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24}>
-                <Form.Item name='introductionText'>
+                <Form.Item label='Introduction Text' name='introductionText'>
                   <Input placeholder='Introduction Text' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -181,17 +182,17 @@ const Invoicing = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='taxType'>
+                <Form.Item label='Tax Type' name='taxType'>
                   <Input placeholder='Tax Type' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='taxValue'>
+                <Form.Item label='Tax Value' name='taxValue'>
                   <Input placeholder='Tax Value' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='concludingText'>
+                <Form.Item label='Concluding Text' name='concludingText'>
                   <Input placeholder='Concluding Text' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -209,7 +210,7 @@ const Invoicing = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='paymentDeadline'>
+                <Form.Item label='Payment Deadline' name='paymentDeadline'>
                   <Input placeholder='Payment Deadline' readOnly={!isEdit} />
                 </Form.Item>
               </Col>

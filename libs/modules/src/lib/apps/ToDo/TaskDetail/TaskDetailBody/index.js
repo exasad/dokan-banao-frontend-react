@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -54,7 +54,7 @@ const TaskDetailBody = (props) => {
   const [comment, setComment] = useState('');
 
   const [scheduleDate, setScheduleDate] = useState(
-    moment(selectedTask.scheduleDate).format('YYYY/MM/DD'),
+    dayjs(selectedTask.scheduleDate).format('YYYY/MM/DD'),
   );
 
   const [selectedStaff, setStaff] = useState(selectedTask.assignedTo);
@@ -97,7 +97,7 @@ const TaskDetailBody = (props) => {
       comment: comment,
       name: user.displayName ? user.displayName : 'User',
       image: user.photoURL,
-      date: moment().format('ll'),
+      date: dayjs().format('ll'),
     });
     putDataApi('/api/todoApp/task/', infoViewActionsContext, {
       task,

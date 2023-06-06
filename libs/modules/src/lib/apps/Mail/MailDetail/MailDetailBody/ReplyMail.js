@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';
 import { Form, Input } from 'antd';
@@ -16,7 +16,7 @@ import {
   StyledMailFormFooter,
 } from '../index.styled';
 import { StyledMailModalSuffix } from '../../ComposeMail/index.styled';
-import { generateUniqueID } from '@crema/helpers';
+import { generateUniqueID, getFormattedDate } from '@crema/helpers';
 
 const ReplyMail = (props) => {
   const [isShowCC, onShowCC] = useState(false);
@@ -35,7 +35,7 @@ const ReplyMail = (props) => {
         cc: values.cc,
         bcc: values.bcc,
         isStarred: false,
-        sentOn: moment().format('lll'),
+        sentOn: getFormattedDate(),
       },
       index,
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import AppRowContainer from '@crema/components/AppRowContainer';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 import InvoiceTable from './InvoiceTable';
 import { downloadPdf } from '@crema/helpers';
@@ -18,8 +18,8 @@ const InvoicePdf = ({ selectedInv, clientsList, invoiceSettings }) => {
     (item) => item.id === selectedInv.clientId,
   );
 
-  const invDate = moment(selectedInv.idt);
-  const dueDate = moment(selectedInv.dueDate);
+  const invDate = dayjs(selectedInv.idt);
+  const dueDate = dayjs(selectedInv.dueDate);
   const dueDays = dueDate.diff(invDate, 'days');
 
   return (

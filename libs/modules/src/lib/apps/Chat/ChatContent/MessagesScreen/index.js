@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import AddNewMessage from './AddNewMessage';
 import MessagesList from './MessagesList';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import Header from './Header';
 import PropTypes from 'prop-types';
 import IntlMessages from '@crema/helpers/IntlMessages';
@@ -53,7 +53,7 @@ const MessagesScreen = ({
     const data = {
       ...fileMessage,
       sender: user.id,
-      time: moment().format('llll'),
+      time: dayjs().format('llll'),
     };
     postDataApi('/api/chatApp/message', infoViewActionsContext, {
       channelId: selectedUser?.channelId,
@@ -75,7 +75,7 @@ const MessagesScreen = ({
       message,
       message_type: MessageType.TEXT,
       sender: user.id,
-      time: moment().format('llll'),
+      time: dayjs().format('llll'),
     };
 
     if (isEdit) {

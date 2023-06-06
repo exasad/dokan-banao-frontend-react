@@ -32,6 +32,7 @@ const AddClient = ({ selectedClient, onSave }) => {
                 country: '',
               }
         }
+        layout='vertical'
         onFinish={(data) => {
           let id;
           if (selectedClient) id = selectedClient.id;
@@ -42,6 +43,7 @@ const AddClient = ({ selectedClient, onSave }) => {
         <StyledFormWrapper>
           <Form.Item
             name='name'
+            label='Client Name'
             rules={[
               {
                 required: true,
@@ -60,6 +62,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='firstName'
+                label='First Name'
                 rules={[
                   {
                     required: true,
@@ -73,6 +76,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='lastName'
+                label='Last Name'
                 rules={[
                   {
                     required: true,
@@ -86,6 +90,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24}>
               <Form.Item
                 name='mail'
+                label='Email'
                 rules={[
                   {
                     required: true,
@@ -99,6 +104,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24}>
               <Form.Item
                 name='phone'
+                label='Phone Number'
                 rules={[
                   {
                     required: true,
@@ -129,6 +135,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='vatId'
+                label='VAT ID'
                 rules={[
                   {
                     required: false,
@@ -142,6 +149,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='taxId'
+                label='Tax ID'
                 rules={[
                   {
                     required: false,
@@ -161,6 +169,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24}>
               <Form.Item
                 name='steetName'
+                label='Street Name/Number'
                 rules={[
                   {
                     required: true,
@@ -174,6 +183,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='zipCode'
+                label='Zip Code'
                 rules={[
                   {
                     required: true,
@@ -198,6 +208,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='city'
+                label='City'
                 rules={[
                   {
                     required: true,
@@ -222,6 +233,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='state'
+                label='State'
                 rules={[
                   {
                     required: true,
@@ -246,6 +258,7 @@ const AddClient = ({ selectedClient, onSave }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name='country'
+                label='Country'
                 rules={[
                   {
                     required: true,

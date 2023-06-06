@@ -1,6 +1,6 @@
 import React from 'react';
 import { DatePicker, Space } from 'antd';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 const { RangePicker } = DatePicker;
 
@@ -19,7 +19,7 @@ function onChange(dates, dateStrings) {
 const rangePresets = [
   {
     label: 'This Month',
-    value: [moment().startOf('month'), moment().endOf('month')],
+    value: [dayjs().startOf('month'), dayjs().endOf('month')],
   },
 ];
 

@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 export const CreateNewBlog = (data) => {
   return {
@@ -12,7 +12,7 @@ export const CreateNewBlog = (data) => {
       {
         id: 2,
         icon: 'AiOutlineCalendar',
-        title: moment().format('DD MMM YYYY'),
+        title: dayjs().format('DD MMM YYYY'),
       },
       {
         id: 3,
@@ -21,7 +21,7 @@ export const CreateNewBlog = (data) => {
       },
     ],
     cardMediaAction: 'Concept',
-    duration: moment().format('DD MMM YYYY'),
+    duration: dayjs().format('DD MMM YYYY'),
     blogDetailContent: {
       cardMedia: data?.srcImg || '/assets/images/extra-pages/blog/blog-img.png',
       content: data?.content || '',

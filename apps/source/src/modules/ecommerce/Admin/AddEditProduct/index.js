@@ -6,7 +6,7 @@ import { useInfoViewActionsContext } from '@crema/context/InfoViewContextProvide
 import { postDataApi, putDataApi } from '@crema/hooks/APIHooks';
 import { useNavigate } from 'react-router-dom';
 import { getStringFromHtml } from '@crema/helpers';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { Form } from 'antd';
 import { StyledTitle5 } from '../index.styled';
 
@@ -60,7 +60,7 @@ export const AddEditProduct = ({ selectedProd }) => {
             rating: 0,
             reviews: 0,
           })),
-          createdAt: moment().format('DD MMM YYYY'),
+          createdAt: dayjs().format('DD MMM YYYY'),
           inStock: values?.inStock || false,
           tag: selectedTags,
           productInfo,
@@ -99,6 +99,7 @@ export const AddEditProduct = ({ selectedProd }) => {
                 inStock: false,
               }
         }
+        layout='vertical'
         onFinish={onFinish}
       >
         <AppRowContainer>

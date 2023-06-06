@@ -71,7 +71,7 @@ export const StyledWallpaperAvatar = styled(Avatar)`
 export const StyledWallpaperTitle = styled.h1`
   font-weight: ${({ theme }) => theme.font.weight.medium};
   color: ${({ theme }) => theme.palette.primary.contrastText};
-  margin-bottom: 0;
+  margin: 0;
   font-size: 20px;
   line-height: 1.25;
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {

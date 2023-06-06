@@ -1,6 +1,6 @@
 import React from 'react';
 
-import moment from 'moment';
+import dayjs from 'dayjs';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import AppsStarredIcon from '@crema/components/AppsStarredIcon';
@@ -35,10 +35,10 @@ const MailListItemMobile = (props) => {
   const onGetMailDate = () => {
     const date = mail.messages[messages - 1].sentOn;
     if (
-      moment(date, 'ddd, MMM DD, YYYY').format() ===
-      moment('ddd, MMM DD, YYYY').format()
+      dayjs(date, 'ddd, MMM DD, YYYY').format() ===
+      dayjs('ddd, MMM DD, YYYY').format()
     ) {
-      return moment(date).format('LT');
+      return dayjs(date).format('LT');
     } else {
       return date.split(',')[1];
     }

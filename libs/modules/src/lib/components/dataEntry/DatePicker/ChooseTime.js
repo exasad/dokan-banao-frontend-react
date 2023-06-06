@@ -17,7 +17,7 @@ const ChooseTime = () => {
       <DatePicker showTime onChange={onChange} onOk={onOk} />
       <RangePicker
         showTime={{ format: 'HH:mm' }}
-        format='YYYY-MM-DD HH:mm'
+        format='MMM DD,YYYY HH:mm'
         onChange={onChange}
         onOk={onOk}
       />

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Alert, Calendar, Space } from 'antd';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 const SelectableCalendar = () => {
-  const [value, setValue] = useState(moment('2017-01-25'));
-  const [selectedValue, setSelectedValue] = useState(moment('2017-01-25'));
+  const [value, setValue] = useState(dayjs('2017-01-25'));
+  const [selectedValue, setSelectedValue] = useState(dayjs('2017-01-25'));
 
   const onSelect = (value) => {
     setValue(value);
@@ -18,7 +18,7 @@ const SelectableCalendar = () => {
     <Space direction='vertical'>
       <Alert
         message={`You selected date: ${
-          selectedValue && selectedValue.format('YYYY-MM-DD')
+          selectedValue && selectedValue.format('MMM DD,YYYY')
         }`}
       />
       <Calendar

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Form, Input } from 'antd';
@@ -64,7 +64,7 @@ const ComposeMail = (props) => {
           cc: [],
           bcc: [],
           messageId: Math.floor(Math.random()) * 1000,
-          sentOn: moment().format('ddd, MMM DD, YYYY'),
+          sentOn: dayjs().format('ddd, MMM DD, YYYY'),
           isRead: false,
           isStarred: false,
         },
@@ -72,7 +72,7 @@ const ComposeMail = (props) => {
       hasAttachments: false,
       isRead: true,
       folderValue: 122,
-      sentOn: moment().format('llll'),
+      sentOn: dayjs().format('llll'),
       subject: values.subject !== '' ? values.subject : 'No Subject',
     };
     dispatch(onComposeMail(mail, pathname));

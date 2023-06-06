@@ -11,17 +11,31 @@ import {
   StyledText,
 } from './index.styled';
 import { Typography } from 'antd';
-import Icon from '@ant-design/icons';
+import {
+  MdDomain,
+  MdLocalShipping,
+  MdPointOfSale,
+  MdSupervisorAccount,
+} from 'react-icons/md';
 
+const getIcon = (icon) => {
+  switch (icon) {
+    case 'domain':
+      return <MdDomain size={24} />;
+    case 'local_shipping':
+      return <MdLocalShipping size={24} />;
+    case 'point_of_sale':
+      return <MdPointOfSale size={24} />;
+    case 'supervisor_account':
+      return <MdSupervisorAccount size={24} />;
+  }
+};
 const StateCard = ({ data }) => {
   return (
     <StyledAppCard className='no-card-space-ltr-rtl'>
       <StyledStateWrapper color={data.color}>
         <div className='state-icon'>
-          <div className='hsIcon'>
-            <Icon type={data.icon} className='icons' />
-            {/* <div className='icons'>{data.icon}</div> */}
-          </div>
+          <div className='hsIcon'>{getIcon(data.icon)}</div>
         </div>
         <div className='state-content'>
           <StyledFlex>

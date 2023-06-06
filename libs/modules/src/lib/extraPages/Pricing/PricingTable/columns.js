@@ -18,7 +18,10 @@ export const getColumns = (billingFormat) => [
         <>
           <span>{text}</span>
           <QuestionCircleOutlined
-            style={{ color: `${({ theme }) => theme.palette.gray[400]}}` }}
+            style={{
+              marginLeft: 10,
+              color: `${({ theme }) => theme.palette.gray[400]}`,
+            }}
           />
         </>
       );

@@ -66,6 +66,8 @@ export const StyledHollywoodAvatar = styled.span`
 
 export const StyledHollywoodFooter = styled.div`
   margin-top: 12px;
+  position: absolute;
+  bottom: 0;
 
   & h1 {
     font-weight: ${({ theme }) => theme.font.weight.medium};

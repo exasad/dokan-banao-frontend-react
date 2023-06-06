@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import UserInfo from './UserInfo';
 import UserTabs from './UserTabs';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
@@ -38,8 +38,8 @@ const ChatSideBar = ({
       );
     }
     chatsList.sort((a, b) => {
-      let momentA = moment(a.lastMessage.time).format('X');
-      let momentB = moment(b.lastMessage.time).format('X');
+      let momentA = dayjs(a.lastMessage.time).format('X');
+      let momentB = dayjs(b.lastMessage.time).format('X');
       return momentB - momentA;
     });
     return chatsList;

@@ -56,7 +56,7 @@ class CustomizedRangePicker extends Component {
           className='gx-mb-3 gx-w-100'
           disabledDate={this.disabledStartDate}
           showTime
-          format='YYYY-MM-DD HH:mm:ss'
+          format='MMM DD,YYYY HH:mm:ss'
           value={startValue}
           placeholder='Start'
           onChange={this.onStartChange}
@@ -66,7 +66,7 @@ class CustomizedRangePicker extends Component {
           className='gx-w-100'
           disabledDate={this.disabledEndDate}
           showTime
-          format='YYYY-MM-DD HH:mm:ss'
+          format='MMM DD,YYYY HH:mm:ss'
           value={endValue}
           placeholder='End'
           onChange={this.onEndChange}

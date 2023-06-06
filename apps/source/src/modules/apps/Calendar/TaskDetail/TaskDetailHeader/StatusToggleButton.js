@@ -17,7 +17,7 @@ const StatusToggleButton = ({ selectedTask, onUpdateSelectedTask }) => {
       task,
     })
       .then((data) => {
-        onUpdateSelectedTask(data[0]);
+        onUpdateSelectedTask(data);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {

@@ -44,6 +44,10 @@ export const StyledFormWrapper = styled.div`
   .ant-select {
     margin-bottom: 20px;
   }
+
+  .mr-10 {
+    margin-right: 10px;
+  }
 `;
 
 export const StyledText = styled.p`

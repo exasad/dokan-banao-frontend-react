@@ -24,7 +24,7 @@ const TaskStatus = ({ selectedTask }) => {
     >
       {statusList.map((status) => {
         return (
-          <Select.Option key={status.type} value={status.type}>
+          <Select.Option key={status.type} value={status.id}>
             {status.name}
           </Select.Option>
         );

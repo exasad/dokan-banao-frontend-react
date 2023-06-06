@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
 import { useIntl } from 'react-intl';
-import { CalendarOutlined } from '@ant-design/icons';
 import { MdOutlineViewAgenda } from 'react-icons/md';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import { Button, Input, Space, Tooltip } from 'antd';
+import {
+  AiOutlineCalendar,
+  AiOutlineLeft,
+  AiOutlineRight,
+} from 'react-icons/ai';
+import { Button, Input, Space } from 'antd';
 import { StyledFlex, StyledIconBtn } from './Calendar.style';
 import { Fonts } from '@crema/constants';
 
@@ -101,27 +103,18 @@ const CustomToolbar = (props) => {
     <StyledFlex>
       <Space size={14}>
         <StyledIconBtn
-          shape='circle'
-          className={clsx({
-            active: viewState === 'month',
-          })}
+          title='Month'
+          icon={<AiOutlineCalendar size={20} />}
           onClick={goToMonthView}
-        >
-          <Tooltip title='Month'>
-            <CalendarOutlined />
-          </Tooltip>
-        </StyledIconBtn>
+          style={{ padding: 0 }}
+        />
+
         <StyledIconBtn
-          shape='circle'
-          className={clsx({
-            active: viewState === 'agenda',
-          })}
+          title='Agenda'
+          icon={<MdOutlineViewAgenda size={20} />}
           onClick={goToAgenda}
-        >
-          <Tooltip title='Agenda'>
-            <MdOutlineViewAgenda size={16} />
-          </Tooltip>
-        </StyledIconBtn>
+          style={{ padding: 0 }}
+        />
         <div style={{ marginRight: 12 }}>
           <Input.Search
             onChange={(event) => props.onSetFilterText(event.target.value)}
@@ -131,23 +124,23 @@ const CustomToolbar = (props) => {
       </Space>
 
       <div style={{ fontWeight: Fonts.BOLD }}>
-        {moment(props.date).format('DD/MM/YYYY')}
+        {dayjs(props.date).format('DD/MM/YYYY')}
       </div>
 
       <Space size={14}>
-        <Button shape='circle' onClick={goToBack}>
-          <Tooltip title='Next'>
-            <AiOutlineLeft size={20} />
-          </Tooltip>
-        </Button>
+        <StyledIconBtn
+          title='Previous'
+          icon={<AiOutlineLeft size={20} />}
+          onClick={goToBack}
+        />
         <Button style={{ maxHeight: 36 }} type='primary' onClick={goToToday}>
           today
         </Button>
-        <Button shape='circle' onClick={goToNext}>
-          <Tooltip title='Next'>
-            <AiOutlineRight size={20} />
-          </Tooltip>
-        </Button>
+        <StyledIconBtn
+          title='Next'
+          icon={<AiOutlineRight size={20} />}
+          onClick={goToNext}
+        />
       </Space>
     </StyledFlex>
   );

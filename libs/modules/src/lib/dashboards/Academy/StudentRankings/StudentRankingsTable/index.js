@@ -14,10 +14,10 @@ const StudentRankingsTable = ({ studentRankings }) => {
       title: 'Student Name',
       dataIndex: 'name',
       key: 'name',
-      render: (name) => (
+      render: (name, record) => (
         <StyledStudentInfo>
-          <StyledStudentAvatar src={name.profile_pic} size={40} />
-          <StyledStudentTitle>{name.title}</StyledStudentTitle>
+          <StyledStudentAvatar src={record.profile_pic} size={40} />
+          <StyledStudentTitle>{record.name}</StyledStudentTitle>
         </StyledStudentInfo>
       ),
     },

@@ -50,15 +50,16 @@ const BlogSidebar = ({
       <AppScrollbar style={{ height: '700px' }}>
         <StyledFormWrapper>
           <AppCard title='Product Details'>
-            <Form.Item name='inStock' label='In Stock' valuePropName='checked'>
+            <Form.Item name='inStock' valuePropName='checked'>
+              <span className='mr-10'>In Stock</span>
               <Switch />
             </Form.Item>
 
-            <Form.Item name='SKU'>
+            <Form.Item label='Product SKU' name='SKU'>
               <Input placeholder='Product SKU' />
             </Form.Item>
 
-            <Form.Item name='category'>
+            <Form.Item label={messages['common.category']} name='category'>
               <Select placeholder={messages['common.category']}>
                 {productCategory.map((category) => {
                   return (
@@ -70,33 +71,32 @@ const BlogSidebar = ({
               </Select>
             </Form.Item>
 
-            <Select
-              mode='multiple'
-              allowClear
-              placeholder='Tags'
-              value={selectedTags}
-              onChange={(value) => setSelectedTags(value)}
-              options={TagList}
-            />
+            <Form.Item label='Tags' name='tag'>
+              <Select
+                mode='multiple'
+                allowClear
+                placeholder='Tags'
+                value={selectedTags}
+                onChange={(value) => setSelectedTags(value)}
+                options={TagList}
+              />
+            </Form.Item>
           </AppCard>
 
           <AppCard title='Product Pricing'>
-            <Form.Item name='mrp'>
+            <Form.Item label='Regular Price' name='mrp'>
               <InputNumber placeholder='Regular Price' addonAfter='$' />
             </Form.Item>
-            <Form.Item name='salemrp'>
+            <Form.Item label='Sale Price' name='salemrp'>
               <InputNumber placeholder='Sale Price' addonAfter='$' />
             </Form.Item>
 
-            <Form.Item
-              name='includeTax'
-              label='Tax Inclusive'
-              valuePropName='checked'
-            >
+            <Form.Item name='includeTax' valuePropName='checked'>
+              <span className='mr-10'>Tax Inclusive</span>
               <Switch />
             </Form.Item>
 
-            <Form.Item name='discount'>
+            <Form.Item label='Discount %' name='discount'>
               <InputNumber placeholder='Discount %' />
             </Form.Item>
           </AppCard>
@@ -213,9 +213,9 @@ const BlogSidebar = ({
           style={{
             minWidth: 100,
           }}
-          type='text'
-          danger
+          type='primary'
           onClick={() => navigate(-1)}
+          ghost
         >
           Cancel
         </Button>

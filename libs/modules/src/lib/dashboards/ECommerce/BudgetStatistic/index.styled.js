@@ -17,12 +17,6 @@ export const StyledAppCircularProgress = styled(AppCircularProgress)`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  & .ant-progress-inner {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 200px;
-  }
 `;
 
 export const StyledTitle = styled.h2`

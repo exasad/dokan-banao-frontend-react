@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import Members from './Members';
 import Labels from './Labels';
@@ -48,7 +48,7 @@ const BoardCard = ({
         {members.length > 0 ? <Members members={members} /> : null}
 
         <StyledScrumBoardCardDetailDate>
-          {date ? moment(date).format('ll').split(',')[0] : null}
+          {date ? dayjs(date).format('ll').split(',')[0] : null}
         </StyledScrumBoardCardDetailDate>
         {comments && comments.length > 0 ? (
           <StyledScrumBoardCardDetailComment>

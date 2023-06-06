@@ -39,6 +39,7 @@ export const CreateBlog = ({ selectedBlog }) => {
           metadesc: selectedBlog?.blogDetailContent?.meta?.metadesc || '',
           keywords: selectedBlog?.blogDetailContent?.meta?.keywords || '',
         }}
+        layout='vertical'
         onFinish={(data) => {
           if (selectedBlog) {
             const newBlog = {

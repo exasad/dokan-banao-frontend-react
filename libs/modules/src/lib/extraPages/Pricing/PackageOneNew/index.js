@@ -6,10 +6,10 @@ import { StyledPackageOneCard, StyledPackageOneRow } from './index.styled';
 
 const PackageOneNew = ({ billingFormat, pricing }) => {
   return (
-    <StyledPackageOneCard title='Pricing Package Style 1'>
+    <StyledPackageOneCard>
       <StyledPackageOneRow>
         {pricing.map((data, index) => (
-          <Col xs={24} md={12} lg={8} key={index}>
+          <Col xs={24} md={12} lg={6} key={index}>
             <PackageCard billingFormat={billingFormat} pricing={data} />
           </Col>
         ))}

@@ -17,7 +17,7 @@ const TaskStatus = ({ selectedTask, onUpdateSelectedTask }) => {
       task: selectedTask,
     })
       .then((data) => {
-        onUpdateSelectedTask(data[0]);
+        onUpdateSelectedTask(data);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {
@@ -35,7 +35,7 @@ const TaskStatus = ({ selectedTask, onUpdateSelectedTask }) => {
     >
       {statusList.map((status) => {
         return (
-          <Select.Option key={status.type} value={status.type}>
+          <Select.Option key={status.type} value={status.id}>
             {status.name}
           </Select.Option>
         );

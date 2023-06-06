@@ -11,8 +11,26 @@ import {
   StyledSuccess,
   StyledTitle,
 } from './index.styled';
-import Icon from '@ant-design/icons';
 import { rgba } from 'polished';
+import {
+  MdAccountBalanceWallet,
+  MdBarChart,
+  MdPieChart,
+  MdPublic,
+} from 'react-icons/md';
+
+const getIcon = (icon) => {
+  switch (icon) {
+    case 'public':
+      return <MdPublic size={30} />;
+    case 'pie_chart':
+      return <MdPieChart size={30} />;
+    case 'bar_chart':
+      return <MdBarChart size={30} />;
+    case 'account_balance_wallet':
+      return <MdAccountBalanceWallet size={30} />;
+  }
+};
 
 const ReportCard = ({ data }) => {
   return (
@@ -41,9 +59,10 @@ const ReportCard = ({ data }) => {
             color: data.color,
             padding: 8,
             backgroundColor: rgba(data.color, 0.1),
+            borderRadius: '50%',
           }}
         >
-          <Icon style={{ fontSize: 30 }}>{data.icon}</Icon>
+          {getIcon(data.icon)}
         </div>
       </StyledFlex>
       <StatGraphs id={data.id} data={data.graphData} strokeColor={data.color} />

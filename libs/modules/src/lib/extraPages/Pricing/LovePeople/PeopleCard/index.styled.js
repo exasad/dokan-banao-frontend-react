@@ -105,3 +105,12 @@ export const StyledPricingTwoCardBtn = styled(Button)`
   min-width: 150px;
   border-radius: 30px;
 `;
+export const StyledLearnBtn = styled(Button)`
+  padding-left: 0;
+  display: flex;
+  font-weight: ${({ theme }) => theme.font.weight.bold};
+
+  & .btn-text {
+    margin-right: 10px;
+  }
+`;

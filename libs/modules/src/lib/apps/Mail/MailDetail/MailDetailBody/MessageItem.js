@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { Popover, Tooltip } from 'antd';
+import { Popover, Space, Tooltip } from 'antd';
 import AppIconButton from '@crema/components/AppIconButton';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { HiOutlineReply } from 'react-icons/hi';
 import AppsStarredIcon from '@crema/components/AppsStarredIcon';
 import { RiShareForwardLine } from 'react-icons/ri';
 import renderHTML from 'react-render-html';
-import moment from 'moment';
 import PropTypes from 'prop-types';
 import ReplyMail from './ReplyMail';
 import { BiChevronDown } from 'react-icons/bi';
-import { getStringFromHtml } from '@crema/helpers';
+import { getFormattedDate, getStringFromHtml } from '@crema/helpers';
 import {
   StyledMailDescItem,
   StyledMailDescName,
@@ -43,7 +42,7 @@ const MessageItem = ({
   });
 
   const onGetMailDate = (date) => {
-    return moment(date).format('lll');
+    return getFormattedDate(date);
   };
 
   const mailDescription = () => {
@@ -109,6 +108,10 @@ const MessageItem = ({
     }
   };
 
+  const getSenderImage = () => {
+    return message.sender.profilePic;
+  };
+
   return (
     <StyledMailDetailMsgContent>
       <StyledMailDetailBodyHeader
@@ -117,16 +120,15 @@ const MessageItem = ({
         }}
       >
         <StyledMailDetailUser>
-          <StyledMailDetailAvatar>
-            {message.sender.name.charAt(0)}
-          </StyledMailDetailAvatar>
+          <StyledMailDetailAvatar src={getSenderImage()} />
+
           <StyledMailDetailUserContent>
-            <div className='ant-row ant-row-middle'>
+            <Space size={0}>
               <h3 className='mb-0'>{message.sender.name}</h3>
               {isExpanded ? (
                 <StyledMailDetailBreakAll>{`<${message.sender.email}>`}</StyledMailDetailBreakAll>
               ) : null}
-            </div>
+            </Space>
             <div>{getHeaderDescription()}</div>
           </StyledMailDetailUserContent>
         </StyledMailDetailUser>

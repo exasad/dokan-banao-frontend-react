@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Calendar } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Button } from 'antd';
 import { rgba } from 'polished';
+import AppIconButton from '@crema/components/AppIconButton';
 
 export const StyledFlex = styled.div`
   display: flex;
@@ -140,7 +140,7 @@ export const StyledCommentWrapper = styled.div`
   padding-right: 8px;
 `;
 
-export const StyledIconBtn = styled(Button)`
+export const StyledIconBtn = styled(AppIconButton)`
   color: ${({ theme }) => theme.palette.text.disabled} !important;
   background-color: ${({ theme }) =>
     rgba(theme.palette.primary.main, 0.05)}!important;

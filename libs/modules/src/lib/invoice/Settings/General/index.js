@@ -10,9 +10,10 @@ import {
 
 const General = ({ settings, onUpdateSettings }) => {
   const [isEdit, setIsEdit] = useState(false);
-  console.log('settings', settings);
+
   return (
     <Form
+      layout='vertical'
       initialValues={settings}
       onFinish={(data) => {
         onUpdateSettings('general', data);
@@ -48,12 +49,12 @@ const General = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='accountType'>
+                <Form.Item label='Account type' name='accountType'>
                   <Input placeholder='Account type' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='agencyName'>
+                <Form.Item label='Agency Name' name='agencyName'>
                   <Input placeholder='Agency Name' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -73,22 +74,22 @@ const General = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='language'>
+                <Form.Item label='Language' name='language'>
                   <Input placeholder='Language' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='dateFormat'>
+                <Form.Item label='Date Format' name='dateFormat'>
                   <Input placeholder='Date Format' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='currency'>
+                <Form.Item label='Default Currency' name='currency'>
                   <Input placeholder='Default Currency' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='decimalSeparator'>
+                <Form.Item label='Decimal Separator' name='decimalSeparator'>
                   <Input placeholder='Decimal Separator' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -107,27 +108,27 @@ const General = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24}>
-                <Form.Item name='street'>
+                <Form.Item label='Street/Number' name='street'>
                   <Input placeholder='Street/Number' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='zipCode'>
+                <Form.Item label='Zip Code' name='zipCode'>
                   <Input placeholder='Zip Code' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='city'>
+                <Form.Item label='City' name='city'>
                   <Input placeholder='City' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='state'>
+                <Form.Item label='State' name='state'>
                   <Input placeholder='State' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='country'>
+                <Form.Item label='Country' name='country'>
                   <Input placeholder='Country' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -147,12 +148,12 @@ const General = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='phoneNumber'>
+                <Form.Item label='Phone Number' name='phoneNumber'>
                   <Input placeholder='Phone Number' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='alternateNumber'>
+                <Form.Item label='Alternate Number' name='alternateNumber'>
                   <Input placeholder='Alternate Number' readOnly={!isEdit} />
                 </Form.Item>
               </Col>

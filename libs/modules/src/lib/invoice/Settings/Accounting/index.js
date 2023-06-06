@@ -14,6 +14,7 @@ const Accounting = ({ settings, onUpdateSettings }) => {
   return (
     <Form
       initialValues={settings}
+      layout='vertical'
       onFinish={(data) => {
         onUpdateSettings('accounting', data);
         setIsEdit(false);
@@ -49,22 +50,22 @@ const Accounting = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='accountHolder'>
+                <Form.Item label='Account Holder' name='accountHolder'>
                   <Input placeholder='Account Holder' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='bankName'>
+                <Form.Item label='Bank Name' name='bankName'>
                   <Input placeholder='Bank Name' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='countryOfBank'>
+                <Form.Item label='Country of bank' name='countryOfBank'>
                   <Input placeholder='Country of bank' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='accountNumber'>
+                <Form.Item label='Account Number' name='accountNumber'>
                   <Input.Password
                     placeholder='Account Number'
                     readOnly={!isEdit}
@@ -72,12 +73,12 @@ const Accounting = ({ settings, onUpdateSettings }) => {
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='swiftBic'>
+                <Form.Item label='Swift Bic' name='swiftBic'>
                   <Input.Password placeholder='Swift Bic' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='ifsc'>
+                <Form.Item label='IFSC' name='ifsc'>
                   <Input placeholder='IFSC' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
@@ -96,12 +97,12 @@ const Accounting = ({ settings, onUpdateSettings }) => {
           <StyledShadowWrapper>
             <AppRowContainer>
               <Col xs={24} md={12}>
-                <Form.Item name='taxId'>
+                <Form.Item label='Tax ID' name='taxId'>
                   <Input placeholder='Tax ID' readOnly={!isEdit} />
                 </Form.Item>
               </Col>
               <Col xs={24} md={12}>
-                <Form.Item name='vatId'>
+                <Form.Item label='VAT ID' name='vatId'>
                   <Input placeholder='VAT ID' readOnly={!isEdit} />
                 </Form.Item>
               </Col>

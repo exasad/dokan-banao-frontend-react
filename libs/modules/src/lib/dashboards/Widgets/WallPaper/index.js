@@ -24,7 +24,7 @@ const WallPaper = () => {
       heightFull
       className='background-image'
       style={{
-        backgroundImage: 'url(/assets/images/dashboard/widgets/latestpost.png)',
+        backgroundImage: 'url(/assets/images/widgets/latestpost.png)',
       }}
     >
       <StyledWallpaperHeader>

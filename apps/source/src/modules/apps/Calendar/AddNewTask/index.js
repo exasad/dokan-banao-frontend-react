@@ -16,10 +16,7 @@ const AddNewTask = ({ isAddTaskOpen, onCloseAddTask, selectedDate }) => {
       onOk={isAddTaskOpen}
       onCancel={() => onCloseAddTask(false)}
     >
-      <AddTaskForm
-        onCloseAddTask={onCloseAddTask}
-        selectedDate={selectedDate}
-      />
+      <AddTaskForm onCloseAddTask={onCloseAddTask} />
     </StyledTodoModal>
   );
 };

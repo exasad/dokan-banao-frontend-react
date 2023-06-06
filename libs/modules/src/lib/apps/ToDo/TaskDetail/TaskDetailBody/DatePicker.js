@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { DatePicker } from 'antd';
 import { StyledTodoDetailDatePicker } from '../index.styled';
@@ -10,10 +10,8 @@ const DatePickers = (props) => {
   return (
     <StyledTodoDetailDatePicker className='form-field'>
       <DatePicker
-        defaultValue={moment(scheduleDate, 'YYYY-MM-DD')}
-        onChange={(value) =>
-          setScheduleDate(moment(value).format('YYYY/MM/DD'))
-        }
+        defaultValue={dayjs(scheduleDate, 'MMM DD,YYYY')}
+        onChange={(value) => setScheduleDate(dayjs(value).format('YYYY/MM/DD'))}
       />
     </StyledTodoDetailDatePicker>
   );

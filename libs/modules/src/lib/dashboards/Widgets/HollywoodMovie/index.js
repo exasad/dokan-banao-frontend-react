@@ -14,7 +14,7 @@ const HollywoodMovie = () => {
       className='background-image'
       heightFull
       style={{
-        backgroundImage: 'url(/assets/images/dashboard/widgets/movie.png)',
+        backgroundImage: 'url(/assets/images/widgets/movie.png)',
       }}
     >
       <StyledHollywoodContent>

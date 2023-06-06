@@ -11,18 +11,14 @@ const BlogContent = ({ uploadedFiles, setUploadedFiles }) => {
     <Col xs={24} lg={16}>
       <AppCard>
         <StyledFormWrapper>
-          <Form.Item name='title'>
+          <Form.Item label='Blog Name' name='title'>
             <Input placeholder='Blog Name' />
           </Form.Item>
 
-          <StyledText>Description*</StyledText>
-          <Form.Item name='description'>
+          <Form.Item label='Description' name='description'>
             <TextArea rows={4} placeholder='Description here' />
           </Form.Item>
-
-          <StyledText>Content*</StyledText>
-
-          <Form.Item name='content'>
+          <Form.Item label='Content' name='content'>
             <StyledTextarea theme='snow' placeholder='Description here' />
           </Form.Item>
           <StyledText>Cover Image</StyledText>

@@ -1,6 +1,6 @@
 import { Comment } from '@ant-design/compatible';
 import { List, Tooltip } from 'antd';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import React from 'react';
 
 const data = [
@@ -17,9 +17,9 @@ const data = [
     ),
     datetime: (
       <Tooltip
-        title={moment().subtract(1, 'days').format('YYYY-MM-DD HH:mm:ss')}
+        title={dayjs().subtract(1, 'days').format('MMM DD,YYYY HH:mm:ss')}
       >
-        <span>{moment().subtract(1, 'days').fromNow()}</span>
+        <span>{dayjs().subtract(1, 'days').fromNow()}</span>
       </Tooltip>
     ),
   },
@@ -36,9 +36,9 @@ const data = [
     ),
     datetime: (
       <Tooltip
-        title={moment().subtract(2, 'days').format('YYYY-MM-DD HH:mm:ss')}
+        title={dayjs().subtract(2, 'days').format('MMM DD,YYYY HH:mm:ss')}
       >
-        <span>{moment().subtract(2, 'days').fromNow()}</span>
+        <span>{dayjs().subtract(2, 'days').fromNow()}</span>
       </Tooltip>
     ),
   },

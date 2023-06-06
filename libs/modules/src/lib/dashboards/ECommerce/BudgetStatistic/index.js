@@ -22,6 +22,7 @@ const BudgetStatistic = () => {
         <StyledAppCircularProgress
           strokeColor='#0A8FDC'
           percent={70}
+          width={170}
           strokeWidth={5}
           format={() => (
             <StyledSecondaryText>

@@ -82,6 +82,7 @@ export const CreateBlog = ({ selectedBlog }) => {
             navigate('/extra-pages/blog');
           }
         }}
+        layout='vertical'
       >
         <AppRowContainer>
           <BlogContent

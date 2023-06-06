@@ -126,5 +126,4 @@ export const StyledTotalBalanceMiddlePara = styled.p`
 
 export const StyledTotalBalanceFooter = styled.div`
   position: relative;
-  margin-top: 22px;
 `;

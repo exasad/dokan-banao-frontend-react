@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { DatePicker, Form, Input, Select } from 'antd';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import {
   StyledContactForm,
   StyledContactFormAvatar,
@@ -51,7 +51,7 @@ const AddContactForm = (props) => {
 
   const onFinish = (values) => {
     if (values.birthday)
-      values.birthday = moment(values.birthday).format('DD-MM-YYYY');
+      values.birthday = dayjs(values.birthday).format('DD-MM-YYYY');
     if (selectContact) {
       const newContact = {
         id: selectContact.id,
@@ -89,7 +89,7 @@ const AddContactForm = (props) => {
           ? {
               ...selectContact,
               birthday: selectContact.birthday
-                ? moment(selectContact.birthday, 'YYYY-MM-DD')
+                ? dayjs(selectContact.birthday, 'MMM DD,YYYY')
                 : '',
             }
           : {}

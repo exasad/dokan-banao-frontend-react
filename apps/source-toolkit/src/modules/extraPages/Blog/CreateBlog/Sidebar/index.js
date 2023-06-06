@@ -23,14 +23,11 @@ const BlogSidebar = ({ selectedTags, setSelectedTags }) => {
     <Col xs={24} lg={8}>
       <AppCard title='Blog Details'>
         <StyledFormWrapper>
-          <Form.Item name='publish' label='Publish' valuePropName='checked'>
-            <Switch />
+          <Form.Item name='publish' valuePropName='checked'>
+            <span className='mr-10'>Publish</span> <Switch />
           </Form.Item>
-          <Form.Item
-            name='showComments'
-            label='Comments'
-            valuePropName='checked'
-          >
+          <Form.Item name='showComments' valuePropName='checked'>
+            <span className='mr-10'>Comments</span>
             <Switch />
           </Form.Item>
 
@@ -43,14 +40,14 @@ const BlogSidebar = ({ selectedTags, setSelectedTags }) => {
             options={TagList}
           />
 
-          <Form.Item name='metatitle'>
+          <Form.Item label='Meta Title' name='metatitle'>
             <Input placeholder='Meta Title' />
           </Form.Item>
-          <Form.Item name='metadesc'>
+          <Form.Item label='Meta Description' name='metadesc'>
             <TextArea rows={4} placeholder='Meta Description' />
           </Form.Item>
 
-          <Form.Item name='keywords'>
+          <Form.Item label='Meta Keywords' name='keywords'>
             <Input placeholder='Meta Keywords' />
           </Form.Item>
         </StyledFormWrapper>

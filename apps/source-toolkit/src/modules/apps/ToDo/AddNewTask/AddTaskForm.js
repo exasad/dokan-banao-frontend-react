@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Col, Form, Input, Select } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import {
   StyledAddTaskFormDate,
@@ -19,6 +19,7 @@ import {
 } from './index.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { onCreateTask } from '../../../../toolkit/actions';
+import { getFormattedDate } from '@crema/helpers';
 
 const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
   const dispatch = useDispatch();
@@ -36,7 +37,9 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
     const priority = priorityList.find(
       (label) => +values.priorityList === label.id,
     );
-    const label = labelList.filter((label) => +values.labelList === label.id);
+    const label = labelList.filter((label) =>
+      values.labelList.includes(label.id),
+    );
 
     const newTask = {
       ...values,
@@ -50,10 +53,10 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
         name: user.displayName ? user.displayName : 'user',
         image: user.photoURL ? user.photoURL : '/assets/images/dummy2.jpg',
       },
-      scheduleDate: moment(values.scheduleDate).format('lll'),
+      startDate: getFormattedDate(values.scheduleDate),
       assignedTo: staff,
-      createdOn: moment().format('ll'),
-      status: 1,
+      createdOn: dayjs().format('ll'),
+      status: 1002,
       comments: [],
       label: label,
       priority: priority,
@@ -76,7 +79,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
     <StyledTodoAddTaskForm
       name='basic'
       initialValues={{
-        scheduleDate: selectedDate ? moment(selectedDate, 'YYYY-MM-DD') : '',
+        startDate: selectedDate ? dayjs(selectedDate, 'MMM DD,YYYY') : '',
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -117,7 +120,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
           </Col>
 
           <Col xs={24} sm={12} md={6}>
-            <Form.Item className='form-field' name='scheduleDate'>
+            <Form.Item className='form-field' name='startDate'>
               <StyledAddTaskFormDate />
             </Form.Item>
           </Col>
@@ -155,7 +158,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
           </Col>
         </AppRowContainer>
 
-        <Form.Item className='form-field' name='description'>
+        <Form.Item className='form-field' name='content'>
           <Input.TextArea
             placeholder={messages['common.description']}
             autoSize={{ minRows: 3, maxRows: 5 }}

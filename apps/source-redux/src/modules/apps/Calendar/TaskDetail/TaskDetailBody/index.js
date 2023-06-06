@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { onUpdateSelectedCalTask } from '../../../../../redux/actions';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import { useIntl } from 'react-intl';
@@ -36,8 +36,9 @@ import {
   TodoDatePicker,
   TaskCreatedByInfo,
   TaskLabels,
-} from '@crema/modules/apps/ToDo';
+} from '@crema/modules/apps/Calendar';
 import { useDispatch, useSelector } from 'react-redux';
+import { getDateObject, getFormattedDate } from '@crema/helpers';
 
 const TaskDetailBody = (props) => {
   const { selectedTask } = props;
@@ -52,7 +53,10 @@ const TaskDetailBody = (props) => {
   const staffList = useSelector(({ calendarApp }) => calendarApp.staffList);
 
   const [scheduleDate, setScheduleDate] = useState(
-    moment(selectedTask.scheduleDate).format('YYYY/MM/DD'),
+    getDateObject(selectedTask.startDate),
+  );
+  const [scheduleEndDate, setScheduleEndDate] = useState(
+    getDateObject(selectedTask.endDate),
   );
 
   const [selectedStaff, setStaff] = useState(selectedTask.assignedTo);
@@ -74,7 +78,8 @@ const TaskDetailBody = (props) => {
       onUpdateSelectedCalTask({
         ...selectedTask,
         content,
-        startDate: scheduleDate,
+        startDate: getFormattedDate(scheduleDate),
+        endDate: getFormattedDate(scheduleEndDate),
         assignedTo: selectedStaff,
       }),
     );
@@ -87,7 +92,7 @@ const TaskDetailBody = (props) => {
       comment: comment,
       name: user.displayName ? user.displayName : 'User',
       image: user.photoURL,
-      date: moment().format('ll'),
+      date: dayjs().format('ll'),
     });
     dispatch(onUpdateSelectedCalTask({ ...selectedTask, comments }));
     setComment('');
@@ -155,7 +160,9 @@ const TaskDetailBody = (props) => {
               </StyledTodoDetailStaff>
               <TodoDatePicker
                 scheduleDate={scheduleDate}
+                scheduleEndDate={scheduleEndDate}
                 setScheduleDate={setScheduleDate}
+                setScheduleEndDate={setScheduleEndDate}
               />
             </>
           ) : (

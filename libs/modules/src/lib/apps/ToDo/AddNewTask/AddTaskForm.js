@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Col, Form, Input, Select } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import {
   StyledAddTaskFormDate,
@@ -19,6 +19,7 @@ import {
 } from './index.styled';
 import { postDataApi, useGetDataApi } from '@crema/hooks/APIHooks';
 import { useInfoViewActionsContext } from '@crema/context/InfoViewContextProvider';
+import { getFormattedDate } from '@crema/helpers';
 
 const AddTaskForm = ({ onCloseAddTask, selectedDate, reCallAPI }) => {
   const [{ apiData: labelList }] = useGetDataApi('/api/todo/labels/list', []);
@@ -51,9 +52,9 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate, reCallAPI }) => {
         name: user.displayName ? user.displayName : 'user',
         image: user.photoURL ? user.photoURL : '/assets/images/dummy2.jpg',
       },
-      scheduleDate: moment(values.scheduleDate).format('lll'),
+      startDate: getFormattedDate(values.scheduleDate),
       assignedTo: staff,
-      createdOn: moment().format('ll'),
+      createdOn: dayjs().format('ll'),
       status: 1,
       comments: [],
       label: label,
@@ -89,7 +90,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate, reCallAPI }) => {
     <StyledTodoAddTaskForm
       name='basic'
       initialValues={{
-        scheduleDate: selectedDate ? moment(selectedDate, 'YYYY-MM-DD') : '',
+        scheduleDate: selectedDate ? dayjs(selectedDate, 'MMM DD,YYYY') : '',
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}

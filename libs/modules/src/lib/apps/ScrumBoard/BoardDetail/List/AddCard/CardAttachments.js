@@ -1,6 +1,6 @@
 import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { BiCloudDownload } from 'react-icons/bi';
@@ -54,7 +54,7 @@ const CardAttachments = (props) => {
                         <StyledScrumBoardAttachmentFileTime>
                           <span>
                             {
-                              moment(file.lastModified)
+                              dayjs(file.lastModified)
                                 .format('ll')
                                 .split(',')[0]
                             }
@@ -62,7 +62,7 @@ const CardAttachments = (props) => {
                           <span>
                             <IntlMessages id='common.at' />
                           </span>
-                          <span>{moment(file.lastModified).format('LT')}</span>
+                          <span>{dayjs(file.lastModified).format('LT')}</span>
                         </StyledScrumBoardAttachmentFileTime>
                       </StyledScrumBoardAttachmentContent>
                     </StyledScrumBoardAttachmentCard>

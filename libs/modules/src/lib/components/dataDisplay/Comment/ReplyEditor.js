@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, Button, Form, Input, List } from 'antd';
 import { Comment } from '@ant-design/compatible';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 
 const { TextArea } = Input;
@@ -59,7 +59,7 @@ class ReplyEditor extends React.Component {
             author: 'Han Solo',
             avatar: 'https://joeschmoe.io/api/v1/random',
             content: <p>{this.state.value}</p>,
-            datetime: moment().fromNow(),
+            datetime: dayjs().fromNow(),
           },
         ],
       });

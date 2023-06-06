@@ -19,7 +19,7 @@ const TaskPriority = ({ selectedTask, onUpdateSelectedTask }) => {
       task: selectedTask,
     })
       .then((data) => {
-        onUpdateSelectedTask(data[0]);
+        onUpdateSelectedTask(data);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {

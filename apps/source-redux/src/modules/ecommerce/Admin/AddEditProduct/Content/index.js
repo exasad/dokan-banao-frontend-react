@@ -2,7 +2,7 @@ import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import ImgUpload from './ImageUpload';
 import AppScrollbar from '@crema/components/AppScrollbar';
-import { StyledDetailTextarea, StyledText, StyledTextMb } from './index.styled';
+import { StyledDetailTextarea, StyledTextMb } from './index.styled';
 import { Form, Col, Input } from 'antd';
 
 const ProductContent = ({ uploadedFiles, setUploadedFiles }) => {
@@ -10,12 +10,11 @@ const ProductContent = ({ uploadedFiles, setUploadedFiles }) => {
     <Col xs={24} lg={16}>
       <AppScrollbar style={{ height: '700px' }}>
         <AppCard>
-          <Form.Item name='title'>
+          <Form.Item label='Product Name' name='title'>
             <Input placeholder='Product Name' />
           </Form.Item>
 
-          <StyledText>Description*</StyledText>
-          <Form.Item name='description'>
+          <Form.Item label='Description' name='description'>
             <StyledDetailTextarea theme='snow' placeholder='Description here' />
           </Form.Item>
           <StyledTextMb>Images</StyledTextMb>
