@@ -320,7 +320,7 @@ export const onUpdateSelectedTask = (task) => {
           dispatch({ type: FETCH_SUCCESS });
           dispatch({
             type: UPDATE_TASK_DETAIL,
-            payload: { data: data.data, task },
+            payload: data.data,
           });
           dispatch({
             type: SHOW_MESSAGE,

@@ -724,6 +724,7 @@
   "chatApp.clearChatMessage": "Chat history cleared successfully.",
   "chatApp.mute": "Mute",
   "chatApp.hide": "Hide",
+  "chatApp.participants": "Participants",
   "sidebar.multiLevel": "Multi Level Menu",
   "sidebar.multiLevel.level1": "Level 1",
   "sidebar.multiLevel.level2": "Level 2",

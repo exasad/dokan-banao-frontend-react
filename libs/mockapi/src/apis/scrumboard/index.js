@@ -2,6 +2,7 @@ import mock from '../MockConfig';
 import labelList from '../../fakedb/apps/scrumboard/labelList';
 import boardList from '../../fakedb/apps/scrumboard/boardList';
 import { memberList } from '../../fakedb/apps/scrumboard/memberList';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 let boardData = boardList;
 
@@ -14,7 +15,7 @@ mock.onGet('/api/scrumboard/member/list').reply(200, memberList);
 mock.onPost('/api/scrumboard/add/board').reply((request) => {
   const { board } = JSON.parse(request.data);
   const newBoard = {
-    id: Math.floor(Math.random() * 10000),
+    id: generateRandomUniqueNumber(),
     name: board.name,
     list: [],
   };
@@ -37,7 +38,7 @@ mock.onGet('/api/scrumboard/board/').reply((config) => {
 mock.onPost('/api/scrumboard/add/list').reply((request) => {
   const { boardId, list } = JSON.parse(request.data);
   const newList = {
-    id: Math.floor(Math.random() * 10000),
+    id: generateRandomUniqueNumber(),
     cards: [],
     name: list.name,
   };

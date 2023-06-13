@@ -5,6 +5,7 @@ import { isEmptyObject } from '@crema/helpers';
 import { StyledTypographyWrapper } from '../index.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { onGetClientDetail, onUpdateClient } from '../../../redux/actions';
+import AppLoader from '@crema/components/AppLoader';
 
 const EditClients = () => {
   const { id } = useParams();
@@ -13,6 +14,7 @@ const EditClients = () => {
   const selectedClient = useSelector(
     ({ invoiceApp }) => invoiceApp.selectedClient,
   );
+  const { loading } = useSelector(({ common }) => common);
 
   useEffect(() => {
     dispatch(onGetClientDetail(id));
@@ -23,7 +25,9 @@ const EditClients = () => {
     navigate('/invoice/clients');
   };
 
-  return (
+  return loading ? (
+    <AppLoader />
+  ) : (
     !isEmptyObject(selectedClient) && (
       <StyledTypographyWrapper>
         <AddClient selectedClient={selectedClient} onSave={onSave} />

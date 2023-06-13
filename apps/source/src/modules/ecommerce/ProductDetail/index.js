@@ -10,10 +10,10 @@ import { StyledProductDetails } from './index.styled';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
 import {
   Header,
-  ProductImageSlide,
   ProductView,
   SimilarProduct,
 } from '@crema/modules/ecommerce/ProductDetail';
+import ProductImageSlide from './ProductImageSlide';
 
 const ProductDetail = () => {
   const { id } = useParams();

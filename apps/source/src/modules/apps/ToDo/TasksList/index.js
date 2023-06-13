@@ -14,15 +14,12 @@ import {
 } from './index.styled';
 import { putDataApi } from '@crema/hooks/APIHooks';
 import { useInfoViewActionsContext } from '@crema/context/InfoViewContextProvider';
-import {
-  TaskCalender,
-  TaskListItem,
-  TaskListItemMobile,
-} from '@crema/modules/apps/ToDo';
+import { TaskCalender, TaskListItemMobile } from '@crema/modules/apps/ToDo';
 import {
   useTodoActionsContext,
   useTodoContext,
 } from '../../context/TodoContextProvider';
+import TaskListItem from './TaskListItem';
 
 const TasksList = () => {
   const infoViewActionsContext = useInfoViewActionsContext();

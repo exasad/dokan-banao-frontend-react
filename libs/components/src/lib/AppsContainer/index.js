@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AppInfoView from '@crema/components/AppInfoView';
+import AppInfoView from '../AppInfoView';
 import PropTypes from 'prop-types';
 import AppSidebar from './AppSidebar';
 import clsx from 'clsx';

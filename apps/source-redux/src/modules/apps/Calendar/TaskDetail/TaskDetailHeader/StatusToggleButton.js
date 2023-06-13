@@ -15,10 +15,10 @@ const StatusToggleButton = ({ selectedTask }) => {
 
   return (
     <>
-      {selectedTask.status === 3 ? (
+      {selectedTask.status === 1003 ? (
         <StyledTodoDetailStatusBtn
           className='bg-color'
-          onClick={() => onChangeTaskStatus(1)}
+          onClick={() => onChangeTaskStatus(1001)}
         >
           <CheckOutlined className='check-icon' />
           <IntlMessages id='todo.completed' />

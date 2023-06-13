@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import dayjs from 'dayjs';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';
 import { Form, Input } from 'antd';
@@ -14,8 +13,8 @@ import {
   StyledMailDetailInput,
   StyledMailDetailTextarea,
   StyledMailFormFooter,
+  StyledMailModalSuffix,
 } from '../index.styled';
-import { StyledMailModalSuffix } from '../../ComposeMail/index.styled';
 import { generateUniqueID, getFormattedDate } from '@crema/helpers';
 
 const ReplyMail = (props) => {

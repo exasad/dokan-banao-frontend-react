@@ -82,7 +82,7 @@ mock.onPut('/api/calendar/task/').reply((request) => {
   const { task } = JSON.parse(request.data);
   // task.assignedTo = staffList.find(staff => staff.id === task.assignedTo);
   todoData = todoData.map((item) => (item.id === task.id ? task : item));
-  return [200, task];
+  return [200, { data: todoData, task }];
 });
 
 mock.onGet('/api/calendar/folders/list').reply(200, folderList);

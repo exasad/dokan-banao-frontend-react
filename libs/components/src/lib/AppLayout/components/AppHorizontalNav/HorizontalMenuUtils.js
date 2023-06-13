@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'antd';
 import React from 'react';

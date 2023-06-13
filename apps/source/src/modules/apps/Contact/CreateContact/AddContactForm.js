@@ -21,6 +21,7 @@ import {
 import { postDataApi, putDataApi } from '@crema/hooks/APIHooks';
 import { useInfoViewActionsContext } from '@crema/context/InfoViewContextProvider';
 import { useContactContext } from '../../context/ContactContextProvider';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 const AddContactForm = (props) => {
   const {
@@ -73,7 +74,7 @@ const AddContactForm = (props) => {
       if (onUpdateContact) onUpdateContact(newContact);
     } else {
       const newContact = {
-        id: Math.floor(Math.random() * 1000),
+        id: generateRandomUniqueNumber(),
         isStarred: false,
         isFrequent: Math.random() > 0.5,
         image: userImage,

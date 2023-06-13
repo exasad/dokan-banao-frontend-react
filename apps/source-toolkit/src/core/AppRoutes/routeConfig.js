@@ -1,16 +1,22 @@
 import React from 'react';
-import { AiOutlineDatabase, AiOutlineLayout } from 'react-icons/ai';
+import {
+  AiOutlineDatabase,
+  AiOutlineEdit,
+  AiOutlineLayout,
+} from 'react-icons/ai';
 import { HiOutlineAcademicCap, HiOutlineChartSquareBar } from 'react-icons/hi';
 import {
   RiBarChart2Line,
   RiCustomerService2Line,
   RiDashboardLine,
   RiEqualizerLine,
+  RiFileUploadLine,
   RiShieldUserLine,
   RiTodoLine,
 } from 'react-icons/ri';
 import {
   BiBookReader,
+  BiCarousel,
   BiCartAlt,
   BiData,
   BiDollar,
@@ -230,29 +236,29 @@ const routesConfig = [
         ],
       },
       {
-        id: 'admin-ecommerce',
+        id: 'ecommerce-admin',
         title: 'Ecommerce Admin',
         messageId: 'sidebar.ecommerceAdmin',
         type: 'collapse',
         icon: <GrUserAdmin />,
         children: [
           {
-            id: 'productListing',
+            id: 'product-listing',
             title: 'Product Listing',
             messageId: 'sidebar.ecommerceAdmin.productListing',
-            path: '/apps/ecommerce/product-listing',
+            path: '/apps/ecommerce-admin/product-listing',
           },
           {
-            id: 'addProducts',
+            id: 'add-products',
             title: 'Add Products',
             messageId: 'sidebar.ecommerceAdmin.addProducts',
-            path: '/apps/ecommerce/add-products',
+            path: '/apps/ecommerce-admin/add-products',
           },
           {
             id: 'customers',
             title: 'Customers',
             messageId: 'sidebar.ecommerce.customers',
-            path: '/apps/ecommerce/customers',
+            path: '/apps/ecommerce-admin/customers',
           },
         ],
       },
@@ -264,16 +270,16 @@ const routesConfig = [
         icon: <TbFileInvoice />,
         children: [
           {
-            id: 'addInvoice',
+            id: 'add',
             title: 'Add Invoices',
             messageId: 'sidebar.invoice.addInvoice',
-            path: '/invoice/list/add',
+            path: '/invoice/add',
           },
           {
             id: 'invoices',
             title: 'Invoices',
             messageId: 'sidebar.invoice.home',
-            path: '/invoice/home',
+            path: '/invoice/invoices',
           },
           {
             id: 'clients',
@@ -297,22 +303,22 @@ const routesConfig = [
         icon: <BiRss />,
         children: [
           {
-            id: 'bloglist',
+            id: 'blog',
             title: 'Blog List',
             messageId: 'sidebar.pages.extraPages.blogList',
             path: '/extra-pages/blog',
           },
           {
-            id: 'blogdetail',
+            id: 'blog-details',
             title: 'Blog Detail',
             messageId: 'sidebar.pages.extraPages.blogDetail',
             path: '/extra-pages/blog-details',
           },
           {
-            id: 'blogcreate',
+            id: 'create-blog',
             title: 'Create Blog',
             messageId: 'sidebar.pages.extraPages.blogCreate',
-            path: '/extra-pages/create/blog',
+            path: '/extra-pages/create-blog',
           },
         ],
       },
@@ -330,7 +336,6 @@ const routesConfig = [
         messageId: 'sidebar.googleMap',
         icon: <FiMap />,
         path: '/third-party/google-map',
-        type: 'item',
       },
       {
         id: 'recharts',
@@ -403,12 +408,43 @@ const routesConfig = [
         ],
       },
       {
+        id: 'filestack',
+        title: 'Filestack',
+        messageId: 'sidebar.filestack',
+
+        icon: <RiFileUploadLine />,
+        path: '/third-party/filestack',
+      },
+      {
+        id: 'froala-editor',
+        title: 'Froala Editor',
+        messageId: 'sidebar.froalaEditor',
+
+        icon: <AiOutlineEdit />,
+        path: '/third-party/froala-editor',
+      },
+      {
+        id: 'fusion-charts',
+        title: 'Fusion Charts',
+        messageId: 'sidebar.fusionCharts',
+
+        icon: <RiBarChart2Line />,
+        path: '/third-party/fusion-charts',
+      },
+      {
         id: 'big-calendar',
         title: 'Big Calendar',
         messageId: 'sidebar.bigCalender',
         icon: <FaRegCalendarAlt />,
         path: '/third-party/calendar',
-        type: 'item',
+      },
+      {
+        id: 'slick',
+        title: 'React Slick',
+        messageId: 'sidebar.reactSlick',
+        icon: <BiCarousel />,
+
+        path: '/third-party/slider',
       },
       {
         id: 'react-color',

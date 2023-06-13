@@ -30,9 +30,7 @@ const InvoiceList = () => {
   }, [dispatch, page, pathname]);
 
   const onChangeStatus = (invoice, status) => {
-    invoice.folderValue = status;
-
-    dispatch(onUpdateInvoice(invoice));
+    dispatch(onUpdateInvoice({ ...invoice, folderValue: status }));
   };
 
   return !isEmptyObject(invoiceList) ? (

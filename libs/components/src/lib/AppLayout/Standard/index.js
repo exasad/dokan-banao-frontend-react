@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid } from 'antd';
 import AppSidebar from './AppSidebar';
 import AppHeader from './AppHeader';
-import AppContentView from '@crema/components/AppContentView';
+import AppContentView from '../../AppContentView';
 import AppThemeSetting from '../../AppThemeSetting';
 import AppFooter from '../components/AppFooter';
 import clsx from 'clsx';

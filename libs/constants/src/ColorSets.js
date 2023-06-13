@@ -3,7 +3,7 @@ import {
   backgroundLight,
   textDark,
   textLight,
-} from '@crema/constants/defaultConfig';
+} from './defaultConfig';
 
 const themeColorSets = [
   {

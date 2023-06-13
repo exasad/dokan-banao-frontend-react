@@ -24,6 +24,7 @@ import {
   onAddNewCard,
   onEditCardDetails,
 } from '../../../../../../toolkit/actions';
+import { generateRandomUniqueNumber, getDateObject } from '@crema/helpers';
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -66,7 +67,7 @@ const AddCardForm = (props) => {
 
   const onAddNewCheckedItem = () => {
     const item = {
-      id: Math.floor(Math.random() * 1000),
+      id: generateRandomUniqueNumber(),
       title: '',
     };
     const updatedList = checkedList.concat(item);
@@ -94,7 +95,7 @@ const AddCardForm = (props) => {
           name: authUser.displayName ? authUser.displayName : 'User',
           image: authUser.photoURL,
         },
-        date: dayjs().format('ll'),
+        date: dayjs().format('MMM DD'),
       }),
     );
   };
@@ -122,7 +123,7 @@ const AddCardForm = (props) => {
       handleCancel();
     } else {
       const newCard = {
-        id: Math.floor(Math.random() * 1000),
+        id: generateRandomUniqueNumber(),
         attachments: attachments,
         checkedList: [],
         comments: comments,
@@ -152,7 +153,7 @@ const AddCardForm = (props) => {
         desc: selectedCard?.desc,
         date:
           selectedCard && selectedCard.date
-            ? dayjs(selectedCard.date, 'DD-MM-YYYY')
+            ? getDateObject(selectedCard.date)
             : '',
         label: selectedCard?.label.map((data) => data.id),
         members: selectedCard?.members.map((data) => data.id),

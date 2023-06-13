@@ -12,10 +12,8 @@ import {
 import { useGetDataApi } from '@crema/hooks/APIHooks';
 import {
   About,
-  CreatePost,
   FriendRequests,
   Photos,
-  PostsList,
   RecentNews,
   Suggestions,
   SuggestTeam,
@@ -24,6 +22,8 @@ import {
   WhatsHappen,
   WhoToFollow,
 } from '@crema/modules/apps/Wall';
+import CreatePost from './CreatePost';
+import PostsList from './PostsList';
 
 const Wall = () => {
   const [{ apiData: wallData }] = useGetDataApi('/wall', undefined);

@@ -28,11 +28,12 @@ const Header = ({ product }) => {
         <StyledProductDetailHeaderContent>
           <Rate defaultValue={product.rating} disabled />
           <StyledProfileReviewText>
-            {product.reviews + ' reviews'}
+            {product.reviews || 0 + ' reviews'}
           </StyledProfileReviewText>
 
           <span>
-            SKU : <StyledProfileMbText>MB023</StyledProfileMbText>
+            SKU :{' '}
+            <StyledProfileMbText> {product.SKU || 'MB023'}</StyledProfileMbText>
           </span>
         </StyledProductDetailHeaderContent>
       </StyledProductDetailHeaderInfo>

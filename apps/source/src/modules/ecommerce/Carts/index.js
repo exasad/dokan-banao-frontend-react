@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CartTable, OrderSummary } from '@crema/modules/ecommerce/Carts';
+import { OrderSummary } from '@crema/modules/ecommerce/Carts';
 import AppCard from '@crema/components/AppCard';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppRowContainer from '@crema/components/AppRowContainer';
@@ -10,6 +10,7 @@ import AppPageMeta from '@crema/components/AppPageMeta';
 import QueueAnim from 'rc-queue-anim';
 import { StyledCartsFooter } from './index.styled';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
+import CartTable from './CartTable';
 
 const Carts = () => {
   const navigate = useNavigate();

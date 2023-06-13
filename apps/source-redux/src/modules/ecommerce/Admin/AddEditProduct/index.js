@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { onCreateProduct, onUpdateProduct } from '../../../../redux/actions';
 
 export const AddEditProduct = ({ selectedProd }) => {
+  const [form] = Form.useForm();
   const dispatch = useDispatch();
   const [selectedTags, setSelectedTags] = useState([]);
   const [uploadedFiles, setUploadedFiles] = useState([]);
@@ -40,7 +41,7 @@ export const AddEditProduct = ({ selectedProd }) => {
         ...values,
       };
       dispatch(onUpdateProduct(updatedProd));
-      navigate('/apps/ecommerce/product-listing');
+      navigate('/apps/ecommerce-admin/product-listing');
     } else {
       const product = {
         ...values,
@@ -58,7 +59,7 @@ export const AddEditProduct = ({ selectedProd }) => {
         productSpec,
       };
       dispatch(onCreateProduct(product));
-      navigate('/apps/ecommerce/product-listing');
+      navigate('/apps/ecommerce-admin/product-listing');
     }
   };
   return (
@@ -68,6 +69,7 @@ export const AddEditProduct = ({ selectedProd }) => {
       </StyledTitle5>
 
       <Form
+        form={form}
         initialValues={
           selectedProd
             ? {
@@ -93,6 +95,7 @@ export const AddEditProduct = ({ selectedProd }) => {
             setUploadedFiles={setUploadedFiles}
           />
           <ProductSidebar
+            form={form}
             isEdit={!!selectedProd}
             inStock={selectedProd?.inStock}
             selectedTags={selectedTags}

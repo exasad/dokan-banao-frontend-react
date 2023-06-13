@@ -41,7 +41,7 @@ const AddInvoice = ({
   const [editIdt, setShowIdt] = useState(false);
   const [items, setItems] = useState([]);
   const [invoiceNo, setInvoiceNo] = useState(
-    dayjs().format('MMM DD,YYYY') + '-' + (Number(totalCount) + 1),
+    dayjs().format('YYYY-MM-DD') + '-' + (Number(totalCount) + 1),
   );
   const [invoiceDate, setInvoiceDate] = useState(dayjs().format('DD/MM/YYYY'));
 

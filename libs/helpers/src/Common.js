@@ -80,3 +80,14 @@ export function IntlGlobalProvider({ children }) {
 export const appIntl = () => {
   return intl;
 };
+
+export const generateRandomUniqueNumber = () => {
+  const numbers = [];
+  const number = Math.floor(Math.random() * 100000000);
+
+  if (numbers.includes(number)) {
+    return generateRandomUniqueNumber();
+  } else {
+    return number;
+  }
+};

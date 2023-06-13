@@ -27,7 +27,7 @@ const AddInvoicePage = () => {
 
   const onSave = (invoice) => {
     dispatch(onAddInvoice(invoice));
-    navigate('/invoice/home');
+    navigate('/invoice/invoices');
   };
 
   return (

@@ -83,7 +83,7 @@ const TaskDetailBody = (props) => {
       task,
     })
       .then((data) => {
-        onUpdateSelectedTask(data);
+        onUpdateSelectedTask(data.task);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {
@@ -99,13 +99,13 @@ const TaskDetailBody = (props) => {
       comment: comment,
       name: user.displayName ? user.displayName : 'User',
       image: user.photoURL,
-      date: dayjs().format('ll'),
+      date: dayjs().format('MMM DD'),
     });
     putDataApi('/api/todoApp/task/', infoViewActionsContext, {
       task,
     })
       .then((data) => {
-        onUpdateSelectedTask(data);
+        onUpdateSelectedTask(data.task);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {

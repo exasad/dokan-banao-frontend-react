@@ -18,7 +18,11 @@ import {
 } from './index.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { onCreateCalTask } from '../../../../toolkit/actions';
-import { getDateObject, getFormattedDate } from '@crema/helpers';
+import {
+  generateRandomUniqueNumber,
+  getDateObject,
+  getFormattedDate,
+} from '@crema/helpers';
 
 const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
   const labelList = useSelector(({ calendarApp }) => calendarApp.labelList);
@@ -45,7 +49,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
 
     const newTask = {
       ...values,
-      id: Math.floor(Math.random() * 1000000),
+      id: generateRandomUniqueNumber(),
       isStarred: false,
       hasAttachments: false,
       sentAt: '10.30am',

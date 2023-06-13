@@ -41,11 +41,6 @@ export const ecommerceConfig = [
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/apps/ecommerce/customers',
-    element: <Customers />,
-  },
-  {
-    permittedRole: RoutePermittedRole.User,
     path: '/apps/ecommerce/checkout',
     element: <Checkout />,
   },
@@ -76,17 +71,22 @@ export const ecommerceConfig = [
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/apps/ecommerce/product-listing',
+    path: '/apps/ecommerce-admin/product-listing',
     element: <ProductListing />,
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/apps/ecommerce/add-products',
+    path: '/apps/ecommerce-admin/add-products',
     element: <AddProduct />,
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/apps/ecommerce/edit-products/:id',
+    path: '/apps/ecommerce-admin/edit-products/:id',
     element: <EditProduct />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/apps/ecommerce-admin/customers',
+    element: <Customers />,
   },
 ];

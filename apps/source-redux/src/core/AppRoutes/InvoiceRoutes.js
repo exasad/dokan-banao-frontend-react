@@ -20,13 +20,13 @@ const InvoicePdf = React.lazy(() => import('../../modules/invoice/InvoicePdf'));
 export const invoiceConfig = [
   {
     permittedRole: RoutePermittedRole.User,
-    path: ['/invoice/home/:folder'],
+    path: ['/invoice/invoices/:folder'],
     element: <Listing />,
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/invoice/home',
-    element: <Navigate to='/invoice/home/all' />,
+    path: '/invoice/invoices',
+    element: <Navigate to='/invoice/invoices/all' />,
   },
   {
     permittedRole: RoutePermittedRole.User,
@@ -35,7 +35,7 @@ export const invoiceConfig = [
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/invoice/list/add',
+    path: '/invoice/add',
     element: <AddInvoice />,
   },
   {

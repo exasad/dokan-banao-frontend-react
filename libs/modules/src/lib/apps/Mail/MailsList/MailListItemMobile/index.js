@@ -60,6 +60,16 @@ const MailListItemMobile = (props) => {
     return mail.messages[messages - 1].description;
   };
 
+  const getSenderImage = () => {
+    if (messages === 1) {
+      return mail.messages[0].sender.profilePic;
+    } else if (messages === 2) {
+      return mail.messages[1].sender.profilePic;
+    } else {
+      return mail.messages[2].sender.profilePic;
+    }
+  };
+
   return (
     <StyledMailListItemMobile
       key={mail.id}
@@ -80,9 +90,7 @@ const MailListItemMobile = (props) => {
         {checkedMails.includes(mail.id) ? (
           <CheckOutlined />
         ) : (
-          <StyledMailListAvatarMobile>
-            {getSenderName().charAt(0).toUpperCase()}
-          </StyledMailListAvatarMobile>
+          <StyledMailListAvatarMobile src={getSenderImage()} alt={getSenderImage()} />
         )}
       </StyledMailListAvatarMobileView>
 

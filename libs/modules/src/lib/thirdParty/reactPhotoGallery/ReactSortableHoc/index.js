@@ -6,8 +6,7 @@ import Photo from './Photo';
 import AppInfoView from '@crema/components/AppInfoView';
 import { StyledReactGalleryPhoto } from '../index.styled';
 import { arrayMoveImmutable } from 'array-move';
-import { useGetDataApi } from '@crema/hooks/APIHooks';
-import AppLoader from '@crema/components/AppLoader';
+import { photos } from '@crema/fakedb/data';
 
 /* popout the browser and maximize to see more rows! -> */
 const SortablePhoto = SortableElement((item) => <Photo {...item} />);
@@ -19,7 +18,6 @@ const SortableGallery = SortableContainer(({ items }) => (
 ));
 
 const ReactSortableHoc = () => {
-  const [{ apiData: photos, loading }] = useGetDataApi('/gallery/photos', []);
   const [items, setItems] = useState(photos);
 
   useEffect(() => {
@@ -32,9 +30,6 @@ const ReactSortableHoc = () => {
     setItems(arrayMoveImmutable(items, oldIndex, newIndex));
   };
 
-  if (loading) {
-    return <AppLoader />;
-  }
   return (
     <StyledReactGalleryPhoto>
       <SortableGallery items={items} onSortEnd={onSortEnd} axis={'xy'} />

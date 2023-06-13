@@ -275,3 +275,17 @@ export const StyledMailDetailBody = styled.div`
 export const StyledMailDetailBodyContent = styled.div`
   color: ${({ theme }) => theme.palette.text.secondary};
 `;
+
+export const StyledMailModalSuffix = styled.span`
+  position: relative;
+
+  & > span {
+    cursor: pointer;
+    margin-left: 16px;
+
+    [dir='rtl'] & {
+      margin-left: 0;
+      margin-right: 16px;
+    }
+  }
+`;

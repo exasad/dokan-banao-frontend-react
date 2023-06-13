@@ -3,12 +3,9 @@ import Gallery from 'react-photo-gallery';
 import SelectedImage from './SelectedImage';
 import AppInfoView from '@crema/components/AppInfoView';
 import { StyledReactGalleryPhoto } from '../index.styled';
-import { useGetDataApi } from '@crema/hooks/APIHooks';
-import AppLoader from '@crema/components/AppLoader';
+import { photos } from '@crema/fakedb/data';
 
 const CustomImage = () => {
-  const [{ apiData: photos, loading }] = useGetDataApi('/gallery/photos', []);
-
   const imageRenderer = useCallback(
     ({ index, left, top, key, photo }) => (
       <SelectedImage
@@ -23,9 +20,6 @@ const CustomImage = () => {
     [],
   );
 
-  if (loading) {
-    return <AppLoader />;
-  }
   return (
     <StyledReactGalleryPhoto>
       <Gallery photos={photos} renderImage={imageRenderer} />

@@ -30,7 +30,7 @@ const TaskSideBar = () => {
           ghost
           type='primary'
           icon={<StyledPlusOutlined style={{ marginRight: 8 }} />}
-          onClick={() => navigate('/invoice/list/add')}
+          onClick={() => navigate('/invoice/add')}
         >
           <IntlMessages id='invoice.addNewInvoice' />
         </Button>

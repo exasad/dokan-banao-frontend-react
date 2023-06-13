@@ -5,6 +5,7 @@ import { useAuthUser } from '@crema/hooks/AuthHooks';
 import dayjs from 'dayjs';
 import { StyledFormWrapper } from '../index.styled';
 import { useIntl } from 'react-intl';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 const { TextArea } = Input;
 
@@ -14,10 +15,10 @@ const BlogCommentForm = ({ comments, setComments }) => {
 
   const onCommentSend = (data) => {
     const item = {
-      id: Math.floor(Math.random() * 1000),
+      id: generateRandomUniqueNumber(),
       name: data.name,
       image: user.photoURL,
-      duration: dayjs().format('ll'),
+      duration: dayjs().format('MMM DD'),
       comment: data.comment,
     };
     const newList = comments.concat(item);

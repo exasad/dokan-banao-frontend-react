@@ -1,4 +1,4 @@
-import AppScrollbar from '@crema/components/AppScrollbar';
+import AppScrollbar from '../../AppScrollbar';
 import { Alert, Drawer, Input, Layout } from 'antd';
 import styled from 'styled-components';
 import AppHorizontalNav from '../components/AppHorizontalNav';

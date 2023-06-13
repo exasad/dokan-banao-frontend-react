@@ -22,7 +22,11 @@ import {
   useTodoContext,
   useTodoActionsContext,
 } from '../../context/TodoContextProvider';
-import { getDateObject, getFormattedDate } from '@crema/helpers';
+import {
+  generateRandomUniqueNumber,
+  getDateObject,
+  getFormattedDate,
+} from '@crema/helpers';
 
 const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
   const { labelList, priorityList, staffList } = useTodoContext();
@@ -44,7 +48,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
 
     const newTask = {
       ...values,
-      id: Math.floor(Math.random() * 1000000),
+      id: generateRandomUniqueNumber(),
       isStarred: false,
       hasAttachments: false,
       sentAt: '10.30am',

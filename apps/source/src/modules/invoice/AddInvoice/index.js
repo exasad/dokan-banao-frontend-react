@@ -39,7 +39,7 @@ const AddInvoicePage = () => {
         infoViewActionsContext.fetchError(error.message);
       });
 
-    navigate('/invoice/home');
+    navigate('/invoice/invoices');
   };
 
   return (

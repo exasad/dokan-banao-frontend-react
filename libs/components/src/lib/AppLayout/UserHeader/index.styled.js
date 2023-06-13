@@ -1,4 +1,4 @@
-import AppScrollbar from '@crema/components/AppScrollbar';
+import AppScrollbar from '../../AppScrollbar';
 import { Input, Layout } from 'antd';
 import styled from 'styled-components';
 import MainSidebar from '../components/MainSidebar';

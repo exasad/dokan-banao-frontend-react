@@ -41,7 +41,7 @@ const MoreOptions = (props) => {
       status: status,
     })
       .then((data) => {
-        setMailData(data);
+        setMailData({ data, count: data.length });
         setCheckedMails([]);
         infoViewActionsContext.showMessage(
           `Email marked as ${status ? 'read' : 'unread'}`,
@@ -60,7 +60,7 @@ const MoreOptions = (props) => {
       status: status,
     })
       .then((data) => {
-        setMailData(data);
+        setMailData({ data, count: data.length });
         setCheckedMails([]);
         infoViewActionsContext.showMessage(
           `Email marked as ${status ? 'read' : 'unread'}`,
@@ -78,7 +78,7 @@ const MoreOptions = (props) => {
       status: status,
     })
       .then((data) => {
-        setMailData(data);
+        setMailData({ data, count: data.length });
         setCheckedMails([]);
         infoViewActionsContext.showMessage(
           `Email(s) marked as ${status ? 'stared' : 'unread'}`,
@@ -95,7 +95,7 @@ const MoreOptions = (props) => {
       status: status,
     })
       .then((data) => {
-        setMailData(data);
+        setMailData({ data, count: data.length });
         setCheckedMails([]);
         infoViewActionsContext.showMessage(
           `Email(s) marked as ${status ? 'stared' : 'unread'}`,

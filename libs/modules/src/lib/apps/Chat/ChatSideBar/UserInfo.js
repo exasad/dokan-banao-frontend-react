@@ -16,6 +16,7 @@ import {
   StyledChatUserStatusText,
   StyledDropDownItem,
 } from './userInfo.styled';
+import IntlMessages from '@crema/helpers/IntlMessages';
 
 const UserInfo = ({ user, showStatus, showStatusActive }) => {
   const getUserAvatar = () => {
@@ -76,14 +77,16 @@ const UserInfo = ({ user, showStatus, showStatusActive }) => {
         ) : (
           <StyledChatUserAvatar>{getUserAvatar()}</StyledChatUserAvatar>
         )}
-        {showStatus && (
-          <StyledChatUserStatusDot
-            className='chat-user-status-dot chat-user-status-dot-only'
-            style={{
-              backgroundColor: user.status === 'online' ? green[6] : red[6],
-            }}
-          />
-        )}
+        {user.isGroup
+          ? null
+          : showStatus && (
+              <StyledChatUserStatusDot
+                className='chat-user-status-dot chat-user-status-dot-only'
+                style={{
+                  backgroundColor: user.status === 'online' ? green[6] : red[6],
+                }}
+              />
+            )}
         {showStatusActive && (
           <StyledChatUserStatus>
             <StyledChatUserStatusDot
@@ -109,9 +112,15 @@ const UserInfo = ({ user, showStatus, showStatusActive }) => {
             ? user.displayName || user.name
             : user.email}
         </StyledChatUserName>
-        <StyledChatUserStatusText className='text-truncate'>
-          {user.status ? user.status : 'Online'}
-        </StyledChatUserStatusText>
+        {user.isGroup ? (
+          <StyledChatUserStatusText className='pointer'>
+            {user.members.length} <IntlMessages id='chatApp.participants' />
+          </StyledChatUserStatusText>
+        ) : (
+          <StyledChatUserStatusText className='text-truncate'>
+            {user.status ? user.status : 'Online'}
+          </StyledChatUserStatusText>
+        )}
       </StyledChatUserInfoContext>
     </StyledChatUserInfo>
   );

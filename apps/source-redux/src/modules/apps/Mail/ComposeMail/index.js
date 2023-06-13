@@ -19,6 +19,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { onComposeMail } from '../../../../redux/actions';
 import { useLocation } from 'react-router-dom';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 export const isValidEmail = (value) => {
   return value && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value);
@@ -36,7 +37,7 @@ const ComposeMail = (props) => {
 
   const onFinish = (values) => {
     const mail = {
-      id: Math.floor(Math.random()) * 1000,
+      id: generateRandomUniqueNumber(),
       isChecked: false,
       isStarred: false,
       label: {
@@ -63,7 +64,7 @@ const ComposeMail = (props) => {
           ],
           cc: [],
           bcc: [],
-          messageId: Math.floor(Math.random()) * 1000,
+          messageId: generateRandomUniqueNumber(),
           sentOn: dayjs().format('ddd, MMM DD, YYYY'),
           isRead: false,
           isStarred: false,

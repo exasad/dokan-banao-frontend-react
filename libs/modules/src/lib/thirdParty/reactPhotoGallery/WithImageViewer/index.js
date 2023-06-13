@@ -3,13 +3,11 @@ import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import AppInfoView from '@crema/components/AppInfoView';
 import { StyledReactGalleryPhoto } from '../index.styled';
-import { useGetDataApi } from '@crema/hooks/APIHooks';
-import AppLoader from '@crema/components/AppLoader';
+import { photos } from '@crema/fakedb/data';
 
 const ReactPhotoGallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  const [{ apiData: photos, loading }] = useGetDataApi('/gallery/photos', []);
   const openLightBox = useCallback((event, { index }) => {
     setCurrentImage(index);
     setViewerIsOpen(true);
@@ -20,9 +18,6 @@ const ReactPhotoGallery = () => {
     setViewerIsOpen(false);
   };
 
-  if (loading) {
-    return <AppLoader />;
-  }
   return (
     <StyledReactGalleryPhoto>
       <Gallery photos={photos} onClick={openLightBox} />

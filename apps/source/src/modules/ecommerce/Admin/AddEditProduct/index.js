@@ -11,6 +11,7 @@ import { Form } from 'antd';
 import { StyledTitle5 } from '../index.styled';
 
 export const AddEditProduct = ({ selectedProd }) => {
+  const [form] = Form.useForm();
   const [selectedTags, setSelectedTags] = useState([]);
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const infoViewActionsContext = useInfoViewActionsContext();
@@ -43,7 +44,7 @@ export const AddEditProduct = ({ selectedProd }) => {
         product: updatedProd,
       })
         .then(() => {
-          navigate('/apps/ecommerce/product-listing');
+          navigate('/apps/ecommerce-admin/product-listing');
           infoViewActionsContext.showMessage('Product updated successfully!');
         })
         .catch((error) => {
@@ -69,7 +70,7 @@ export const AddEditProduct = ({ selectedProd }) => {
       })
         .then(() => {
           infoViewActionsContext.showMessage('Product created successfully!');
-          navigate('/apps/ecommerce/product-listing');
+          navigate('/apps/ecommerce-admin/product-listing');
         })
         .catch((error) => {
           infoViewActionsContext.fetchError(error.message);
@@ -83,6 +84,7 @@ export const AddEditProduct = ({ selectedProd }) => {
       </StyledTitle5>
 
       <Form
+        form={form}
         initialValues={
           selectedProd
             ? {
@@ -108,6 +110,7 @@ export const AddEditProduct = ({ selectedProd }) => {
             setUploadedFiles={setUploadedFiles}
           />
           <ProductSidebar
+            form={form}
             isEdit={!!selectedProd}
             inStock={selectedProd?.inStock}
             selectedTags={selectedTags}

@@ -16,7 +16,7 @@ const TaskLabel = ({ selectedTask, onUpdateSelectedTask }) => {
       task: selectedTask,
     })
       .then((data) => {
-        onUpdateSelectedTask(data);
+        onUpdateSelectedTask(data.task);
         infoViewActionsContext.showMessage('Task Updated Successfully');
       })
       .catch((error) => {

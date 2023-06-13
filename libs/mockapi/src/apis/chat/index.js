@@ -1,6 +1,7 @@
 import mock from '../MockConfig';
 import connectionList from '../../fakedb/apps/chat/connectionList';
 import chatList from '../../fakedb/apps/chat/chatList';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 let connectionData = connectionList;
 let chatData = chatList;
@@ -18,7 +19,7 @@ mock.onGet('/api/chatApp/connection/messages').reply((config) => {
 
 mock.onPost('/api/chatApp/message').reply((request) => {
   const { channelId, message } = JSON.parse(request.data);
-  const id = (Math.random() * 10000).toFixed();
+  const id = generateRandomUniqueNumber();
   const data = { ...message, id };
   let user = connectionData.find(
     (connection) => connection.channelId === channelId,

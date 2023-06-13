@@ -23,6 +23,7 @@ import {
   onCreateContact,
   onUpdateSelectedContact,
 } from '../../../../redux/actions';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 const AddContactForm = (props) => {
   const {
@@ -65,7 +66,7 @@ const AddContactForm = (props) => {
       if (onUpdateContact) onUpdateContact(newContact);
     } else {
       const newContact = {
-        id: Math.floor(Math.random() * 1000),
+        id: generateRandomUniqueNumber(),
         isStarred: false,
         isFrequent: Math.random() > 0.5,
         image: userImage,

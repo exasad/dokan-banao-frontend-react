@@ -1,45 +1,43 @@
 import React from 'react';
-import { aboutUsData } from '@crema/fakedb/data';
 import AppRowContainer from '@crema/components/AppRowContainer';
-import { Col } from 'antd';
-import AppPageMeta from '@crema/components/AppPageMeta';
+import AppAnimate from '@crema/components/AppAnimate';
 
 import {
+  Clients,
   Introduction,
+  OfficeCultureCard,
   Sections,
   Team,
 } from '@crema/modules/extraPages/AboutUs';
+import { aboutUsData } from '@crema/fakedb/extraPages';
+import { Col } from 'antd';
+import { StyledTypographyWrapper } from './index.styled';
 
 const AboutUs = () => {
-  const brandingData = aboutUsData.find((about) => about.alias === 'branding');
-  const photoGraphyData = aboutUsData.find(
-    (about) => about.alias === 'photography',
-  );
-  const seoData = aboutUsData.find((about) => about.alias === 'seo');
-
   return (
-    <AppRowContainer type='bottom'>
-      <AppPageMeta title='About us' />
-      <Col xs={24} md={24} key='a'>
-        <Introduction />
-      </Col>
-
-      <Col xs={24} lg={8} key='b'>
-        <Sections data={brandingData} />
-      </Col>
-
-      <Col xs={24} lg={8} key='c'>
-        <Sections data={photoGraphyData} />
-      </Col>
-
-      <Col xs={24} lg={8} key='d'>
-        <Sections data={seoData} />
-      </Col>
-
-      <Col xs={24} md={24} key='e'>
-        <Team />
-      </Col>
-    </AppRowContainer>
+    <StyledTypographyWrapper>
+      <AppAnimate animation='transition.slideUpIn' delay={200}>
+        <AppRowContainer>
+          <Col xs={24} md={12} lg={18}>
+            <Introduction introduction={aboutUsData.introduction} />
+          </Col>
+          <Col xs={24} md={12} lg={6}>
+            <OfficeCultureCard officeCulture={aboutUsData.officeCulture} />
+          </Col>
+          {aboutUsData.aboutUsSection.map((data, index) => (
+            <Col xs={24} sm={12} lg={6} key={'section-' + index}>
+              <Sections data={data} />
+            </Col>
+          ))}
+          <Col xs={24}>
+            <Team team={aboutUsData.team} />
+          </Col>
+          <Col xs={24}>
+            <Clients client={aboutUsData.client} />
+          </Col>
+        </AppRowContainer>
+      </AppAnimate>
+    </StyledTypographyWrapper>
   );
 };
 

@@ -9,7 +9,7 @@ import {
 
 const INIT_STATE = {
   error: '',
-  loading: true,
+  loading: false,
   isAppDrawerOpen: false,
   displayMessage: '',
 };

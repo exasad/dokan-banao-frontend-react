@@ -13,6 +13,7 @@ import { thirdPartyConfigs } from './ThirdPartyRoutes';
 import { appsConfig } from './AppsRoutes';
 import { accountPagesConfigs } from './AccountRoutes';
 import { componentsConfigs } from '../../modules/components';
+import { invoiceConfig } from './InvoiceRoutes';
 import { initialUrl } from '@crema/constants/AppConst';
 
 const authorizedStructure = {
@@ -28,6 +29,7 @@ const authorizedStructure = {
     ...componentsConfigs,
     ...userPagesConfig,
     ...userListConfig,
+    ...invoiceConfig,
   ],
 };
 

@@ -27,7 +27,7 @@ const CheckedMailActions = (props) => {
       folderId: key,
     })
       .then((data) => {
-        setMailData(data);
+        setMailData({ data, count: data.length });
         infoViewActionsContext.showMessage('Mail moved to folder successfully');
       })
       .catch((error) => {
@@ -45,7 +45,7 @@ const CheckedMailActions = (props) => {
       type: labelType,
     })
       .then((data) => {
-        setMailData(data);
+        setMailData({ data, count: data.length });
         infoViewActionsContext.showMessage('Mail moved to folder successfully');
       })
       .catch((error) => {

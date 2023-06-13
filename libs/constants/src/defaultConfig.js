@@ -6,7 +6,7 @@ import {
   ThemeMode,
   ThemeStyle,
   ThemeStyleRadius,
-} from '@crema/constants/AppEnums';
+} from './AppEnums';
 
 export const appThemeFont = {
   family: ['Be Vietnam', 'sans-serif'].join(','),

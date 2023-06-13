@@ -55,7 +55,7 @@ const CardAttachments = (props) => {
                           <span>
                             {
                               dayjs(file.lastModified)
-                                .format('ll')
+                                .format('MMM DD')
                                 .split(',')[0]
                             }
                           </span>

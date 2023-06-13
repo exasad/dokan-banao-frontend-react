@@ -88,7 +88,7 @@ export const extraPagesConfigs = [
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/extra-pages/create/blog',
+    path: '/extra-pages/create-blog',
     element: <BlogCreate />,
   },
   {

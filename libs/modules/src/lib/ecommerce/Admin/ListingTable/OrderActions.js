@@ -25,7 +25,7 @@ const OrderActions = ({ id }) => {
         navigate('/apps/ecommerce/orders');
         break;
       case '2':
-        navigate(`/apps/ecommerce/edit-products/${id}`);
+        navigate(`/apps/ecommerce-admin/edit-products/${id}`);
         break;
       case '3':
         break;

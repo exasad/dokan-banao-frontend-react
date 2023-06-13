@@ -22,7 +22,7 @@ import {
   useCalendarContext,
   useCalendarActionsContext,
 } from '../../context/CalendarContextProvider';
-import { getFormattedDate } from '@crema/helpers';
+import { generateRandomUniqueNumber, getFormattedDate } from '@crema/helpers';
 
 const AddTaskForm = ({ onCloseAddTask }) => {
   const { labelList, priorityList, staffList } = useCalendarContext();
@@ -44,7 +44,7 @@ const AddTaskForm = ({ onCloseAddTask }) => {
 
     const newTask = {
       ...values,
-      id: Math.floor(Math.random() * 1000000),
+      id: generateRandomUniqueNumber(),
       isStarred: false,
       hasAttachments: false,
       sentAt: '10.30am',

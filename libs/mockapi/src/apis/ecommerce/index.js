@@ -40,7 +40,7 @@ mock.onGet('/api/ecommerce/list').reply((request) => {
 
 mock.onGet('/api/ecommerce/get').reply((request) => {
   const { id } = request.params;
-  if (id >= 1 && id <= 12) {
+  if (+id >= 1) {
     const data = ecommerceListingData.filter((item) => +item.id === +id);
     if (data.length > 0) return [200, data[0]];
   }

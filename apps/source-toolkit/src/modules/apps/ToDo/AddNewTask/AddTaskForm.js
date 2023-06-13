@@ -19,7 +19,7 @@ import {
 } from './index.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { onCreateTask } from '../../../../toolkit/actions';
-import { getFormattedDate } from '@crema/helpers';
+import { generateRandomUniqueNumber, getFormattedDate } from '@crema/helpers';
 
 const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
   const dispatch = useDispatch();
@@ -43,7 +43,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
 
     const newTask = {
       ...values,
-      id: Math.floor(Math.random() * 1000000),
+      id: generateRandomUniqueNumber(),
       isStarred: false,
       hasAttachments: false,
       sentAt: '10.30am',
@@ -55,7 +55,7 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
       },
       startDate: getFormattedDate(values.scheduleDate),
       assignedTo: staff,
-      createdOn: dayjs().format('ll'),
+      createdOn: dayjs().format('MMM DD'),
       status: 1002,
       comments: [],
       label: label,

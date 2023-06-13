@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Badge, Calendar } from 'antd';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
-import ViewEditTodo from './ViewEditTodo';
-import AddNewTask from '../../AddNewTask';
 import { StyledTodoEvents } from './index.styled';
 
 const getListData = (value, data) => {
@@ -75,32 +73,15 @@ const TaskCalender = ({ taskList }) => {
   };
 
   return (
-    <>
-      <Calendar
-        dateCellRender={dateCellRender}
-        onSelect={(value) => {
-          onSelectDate(value);
-          onOpenAddTask();
-        }}
-        value={selectedDate}
-        onPanelChange={onPanelChange}
-      />
-      {isViewTodo ? (
-        <ViewEditTodo
-          toDoId={toDoId}
-          taskList={taskList}
-          showModal={isViewTodo}
-        />
-      ) : null}
-      {isAddTaskOpen ? (
-        <AddNewTask
-          selectedDate={selectedDate}
-          onOpenAddTask={onOpenAddTask}
-          onCloseAddTask={onCloseAddTask}
-          isAddTaskOpen={isAddTaskOpen}
-        />
-      ) : null}
-    </>
+    <Calendar
+      dateCellRender={dateCellRender}
+      onSelect={(value) => {
+        onSelectDate(value);
+        onOpenAddTask();
+      }}
+      value={selectedDate}
+      onPanelChange={onPanelChange}
+    />
   );
 };
 

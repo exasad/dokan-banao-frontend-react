@@ -48,7 +48,7 @@ const BoardCard = ({
         {members.length > 0 ? <Members members={members} /> : null}
 
         <StyledScrumBoardCardDetailDate>
-          {date ? dayjs(date).format('ll').split(',')[0] : null}
+          {date ? dayjs(date).format('MMM DD').split(',')[0] : null}
         </StyledScrumBoardCardDetailDate>
         {comments && comments.length > 0 ? (
           <StyledScrumBoardCardDetailComment>

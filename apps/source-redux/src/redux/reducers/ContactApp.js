@@ -57,8 +57,8 @@ const contactReducer = (state = initialState, action) => {
     case DELETE_CONTACT: {
       return {
         ...state,
-        contactList: action.payload.list,
-        totalContacts: action.payload.total,
+        contactList: action.payload.data,
+        totalContacts: action.payload.count,
       };
     }
 

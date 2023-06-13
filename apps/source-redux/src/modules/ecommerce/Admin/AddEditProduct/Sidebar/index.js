@@ -34,6 +34,7 @@ const TagList = [
 
 const { Option } = Select;
 const BlogSidebar = ({
+  form,
   isEdit,
   productInfo,
   productSpec,
@@ -52,7 +53,10 @@ const BlogSidebar = ({
           <AppCard title='Product Details'>
             <Form.Item name='inStock' valuePropName='checked'>
               <span className='mr-10'>In Stock</span>
-              <Switch />
+              <Switch
+                defaultChecked={form.getFieldValue('inStock')}
+                onChange={(checked) => form.setFieldValue('inStock', checked)}
+              />
             </Form.Item>
 
             <Form.Item label='Product SKU' name='SKU'>

@@ -8,7 +8,6 @@ import SelectTasksDropdown from './TasksList/TaskContentHeader/SelectTasksDropdo
 import ViewSelectButtons from './TasksList/TaskContentHeader/ViewSelectButtons';
 import TaskLabels from './TasksList/TaskListItem/Labels';
 import TaskPriority from './TasksList/TaskListItem/Priority';
-import TaskListItem from './TasksList/TaskListItem';
 import TaskListItemMobile from './TasksList/TaskListItemMobile';
 
 export {
@@ -22,6 +21,5 @@ export {
   TaskCalender,
   SelectTasksDropdown,
   ViewSelectButtons,
-  TaskListItem,
   TaskListItemMobile,
 };

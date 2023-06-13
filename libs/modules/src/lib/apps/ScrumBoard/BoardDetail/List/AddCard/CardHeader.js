@@ -8,6 +8,7 @@ import {
   StyledScrumBoardCardHeader,
   StyledScrumBoardCardHeaderAction,
 } from './index.styled';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 const CardHeader = (props) => {
   const { onClickDeleteIcon, board, list, onAddAttachments } = props;
@@ -19,7 +20,7 @@ const CardHeader = (props) => {
     onDrop: (acceptedFiles) => {
       const files = acceptedFiles.map((file) => {
         return {
-          id: Math.floor(Math.random() * 10000),
+          id: generateRandomUniqueNumber(),
           file,
           preview: URL.createObjectURL(file),
         };

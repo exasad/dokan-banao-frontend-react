@@ -23,20 +23,15 @@ const ProductView = ({ product }) => {
       </StyledProductViewTitle>
       <StyledStrokeSubtitle>In stock</StyledStrokeSubtitle>
       <p className='text-secondary mb-0'>
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page looking at its layout. The point of using
-        Lorem Ipsum is that it has a more-or-less normal distribution of
-        letters, as opposed to using Content here, content here, making it look
-        like readable English. Many desktop publishing packages and web page
-        editors now use..
+        {product.description || 'No description found'}
       </p>
       <Divider style={{ marginTop: 15, marginBottom: 15 }} />
       <AvailableOffers />
       <DeliveryInfo />
       <Divider style={{ marginTop: 15, marginBottom: 15 }} />
-      <ProductSpecification />
+      <ProductSpecification productSpec={product.productSpec || []} />
       <Divider style={{ marginTop: 15, marginBottom: 15 }} />
-      <ProductInfo />
+      <ProductInfo productInfo={product.productInfo || []} />
       <Divider style={{ marginTop: 15, marginBottom: 15 }} />
       <Reviews />
     </StyledProductView>

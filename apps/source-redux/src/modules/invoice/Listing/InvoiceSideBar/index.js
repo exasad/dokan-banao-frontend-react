@@ -31,7 +31,7 @@ const TaskSideBar = () => {
           ghost
           type='primary'
           icon={<StyledPlusOutlined style={{ marginRight: 8 }} />}
-          onClick={() => navigate('/invoice/list/add')}
+          onClick={() => navigate('/invoice/add')}
         >
           <IntlMessages id='invoice.addNewInvoice' />
         </Button>
@@ -51,7 +51,7 @@ const TaskSideBar = () => {
               <AppsSideBarFolderItem
                 key={item.id}
                 item={item}
-                path={`/invoice/home/${item.alias}`}
+                path={`/invoice/invoices/${item.alias}`}
               />
             )}
           />

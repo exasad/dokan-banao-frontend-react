@@ -23,6 +23,7 @@ import {
 } from './index.styled';
 import { useDispatch } from 'react-redux';
 import { onCreateNewPost } from '../../../../redux/actions';
+import { generateRandomUniqueNumber } from '@crema/helpers';
 
 const CreatePost = ({ wallData }) => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const CreatePost = ({ wallData }) => {
     onDrop: (acceptedFiles) => {
       const files = acceptedFiles.map((file) => {
         return {
-          id: Math.floor(Math.random() * 10000),
+          id: generateRandomUniqueNumber(),
           path: file.path,
           metaData: { type: file.type, size: file.size },
           preview: URL.createObjectURL(file),

@@ -33,7 +33,7 @@ const EditInvoicePage = () => {
 
   const onSave = (invoice) => {
     dispatch(onUpdateInvoice(invoice));
-    navigate('/invoice/home');
+    navigate('/invoice/invoices');
   };
 
   return (
