@@ -51,6 +51,7 @@ export const StyledNotificationListItem = styled.div`
   align-items: center;
 
   & .label {
+    color: ${({theme}) => theme.palette.text.primary};
     margin-left: 15px;
 
     [dir='rtl'] & {

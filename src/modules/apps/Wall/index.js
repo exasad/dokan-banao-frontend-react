@@ -48,7 +48,7 @@ const Wall = () => {
           }}
         >
           <StyledWallLeftSidebar xs={24} md={6} xl={6} xxl={6}>
-            <StyledWallScrollBar>
+            <StyledWallScrollBar style={{height: 'calc(100vh - 160px)'}}>
               <div>
                 <VideoCall data={wallData?.videoCall} />
                 <About about={wallData?.about} />
@@ -59,7 +59,7 @@ const Wall = () => {
             </StyledWallScrollBar>
           </StyledWallLeftSidebar>
           <StyledWallMainContent xs={24} md={12} xl={12} xxl={12}>
-            <StyledWallScrollBar style={{height: '100%'}}>
+            <StyledWallScrollBar style={{height: 'calc(100vh - 160px)'}}>
               <div>
                 <CreatePost wallData={wallData} setPostList={setPostList} />
                 <PostsList
@@ -71,7 +71,7 @@ const Wall = () => {
             </StyledWallScrollBar>
           </StyledWallMainContent>
           <StyledWallRightSidebar xs={24} md={6} xl={6} xxl={6}>
-            <StyledWallScrollBar style={{height: '100%'}}>
+            <StyledWallScrollBar style={{height: 'calc(100vh - 160px)'}}>
               <div>
                 <Stories stories={wallData?.stories} />
                 <WhatsHappen whatsHappen={wallData?.whatsHappen} />

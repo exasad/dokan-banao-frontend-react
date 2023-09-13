@@ -155,7 +155,7 @@ export const StyledUserProfileTabs = styled(Tabs)`
 
   & .ant-tabs-content-holder {
     padding-top: 20px;
-
+    border: none;
     [dir='rtl'] & {
       order: 2;
     }
