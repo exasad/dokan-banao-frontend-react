@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AddNewTag from './AddNewTag';
 import PropTypes from 'prop-types';
 import AppCard from '@crema/components/AppCard';
@@ -28,7 +28,6 @@ const AddTags = (props) => {
 
   const handleDelete = (tagToDelete) => () => {
     setTags((tags) => tags.filter((tag) => tag.id !== tagToDelete.id));
-    console.log('Deleted');
   };
 
   const onAddNewTag = (newTag) => {

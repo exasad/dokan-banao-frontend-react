@@ -1,4 +1,3 @@
-import React from 'react';
 import { FloatButton } from 'antd';
 
 const style = {

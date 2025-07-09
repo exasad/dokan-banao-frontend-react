@@ -1,4 +1,3 @@
-import React from 'react';
 import InjectMassage from '@crema/helpers/IntlMessages';
 import AppAnimate from '@crema/components/AppAnimate';
 

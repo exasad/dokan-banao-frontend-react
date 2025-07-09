@@ -1,7 +1,5 @@
 import { Descriptions } from 'antd';
 
-import React from 'react';
-
 const Basic = () => {
   return (
     <Descriptions title='User Info'>

@@ -1,8 +1,6 @@
 import { Button, Descriptions, Row, Statistic, Tag } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
 
-import React from 'react';
-
 const VariousFormsOfPageHeader = () => {
   return (
     <>

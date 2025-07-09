@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import PremiumBrandWrapper from './PremiumBrandWrapper';
 import { StyledTitlewrapper2, StyledTitlewrapper5 } from './index.styled';

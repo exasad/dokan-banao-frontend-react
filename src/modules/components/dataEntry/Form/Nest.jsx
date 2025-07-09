@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Form, Input, InputNumber } from 'antd';
 
 const layout = {

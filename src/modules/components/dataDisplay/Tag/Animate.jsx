@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import { Input, Tag } from 'antd';
 import { TweenOneGroup } from 'rc-tween-one';
 import { PlusOutlined } from '@ant-design/icons';
 
-class Animate extends React.Component {
+class Animate extends Component {
   state = {
     tags: ['Tag 1', 'Tag 2', 'Tag 3'],
     inputVisible: false,
@@ -12,7 +12,6 @@ class Animate extends React.Component {
 
   handleClose = (removedTag) => {
     const tags = this.state.tags.filter((tag) => tag !== removedTag);
-    console.log(tags);
     this.setState({ tags });
   };
 
@@ -30,7 +29,6 @@ class Animate extends React.Component {
     if (inputValue && tags.indexOf(inputValue) === -1) {
       tags = [...tags, inputValue];
     }
-    console.log(tags);
     this.setState({
       tags,
       inputVisible: false,

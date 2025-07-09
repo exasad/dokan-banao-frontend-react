@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown } from 'antd';
 import AppLogo from '../components/AppLogo';
 import { useIntl } from 'react-intl';

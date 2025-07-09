@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Space, Typography } from 'antd';
 import {
   HighlightOutlined,

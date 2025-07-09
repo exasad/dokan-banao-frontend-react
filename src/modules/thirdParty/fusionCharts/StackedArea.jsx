@@ -1,4 +1,3 @@
-import React from 'react';
 import { stackAreaData } from './data';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';

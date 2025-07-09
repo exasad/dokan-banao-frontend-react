@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';
 import PortfolioCard from './PortfolioCard';
@@ -7,7 +7,7 @@ import AppGrid from '@crema/components/AppGrid';
 import { StyledTabs } from '../index.styled';
 
 const PortfolioTabs = ({ portfolio }) => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   const navigate = useNavigate();
 
   const onTabsChange = (event, newValue) => {

@@ -1,5 +1,5 @@
 import { SketchPicker } from 'react-color';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   ClockCircleOutlined,
   DownOutlined,
@@ -127,7 +127,7 @@ const FormSizeDemo = () => {
     infoColor: '#1890ff',
   });
 
-  function onColorChange(nextColor) {
+  const onColorChange=(nextColor)=> {
     const mergedNextColor = {
       ...color,
       ...nextColor,

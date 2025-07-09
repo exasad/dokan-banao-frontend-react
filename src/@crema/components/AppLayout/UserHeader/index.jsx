@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Grid } from 'antd';
 import AppSidebar from './AppSidebar';
 import AppHeader from './AppHeader';

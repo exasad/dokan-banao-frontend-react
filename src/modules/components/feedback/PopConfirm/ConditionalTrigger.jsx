@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { message, Popconfirm, Space, Switch } from 'antd';
 
-class ConditionalTrigger extends React.Component {
+class ConditionalTrigger extends Component {
   state = {
     visible: false,
     condition: true, // Whether meet the condition, if not show popconfirm.

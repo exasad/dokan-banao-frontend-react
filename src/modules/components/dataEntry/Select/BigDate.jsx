@@ -1,5 +1,4 @@
 import { Divider, Select, Typography } from 'antd';
-import React from 'react';
 
 const { Title } = Typography;
 
@@ -12,7 +11,7 @@ for (let i = 0; i < 100000; i++) {
   });
 }
 
-function handleChange(value) {
+const handleChange=(value)=> {
   console.log(`selected ${value}`);
 }
 

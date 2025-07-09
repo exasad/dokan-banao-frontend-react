@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tag } from 'antd';
 import { StyledColorTagView } from './ColorTag.styled';
 

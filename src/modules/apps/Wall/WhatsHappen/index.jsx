@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import WhatsHappenItem from './WhatsHappenItem';
 import { useIntl } from 'react-intl';

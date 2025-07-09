@@ -1,4 +1,3 @@
-import React from 'react';
 import VisitorGraph from './VisitorGraph';
 import { List } from 'antd';
 import PropTypes from 'prop-types';

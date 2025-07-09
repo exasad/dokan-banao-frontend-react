@@ -1,4 +1,3 @@
-import React from 'react';
 import { Store } from 'react-notifications-component';
 import { Button } from 'antd';
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import { Space, TreeSelect } from 'antd';
 
 const TreeNode = TreeSelect.TreeNode;
 
-class MultipleSelection extends React.Component {
+class MultipleSelection extends Component {
   state = {
     value: undefined,
   };

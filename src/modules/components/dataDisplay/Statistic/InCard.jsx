@@ -1,6 +1,5 @@
 import { Card, Col, Row, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const InCard = () => {
   return (

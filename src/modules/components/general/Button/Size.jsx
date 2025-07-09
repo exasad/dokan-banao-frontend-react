@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Radio, Space } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 
-class ButtonSize extends React.Component {
+class ButtonSize extends Component {
   state = {
     size: 'large',
   };

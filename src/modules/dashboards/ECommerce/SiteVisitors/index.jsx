@@ -1,4 +1,3 @@
-import React from 'react';
 import MapView from './MapView';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { Col, List } from 'antd';

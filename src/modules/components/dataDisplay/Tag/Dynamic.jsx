@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Input, Space, Tag, Tooltip } from 'antd';
 import PlusOutlined from '@ant-design/icons/lib/icons/PlusOutlined';
 
-class Dynamic extends React.Component {
+class Dynamic extends Component {
   state = {
     tags: ['Unremovable', 'Tag 2', 'Tag 3'],
     inputVisible: false,
@@ -11,7 +11,6 @@ class Dynamic extends React.Component {
 
   handleClose = (removedTag) => {
     const tags = this.state.tags.filter((tag) => tag !== removedTag);
-    console.log(tags);
     this.setState({ tags });
   };
 
@@ -30,7 +29,6 @@ class Dynamic extends React.Component {
     if (inputValue && tags.indexOf(inputValue) === -1) {
       tags = [...tags, inputValue];
     }
-    console.log(tags);
     this.setState({
       tags,
       inputVisible: false,

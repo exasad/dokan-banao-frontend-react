@@ -1,4 +1,3 @@
-import React from 'react';
 import { Divider, List, Space, Typography } from 'antd';
 
 const data = [

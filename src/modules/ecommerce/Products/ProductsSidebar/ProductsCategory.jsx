@@ -1,4 +1,3 @@
-import React from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { StyledProductSidebarTree } from './index.styled';
 

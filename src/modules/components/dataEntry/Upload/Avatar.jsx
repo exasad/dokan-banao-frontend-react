@@ -1,14 +1,14 @@
-import React from 'react';
+import { Component } from 'react';
 import { message, Space, Upload } from 'antd';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 
-function getBase64(img, callback) {
+const getBase64=(img, callback)=> {
   const reader = new FileReader();
   reader.addEventListener('load', () => callback(reader.result));
   reader.readAsDataURL(img);
 }
 
-function beforeUpload(file) {
+const beforeUpload=(file)=> {
   const isJPG = file.type === 'image/jpeg';
   if (!isJPG) {
     message.error('You can only upload JPG file!');
@@ -20,7 +20,7 @@ function beforeUpload(file) {
   return isJPG && isLt2M;
 }
 
-class Avatar extends React.Component {
+class Avatar extends Component {
   state = {
     loading: false,
   };

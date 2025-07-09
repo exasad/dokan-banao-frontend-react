@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import AppMenu from '@crema/components/AppMenu';
 import {

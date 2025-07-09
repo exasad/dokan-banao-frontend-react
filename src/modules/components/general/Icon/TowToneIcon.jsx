@@ -4,8 +4,6 @@ import {
   SmileTwoTone,
 } from '@ant-design/icons';
 
-import React from 'react';
-
 const TowToneIcon = () => {
   return (
     <div style={{ display: 'flex', gap: 10 }}>

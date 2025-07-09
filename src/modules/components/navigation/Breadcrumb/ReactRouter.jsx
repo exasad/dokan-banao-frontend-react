@@ -67,8 +67,6 @@
 //
 // export default ReactRouter;
 
-import React from 'react';
-
 const ReactRouter = () => {
   return <div>ReactRouter</div>;
 };

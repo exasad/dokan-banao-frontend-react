@@ -1,4 +1,3 @@
-import React from 'react';
 import { Popover, Space, Steps } from 'antd';
 
 const description = 'You can hover on the dot.';

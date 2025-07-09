@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -6,7 +6,7 @@ import {
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 
-function getItem(label, key, icon, children, type) {
+const getItem=(label, key, icon, children, type)=> {
   return {
     key,
     icon,

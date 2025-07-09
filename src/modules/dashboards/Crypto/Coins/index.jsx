@@ -1,4 +1,3 @@
-import React from 'react';
 import CoinStats from './CoinStats';
 import PropTypes from 'prop-types';
 import IntlMessages from '@crema/helpers/IntlMessages';

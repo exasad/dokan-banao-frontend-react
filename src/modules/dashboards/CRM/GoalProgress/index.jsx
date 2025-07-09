@@ -1,4 +1,3 @@
-import React from 'react';
 import GoalProgressGraph from './GoalProgressGraph';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

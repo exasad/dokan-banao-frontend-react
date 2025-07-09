@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown } from 'antd';
 import { FiMoreVertical } from 'react-icons/fi';
 import AppLogo from '../components/AppLogo';

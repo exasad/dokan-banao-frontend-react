@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import { StyledPageVisitTable } from '../index.styled';

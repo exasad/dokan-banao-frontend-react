@@ -17,7 +17,7 @@ export const StyledMailModal = styled(Modal)`
 `;
 
 export const StyledMainModalScrollbar = styled(AppScrollbar)`
-  height: 460px;
+  height: 520px;
 `;
 
 export const StyledMainForm = styled(Form)`

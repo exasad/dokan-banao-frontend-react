@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as React from 'react';
 import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import { useIntl } from 'react-intl';
@@ -87,18 +88,17 @@ const TaskDetailBody = (props) => {
       .catch((error) => {
         infoViewActionsContext.fetchError(error.message);
       });
-    console.log('onDoneEditing: ', task);
     setEdit(!isEdit);
   };
 
   const onAddComments = () => {
     let task = selectedTask;
-    task.comments = task.comments.concat({
+    task.comments = [{
       comment: comment,
       name: user.displayName ? user.displayName : 'User',
       image: user.photoURL,
       date: dayjs().format('MMM DD'),
-    });
+    }, ...task.comments];
     putDataApi('/api/todoApp/task/', infoViewActionsContext, {
       task,
     })
@@ -235,8 +235,6 @@ const TaskDetailBody = (props) => {
 
       <StyledTodoDivider />
 
-      <CommentsLists comments={selectedTask.comments} />
-
       <StyledTodoDetailFooter>
         <Input.TextArea
           autoSize={{ minRows: 2, maxRows: 3 }}
@@ -253,6 +251,8 @@ const TaskDetailBody = (props) => {
           <FiSend />
         </StyledTodoDetailBtn>
       </StyledTodoDetailFooter>
+      <CommentsLists comments={selectedTask.comments} />
+
     </StyledDetailContent>
   );
 };

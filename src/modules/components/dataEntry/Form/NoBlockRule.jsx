@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Form, Input, message, Space } from 'antd';
 
 const NoBlockRule = () => {

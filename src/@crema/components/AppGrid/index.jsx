@@ -1,4 +1,3 @@
-import React from 'react';
 import GridView from './GridView';
 import PropTypes from 'prop-types';
 import GridFooter from './GridFooter';

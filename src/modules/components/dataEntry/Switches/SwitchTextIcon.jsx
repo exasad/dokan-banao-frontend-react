@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space, Switch } from 'antd';
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 

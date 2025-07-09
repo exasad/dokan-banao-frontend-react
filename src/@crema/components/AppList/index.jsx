@@ -1,4 +1,3 @@
-import React from 'react';
 import ListView from './ListView';
 import PropTypes from 'prop-types';
 import ListFooter from './ListFooter';

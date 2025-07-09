@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BitcoinGraph from './BitcoinGraph';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ import {
 const Bitcoin = (props) => {
   const { coinGraphData } = props;
 
-  const onGetCoinData = useCallback(
+  const onGetCoinData =
     (coin) => {
       switch (coin) {
         case 'Bitcoin': {
@@ -29,9 +29,7 @@ const Bitcoin = (props) => {
         default:
           return coinGraphData.bitcoin;
       }
-    },
-    [coinGraphData],
-  );
+    },;
 
   const [coinType, setCoinType] = useState('Bitcoin');
   const [coinData, setCoinData] = useState(onGetCoinData(coinType));

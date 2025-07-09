@@ -316,7 +316,7 @@ export const StyledTodoDetailStatus = styled.div`
 
 export const StyledTodoDetailFooter = styled(StyledTodoDetailTextAreaForm)`
   position: relative;
-  margin-top: auto;
+  //margin-top: auto;
   display: flex;
   align-items: center;
 

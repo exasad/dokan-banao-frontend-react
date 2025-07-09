@@ -1,4 +1,3 @@
-import React from 'react';
 import { formatCurrency } from '@crema/helpers/StringHelper';
 
 export const getColumns = (currencyData) => [

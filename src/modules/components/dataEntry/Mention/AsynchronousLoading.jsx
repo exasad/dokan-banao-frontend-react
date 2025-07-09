@@ -1,6 +1,6 @@
 import { Mentions } from 'antd';
 import debounce from 'lodash/debounce';
-import React, { useCallback, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const { Option } = Mentions;
 const AsynchronousLoading = () => {
@@ -20,10 +20,8 @@ const AsynchronousLoading = () => {
         setUsers(items.slice(0, 10));
       });
   };
-  const debounceLoadGithubUsers = useCallback(
-    debounce(loadGithubUsers, 800),
-    [],
-  );
+  const debounceLoadGithubUsers =
+    debounce(loadGithubUsers, 800);
   const onSearch = (search) => {
     ref.current = search;
     setLoading(!!search);

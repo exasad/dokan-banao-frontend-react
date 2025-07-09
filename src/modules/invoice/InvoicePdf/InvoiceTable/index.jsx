@@ -1,4 +1,3 @@
-import React from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { formatCurrency } from '@crema/helpers/StringHelper';
 import { taxType } from '../../AddInvoice/data';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
 import AppLoader from '@crema/components/AppLoader';
 import BlogContent from './BlogContent';

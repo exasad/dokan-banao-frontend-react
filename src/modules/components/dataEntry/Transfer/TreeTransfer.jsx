@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Transfer, Tree } from 'antd';
 import PropTypes from 'prop-types';
 
@@ -16,7 +16,7 @@ const generateTree = (treeNodes = [], checkedKeys = []) =>
 const TreeTransfer = ({ dataSource, targetKeys, ...restProps }) => {
   const transferDataSource = [];
 
-  function flatten(list = []) {
+  const flatten=(list = [])=> {
     list.forEach((item) => {
       transferDataSource.push(item);
       flatten(item.children);

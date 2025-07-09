@@ -1,7 +1,5 @@
 import { Radio } from 'antd';
 
-import React from 'react';
-
 const SolidRadioButton = () => {
   return (
     <>

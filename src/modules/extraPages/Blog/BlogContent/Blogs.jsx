@@ -1,4 +1,3 @@
-import React from 'react';
 import BlogCard from './BlogCard';
 import PropTypes from 'prop-types';
 import AppGrid from '@crema/components/AppGrid';

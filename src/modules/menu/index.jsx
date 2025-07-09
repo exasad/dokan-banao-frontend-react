@@ -1,7 +1,7 @@
-import React from 'react';
+import { lazy } from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
-const MenuLevel = React.lazy(() => import('./MenuLevel'));
+const MenuLevel = lazy(() => import('./MenuLevel'));
 
 export const menuLevelConfig = [
   {

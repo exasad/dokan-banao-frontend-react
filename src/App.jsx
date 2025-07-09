@@ -11,7 +11,7 @@ import { Normalize } from 'styled-normalize';
 import './styles/index.css';
 
 
-function App() {
+const App=()=> {
 
   return (
       <AppContextProvider>

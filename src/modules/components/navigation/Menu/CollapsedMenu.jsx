@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   AppstoreOutlined,
   ContainerOutlined,
@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Menu } from 'antd';
 
-function getItem(label, key, icon, children, type) {
+const getItem=(label, key, icon, children, type)=> {
   return {
     key,
     icon,

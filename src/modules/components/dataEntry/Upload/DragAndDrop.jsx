@@ -1,6 +1,5 @@
 import { message, Upload } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const { Dragger } = Upload;
 

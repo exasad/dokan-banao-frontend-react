@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   Cascader,
   ConfigProvider,
@@ -21,7 +21,7 @@ const customizeRenderEmpty = () => (
 
 const style = { width: 200 };
 
-class ConfigProviderDemo extends React.Component {
+class ConfigProviderDemo extends Component {
   state = {
     customize: false,
   };

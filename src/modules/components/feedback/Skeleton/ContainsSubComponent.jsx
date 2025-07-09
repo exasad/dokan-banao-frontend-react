@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Skeleton } from 'antd';
 
-class ContainsSubComponent extends React.Component {
+class ContainsSubComponent extends Component {
   state = {
     loading: false,
   };

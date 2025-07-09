@@ -88,7 +88,6 @@ export const useGetDataApi = (
         .catch((error) => {
           console.log('API Failed', initialUrl, error);
           if (error.response.data.message) {
-            console.log(initialUrl, error.response.data.message);
             if (callbackFun) callbackFun(error.response.data);
             fetchError(error.response.data.message);
           } else {
@@ -137,7 +136,6 @@ export const trimObjectValues = (obj) => {
 };
 
 const handleApiResponse = (url, fetchSuccess, data, resolve, reject) => {
-  console.log(url, data.data);
   fetchSuccess();
   if (isRequestSuccessful(data.status)) {
     return resolve(data.data);
@@ -147,7 +145,6 @@ const handleApiResponse = (url, fetchSuccess, data, resolve, reject) => {
 };
 
 const handleAPIError = (url, fetchSuccess, error, reject) => {
-  console.log(url, error.response.data.message);
   fetchSuccess();
   if (error.response.data.message) {
     return reject(error.response.data);

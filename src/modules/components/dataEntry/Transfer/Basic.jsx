@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Space, Transfer } from 'antd';
 import { StyledAntTransfer } from './index.styled';
 
@@ -16,7 +16,7 @@ const targetKeys = mockData
   .filter((item) => +item.key % 3 > 1)
   .map((item) => item.key);
 
-class Basic extends React.Component {
+class Basic extends Component {
   state = {
     targetKeys,
     selectedKeys: [],
@@ -30,8 +30,6 @@ class Basic extends React.Component {
     this.setState({
       selectedKeys: [...sourceSelectedKeys, ...targetSelectedKeys],
     });
-
-    console.log('targetSelectedKeys: ', sourceSelectedKeys, targetSelectedKeys);
   };
 
   handleScroll = (direction, e) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import StoriesItem from './StoriesItem';
 import { useIntl } from 'react-intl';

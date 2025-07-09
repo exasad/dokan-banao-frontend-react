@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   StyledAppBoundary,
@@ -8,14 +8,13 @@ import {
 } from './index.styled';
 import ErrorIcon from './ErrorIcon';
 
-class AppErrorBoundary extends React.Component {
+class AppErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(error) {
-    console.log('error: ', error);
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }

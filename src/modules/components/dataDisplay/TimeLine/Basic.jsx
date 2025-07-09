@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space, Timeline } from 'antd';
 
 const Basic = () => {

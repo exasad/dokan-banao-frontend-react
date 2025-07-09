@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Radio, Space } from 'antd';
 
 const plainOptions = ['Apple', 'Pear', 'Orange'];
@@ -13,7 +13,7 @@ const optionsWithDisabled = [
   { label: 'Orange', value: 'Orange', disabled: true },
 ];
 
-class OptionalRadio extends React.Component {
+class OptionalRadio extends Component {
   state = {
     value1: 'Apple',
     value2: 'Apple',

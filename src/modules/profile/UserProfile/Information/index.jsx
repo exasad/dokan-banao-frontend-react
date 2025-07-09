@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Col, DatePicker, Form, Input, Select } from 'antd';
 import { countryList } from './countryList';
 import AppRowContainer from '@crema/components/AppRowContainer';
@@ -14,7 +13,6 @@ const Information = () => {
     console.log('Success:', values);
   };
   const { Option } = Select;
-  console.log(countryList);
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };

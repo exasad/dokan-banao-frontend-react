@@ -1,5 +1,3 @@
-import React from "react";
-
 import AppComponentCard from "@crema/components/AppComponentCard";
 import AppComponentHeader from "@crema/components/AppComponentHeader";
 import Basic from "./Basic";

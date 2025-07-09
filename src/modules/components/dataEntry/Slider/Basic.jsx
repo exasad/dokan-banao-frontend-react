@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Slider, Space, Switch } from 'antd';
 
-class Basic extends React.Component {
+class Basic extends Component {
   state = {
     disabled: false,
   };

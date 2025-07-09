@@ -1,4 +1,3 @@
-import React from 'react';
 import { BiChart } from 'react-icons/bi';
 import { FaUserAlt } from 'react-icons/fa';
 import { BsFileText } from 'react-icons/bs';

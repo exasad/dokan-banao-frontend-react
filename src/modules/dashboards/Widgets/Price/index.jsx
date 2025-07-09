@@ -1,11 +1,11 @@
-import React from 'react';
+import { useState } from 'react';
 import { Slider } from 'antd';
 import AppCard from '@crema/components/AppCard';
 import { useIntl } from 'react-intl';
 import { StyledPriceText } from './index.styled';
 
 const Price = () => {
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = useState([20, 37]);
 
   const handleChange = (newValue) => {
     setValue(newValue);

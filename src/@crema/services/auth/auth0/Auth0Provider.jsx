@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Auth0Provider as Auth0 } from '@auth0/auth0-react';
 

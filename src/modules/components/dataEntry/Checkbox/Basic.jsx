@@ -1,7 +1,6 @@
-import React from 'react';
 import { Checkbox, Space } from 'antd';
 
-function onChange(e) {
+const onChange=(e)=> {
   console.log(`checked = ${e.target.checked}`);
 }
 

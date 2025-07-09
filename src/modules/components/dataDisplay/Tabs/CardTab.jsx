@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space, Tabs } from 'antd';
 
 const CardTab = () => {

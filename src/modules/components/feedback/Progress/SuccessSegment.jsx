@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress, Space, Tooltip } from 'antd';
 
 const SuccessSegment = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdAdd } from 'react-icons/md';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

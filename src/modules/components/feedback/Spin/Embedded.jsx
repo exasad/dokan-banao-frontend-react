@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Alert, Space, Spin, Switch } from 'antd';
 
-class Embedded extends React.Component {
+class Embedded extends Component {
   state = { loading: false };
   toggle = (value) => {
     this.setState({ loading: value });

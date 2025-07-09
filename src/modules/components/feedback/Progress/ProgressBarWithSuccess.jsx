@@ -1,7 +1,5 @@
 import { Progress, Tooltip } from 'antd';
 
-import React from 'react';
-
 const ProgressBarWithSuccess = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>

@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { AiFillHeart } from "react-icons/ai";
 import Tag from "../../BlogContent/Tag";

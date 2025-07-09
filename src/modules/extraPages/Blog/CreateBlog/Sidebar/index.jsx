@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Col, Form, Input, Select, Space, Switch } from 'antd';
 import AppCard from '@crema/components/AppCard';
 import { StyledFormWrapper } from '../index.styled';

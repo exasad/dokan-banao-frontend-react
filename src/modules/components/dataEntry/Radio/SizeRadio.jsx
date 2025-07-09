@@ -1,4 +1,3 @@
-import React from 'react';
 import { Radio, Space } from 'antd';
 
 const SizeRadio = () => {

@@ -1,13 +1,12 @@
-import React from 'react';
+import { Component } from 'react';
 import { Pagination } from 'antd';
 
-class Controlled extends React.Component {
+class Controlled extends Component {
   state = {
     current: 3,
   };
 
   onChange = (page) => {
-    console.log(page);
     this.setState({
       current: page,
     });

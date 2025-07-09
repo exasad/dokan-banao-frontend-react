@@ -1,12 +1,12 @@
 import { Switch, Transfer } from 'antd';
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 const Pagination = () => {
-  const [oneWay, setOneWay] = React.useState(false);
-  const [mockData, setMockData] = React.useState([]);
-  const [targetKeys, setTargetKeys] = React.useState([]);
+  const [oneWay, setOneWay] = useState(false);
+  const [mockData, setMockData] = useState([]);
+  const [targetKeys, setTargetKeys] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const newTargetKeys = [];
     const newMockData = [];
     for (let i = 0; i < 2000; i++) {
@@ -27,7 +27,6 @@ const Pagination = () => {
   }, []);
 
   const onChange = (newTargetKeys, direction, moveKeys) => {
-    console.log(newTargetKeys, direction, moveKeys);
     setTargetKeys(newTargetKeys);
   };
 

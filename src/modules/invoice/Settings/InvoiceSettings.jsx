@@ -1,5 +1,4 @@
 import IntlMessages from '@crema/helpers/IntlMessages';
-import React from 'react';
 import Invoicing from './Invoicing';
 import General from './General';
 import Accounting from './Accounting';

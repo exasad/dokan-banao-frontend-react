@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 
 import AppSelect from '@crema/components/AppSelect';

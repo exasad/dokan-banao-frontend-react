@@ -1,8 +1,7 @@
-import React from 'react';
 import { Radio, Space } from 'antd';
 
 const StyleRadio = () => {
-  function onChange(e) {
+  const onChange=(e)=> {
     console.log(`radio checked:${e.target.value}`);
   }
 

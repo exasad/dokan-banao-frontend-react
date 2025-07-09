@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, message, Space, Upload } from 'antd';
 import UploadOutlined from '@ant-design/icons/lib/icons/UploadOutlined';
 

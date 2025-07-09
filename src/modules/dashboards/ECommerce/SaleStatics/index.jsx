@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import { useIntl } from 'react-intl';
 import AppSelect from '@crema/components/AppSelect';

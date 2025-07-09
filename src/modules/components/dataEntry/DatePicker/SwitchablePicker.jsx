@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DatePicker, Select, Space, TimePicker } from 'antd';
 import PropTypes from 'prop-types';
 // import CompleteExample from '../../navigation/PageHeader/CompleteExample';
 
 const { Option } = Select;
 
-function PickerWithType({ type, onChange }) {
+const PickerWithType=({ type, onChange })=> {
   if (type === 'time') return <TimePicker onChange={onChange} />;
   if (type === 'date') return <DatePicker onChange={onChange} />;
   return <DatePicker picker={type} onChange={onChange} />;
@@ -16,7 +16,7 @@ PickerWithType.propTypes = {
   onChange: PropTypes.any,
 };
 
-function SwitchablePicker() {
+const SwitchablePicker=()=> {
   const [type, setType] = useState('time');
   return (
     <Space>

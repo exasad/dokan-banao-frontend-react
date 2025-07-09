@@ -1,4 +1,3 @@
-import React from "react";
 import SimpleAreaChart from "./Components/SimpleAreaChart";
 import SimpleAreaChartSource from "./Components/SimpleAreaChart?raw";
 import StackedAreaChart from "./Components/StackedAreaChart";

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Input, Space, Tooltip } from 'antd';
 import PropTypes from 'prop-types';
 
-function formatNumber(value) {
+const formatNumber=(value)=> {
   value += '';
   const list = value.split('.');
   const prefix = list[0].charAt(0) === '-' ? '-' : '';

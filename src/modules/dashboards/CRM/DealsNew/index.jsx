@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import DealsTable from './DealsTable';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';

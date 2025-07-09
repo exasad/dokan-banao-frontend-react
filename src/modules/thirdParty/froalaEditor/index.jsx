@@ -45,8 +45,6 @@
 // };
 //
 // export default FroalaEditor;
-import React from 'react';
-
 const Index = () => {
   return <div>hie</div>;
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCircularProgress from '@crema/components/AppCircularProgress';
 import PropTypes from 'prop-types';
 import {

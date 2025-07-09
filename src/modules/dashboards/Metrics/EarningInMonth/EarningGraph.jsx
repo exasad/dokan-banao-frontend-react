@@ -1,4 +1,3 @@
-import React from 'react';
 import { Cell, Pie } from 'recharts';
 import PropTypes from 'prop-types';
 import { StyledEarningMonthGraph } from './index.styled';

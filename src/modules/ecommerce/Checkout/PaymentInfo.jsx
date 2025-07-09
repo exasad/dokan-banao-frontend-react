@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppCard from '@crema/components/AppCard';
 import { Button, Input, Radio } from 'antd';
 import {

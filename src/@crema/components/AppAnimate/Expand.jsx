@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // In firefox, setTimeout with duration 0 too short for browser notice the changes in dom

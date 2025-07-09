@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { ResponsiveContainer, Treemap } from 'recharts';
 import data from './data';
 import PropTypes from 'prop-types';

@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Divider, Form, Radio, Skeleton, Space, Switch } from 'antd';
 
-class ButtonAavtarInputImage extends React.Component {
+class ButtonAavtarInputImage extends Component {
   state = {
     active: false,
     block: false,

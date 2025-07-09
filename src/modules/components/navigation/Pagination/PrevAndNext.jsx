@@ -1,7 +1,6 @@
-import React from 'react';
 import { Pagination, Space } from 'antd';
 
-function itemRender(current, type, originalElement) {
+const itemRender=(current, type, originalElement)=> {
   if (type === 'prev') {
     return <a>Previous</a>;
   }

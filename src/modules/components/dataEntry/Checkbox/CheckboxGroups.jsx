@@ -1,9 +1,8 @@
-import React from 'react';
 import { Checkbox, Space } from 'antd';
 
 const CheckboxGroup = Checkbox.Group;
 
-function onChange(checkedValues) {
+const onChange=(checkedValues) =>{
   console.log('checked = ', checkedValues);
 }
 

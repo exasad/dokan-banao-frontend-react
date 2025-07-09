@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, Divider, Tooltip } from 'antd';
 import { AntDesignOutlined, UserOutlined } from '@ant-design/icons';
 

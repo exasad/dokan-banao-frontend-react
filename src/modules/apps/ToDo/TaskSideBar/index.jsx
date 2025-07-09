@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import AddNewTask from '../AddNewTask';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppsSideBarFolderItem from '@crema/components/AppsSideBarFolderItem';
@@ -20,7 +20,7 @@ import { useTodoContext } from '../../context/TodoContextProvider';
 const TaskSideBar = () => {
   const { labelList, folderList } = useTodoContext();
 
-  const [isAddTaskOpen, setAddTaskOpen] = React.useState(false);
+  const [isAddTaskOpen, setAddTaskOpen] = useState(false);
 
   const onOpenAddTask = () => {
     setAddTaskOpen(true);

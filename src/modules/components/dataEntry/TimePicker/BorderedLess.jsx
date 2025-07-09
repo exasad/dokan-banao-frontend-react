@@ -1,5 +1,4 @@
 import { TimePicker } from 'antd';
-import React from 'react';
 
 const { RangePicker } = TimePicker;
 

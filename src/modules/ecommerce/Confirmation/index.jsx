@@ -1,4 +1,3 @@
-import React from 'react';
 import { addresses } from '@crema/mockapi/fakedb/ecommerce/ecommerceData';
 import AppPageMeta from '@crema/components/AppPageMeta';
 import { StyledConfirmationView } from './index.styled';

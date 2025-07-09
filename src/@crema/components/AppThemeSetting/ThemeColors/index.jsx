@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import themeColorSets from '@crema/constants/ColorSets';
 import CustomColorCell from '../ColorCell';

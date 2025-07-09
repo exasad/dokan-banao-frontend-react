@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 // import { VelocityTransitionGroup } from 'velocity-react';
 // import 'velocity-animate/velocity.ui';
@@ -21,7 +20,7 @@ import PropTypes from 'prop-types';
 //   delay: 0,
 // };
 
-function AppAnimateGroup({ ...props }) {
+const AppAnimateGroup=({ ...props })=> {
   return <div {...props}>{props.children}</div>;
 }
 

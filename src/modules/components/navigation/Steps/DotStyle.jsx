@@ -1,4 +1,3 @@
-import React from 'react';
 import { Divider, Space, Steps } from 'antd';
 
 const items = [

@@ -1,4 +1,3 @@
-import React from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import AppAnimate from '@crema/components/AppAnimate';
 import Introduction from './Introduction';

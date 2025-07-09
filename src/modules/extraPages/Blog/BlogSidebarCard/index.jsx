@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIntl } from 'react-intl';
 import RecentPost from './RecentPost';
 import PropTypes from 'prop-types';

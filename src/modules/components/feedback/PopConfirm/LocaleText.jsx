@@ -1,4 +1,3 @@
-import React from 'react';
 import { Popconfirm, Space } from 'antd';
 
 const LocaleText = () => {

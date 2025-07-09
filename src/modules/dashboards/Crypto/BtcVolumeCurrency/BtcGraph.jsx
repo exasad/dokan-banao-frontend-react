@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Cell, Pie, Sector } from 'recharts';
 import PropTypes from 'prop-types';
 import { StyledBtcGraph } from './index.styled';

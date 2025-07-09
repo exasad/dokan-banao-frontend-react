@@ -1,4 +1,3 @@
-import React from 'react';
 import languageData from './data';
 
 import PropTypes from 'prop-types';

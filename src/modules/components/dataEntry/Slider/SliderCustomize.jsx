@@ -1,5 +1,4 @@
 import { Slider } from 'antd';
-import React from 'react';
 
 const formatter = (value) => `${value}%`;
 const SliderCustomize = () => (

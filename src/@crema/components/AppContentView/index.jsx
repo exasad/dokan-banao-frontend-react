@@ -1,4 +1,3 @@
-import React from 'react';
 import AppErrorBoundary from '../AppErrorBoundary';
 import { StyledMainContentView } from './index.styled';
 import AppSuspense from '../AppSuspense';

@@ -1,13 +1,12 @@
-import React from 'react';
 import { DatePicker, Space } from 'antd';
 
 const { RangePicker } = DatePicker;
 
-function onChange(value, dateString) {
+const onChange=(value, dateString)=> {
   console.log('Formatted Selected Time: ', value, dateString);
 }
 
-function onOk(value) {
+const onOk=(value)=> {
   console.log('onOk: ', value);
 }
 

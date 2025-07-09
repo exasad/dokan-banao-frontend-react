@@ -1,5 +1,4 @@
 import { Badge, Divider } from 'antd';
-import React from 'react';
 
 const colors = [
   'pink',

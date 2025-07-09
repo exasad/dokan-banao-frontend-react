@@ -1,24 +1,24 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Error401 = React.lazy(() =>
+const Error401 = lazy(() =>
   import('../../../modules/errorPages/Error401'),
 );
-const Error403 = React.lazy(() =>
+const Error403 = lazy(() =>
   import('../../../modules/errorPages/Error403'),
 );
-const Error404 = React.lazy(() =>
+const Error404 = lazy(() =>
   import('../../../modules/errorPages/Error404'),
 );
-const Error500 = React.lazy(() =>
+const Error500 = lazy(() =>
   import('../../../modules/errorPages/Error500'),
 );
-const Error503 = React.lazy(() =>
+const Error503 = lazy(() =>
   import('../../../modules/errorPages/Error503'),
 );
-const ComingSoon = React.lazy(() =>
+const ComingSoon = lazy(() =>
   import('../../../modules/errorPages/ComingSoon'),
 );
-const Maintenance = React.lazy(() =>
+const Maintenance = lazy(() =>
   import('../../../modules/errorPages/Maintenance'),
 );
 

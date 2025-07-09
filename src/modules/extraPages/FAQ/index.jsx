@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppInfoView from '@crema/components/AppInfoView';
 
 import IntlMessages from '@crema/helpers/IntlMessages';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Affix, Button, Space } from 'antd';
 
 const Callback = () => {

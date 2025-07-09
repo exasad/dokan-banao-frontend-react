@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Button, Checkbox, Divider, Tabs } from 'antd';
 
 const CheckboxGroup = Checkbox.Group;
@@ -18,7 +18,7 @@ const items = new Array(3).fill(null).map((_, i) => {
 });
 const App = () => {
   const [position, setPosition] = useState(['left', 'right']);
-  const slot = useMemo(() => {
+  const slot = () => {
     if (position.length === 0) return null;
     return position.reduce(
       (acc, direction) => ({
@@ -27,7 +27,7 @@ const App = () => {
       }),
       {},
     );
-  }, [position]);
+  };
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Tabs tabBarExtraContent={operations} items={items} />

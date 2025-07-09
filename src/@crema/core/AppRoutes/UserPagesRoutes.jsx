@@ -1,34 +1,34 @@
-import React from 'react';
+import { lazy } from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
-const Signin = React.lazy(() =>
+const Signin = lazy(() =>
   import('../../../modules/userPages/UserPages/Signin'),
 );
-const Signup = React.lazy(() =>
+const Signup = lazy(() =>
   import('../../../modules/userPages/UserPages/Signup'),
 );
-const ForgetPassword = React.lazy(() =>
+const ForgetPassword = lazy(() =>
   import('../../../modules/userPages/UserPages/ForgetPassword'),
 );
-const ResetPassword = React.lazy(() =>
+const ResetPassword = lazy(() =>
   import('../../../modules/userPages/UserPages/ResetPassword'),
 );
-const UnlockScreen = React.lazy(() =>
+const UnlockScreen = lazy(() =>
   import('../../../modules/userPages/UserPages/UnlockScreen'),
 );
-const StyledSignin = React.lazy(() =>
+const StyledSignin = lazy(() =>
   import('../../../modules/userPages/StyledUserPages/Signin'),
 );
-const StyledSignup = React.lazy(() =>
+const StyledSignup = lazy(() =>
   import('../../../modules/userPages/StyledUserPages/Signup'),
 );
-const StyledForgetPassword = React.lazy(() =>
+const StyledForgetPassword = lazy(() =>
   import('../../../modules/userPages/StyledUserPages/ForgetPassword'),
 );
-const StyledResetPassword = React.lazy(() =>
+const StyledResetPassword = lazy(() =>
   import('../../../modules/userPages/StyledUserPages/ResetPassword'),
 );
-const StyledUnlockScreen = React.lazy(() =>
+const StyledUnlockScreen = lazy(() =>
   import('../../../modules/userPages/StyledUserPages/UnlockScreen'),
 );
 

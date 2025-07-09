@@ -1,7 +1,5 @@
 import { Descriptions } from 'antd';
 
-import React from 'react';
-
 const Vertical = () => {
   return (
     <Descriptions title='User Info' layout='vertical'>

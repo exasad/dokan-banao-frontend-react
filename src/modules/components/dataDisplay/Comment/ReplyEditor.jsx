@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Avatar, Button, Form, Input, List } from 'antd';
 import { Comment } from '@ant-design/compatible';
 import dayjs from 'dayjs';
@@ -33,7 +33,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
   </>
 );
 
-class ReplyEditor extends React.Component {
+class ReplyEditor extends Component {
   state = {
     comments: [],
     submitting: false,

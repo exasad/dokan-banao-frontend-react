@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Drawer } from 'antd';
 
-class MultiLevelDrawer extends React.Component {
+class MultiLevelDrawer extends Component {
   state = { visible: false, childrenDrawer: false };
 
   showDrawer = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import SimpleFunnel from "./Components/SimpleFunnel";
 import SimpleFunnelSource from "./Components/SimpleFunnel?raw";
 import { Col } from "antd";

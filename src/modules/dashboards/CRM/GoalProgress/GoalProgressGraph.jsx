@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bar, BarChart, Tooltip, XAxis, YAxis } from 'recharts';
 import PropTypes from 'prop-types';
 import { StyledGoalChart } from './index.styled';

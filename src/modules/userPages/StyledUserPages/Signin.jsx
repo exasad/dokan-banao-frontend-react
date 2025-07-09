@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { useIntl } from 'react-intl';
 import AppAnimate from '@crema/components/AppAnimate';

@@ -1,8 +1,8 @@
-import React from 'react';
+import { createContext } from 'react';
 import { Button, Modal, Space } from 'antd';
 
-const ReachableContext = React.createContext();
-const UnreachableContext = React.createContext();
+const ReachableContext = createContext();
+const UnreachableContext = createContext();
 
 const config = {
   title: 'Use Hook!',

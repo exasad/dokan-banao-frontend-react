@@ -1,4 +1,3 @@
-import React from 'react';
 import SocialMediaGraph from './SocialMediaGraph';
 import PropTypes from 'prop-types';
 import AppCard from '@crema/components/AppCard';

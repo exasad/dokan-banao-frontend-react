@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { BsCardList } from 'react-icons/bs';
 import { MdEdit } from 'react-icons/md';

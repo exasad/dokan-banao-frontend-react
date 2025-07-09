@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCircularProgress from '@crema/components/AppCircularProgress';
 import { StarFilled } from '@ant-design/icons';
 import { Progress } from 'antd';

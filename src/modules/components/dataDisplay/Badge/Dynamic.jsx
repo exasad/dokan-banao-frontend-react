@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Badge, Button, Space, Switch } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { StyledAntBadgeGroup, StyledHeadExampleDiv } from './index.styled';

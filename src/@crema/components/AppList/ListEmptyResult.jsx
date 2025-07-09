@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Button, Progress } from 'antd';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';
@@ -18,7 +18,7 @@ const ListEmptyResult = ({
 }) => {
   if (loading || loader) {
     return (
-      <React.Fragment>
+      <Fragment>
         {placeholder ? (
           placeholder
         ) : (
@@ -27,7 +27,7 @@ const ListEmptyResult = ({
             <span>Loading...</span>
           </StyledEmptyListContainerFlex>
         )}
-      </React.Fragment>
+      </Fragment>
     );
   } else {
     return (

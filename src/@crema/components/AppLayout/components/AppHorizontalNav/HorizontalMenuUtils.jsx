@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'antd';
-import React from 'react';
+import { isValidElement } from 'react';
 import { useIntl } from 'react-intl';
 import { useSidebarContext } from '@crema/context/AppContextProvider/SidebarContextProvider';
 import { allowMultiLanguage } from '@crema/constants/AppConst';
 
-function getStyles(item, sidebarColorSet, index) {
+const getStyles=(item, sidebarColorSet, index)=> {
   const { pathname } = useLocation();
   const selectedKeys = pathname.substr(1);
   const defaultOpenKeys = selectedKeys.split('/');
@@ -30,7 +30,7 @@ const renderMenuItemChildren = (item) => {
     return (
       <Link to={url}>
         {icon &&
-          (React.isValidElement(icon) ? (
+          (isValidElement(icon) ? (
             <span className='ant-menu-item-icon'>{icon}</span>
           ) : (
             <icon className='ant-menu-item-icon' />
@@ -41,19 +41,17 @@ const renderMenuItemChildren = (item) => {
       </Link>
     );
   else {
-    return (
-      <>
-        {icon &&
-          (React.isValidElement(icon) ? (
-            <span className='ant-menu-item-icon'>{icon}</span>
-          ) : (
-            <icon className='ant-menu-item-icon' />
-          ))}
-        <span data-testid={messageId.toLowerCase + '-nav'}>
-          {allowMultiLanguage ? messages[messageId] : item.title}
-        </span>
-      </>
-    );
+    return <>
+      {icon &&
+        (isValidElement(icon) ? (
+          <span className='ant-menu-item-icon'>{icon}</span>
+        ) : (
+          <icon className='ant-menu-item-icon' />
+        ))}
+      <span data-testid={messageId.toLowerCase + '-nav'}>
+        {allowMultiLanguage ? messages[messageId] : item.title}
+      </span>
+    </>;
   }
 };
 

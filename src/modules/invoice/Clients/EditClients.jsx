@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useInfoViewActionsContext } from '@crema/context/AppContextProvider/InfoViewContextProvider';
 import AddClient from './AddClient';

@@ -1,4 +1,3 @@
-import React from 'react';
 import Attachments from './Attachments';
 import PostStats from './PostStats';
 import AddComment from './AddComment';

@@ -1,4 +1,3 @@
-import React from "react";
 import SimpleLineChart from "./Components/SimpleLineChart";
 import SimpleLineChartSource from "./Components/SimpleLineChart?raw";
 import VerticalLineChart from "./Components/VerticalLineChart";

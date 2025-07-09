@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge, Space } from 'antd';
 import { StyledHeadExample } from './index.styled';
 

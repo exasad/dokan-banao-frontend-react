@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import AddNewTask from '../AddNewTask';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppsSideBarFolderItem from '@crema/components/AppsSideBarFolderItem';
@@ -26,7 +26,7 @@ const TaskSideBar = () => {
     useCalendarContext();
   const { setFilterData } = useCalendarActionsContext();
 
-  const [isAddTaskOpen, setAddTaskOpen] = React.useState(false);
+  const [isAddTaskOpen, setAddTaskOpen] = useState(false);
 
   const onOpenAddTask = () => {
     setAddTaskOpen(true);

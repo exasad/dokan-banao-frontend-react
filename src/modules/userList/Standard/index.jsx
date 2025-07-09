@@ -1,4 +1,3 @@
-import React from 'react';
 import ListItem from './ListItem';
 import AppList from '@crema/components/AppList';
 import AppInfoView from '@crema/components/AppInfoView';

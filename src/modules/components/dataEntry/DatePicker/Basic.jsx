@@ -1,7 +1,6 @@
-import React from 'react';
 import { DatePicker, Space } from 'antd';
 
-function onChange(date, dateString) {
+const onChange=(date, dateString)=> {
   console.log(date, dateString);
 }
 

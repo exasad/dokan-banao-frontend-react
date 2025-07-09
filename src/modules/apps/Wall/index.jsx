@@ -1,4 +1,3 @@
-import React from 'react';
 import AppsContainer from '@crema/components/AppsContainer';
 import { useIntl } from 'react-intl';
 import AppPageMeta from '@crema/components/AppPageMeta';

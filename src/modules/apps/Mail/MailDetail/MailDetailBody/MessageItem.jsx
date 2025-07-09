@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Popover, Space, Tooltip } from "antd";
 import AppIconButton from "@crema/components/AppIconButton";
 import IntlMessages from "@crema/helpers/IntlMessages";
@@ -199,7 +199,7 @@ const MessageItem = ({
   );
 };
 
-export default React.memo(MessageItem);
+export default MessageItem;
 
 MessageItem.propTypes = {
   message: PropTypes.object.isRequired,

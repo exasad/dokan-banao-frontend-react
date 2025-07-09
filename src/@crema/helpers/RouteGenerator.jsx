@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { authRole } from '@crema/constants/AppConst';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';

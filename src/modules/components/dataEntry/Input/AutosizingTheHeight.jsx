@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import { Input, Space } from 'antd';
 
 const { TextArea } = Input;
 
-class AutosizingTheHeight extends React.Component {
+class AutosizingTheHeight extends Component {
   state = {
     value: '',
   };

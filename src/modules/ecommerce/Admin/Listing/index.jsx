@@ -1,6 +1,6 @@
 import AppsHeader from '@crema/components/AppsContainer/AppsHeader';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import ListingTable from '../ListingTable';
 import FilterItem from '../FilterItem';

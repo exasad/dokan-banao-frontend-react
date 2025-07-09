@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppAnimate from '@crema/components/AppAnimate';
 import { Col, Form, Input } from 'antd';

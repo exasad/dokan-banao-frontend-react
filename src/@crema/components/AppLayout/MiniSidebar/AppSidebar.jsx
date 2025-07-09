@@ -1,4 +1,3 @@
-import React from 'react';
 import collapseMotion from 'antd/lib/_util/motion';
 import UserInfo from '../components/UserInfo';
 import clsx from 'clsx';

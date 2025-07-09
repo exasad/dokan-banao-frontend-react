@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Checkbox, Form, Input } from 'antd';
 import {
@@ -37,7 +36,7 @@ const SignInFirebase = () => {
     navigate('/forget-password', { tab: 'firebase' });
   };
 
-  function onRememberMe(e) {
+  const onRememberMe=(e)=> {
     console.log(`checked = ${e.target.checked}`);
   }
 

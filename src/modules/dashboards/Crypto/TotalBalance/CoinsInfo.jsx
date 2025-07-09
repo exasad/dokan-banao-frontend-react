@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledCoinInfoCol, StyledCoinInfoRow } from './index.styled';
 

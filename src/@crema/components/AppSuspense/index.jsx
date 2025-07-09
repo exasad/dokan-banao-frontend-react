@@ -1,12 +1,12 @@
-import React from 'react';
+import { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import AppLoader from '../AppLoader';
 
 const AppSuspense = (props) => {
   return (
-    <React.Suspense fallback={<AppLoader {...props.loadingProps} />}>
+    <Suspense fallback={<AppLoader {...props.loadingProps} />}>
       {props.children}
-    </React.Suspense>
+    </Suspense>
   );
 };
 

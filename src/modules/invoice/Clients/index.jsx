@@ -4,7 +4,6 @@ import { isEmptyObject } from '@crema/helpers/ApiHelper';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
 import ClientItem from './ClientItem';
 import { Button } from 'antd';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StyledTypographyWrapper } from '../index.styled';
 

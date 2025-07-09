@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import ContentLoader from 'react-content-loader';
 
 export const ChatItemItem = (props) => (
@@ -10,7 +10,7 @@ export const ChatItemItem = (props) => (
 );
 const ChatListSkeleton = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <ChatItemItem />
       <ChatItemItem />
       <ChatItemItem />
@@ -21,7 +21,7 @@ const ChatListSkeleton = () => {
       <ChatItemItem />
       <ChatItemItem />
       <ChatItemItem />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

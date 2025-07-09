@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Input, Radio, Space } from 'antd';
 
-class VerticalRadio extends React.Component {
+class VerticalRadio extends Component {
   state = {
     value: 1,
   };

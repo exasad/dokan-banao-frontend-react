@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIntl } from 'react-intl';
 import AppMenu from '@crema/components/AppMenu';
 import NotificationCell from './NotificationCell';

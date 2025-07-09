@@ -1,5 +1,3 @@
-import React from 'react';
-
 import clsx from 'clsx';
 import AppList from '@crema/components/AppList';
 import { StyledTimeWrapper } from './index.styled';

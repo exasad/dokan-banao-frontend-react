@@ -1,4 +1,3 @@
-import React from 'react';
 import { Checkbox, Form, Input } from 'antd';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { useIntl } from 'react-intl';

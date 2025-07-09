@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Badge, Calendar } from 'antd';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
@@ -29,7 +29,6 @@ const TaskCalender = ({ taskList }) => {
   const onSelectDate = (value) => {
     setSelectedDate(value);
   };
-  console.log('isAddTaskOpen', isAddTaskOpen);
 
   const onPanelChange = () => {
     onCloseAddTask();

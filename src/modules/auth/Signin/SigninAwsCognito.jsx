@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import { GoogleOutlined } from '@ant-design/icons';
@@ -35,7 +34,7 @@ const SigninAwsCognito = () => {
     navigate('/forget-password', { tab: 'awsCognito' });
   };
 
-  function onRememberMe(e) {
+  const onRememberMe=(e)=> {
     console.log(`checked = ${e.target.checked}`);
   }
 

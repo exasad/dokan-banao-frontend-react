@@ -1,4 +1,3 @@
-import React from 'react';
 import ChatItem from './ChatItem';
 import PropTypes from 'prop-types';
 import AppList from '@crema/components/AppList';

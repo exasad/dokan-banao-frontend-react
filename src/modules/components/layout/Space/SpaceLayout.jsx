@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Radio, Space } from 'antd';
 
-function SpaceSize() {
+const SpaceSize=()=> {
   const [size, setSize] = useState('small');
 
   return (

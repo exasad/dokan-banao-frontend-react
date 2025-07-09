@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import ReactCodeInput from 'react-code-input';
 import { useLocation, useNavigate } from 'react-router-dom';

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Select } from 'antd';
 import { useIntl } from 'react-intl';

@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 
 import { CompactPicker } from 'react-color';
 
-class BasicToggle extends React.Component {
+class BasicToggle extends Component {
   state = {
     pickerVisible: false,
   };

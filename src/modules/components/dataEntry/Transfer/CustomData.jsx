@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Transfer } from 'antd';
 import { StyledAdvancedTransfer } from './index.styled';
 
-class CustomData extends React.Component {
+class CustomData extends Component {
   state = {
     mockData: [],
     targetKeys: [],
@@ -25,7 +25,6 @@ class CustomData extends React.Component {
     this.setState({ mockData, targetKeys });
   };
   handleChange = (targetKeys, direction, moveKeys) => {
-    console.log(targetKeys, direction, moveKeys);
     this.setState({ targetKeys });
   };
   renderItem = (item) => {

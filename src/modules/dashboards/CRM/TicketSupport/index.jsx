@@ -1,4 +1,3 @@
-import React from 'react';
 import TicketSupportTable from './TicketSupportTable';
 import PropTypes from 'prop-types';
 import AppCard from '@crema/components/AppCard';

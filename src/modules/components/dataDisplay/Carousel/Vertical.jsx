@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Carousel, Radio, Space } from 'antd';
 
 const Vertical = () => {
@@ -9,7 +9,7 @@ const Vertical = () => {
     textAlign: 'center',
     background: '#364d79',
   };
-  const [dotPosition, setDotPosition] = React.useState('top');
+  const [dotPosition, setDotPosition] = useState('top');
 
   const handlePositionChange = ({ target: { value } }) => {
     setDotPosition(value);

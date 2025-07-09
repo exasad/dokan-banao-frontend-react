@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Transfer } from 'antd';
 import { StyledAdvancedTransfer } from './index.styled';
 
-class Advance extends React.Component {
+class Advance extends Component {
   state = {
     mockData: [],
     targetKeys: [],

@@ -1,4 +1,3 @@
-import React from 'react';
 import MarketGraph from './MarketGraph';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

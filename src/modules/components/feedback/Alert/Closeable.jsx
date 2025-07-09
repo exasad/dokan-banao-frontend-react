@@ -1,7 +1,6 @@
-import React from 'react';
 import { Alert, Space } from 'antd';
 
-const onClose = function (e) {
+const onClose = (e)=> {
   console.log(e, 'I was closed.');
 };
 

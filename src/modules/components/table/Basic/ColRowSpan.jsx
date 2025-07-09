@@ -1,5 +1,4 @@
-import React from 'react';
-import { Space, Table } from 'antd'; // In the fifth row, other columns are merged into first column
+import { Space, Table } from 'antd';
 // In the fifth row, other columns are merged into first column
 // by setting it's colSpan to be 0
 const renderContent = (value, row, index) => {

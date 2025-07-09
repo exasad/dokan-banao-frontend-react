@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIntl } from 'react-intl';
 import PatientGraph from './PatientGraph';
 import AppMenu from '@crema/components/AppMenu';

@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement, Component } from 'react';
 import { Avatar, List, Skeleton, Switch } from 'antd';
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
@@ -18,12 +18,12 @@ for (let i = 0; i < 3; i++) {
 
 const IconText = ({ icon, text }) => (
   <span>
-    {React.createElement(icon, { style: { marginRight: 8 } })}
+    {createElement(icon, { style: { marginRight: 8 } })}
     {text}
   </span>
 );
 
-class ListIcon extends React.Component {
+class ListIcon extends Component {
   state = {
     loading: true,
   };

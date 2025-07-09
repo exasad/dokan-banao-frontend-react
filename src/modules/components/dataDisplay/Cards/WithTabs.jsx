@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Card, Space } from 'antd';
 
 const tabList = [
@@ -64,7 +64,7 @@ const contentListNoTitle = {
   ),
 };
 
-class WithTabs extends React.Component {
+class WithTabs extends Component {
   state = {
     key: 'tab1',
     noTitleKey: 'article',

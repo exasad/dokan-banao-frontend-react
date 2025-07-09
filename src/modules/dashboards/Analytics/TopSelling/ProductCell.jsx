@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCircularProgress from '@crema/components/AppCircularProgress';
 import { RightOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';

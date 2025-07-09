@@ -1,7 +1,6 @@
 import { Card, Space } from 'antd';
-import React from 'react';
 
-function SpaceVertical() {
+const SpaceVertical=()=> {
   return (
     <Space direction='vertical'>
       <Card title='Card' style={{ width: 300 }}>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppsContainer from '@crema/components/AppsContainer';
 import { useNavigate } from 'react-router-dom';
 import { useIntl } from 'react-intl';

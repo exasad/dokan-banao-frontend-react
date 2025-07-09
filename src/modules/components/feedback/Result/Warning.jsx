@@ -1,7 +1,5 @@
 import { Button, Result } from 'antd';
 
-import React from 'react';
-
 const Warning = () => {
   return (
     <Result

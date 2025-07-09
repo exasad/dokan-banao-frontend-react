@@ -1,4 +1,3 @@
-import React from 'react';
 import PropsTypes from 'prop-types';
 import { StyledMediaSliderWrapper } from './index.styled';
 

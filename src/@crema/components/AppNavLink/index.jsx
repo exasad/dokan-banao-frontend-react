@@ -1,11 +1,9 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const AppNavLink = React.forwardRef(function AppNavLink(
-  { activeClassName, className, ...rest },
-  ref,
-) {
+const AppNavLink = (
+  { activeClassName, className,ref, ...rest }
+) =>{
   return (
     <NavLink
       ref={ref}
@@ -15,7 +13,7 @@ const AppNavLink = React.forwardRef(function AppNavLink(
       }
     />
   );
-});
+};
 
 export default AppNavLink;
 AppNavLink.propTypes = {

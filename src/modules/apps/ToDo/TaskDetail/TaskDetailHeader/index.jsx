@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

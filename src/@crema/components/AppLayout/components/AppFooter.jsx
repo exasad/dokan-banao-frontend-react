@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLayoutContext } from '@crema/context/AppContextProvider/LayoutContextProvider';
 import {
   StyledFooterBtn,

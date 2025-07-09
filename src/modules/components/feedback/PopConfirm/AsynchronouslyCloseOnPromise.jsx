@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Popconfirm } from 'antd';
 
 const AsynchronouslyCloseOnPromise = () => {

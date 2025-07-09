@@ -1,12 +1,12 @@
-import React from 'react';
+import { cloneElement } from 'react';
 import { Button, Dropdown, message, Space, Tooltip } from 'antd';
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
 
-function handleButtonClick() {
+const handleButtonClick=()=> {
   message.info('Click on left button.');
 }
 
-function handleMenuClick() {
+const handleMenuClick=()=> {
   message.info('Click on menu item.');
 }
 
@@ -55,7 +55,7 @@ const ButtonWithDropdown = () => {
           <Tooltip title='tooltip' key='leftButton'>
             {leftButton}
           </Tooltip>,
-          React.cloneElement(rightButton, { loading: true }),
+          cloneElement(rightButton, { loading: true }),
         ]}
       >
         With Tooltip

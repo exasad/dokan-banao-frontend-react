@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Drawer } from 'antd';
 
-class RenderInCurrentDom extends React.Component {
+class RenderInCurrentDom extends Component {
   state = { visible: false };
 
   showDrawer = () => {

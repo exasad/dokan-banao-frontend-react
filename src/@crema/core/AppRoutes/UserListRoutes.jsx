@@ -1,9 +1,9 @@
-import React from 'react';
+import { lazy } from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
-const Flat = React.lazy(() => import('../../../modules/userList/Flat'));
-const Modern = React.lazy(() => import('../../../modules/userList/Modern'));
-const Standard = React.lazy(() => import('../../../modules/userList/Standard'));
+const Flat = lazy(() => import('../../../modules/userList/Flat'));
+const Modern = lazy(() => import('../../../modules/userList/Modern'));
+const Standard = lazy(() => import('../../../modules/userList/Standard'));
 export const userListConfig = [
   {
     permittedRole: RoutePermittedRole.User,

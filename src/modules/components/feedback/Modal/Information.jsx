@@ -1,8 +1,7 @@
-import React from 'react';
 import { Button, Modal, Space } from 'antd';
 
 const Information = () => {
-  function info() {
+  const info=()=> {
     Modal.info({
       title: 'This is a Notification message',
       content: (
@@ -17,21 +16,21 @@ const Information = () => {
     });
   }
 
-  function success() {
+  const success=()=> {
     Modal.success({
       title: 'This is a success message',
       content: 'some messages...some messages...',
     });
   }
 
-  function error() {
+  const error=()=> {
     Modal.error({
       title: 'This is an error message',
       content: 'some messages...some messages...',
     });
   }
 
-  function warning() {
+  const warning=()=> {
     Modal.warning({
       title: 'This is a warning message',
       content: 'some messages...some messages...',

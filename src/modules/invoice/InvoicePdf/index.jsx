@@ -1,4 +1,3 @@
-import React from 'react';
 import InvoicePdf from './InvoicePdf';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
 import { useParams } from 'react-router-dom';

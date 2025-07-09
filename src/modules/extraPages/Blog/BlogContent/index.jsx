@@ -1,4 +1,3 @@
-import React from 'react';
 import BlogSidebarCard from '../BlogSidebarCard';
 import Blogs from './Blogs';
 import AppRowContainer from '@crema/components/AppRowContainer';

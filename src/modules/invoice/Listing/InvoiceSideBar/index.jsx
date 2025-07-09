@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppsSideBarFolderItem from '@crema/components/AppsSideBarFolderItem';
 import AppList from '@crema/components/AppList';

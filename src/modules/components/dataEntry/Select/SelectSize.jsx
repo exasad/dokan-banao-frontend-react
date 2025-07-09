@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Radio, Select, Space } from 'antd';
 
 import { StyledSelectSizes } from './SelectSize.styled';
@@ -10,12 +10,12 @@ for (let i = 10; i < 36; i++) {
   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }
 
-function handleChange(value) {
+const handleChange=(value)=> {
   console.log(`Selected: ${value}`);
 }
 
 const SeclectSize = () => {
-  const [size, setSize] = React.useState('default');
+  const [size, setSize] = useState('default');
 
   const handleSizeChange = (e) => {
     setSize(e.target.value);

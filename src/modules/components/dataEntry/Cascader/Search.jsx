@@ -1,4 +1,3 @@
-import React from 'react';
 import { Cascader, Space } from 'antd';
 
 const options = [
@@ -40,12 +39,11 @@ const options = [
     ],
   },
 ];
-
-function onChange(value, selectedOptions) {
-  console.log(value, selectedOptions);
+const onChange=(value, selectedOptions)=> {
+ console.log(value, selectedOptions);
 }
 
-function filter(inputValue, path) {
+const filter=(inputValue, path)=> {
   return path.some(
     (option) =>
       option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1,

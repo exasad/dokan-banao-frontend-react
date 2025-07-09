@@ -1,37 +1,37 @@
-import React from 'react';
+import { lazy } from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
-const Products = React.lazy(() =>
+const Products = lazy(() =>
   import('../../../modules/ecommerce/Products'),
 );
-const ProductDetail = React.lazy(() =>
+const ProductDetail = lazy(() =>
   import('../../../modules/ecommerce/ProductDetail'),
 );
-const Customers = React.lazy(() =>
+const Customers = lazy(() =>
   import('../../../modules/ecommerce/Customers'),
 );
-const Checkout = React.lazy(() =>
+const Checkout = lazy(() =>
   import('../../../modules/ecommerce/Checkout'),
 );
-const Carts = React.lazy(() => import('../../../modules/ecommerce/Carts'));
-const Orders = React.lazy(() => import('../../../modules/ecommerce/Orders'));
-const Confirmation = React.lazy(() =>
+const Carts = lazy(() => import('../../../modules/ecommerce/Carts'));
+const Orders = lazy(() => import('../../../modules/ecommerce/Orders'));
+const Confirmation = lazy(() =>
   import('../../../modules/ecommerce/Confirmation'),
 );
-const Invoice1 = React.lazy(() =>
+const Invoice1 = lazy(() =>
   import('../../../modules/ecommerce/Invoice1'),
 );
-const Invoice2 = React.lazy(() =>
+const Invoice2 = lazy(() =>
   import('../../../modules/ecommerce/Invoice2'),
 );
 
-const ProductListing = React.lazy(() =>
+const ProductListing = lazy(() =>
   import('../../../modules/ecommerce/Admin/Listing'),
 );
-const AddProduct = React.lazy(() =>
+const AddProduct = lazy(() =>
   import('../../../modules/ecommerce/Admin/AddEditProduct'),
 );
-const EditProduct = React.lazy(() =>
+const EditProduct = lazy(() =>
   import('../../../modules/ecommerce/Admin/EditProduct'),
 );
 

@@ -5,7 +5,6 @@ import {
   TwitterOutlined,
   YoutubeOutlined,
 } from '@ant-design/icons';
-import React from 'react';
 
 const Icon = () => {
   return (

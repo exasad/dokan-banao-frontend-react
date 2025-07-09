@@ -1,4 +1,3 @@
-import React from 'react';
 import AppLogo from '../components/AppLogo';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';

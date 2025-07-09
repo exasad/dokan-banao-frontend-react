@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppCard from '@crema/components/AppCard';
 import RecentContact from './RecentContact';
 import PropTypes from 'prop-types';

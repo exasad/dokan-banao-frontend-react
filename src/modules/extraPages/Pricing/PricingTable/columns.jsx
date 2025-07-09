@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircleOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import { StyledAmount, StyledBtn } from './index.styled';
 import { Typography } from 'antd';

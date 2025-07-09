@@ -1,4 +1,3 @@
-import React from 'react';
 import BtcGraph from './BtcGraph';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';

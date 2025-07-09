@@ -1,4 +1,3 @@
-import React from 'react';
 import { Line, LineChart } from 'recharts';
 import PropTypes from 'prop-types';
 import {

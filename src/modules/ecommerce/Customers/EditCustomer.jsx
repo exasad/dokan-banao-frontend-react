@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Button, Form, Input } from 'antd';
 import { StyledEditCustomerForm } from './index.styled';
 

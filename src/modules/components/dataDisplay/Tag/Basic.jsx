@@ -1,8 +1,7 @@
-import React from 'react';
 import { Space, Tag } from 'antd';
 
 const Basic = () => {
-  function log(e) {
+  const log=(e)=> {
     console.log(e);
   }
 

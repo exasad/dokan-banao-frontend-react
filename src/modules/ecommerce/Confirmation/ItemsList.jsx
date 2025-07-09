@@ -1,4 +1,3 @@
-import React from 'react';
 import AppList from '@crema/components/AppList';
 import PropTypes from 'prop-types';
 import AppRowContainer from '@crema/components/AppRowContainer';

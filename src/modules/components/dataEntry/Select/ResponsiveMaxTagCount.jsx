@@ -1,5 +1,5 @@
 import { Select, Space } from 'antd';
-import React from 'react';
+import { useState } from 'react';
 
 const options = [];
 
@@ -12,7 +12,7 @@ for (let i = 10; i < 36; i++) {
 }
 
 const ResponsiveMaxTagCount = () => {
-  const [value, setValue] = React.useState(['a10', 'c12', 'h17', 'j19', 'k20']);
+  const [value, setValue] = useState(['a10', 'c12', 'h17', 'j19', 'k20']);
   const selectProps = {
     mode: 'multiple',
     style: {

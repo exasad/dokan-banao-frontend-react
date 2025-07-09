@@ -1,4 +1,3 @@
-import React from 'react';
 import { Select } from 'antd';
 
 const Option = Select.Option;
@@ -9,7 +8,7 @@ for (let i = 10; i < 36; i++) {
 }
 
 const AutomaticCompletion = () => {
-  function handleChange(value) {
+  const handleChange=(value)=> {
     console.log(`selected ${value}`);
   }
 

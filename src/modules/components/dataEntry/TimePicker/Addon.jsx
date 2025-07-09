@@ -1,5 +1,5 @@
 import { Button, TimePicker } from 'antd';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Addon = () => {
   const [open, setOpen] = useState(false);

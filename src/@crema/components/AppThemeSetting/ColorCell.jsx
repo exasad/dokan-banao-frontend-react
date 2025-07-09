@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckOutlined, PlusOutlined } from '@ant-design/icons';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

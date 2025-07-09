@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, InputNumber, Space } from 'antd';
 
-class Disabled extends React.Component {
+class Disabled extends Component {
   state = {
     disabled: true,
   };

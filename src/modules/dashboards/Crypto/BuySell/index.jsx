@@ -1,4 +1,3 @@
-import React from 'react';
 import TabForm from './TabForm';
 import PropTypes from 'prop-types';
 import { StyledBuyCellCard, StyledTabs } from './index.styled';

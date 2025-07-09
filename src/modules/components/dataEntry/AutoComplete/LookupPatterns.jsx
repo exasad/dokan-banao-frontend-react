@@ -1,4 +1,3 @@
-import React from 'react';
 import { AutoComplete, Input, Space } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 

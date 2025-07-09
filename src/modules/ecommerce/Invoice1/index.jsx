@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppPageMeta from '@crema/components/AppPageMeta';
 import {

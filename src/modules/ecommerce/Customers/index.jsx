@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppsContainer from '@crema/components/AppsContainer';
 import { useIntl } from 'react-intl';
 import AppsHeader from '@crema/components/AppsContainer/AppsHeader';
@@ -27,7 +27,6 @@ const Customers = () => {
     { setQueryParams },
   ] = useGetDataApi('/api/ecommerce/customers', {}, {}, false);
 
-  console.log('customers', customers, customerCount);
   const [page, setPage] = useState(1);
   const [search, setSearchQuery] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);

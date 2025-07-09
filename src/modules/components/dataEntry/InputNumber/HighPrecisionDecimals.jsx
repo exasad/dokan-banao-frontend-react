@@ -1,7 +1,6 @@
 import { InputNumber } from 'antd';
-import React from 'react';
 
-function onChange(value) {
+const onChange=(value)=> {
   console.log('changed', value);
 }
 

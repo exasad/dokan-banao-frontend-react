@@ -1,7 +1,5 @@
 import { Slider } from 'antd';
 
-import React from 'react';
-
 const DraggableTrack = () => {
   return (
     <Slider

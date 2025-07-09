@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import ContentLoader from 'react-content-loader';
 
 const SidebarItem = () => (
@@ -9,14 +9,14 @@ const SidebarItem = () => (
 );
 const SidebarListSkeleton = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <SidebarItem />
       <SidebarItem />
       <SidebarItem />
       <SidebarItem />
       <SidebarItem />
       <SidebarItem />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

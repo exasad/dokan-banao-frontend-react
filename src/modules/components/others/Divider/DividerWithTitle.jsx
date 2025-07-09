@@ -1,5 +1,4 @@
 import { Divider } from 'antd';
-import React from 'react';
 
 const DividerWithTitle = () => {
   return (

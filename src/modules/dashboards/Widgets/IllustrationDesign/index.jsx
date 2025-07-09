@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { EyeFilled, HeartFilled, MessageFilled } from '@ant-design/icons';
 import {

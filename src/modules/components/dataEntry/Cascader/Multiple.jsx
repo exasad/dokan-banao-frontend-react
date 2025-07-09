@@ -1,5 +1,4 @@
 import { Cascader } from 'antd';
-import React from 'react';
 
 const options = [
   {
@@ -35,7 +34,7 @@ const options = [
   },
 ];
 
-function onChange(value) {
+const onChange=(value)=> {
   console.log(value);
 }
 

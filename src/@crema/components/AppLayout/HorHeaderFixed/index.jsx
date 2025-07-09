@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppSidebar from './AppSidebar';
 import AppHeader from './AppHeader';
 import AppContentView from '../../AppContentView';

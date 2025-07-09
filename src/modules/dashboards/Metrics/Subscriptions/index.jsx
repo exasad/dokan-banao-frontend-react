@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import SubscriptionGraph from './SubscriptionGraph';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';

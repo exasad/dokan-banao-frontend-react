@@ -1,13 +1,12 @@
-import React from 'react';
-import { momentLocalizer } from 'react-big-calendar';
+import { dayjsLocalizer } from 'react-big-calendar';
 import events from '../events';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { StyledCalendar } from '../index.styled';
 
-const localizer = momentLocalizer(moment);
+const localizer = dayjsLocalizer(dayjs);
 
-function Event({ event }) {
+const Event=({ event })=> {
   return (
     <span>
       <strong>{event.title}</strong>
@@ -20,7 +19,7 @@ Event.propTypes = {
   event: PropTypes.object,
 };
 
-function EventAgenda({ event }) {
+const EventAgenda=({ event })=> {
   return (
     <span>
       <em style={{ color: 'magenta' }}>{event.title}</em>

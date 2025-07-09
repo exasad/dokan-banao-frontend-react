@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge, Calendar, Space } from 'antd';
 import { StyledEvents, StyledNotesMonth } from './NoticeCalendar.styled';
 
@@ -34,7 +33,7 @@ const getListData = (value) => {
 };
 
 const NoticeCalendar = () => {
-  function dateCellRender(value) {
+  const dateCellRender=(value)=> {
     const listData = getListData(value);
     return (
       <StyledEvents>

@@ -1,4 +1,3 @@
-import React from 'react';
 import SocialVisitorsGraph from './SocialVisitorsGraph';
 import PropTypes from 'prop-types';
 import Categories from './Categories';

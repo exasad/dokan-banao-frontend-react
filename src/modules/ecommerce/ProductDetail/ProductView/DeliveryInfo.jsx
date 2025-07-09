@@ -1,4 +1,3 @@
-import React from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { Col, Tooltip } from 'antd';
 import {

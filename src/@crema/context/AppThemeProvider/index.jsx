@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ConfigProvider } from 'antd';
 import { ThemeProvider } from 'styled-components';
@@ -35,7 +35,7 @@ const AppThemeProvider = (props) => {
   );
 };
 
-export default React.memo(AppThemeProvider);
+export default AppThemeProvider;
 
 AppThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { DatePicker, Space } from 'antd';
 
 class CustomizedRangePicker extends Component {

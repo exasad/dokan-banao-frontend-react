@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import InvContentHeader from './InvContentHeader';
 import AppsHeader from '@crema/components/AppsContainer/AppsHeader';
 import AppsContent from '@crema/components/AppsContainer/AppsContent';
@@ -53,7 +53,6 @@ const InvoiceList = () => {
       });
   };
 
-  console.log('invoiceList', invoiceList);
   return !isEmptyObject(invoiceList) ? (
     <>
       <AppsHeader>

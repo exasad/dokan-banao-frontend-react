@@ -1,7 +1,5 @@
 import { Progress } from 'antd';
 
-import React from 'react';
-
 const ProgressBar = () => {
   return (
     <div style={{ minWidth: '90%' }}>

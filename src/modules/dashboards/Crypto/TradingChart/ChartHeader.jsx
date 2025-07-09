@@ -1,4 +1,3 @@
-import React from "react";
 import crypto from "@crema/mockapi/fakedb/dashboard/crypto";
 import CurrencyCell from "../BuySell/CurrencyCell";
 import {

@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Form, message, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 
-class AliyunOss extends React.Component {
+class AliyunOss extends Component {
   state = {
     OSSData: {},
   };

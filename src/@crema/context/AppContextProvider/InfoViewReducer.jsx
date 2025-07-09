@@ -6,7 +6,7 @@ export const InFoViewActions = {
   CLEAR_INFOVIEW: 'CLEAR_INFO_VIEW',
 };
 
-export function contextReducer(state, action) {
+export const contextReducer=(state, action)=> {
   switch (action.type) {
     case InFoViewActions.FETCH_STARTS: {
       return {

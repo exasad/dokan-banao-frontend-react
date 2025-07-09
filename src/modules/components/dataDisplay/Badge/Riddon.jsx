@@ -1,7 +1,5 @@
 import { Badge, Card } from 'antd';
 
-import React from 'react';
-
 const Riddon = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>

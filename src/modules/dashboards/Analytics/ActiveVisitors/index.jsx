@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import VisitorsGraph from './VisitorsGraph';
 import { useIntl } from 'react-intl';

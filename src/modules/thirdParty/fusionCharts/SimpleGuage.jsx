@@ -1,4 +1,3 @@
-import React from 'react';
 import FusionCharts from 'fusioncharts';
 import Widgets from 'fusioncharts/fusioncharts.widgets';
 import ReactFC from 'react-fusioncharts';

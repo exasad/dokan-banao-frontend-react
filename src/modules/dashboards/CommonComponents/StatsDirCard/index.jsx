@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Typography } from 'antd';
 import PropTypes from 'prop-types';
 import { Fonts } from '@crema/constants/AppEnums';

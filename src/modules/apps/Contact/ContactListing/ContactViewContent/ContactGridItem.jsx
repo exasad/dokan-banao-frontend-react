@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';
 import ItemMenu from './ItemMenu';

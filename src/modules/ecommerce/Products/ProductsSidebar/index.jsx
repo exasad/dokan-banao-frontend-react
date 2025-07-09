@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProductsCategory from './ProductsCategory';
 import PriceSelector from './PriceSelector';
 import AppList from '@crema/components/AppList';

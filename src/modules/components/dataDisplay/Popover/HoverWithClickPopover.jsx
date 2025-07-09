@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Popover } from 'antd';
 
-class HoverWithClickPopover extends React.Component {
+class HoverWithClickPopover extends Component {
   state = {
     clicked: false,
     hovered: false,

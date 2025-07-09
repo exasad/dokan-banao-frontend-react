@@ -1,5 +1,4 @@
 import { Cascader, Divider } from 'antd';
-import React from 'react';
 
 const options = [
   {
@@ -36,7 +35,7 @@ const options = [
   },
 ];
 
-function dropdownRender(menus) {
+const dropdownRender=(menus)=> {
   return (
     <div>
       {menus}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Input, Space } from 'antd';
 
 const { TextArea } = Input;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pie, PieChart, ResponsiveContainer } from 'recharts';
 import data from './data';
 

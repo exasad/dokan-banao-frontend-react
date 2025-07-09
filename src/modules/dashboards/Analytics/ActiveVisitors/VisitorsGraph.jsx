@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bar, BarChart, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 

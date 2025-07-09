@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Progress } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 
 const ButtonGroup = Button.Group;
 
-class DynamicBar extends React.Component {
+class DynamicBar extends Component {
   state = {
     percent: 0,
   };

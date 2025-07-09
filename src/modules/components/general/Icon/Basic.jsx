@@ -5,7 +5,6 @@ import {
   SmileOutlined,
   SyncOutlined,
 } from '@ant-design/icons';
-import React from 'react';
 import { Space } from 'antd';
 
 const Basic = () => {

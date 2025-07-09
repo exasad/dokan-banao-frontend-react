@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Radio, Timeline } from 'antd';
 
-function TimelimeLabelDemo() {
+const TimelimeLabelDemo=()=> {
   const [mode, setMode] = useState('left');
 
   const onChange = (e) => {

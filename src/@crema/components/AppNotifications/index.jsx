@@ -1,4 +1,3 @@
-import React from 'react';
 import { notification } from '@crema/mockapi/fakedb';
 import { Dropdown } from 'antd';
 

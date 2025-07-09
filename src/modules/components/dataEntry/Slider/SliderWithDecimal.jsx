@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Col, InputNumber, Row, Slider } from 'antd';
 
-class SliderWithDecimal extends React.Component {
+class SliderWithDecimal extends Component {
   state = {
     inputValue: 0,
   };

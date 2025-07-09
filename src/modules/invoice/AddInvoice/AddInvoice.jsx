@@ -1,7 +1,7 @@
 import AppCard from '@crema/components/AppCard';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import dayjs from 'dayjs';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GrClose } from 'react-icons/gr';
 import EditInvoiceTable from './EditTable';
 import { getFormattedDate } from '@crema/helpers/DateHelper';

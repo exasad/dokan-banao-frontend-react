@@ -1,4 +1,3 @@
-import React from 'react';
 import BlogSidebarCard from '../BlogSidebarCard';
 import BlogDetailHeader from './BlogDetailHeader';
 import BlogDetailContent from './BlogDetailContent';

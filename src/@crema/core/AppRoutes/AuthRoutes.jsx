@@ -1,14 +1,14 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Signin = React.lazy(() => import('../../../modules/auth/Signin'));
-const Signup = React.lazy(() => import('../../../modules/auth/Signup'));
-const ForgotPassword = React.lazy(() =>
+const Signin = lazy(() => import('../../../modules/auth/Signin'));
+const Signup = lazy(() => import('../../../modules/auth/Signup'));
+const ForgotPassword = lazy(() =>
   import('../../../modules/auth/ForgetPassword/ForgetPasswordJwtAuth'),
 );
-const ConfirmSignupAwsCognito = React.lazy(() =>
+const ConfirmSignupAwsCognito = lazy(() =>
   import('../../../modules/auth/Signup/ConfirmSignupAwsCognito'),
 );
-const ResetPasswordAwsCognito = React.lazy(() =>
+const ResetPasswordAwsCognito = lazy(() =>
   import('../../../modules/auth/ForgetPassword/ResetPasswordAwsCognito'),
 );
 export const authRouteConfig = [

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input } from 'antd';
 import IntlMessages from '@crema/helpers/IntlMessages';

@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import { Avatar, Switch } from 'antd';
 import PropTypes from 'prop-types';

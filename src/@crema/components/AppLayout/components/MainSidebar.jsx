@@ -1,4 +1,3 @@
-import React from 'react';
 import { Layout } from 'antd';
 import { ThemeMode } from '@crema/constants/AppEnums';
 import { useThemeContext } from '@crema/context/AppContextProvider/ThemeContextProvider';

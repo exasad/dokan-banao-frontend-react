@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Progress, Space } from 'antd';
 
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 
 const ButtonGroup = Button.Group;
 
-class DynamicCircularBar extends React.Component {
+class DynamicCircularBar extends Component {
   state = {
     percent: 0,
   };

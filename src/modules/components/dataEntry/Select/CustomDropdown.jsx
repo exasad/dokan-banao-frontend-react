@@ -1,12 +1,12 @@
 import { Divider, Input, Select } from 'antd';
-import React from 'react';
+import { Component } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
 let index = 0;
 
-class CustomDropdown extends React.Component {
+class CustomDropdown extends Component {
   state = {
     items: ['jack', 'lucy'],
     name: '',

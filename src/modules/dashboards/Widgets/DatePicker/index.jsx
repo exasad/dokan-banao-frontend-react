@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { StyledWidCalendarCard, StyledWidDateCalendar } from './index.styled';
 
 const DateSelector = () => {

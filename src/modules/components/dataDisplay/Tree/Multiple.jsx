@@ -1,11 +1,10 @@
 import { TreeSelect } from 'antd';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const { TreeNode } = TreeSelect;
 const Multiple = () => {
   const [value, setValue] = useState();
   const onChange = (newValue) => {
-    console.log(newValue);
     setValue(newValue);
   };
   return (

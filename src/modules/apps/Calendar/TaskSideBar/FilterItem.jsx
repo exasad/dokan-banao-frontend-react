@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledFlex, StyledTodoLabelItem } from './index.styled';
 import { Checkbox } from 'antd';

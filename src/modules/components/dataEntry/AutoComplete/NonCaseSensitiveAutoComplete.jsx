@@ -1,4 +1,3 @@
-import React from 'react';
 import { AutoComplete, Space } from 'antd';
 
 const options = [

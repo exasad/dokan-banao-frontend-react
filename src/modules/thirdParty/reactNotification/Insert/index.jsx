@@ -1,4 +1,3 @@
-import React from 'react';
 import { Store } from 'react-notifications-component';
 import notification from '../helpers/notification';
 import { getMessage, getTitle, getType } from '../helpers/randomize';

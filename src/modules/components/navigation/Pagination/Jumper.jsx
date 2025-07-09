@@ -1,7 +1,6 @@
-import React from 'react';
 import { Pagination, Space } from 'antd';
 
-function onChange(pageNumber) {
+const onChange=(pageNumber)=> {
   console.log('Page: ', pageNumber);
 }
 

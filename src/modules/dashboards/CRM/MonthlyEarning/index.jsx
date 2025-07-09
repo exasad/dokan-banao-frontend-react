@@ -1,4 +1,3 @@
-import React from 'react';
 import EarningGraph from './EarningGraph';
 import PropTypes from 'prop-types';
 import Categories from './Categories';

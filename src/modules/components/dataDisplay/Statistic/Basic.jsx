@@ -1,7 +1,5 @@
 import { Button, Col, Row, Statistic } from 'antd';
 
-import React from 'react';
-
 const Basic = () => {
   return (
     <Row gutter={16}>

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { AppstoreOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import clsx from 'clsx';

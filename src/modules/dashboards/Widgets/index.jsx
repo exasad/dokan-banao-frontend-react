@@ -1,4 +1,3 @@
-import React from "react";
 import AppRowContainer from "@crema/components/AppRowContainer";
 import { Col } from "antd";
 import IntlMessages from "@crema/helpers/IntlMessages";

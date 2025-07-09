@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactCodeInput from 'react-code-input';
 import { Form, Input } from 'antd';
 import IntlMessages from '@crema/helpers/IntlMessages';

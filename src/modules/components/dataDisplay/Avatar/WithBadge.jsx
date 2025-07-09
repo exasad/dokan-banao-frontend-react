@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, Badge, Space } from 'antd';
 import UserOutlined from '@ant-design/icons/lib/icons/UserOutlined';
 import { StyledAvatarItem } from './withBadge.styled';

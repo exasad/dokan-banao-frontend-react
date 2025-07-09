@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -45,7 +45,6 @@ const App = () => {
     setTheme(value ? 'dark' : 'light');
   };
   const onClick = (e) => {
-    console.log('click ', e);
     setCurrent(e.key);
   };
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox } from 'antd';
 import { StyledCategoryItem } from './index.styled';

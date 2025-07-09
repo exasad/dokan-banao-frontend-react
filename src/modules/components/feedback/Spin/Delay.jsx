@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Alert, Spin, Switch } from 'antd';
 
-class Delay extends React.Component {
+class Delay extends Component {
   state = { loading: false };
 
   toggle = (value) => {

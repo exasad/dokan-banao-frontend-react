@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { LayoutDirection } from '@crema/constants/AppEnums';
 import { useLayoutContext } from '@crema/context/AppContextProvider/LayoutContextProvider';

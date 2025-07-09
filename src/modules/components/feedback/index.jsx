@@ -1,15 +1,15 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Alert = React.lazy(() => import('./Alert'));
-const Modal = React.lazy(() => import('./Modal'));
-const Message = React.lazy(() => import('./Message'));
-const Notification = React.lazy(() => import('./Notification'));
-const Progress = React.lazy(() => import('./Progress'));
-const Spin = React.lazy(() => import('./Spin'));
-const PopConfirm = React.lazy(() => import('./PopConfirm'));
-const Drawer = React.lazy(() => import('./Drawer'));
-const Result = React.lazy(() => import('./Result'));
-const Skeleton = React.lazy(() => import('./Skeleton'));
+const Alert = lazy(() => import('./Alert'));
+const Modal = lazy(() => import('./Modal'));
+const Message = lazy(() => import('./Message'));
+const Notification = lazy(() => import('./Notification'));
+const Progress = lazy(() => import('./Progress'));
+const Spin = lazy(() => import('./Spin'));
+const PopConfirm = lazy(() => import('./PopConfirm'));
+const Drawer = lazy(() => import('./Drawer'));
+const Result = lazy(() => import('./Result'));
+const Skeleton = lazy(() => import('./Skeleton'));
 
 export const feedBackComponentConfigs = [
   {

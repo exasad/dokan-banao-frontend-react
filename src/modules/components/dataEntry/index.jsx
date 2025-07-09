@@ -1,22 +1,22 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const AutoComplete = React.lazy(() => import('./AutoComplete'));
-const Checkbox = React.lazy(() => import('./Checkbox'));
-const Cascader = React.lazy(() => import('./Cascader'));
-const Form = React.lazy(() => import('./Form'));
-const DatePicker = React.lazy(() => import('./DatePicker'));
-const InputNumber = React.lazy(() => import('./InputNumber'));
-const Input = React.lazy(() => import('./Input'));
-const Mention = React.lazy(() => import('./Mention'));
-const Rate = React.lazy(() => import('./Rate'));
-const Radio = React.lazy(() => import('./Radio'));
-const Select = React.lazy(() => import('./Select'));
-const Slider = React.lazy(() => import('./Slider'));
-const Switches = React.lazy(() => import('./Switches'));
-const TreeSelect = React.lazy(() => import('./TreeSelect'));
-const TimePicker = React.lazy(() => import('./TimePicker'));
-const Transfer = React.lazy(() => import('./Transfer'));
-const Upload = React.lazy(() => import('./Upload'));
+const AutoComplete = lazy(() => import('./AutoComplete'));
+const Checkbox = lazy(() => import('./Checkbox'));
+const Cascader = lazy(() => import('./Cascader'));
+const Form = lazy(() => import('./Form'));
+const DatePicker = lazy(() => import('./DatePicker'));
+const InputNumber = lazy(() => import('./InputNumber'));
+const Input = lazy(() => import('./Input'));
+const Mention = lazy(() => import('./Mention'));
+const Rate = lazy(() => import('./Rate'));
+const Radio = lazy(() => import('./Radio'));
+const Select = lazy(() => import('./Select'));
+const Slider = lazy(() => import('./Slider'));
+const Switches = lazy(() => import('./Switches'));
+const TreeSelect = lazy(() => import('./TreeSelect'));
+const TimePicker = lazy(() => import('./TimePicker'));
+const Transfer = lazy(() => import('./Transfer'));
+const Upload = lazy(() => import('./Upload'));
 
 export const dataEntryComponentConfigs = [
   {

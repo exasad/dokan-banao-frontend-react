@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress } from 'antd';
 import { StyledListFooter, StyledLoaderProgress } from './index.styled';
 import PropTypes from 'prop-types';

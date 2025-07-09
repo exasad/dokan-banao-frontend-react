@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pagination, Space } from 'antd';
 
 const More = () => {

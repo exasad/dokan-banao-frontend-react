@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import AppList from '@crema/components/AppList';
 import AppGrid from '@crema/components/AppGrid';

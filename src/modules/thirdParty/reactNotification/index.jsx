@@ -1,4 +1,3 @@
-import React from 'react';
 import { Col } from 'antd';
 import 'react-notifications-component/dist/theme.css';
 import AppComponentCard from '@crema/components/AppComponentCard';

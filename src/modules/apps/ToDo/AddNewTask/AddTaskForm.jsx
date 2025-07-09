@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -62,7 +61,6 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
       label: label,
       priority: priority,
     };
-    console.log(newTask);
     postDataApi('/api/todoApp/compose', infoViewActionsContext, {
       task: newTask,
     })
@@ -81,7 +79,6 @@ const AddTaskForm = ({ onCloseAddTask, selectedDate }) => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
     onCloseAddTask(true);
   };
 

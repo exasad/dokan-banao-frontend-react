@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Dropdown } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';
 

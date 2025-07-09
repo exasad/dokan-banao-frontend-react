@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';

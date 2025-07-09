@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import {
   Button,
   Col,
@@ -14,7 +14,7 @@ import { PlusOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
-class SubmitFormInDrawer extends React.Component {
+class SubmitFormInDrawer extends Component {
   state = { visible: false };
 
   showDrawer = () => {

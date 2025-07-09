@@ -1,4 +1,3 @@
-import React from 'react';
 import AppGrid from '@crema/components/AppGrid';
 import GridItem from './GridItem';
 import ListEmptyResult from '@crema/components/AppList/ListEmptyResult';

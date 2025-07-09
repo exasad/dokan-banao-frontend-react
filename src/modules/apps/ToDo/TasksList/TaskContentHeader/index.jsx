@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import CheckedTasksActions from './CheckedTasksActions';
@@ -68,7 +67,6 @@ const TaskContentHeader = (props) => {
   };
 
   const { messages } = useIntl();
-  console.log('pageView: ', viewMode);
   return (
     <>
       <StyledContentHeader>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import defaultConfig from '@crema/constants/defaultConfig';
 import PropTypes from 'prop-types';
 

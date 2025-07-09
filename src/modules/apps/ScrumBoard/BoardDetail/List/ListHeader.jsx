@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { HiCheck } from 'react-icons/hi';

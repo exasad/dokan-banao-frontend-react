@@ -1,39 +1,39 @@
-import React from 'react';
+import { lazy } from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
-const AboutUs = React.lazy(() => import('../../../modules/extraPages/AboutUs'));
-const ContactUs = React.lazy(() =>
+const AboutUs = lazy(() => import('../../../modules/extraPages/AboutUs'));
+const ContactUs = lazy(() =>
   import('../../../modules/extraPages/ContactUs'),
 );
-const KnowledgeBase = React.lazy(() =>
+const KnowledgeBase = lazy(() =>
   import('../../../modules/extraPages/KnowledgeBase'),
 );
-const UserProfile = React.lazy(() =>
+const UserProfile = lazy(() =>
   import('../../../modules/account/MyProfile'),
 );
-const Portfolio = React.lazy(() =>
+const Portfolio = lazy(() =>
   import('../../../modules/extraPages/Portfolio'),
 );
-const FAQ = React.lazy(() => import('../../../modules/extraPages/FAQ'));
+const FAQ = lazy(() => import('../../../modules/extraPages/FAQ'));
 
-const PortfolioDetail = React.lazy(() =>
+const PortfolioDetail = lazy(() =>
   import('../../../modules/extraPages/Portfolio/PortFolioPage'),
 );
-const PricingListing = React.lazy(() =>
+const PricingListing = lazy(() =>
   import('../../../modules/extraPages/Pricing'),
 );
-const PricingDetail = React.lazy(() =>
+const PricingDetail = lazy(() =>
   import('../../../modules/extraPages/Pricing/Detail'),
 );
-const Blog = React.lazy(() => import('../../../modules/extraPages/Blog'));
-const BlogDetail = React.lazy(() =>
+const Blog = lazy(() => import('../../../modules/extraPages/Blog'));
+const BlogDetail = lazy(() =>
   import('../../../modules/extraPages/Blog/DetailPage'),
 );
-const BlogCreate = React.lazy(() =>
+const BlogCreate = lazy(() =>
   import('../../../modules/extraPages/Blog/CreateBlog'),
 );
 
-const BlogEditPage = React.lazy(() =>
+const BlogEditPage = lazy(() =>
   import('../../../modules/extraPages/Blog/EditBlog'),
 );
 

@@ -1,8 +1,8 @@
 import { Radio } from 'antd';
-import React from 'react';
+import { useState } from 'react';
 
 const RadioGroup = () => {
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = useState(1);
 
   const onChange = (e) => {
     setValue(e.target.value);

@@ -1,8 +1,7 @@
 import { Calendar, Col, Radio, Row, Select, Typography } from 'antd';
-import React from 'react';
 
-function onPanelChange(value, mode) {
-  console.log(value, mode);
+const onPanelChange=(value, mode)=> {
+    console.log(value, mode);
 }
 
 const CustomHeader = () => {

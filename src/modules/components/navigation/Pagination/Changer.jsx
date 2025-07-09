@@ -1,7 +1,6 @@
-import React from 'react';
 import { Pagination, Space } from 'antd';
 
-function onShowSizeChange(current, pageSize) {
+const onShowSizeChange=(current, pageSize)=> {
   console.log(current, pageSize);
 }
 

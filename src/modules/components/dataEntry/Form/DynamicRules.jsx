@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Checkbox, Form, Input, Space } from 'antd';
 
 const formItemLayout = {

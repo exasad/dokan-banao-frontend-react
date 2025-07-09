@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Space, Transfer } from 'antd';
 import { StyledAntTransfer } from './index.styled';
 
-class Search extends React.Component {
+class Search extends Component {
   state = {
     mockData: [],
     targetKeys: [],

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, message, Popconfirm } from 'antd';
 import {
   StyledPopConfirmLeft,
@@ -9,7 +8,7 @@ import {
 const text = 'Are you sure delete this task?';
 
 const Placement = () => {
-  function confirm() {
+  const confirm=()=> {
     message.info('Click on Yes.');
   }
 

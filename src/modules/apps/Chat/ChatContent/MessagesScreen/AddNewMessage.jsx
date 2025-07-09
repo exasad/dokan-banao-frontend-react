@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { PaperClipOutlined, SendOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';

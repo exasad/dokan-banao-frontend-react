@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import AppAnimateGroup from '@crema/components/AppAnimateGroup';
 import AppInfoView from '@crema/components/AppInfoView';

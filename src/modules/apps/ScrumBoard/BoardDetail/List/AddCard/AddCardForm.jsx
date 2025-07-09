@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { useIntl } from 'react-intl';
 import dayjs from 'dayjs';
@@ -52,8 +51,6 @@ const AddCardForm = (props) => {
   const { messages } = useIntl();
   const infoViewActionsContext = useInfoViewActionsContext();
   const { labelList, memberList } = useScrumContext();
-
-  console.log('board, list: ', board, list);
   const onDeleteCheckedItem = (id) => {
     const updatedList = checkedList.filter((item) => item.id !== id);
     setCheckedList(updatedList);
@@ -102,7 +99,6 @@ const AddCardForm = (props) => {
   };
 
   const onFinish = (values) => {
-    console.log('values', values);
     if (selectedCard) {
       const editedCard = {
         ...selectedCard,

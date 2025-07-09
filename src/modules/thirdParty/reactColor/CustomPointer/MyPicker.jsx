@@ -1,4 +1,3 @@
-import React from 'react';
 import { CustomPicker } from 'react-color';
 import { Alpha } from 'react-color/lib/components/common';
 import MyPointer from './MyPointer';

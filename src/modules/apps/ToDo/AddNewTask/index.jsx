@@ -1,4 +1,3 @@
-import React from 'react';
 import AddTaskForm from './AddTaskForm';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
@@ -16,12 +15,12 @@ const AddNewTask = ({ isAddTaskOpen, selectedDate, onCloseAddTask }) => {
       onOk={isAddTaskOpen}
       onCancel={() => onCloseAddTask(false)}
     >
-      <StyledTodoModalScrollbar>
+      {/* <StyledTodoModalScrollbar> */}
         <AddTaskForm
           onCloseAddTask={onCloseAddTask}
           selectedDate={selectedDate}
         />
-      </StyledTodoModalScrollbar>
+      {/* </StyledTodoModalScrollbar> */}
     </StyledTodoModal>
   );
 };

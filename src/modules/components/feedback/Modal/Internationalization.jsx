@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Modal, Space } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 
-class LocalizedModal extends React.Component {
+class LocalizedModal extends Component {
   state = { visible: false };
 
   showModal = () => {
@@ -40,7 +40,7 @@ class LocalizedModal extends React.Component {
   }
 }
 
-function confirm() {
+const confirm=()=> {
   Modal.confirm({
     title: 'Confirm',
     icon: <ExclamationCircleOutlined />,

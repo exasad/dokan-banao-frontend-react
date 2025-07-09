@@ -1,8 +1,7 @@
-import React from 'react';
 import { Pagination, Space } from 'antd';
 
 const MiniSize = () => {
-  function showTotal(total) {
+  const showTotal=(total)=> {
     return `Total ${total} items`;
   }
 

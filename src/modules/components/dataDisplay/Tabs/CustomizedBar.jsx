@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button, Tabs } from 'antd';
 
 const defaultPanes = new Array(2).fill(null).map((_, index) => {

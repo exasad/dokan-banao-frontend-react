@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Divider, Radio, Space, Table } from 'antd';
 
 const columns = [

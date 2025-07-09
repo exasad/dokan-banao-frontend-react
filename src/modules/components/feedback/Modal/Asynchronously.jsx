@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Modal, Space } from 'antd';
 
-class Asynchronously extends React.Component {
+class Asynchronously extends Component {
   state = {
     ModalText: 'Content of the modal',
     visible: false,
@@ -25,7 +25,6 @@ class Asynchronously extends React.Component {
     }, 2000);
   };
   handleCancel = () => {
-    console.log('Clicked cancel button');
     this.setState({
       visible: false,
     });

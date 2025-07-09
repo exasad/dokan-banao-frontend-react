@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { CustomPicker } from 'react-color';
 import { EditableInput, Hue } from 'react-color/lib/components/common';
 import PropTypes from 'prop-types';

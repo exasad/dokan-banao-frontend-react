@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BlogCommentForm from './BlogCommentForm';
 import BlogCommentList from './BlogCommentList';
 import PropTypes from 'prop-types';

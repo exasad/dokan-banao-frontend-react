@@ -1,8 +1,7 @@
-import React from 'react';
 import { Calendar, Space } from 'antd';
 
 const CalendarCard = () => {
-  function onPanelChange(value, mode) {
+  const onPanelChange=(value, mode)=> {
     console.log(value, mode);
   }
 

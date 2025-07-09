@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { MdComment, MdOutlineAttachment } from 'react-icons/md';
 import { StarFilled, StarOutlined } from '@ant-design/icons';

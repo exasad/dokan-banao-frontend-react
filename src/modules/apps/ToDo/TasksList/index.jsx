@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import TaskContentHeader from './TaskContentHeader';
 import AddNewTask from '../AddNewTask';
 import AppsPagination from '@crema/components/AppsPagination';

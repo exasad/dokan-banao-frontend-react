@@ -1,6 +1,5 @@
 import { PageHeader } from '@ant-design/pro-layout';
 import { Button, Descriptions, Statistic, Tabs } from 'antd';
-import React from 'react';
 import PropTypes from 'prop-types';
 
 const renderContent = (column = 2) => (

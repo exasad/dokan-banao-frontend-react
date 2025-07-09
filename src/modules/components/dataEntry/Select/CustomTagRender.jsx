@@ -1,5 +1,4 @@
 import { Select, Tag } from 'antd';
-import React from 'react';
 
 const options = [
   { value: 'gold' },
@@ -8,7 +7,7 @@ const options = [
   { value: 'cyan' },
 ];
 
-function tagRender(props) {
+const tagRender=(props)=> {
   const { label, value, closable, onClose } = props;
   const onPreventMouseDown = (event) => {
     event.preventDefault();

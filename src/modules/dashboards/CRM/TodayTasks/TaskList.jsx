@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox, List } from 'antd';
 import { StyledTaskListItem } from './index,styled';

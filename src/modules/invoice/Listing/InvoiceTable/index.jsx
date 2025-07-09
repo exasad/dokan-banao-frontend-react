@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Table, Typography } from 'antd';
 import OrderActions from './OrderActions';

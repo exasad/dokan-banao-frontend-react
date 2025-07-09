@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import dayjs from "dayjs";
 import { useIntl } from "react-intl";
 import PropTypes from "prop-types";
@@ -23,8 +23,7 @@ import JoditEditor from "jodit-react";
 const config = {
   readonly: false, // all options from https://xdsoft.net/jodit/doc/
   toolbar: true,
-  minHeight: 300,
-  maxHeight: 500,
+  height: 300,
   buttons: [
     "source",
     "|",

@@ -1,4 +1,3 @@
-import React from "react";
 import AppCard from "@crema/components/AppCard";
 import IntlMessages from "@crema/helpers/IntlMessages";
 import AppAnimate from "@crema/components/AppAnimate";
@@ -6,7 +5,7 @@ import AppRowContainer from "@crema/components/AppRowContainer";
 import { Col } from "antd";
 import { Link } from "react-router-dom";
 import AppPageMeta from "@crema/components/AppPageMeta";
-import QueueAnim from "rc-queue-anim";
+import { motion, AnimatePresence } from 'framer-motion';
 import DeliveryAddress from "./DeliveryAddress";
 import PaymentInfo from "./PaymentInfo";
 import OrderSummary from "../OrderSummary";
@@ -23,11 +22,11 @@ const Checkout = () => {
   return (
     <>
       <AppPageMeta title="Checkout" />
-      <QueueAnim style={{ zIndex: 3 }} type="scale">
-        <h2 className="page-title" key="title">
+      <AnimatePresence style={{ zIndex: 3 }} type="scale">
+        <motion.h2 className="page-title" key="title">
           <IntlMessages id="sidebar.ecommerce.checkout" />
-        </h2>
-      </QueueAnim>
+        </motion.h2>
+      </AnimatePresence>
       <AppRowContainer>
         <Col xs={24} lg={16}>
           <AppAnimate animation="transition.slideLeftIn" delay={200}>

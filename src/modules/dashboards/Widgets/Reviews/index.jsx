@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import ReviewItem from './ReviewItem';
 import AppCard from '@crema/components/AppCard';

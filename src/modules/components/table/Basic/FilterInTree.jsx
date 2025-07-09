@@ -1,5 +1,4 @@
 import { Table } from 'antd';
-import React from 'react';
 
 const columns = [
   {
@@ -95,7 +94,7 @@ const data = [
   },
 ];
 
-function onChange(pagination, filters, sorter, extra) {
+const onChange=(pagination, filters, sorter, extra)=> {
   console.log('params', pagination, filters, sorter, extra);
 }
 

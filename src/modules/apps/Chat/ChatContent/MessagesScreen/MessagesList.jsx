@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import SenderMessageItem from './SenderMessageItem';
 import ReceiverMessageItem from './ReceiverMessageItem';
@@ -14,7 +13,6 @@ const MessagesList = ({
   onClickEditMessage,
   deleteMessage,
 }) => {
-  console.log('userMessages', userMessages);
   return (
     <StyledChatMsgList>
       <AppList

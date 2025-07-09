@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import BlogDetailHeaderWrapper from './BlogDetailHeaderWrapper';
 import { BiCommentDetail, BiUserCircle } from 'react-icons/bi';

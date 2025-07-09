@@ -1,5 +1,5 @@
 import { Switch, Transfer } from 'antd';
-import React from 'react';
+import { Component } from 'react';
 
 const mockData = [];
 for (let i = 0; i < 20; i++) {
@@ -15,7 +15,7 @@ const oriTargetKeys = mockData
   .filter((item) => +item.key % 3 > 1)
   .map((item) => item.key);
 
-class OneWay extends React.Component {
+class OneWay extends Component {
   state = {
     targetKeys: oriTargetKeys,
     selectedKeys: [],
@@ -24,16 +24,12 @@ class OneWay extends React.Component {
 
   handleChange = (nextTargetKeys, direction, moveKeys) => {
     this.setState({ targetKeys: nextTargetKeys });
-
-    console.log('targetKeys: ', direction, moveKeys, nextTargetKeys);
   };
 
   handleSelectChange = (sourceSelectedKeys, targetSelectedKeys) => {
     this.setState({
       selectedKeys: [...sourceSelectedKeys, ...targetSelectedKeys],
     });
-
-    console.log('targetSelectedKeys: ', sourceSelectedKeys, targetSelectedKeys);
   };
 
   handleScroll = (direction, e) => {

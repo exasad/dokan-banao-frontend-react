@@ -1,13 +1,12 @@
-import React from 'react';
 import { message, Popconfirm, Space } from 'antd';
 
 const Basic = () => {
-  function confirm(e) {
+  const confirm=(e)=> {
     console.log(e);
     message.success('Click on Yes');
   }
 
-  function cancel(e) {
+  const cancel=(e)=> {
     console.log(e);
     message.error('Click on No');
   }

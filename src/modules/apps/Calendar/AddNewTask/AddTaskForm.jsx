@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -81,7 +80,6 @@ const AddTaskForm = ({ onCloseAddTask }) => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
     onCloseAddTask(true);
   };
 

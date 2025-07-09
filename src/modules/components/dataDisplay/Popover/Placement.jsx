@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Popover, Space } from 'antd';
 import {
   StyledPopOverLeft,

@@ -1,23 +1,23 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Avatar = React.lazy(() => import('./Avatar'));
-const Badge = React.lazy(() => import('./Badge'));
-const Collapse = React.lazy(() => import('./Collapse'));
-const Calendar = React.lazy(() => import('./Calendar'));
-const Cards = React.lazy(() => import('./Cards'));
-const Carousel = React.lazy(() => import('./Carousel'));
-const List = React.lazy(() => import('./List'));
-const Popover = React.lazy(() => import('./Popover'));
-const Tree = React.lazy(() => import('./Tree'));
-const Tooltip = React.lazy(() => import('./Tooltip'));
-const TimeLine = React.lazy(() => import('./TimeLine'));
-const Tag = React.lazy(() => import('./Tag'));
-const Tabs = React.lazy(() => import('./Tabs'));
-const Comment = React.lazy(() => import('./Comment'));
-const Descriptions = React.lazy(() => import('./Descriptions'));
-const Empty = React.lazy(() => import('./Empty'));
-const Image = React.lazy(() => import('./Image'));
-const Statistic = React.lazy(() => import('./Statistic'));
+const Avatar = lazy(() => import('./Avatar'));
+const Badge = lazy(() => import('./Badge'));
+const Collapse = lazy(() => import('./Collapse'));
+const Calendar = lazy(() => import('./Calendar'));
+const Cards = lazy(() => import('./Cards'));
+const Carousel = lazy(() => import('./Carousel'));
+const List = lazy(() => import('./List'));
+const Popover = lazy(() => import('./Popover'));
+const Tree = lazy(() => import('./Tree'));
+const Tooltip = lazy(() => import('./Tooltip'));
+const TimeLine = lazy(() => import('./TimeLine'));
+const Tag = lazy(() => import('./Tag'));
+const Tabs = lazy(() => import('./Tabs'));
+const Comment = lazy(() => import('./Comment'));
+const Descriptions = lazy(() => import('./Descriptions'));
+const Empty = lazy(() => import('./Empty'));
+const Image = lazy(() => import('./Image'));
+const Statistic = lazy(() => import('./Statistic'));
 
 export const dataDisplayComponentConfigs = [
   {

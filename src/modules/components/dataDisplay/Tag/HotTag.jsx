@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Space, Tag } from 'antd';
 
 const CheckableTag = Tag.CheckableTag;

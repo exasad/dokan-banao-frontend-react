@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import MarketingTable from './MarketingTable';
 import PropTypes from 'prop-types';

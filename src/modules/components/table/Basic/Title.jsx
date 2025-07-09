@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space, Table } from 'antd';
 
 const columns = [

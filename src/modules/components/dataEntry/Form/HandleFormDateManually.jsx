@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Form, InputNumber } from 'antd';
 
-function validatePrimeNumber(number) {
+const validatePrimeNumber=(number)=> {
   if (number === 11) {
     return {
       validateStatus: 'success',

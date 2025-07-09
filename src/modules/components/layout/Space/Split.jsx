@@ -1,7 +1,6 @@
 import { Divider, Space, Typography } from 'antd';
-import React from 'react';
 
-function SpaceSplit() {
+const SpaceSplit=()=> {
   return (
     <Space split={<Divider type='vertical' />}>
       <Typography.Link>Link</Typography.Link>

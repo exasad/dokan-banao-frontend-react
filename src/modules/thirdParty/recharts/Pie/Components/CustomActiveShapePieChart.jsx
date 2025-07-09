@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Pie, PieChart, ResponsiveContainer, Sector } from 'recharts';
 import data from './data';
 

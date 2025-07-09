@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import StatGraphs from './StatGraphs';
 import PropTypes from 'prop-types';
 import AppSelect from '@crema/components/AppSelect';

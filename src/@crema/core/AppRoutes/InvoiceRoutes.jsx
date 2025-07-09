@@ -1,23 +1,23 @@
-import React from 'react';
+import { lazy } from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 import { Navigate } from 'react-router-dom';
 
-const AddInvoice = React.lazy(() =>
+const AddInvoice = lazy(() =>
   import('../../../modules/invoice/AddInvoice'),
 );
-const EditInvoice = React.lazy(() =>
+const EditInvoice = lazy(() =>
   import('../../../modules/invoice/EditInvoice'),
 );
-const Clients = React.lazy(() => import('../../../modules/invoice/Clients'));
-const AddClients = React.lazy(() =>
+const Clients = lazy(() => import('../../../modules/invoice/Clients'));
+const AddClients = lazy(() =>
   import('../../../modules/invoice/Clients/AddClients'),
 );
-const EditClients = React.lazy(() =>
+const EditClients = lazy(() =>
   import('../../../modules/invoice/Clients/EditClients'),
 );
-const Listing = React.lazy(() => import('../../../modules/invoice/Listing'));
-const Settings = React.lazy(() => import('../../../modules/invoice/Settings'));
-const InvoicePdf = React.lazy(() =>
+const Listing = lazy(() => import('../../../modules/invoice/Listing'));
+const Settings = lazy(() => import('../../../modules/invoice/Settings'));
+const InvoicePdf = lazy(() =>
   import('../../../modules/invoice/InvoicePdf'),
 );
 

@@ -1,10 +1,10 @@
 // import React, {useState} from 'react';
-// import {momentLocalizer, Views} from 'react-big-calendar';
+// import {dayjsLocalizer, Views} from 'react-big-calendar';
 // import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop';
 //
 // import eventsData from '../events';
 // import 'react-big-calendar/lib/addons/dragAndDrop/styles.css';
-// import moment from 'moment';
+// import dayjs from 'dayjs';
 // import {StyledCalendar} from '../index.styled';
 //
 // const DragAndDropCalendar = withDragAndDrop(StyledCalendar);
@@ -59,7 +59,7 @@
 //     <DragAndDropCalendar
 //       className='app-calendar'
 //       selectable
-//       localizer={momentLocalizer(moment)}
+//       localizer = {dayjsLocalizer(dayjs)};
 //       events={events}
 //       onEventDrop={moveEvent}
 //       resizable
@@ -73,8 +73,6 @@
 // };
 //
 // export default Dnd;
-import React from 'react';
-
 const Index = () => {
   return <div>hi</div>;
 };

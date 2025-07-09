@@ -1,4 +1,3 @@
-import React from 'react';
 import SlideItem from './SlideItem';
 import AppCard from '@crema/components/AppCard';
 import Slider from 'react-slick';

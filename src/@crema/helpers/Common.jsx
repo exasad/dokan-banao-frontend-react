@@ -71,7 +71,7 @@ export const multiPropsFilter = (products, filters, stringKey = 'title') => {
 // 'intl' service singleton reference
 let intl;
 
-export function IntlGlobalProvider({ children }) {
+export const IntlGlobalProvider=({ children })=> {
   intl = useIntl();
   // Keep the 'intl' service reference
   return children;

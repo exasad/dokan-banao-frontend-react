@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Avatar, Col, Divider, Drawer, List, Row } from 'antd';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ const DescriptionItem = ({ title, content }) => (
   </div>
 );
 
-class PreviewDrawer extends React.Component {
+class PreviewDrawer extends Component {
   state = { visible: false };
 
   showDrawer = () => {

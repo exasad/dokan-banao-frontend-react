@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Tabs } from 'antd';
 import { AndroidOutlined, AppleOutlined } from '@ant-design/icons';
 

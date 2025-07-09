@@ -1,19 +1,34 @@
-import  { useState } from 'react';
-import { momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
+import React,{ useState } from 'react';
+import { dateFnsLocalizer } from 'react-big-calendar'
 import PropTypes from 'prop-types';
-import { StyledCalendar } from './Calendar.style';
 import { useNavigate, useParams } from 'react-router-dom';
 import './calendar.css';
 import CustomToolbar from './CustomToolbar';
 import TaskItem from './TaskItem';
-import 'react-big-calendar/lib/addons/dragAndDrop/styles.css';
-import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop';
+import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+import 'react-big-calendar/lib/css/react-big-calendar.css'
+import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
 import AppsHeader from '@crema/components/AppsContainer/AppsHeader';
+import format from 'date-fns/format'
+import parse from 'date-fns/parse'
+import startOfWeek from 'date-fns/startOfWeek'
+import getDay from 'date-fns/getDay'
+import enUS from 'date-fns/locale/en-US'
+import {StyledCalendar} from "./Calendar.style.jsx";
 
-const DragAndDropCalendar = withDragAndDrop(StyledCalendar);
+const locales = {
+  'en-US': enUS,
+}
 
-const localizer = momentLocalizer(moment);
+const DnDCalendar = withDragAndDrop(StyledCalendar)
+
+const localizer = dateFnsLocalizer({
+  format,
+  parse,
+  startOfWeek,
+  getDay,
+  locales,
+})
 
 const TaskCalender = ({ taskList, onUpdateTask, onSetFilterText }) => {
   const navigate = useNavigate();
@@ -21,7 +36,6 @@ const TaskCalender = ({ taskList, onUpdateTask, onSetFilterText }) => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const onSelectDate = ({ start }) => {
-    console.log('start: ', start);
     setSelectedDate(start);
   };
 
@@ -34,7 +48,6 @@ const TaskCalender = ({ taskList, onUpdateTask, onSetFilterText }) => {
   };
   const resizeEvent = ({ event, start, end }) => {
     onUpdateTask({ ...event, startDate: start, endDate: end });
-    console.log('resizeEvent: ', event, start, end);
   };
 
   const onViewTaskDetail = (task) => {
@@ -51,19 +64,19 @@ const TaskCalender = ({ taskList, onUpdateTask, onSetFilterText }) => {
         return {
           ...task,
           title: task.title,
-          start: task.startDate,
-          end: task.endDate,
+          start: new Date(task.startDate),
+          end: new Date(task.endDate),
         };
       });
     return [];
   };
   return (
-    <DragAndDropCalendar
+      <DnDCalendar
       localizer={localizer}
       events={getEvents()}
-      themeVariant='dark'
+      // themeVariant='dark'
       views={['month', 'agenda']}
-      tooltipAccessor={null}
+      tooltipAccessor={undefined}
       showMultiDayTimes
       resizable
       onEventResize={resizeEvent}
@@ -75,13 +88,14 @@ const TaskCalender = ({ taskList, onUpdateTask, onSetFilterText }) => {
             <CustomToolbar onSetFilterText={onSetFilterText} {...props} />
           </AppsHeader>
         ),
-        event: (item) => <TaskItem key={item.key} item={item.event} />,
+        event: ({ event }) => <TaskItem item={event} />,
       }}
       popup
       selectable
       onSelectSlot={onSelectDate}
       defaultView='month'
     />
+
   );
 };
 export default TaskCalender;

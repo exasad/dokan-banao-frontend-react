@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';

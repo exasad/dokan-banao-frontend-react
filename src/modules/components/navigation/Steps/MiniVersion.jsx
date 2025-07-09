@@ -1,4 +1,3 @@
-import React from 'react';
 import { Steps } from 'antd';
 
 const App = () => (

@@ -1,5 +1,4 @@
 import { Button, Empty } from 'antd';
-import React from 'react';
 
 const Customize = () => {
   return (

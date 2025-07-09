@@ -1,5 +1,5 @@
 import { Mentions } from 'antd';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const { Option } = Mentions;
 const MOCK_DATA = {

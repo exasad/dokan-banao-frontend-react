@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown } from 'antd';
 import AppLogo from '../components/AppLogo';
 import { useIntl } from 'react-intl';
@@ -26,7 +25,6 @@ const items = [
 
 const AppHeader = ({ showDrawer }) => {
   const { messages } = useIntl();
-  console.log('testing');
   return (
     <StyledDrawerLayoutHeader>
       <a className='trigger' onClick={showDrawer}>

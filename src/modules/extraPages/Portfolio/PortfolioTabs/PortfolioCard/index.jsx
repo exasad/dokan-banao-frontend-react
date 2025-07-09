@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { FiSearch } from 'react-icons/fi';
 import { AiOutlineLink } from 'react-icons/ai';

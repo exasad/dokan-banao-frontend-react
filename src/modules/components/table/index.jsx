@@ -1,6 +1,6 @@
-import React from "react";
+import { lazy } from "react";
 
-const Basic = React.lazy(() => import("./Basic"));
+const Basic = lazy(() => import("./Basic"));
 
 export const tableComponentConfigs = [
   {

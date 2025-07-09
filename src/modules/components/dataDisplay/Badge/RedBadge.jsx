@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge, Space } from 'antd';
 import NotificationOutlined from '@ant-design/icons/lib/icons/NotificationOutlined';
 

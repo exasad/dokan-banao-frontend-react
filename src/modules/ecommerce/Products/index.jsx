@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import ProductListing from './ProductListing';
 import { useIntl } from 'react-intl';
 import AppsContainer from '@crema/components/AppsContainer';
@@ -13,7 +13,7 @@ export const VIEW_TYPE = {
 
 const Products = () => {
   const { messages } = useIntl();
-  const [filterData, setFilterData] = React.useState({
+  const [filterData, setFilterData] = useState({
     title: '',
     brand: [],
     ideaFor: [],
@@ -21,7 +21,7 @@ const Products = () => {
     color: [],
     rating: [],
   });
-  const [viewType, setViewType] = React.useState(VIEW_TYPE.GRID);
+  const [viewType, setViewType] = useState(VIEW_TYPE.GRID);
   return (
     <AppsContainer
       title={messages['sidebar.ecommerce.products']}

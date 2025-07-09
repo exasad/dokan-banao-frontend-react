@@ -1,10 +1,9 @@
-import React from 'react';
-import { useDropzone } from 'react-dropzone';
-import { useIntl } from 'react-intl';
-import PropTypes from 'prop-types';
-import IntlMessages from '@crema/helpers/IntlMessages';
-import { DatePicker, Form, Input, Select } from 'antd';
-import dayjs from 'dayjs';
+import { useDropzone } from "react-dropzone";
+import { useIntl } from "react-intl";
+import PropTypes from "prop-types";
+import IntlMessages from "@crema/helpers/IntlMessages";
+import { DatePicker, Form, Input, Select } from "antd";
+import dayjs from "dayjs";
 import {
   StyledContactForm,
   StyledContactFormAvatar,
@@ -17,11 +16,11 @@ import {
   StyledContactFormHeaderTitle,
   StyledContactFormItemTitle,
   StyledContactModalScrollbar,
-} from './index.styled';
-import { postDataApi, putDataApi } from '@crema/hooks/APIHooks';
-import { useInfoViewActionsContext } from '@crema/context/AppContextProvider/InfoViewContextProvider';
-import { useContactContext } from '../../context/ContactContextProvider';
-import { generateRandomUniqueNumber } from '@crema/helpers/Common';
+} from "./index.styled";
+import { postDataApi, putDataApi } from "@crema/hooks/APIHooks";
+import { useInfoViewActionsContext } from "@crema/context/AppContextProvider/InfoViewContextProvider";
+import { useContactContext } from "../../context/ContactContextProvider";
+import { generateRandomUniqueNumber } from "@crema/helpers/Common";
 
 const AddContactForm = (props) => {
   const {
@@ -36,9 +35,9 @@ const AddContactForm = (props) => {
   const infoViewActionsContext = useInfoViewActionsContext();
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
-      'image/jpeg': [],
-      'image/png': [],
-      '.pdf': [],
+      "image/jpeg": [],
+      "image/png": [],
+      ".pdf": [],
     },
     onDrop: (acceptedFiles) => {
       setUserImage(URL.createObjectURL(acceptedFiles[0]));
@@ -51,7 +50,7 @@ const AddContactForm = (props) => {
 
   const onFinish = (values) => {
     if (values.birthday)
-      values.birthday = dayjs(values.birthday).format('DD-MM-YYYY');
+      values.birthday = dayjs(values.birthday).format("DD-MM-YYYY");
     if (selectContact) {
       const newContact = {
         id: selectContact.id,
@@ -60,12 +59,12 @@ const AddContactForm = (props) => {
         image: userImage,
         ...values,
       };
-      putDataApi('/api/contactApp/contact/', infoViewActionsContext, {
+      putDataApi("/api/contactApp/contact/", infoViewActionsContext, {
         contact: newContact,
       })
         .then(() => {
           reCallAPI();
-          infoViewActionsContext.showMessage('Contact updated successfully!');
+          infoViewActionsContext.showMessage("Contact updated successfully!");
         })
         .catch((error) => {
           infoViewActionsContext.fetchError(error.message);
@@ -81,12 +80,12 @@ const AddContactForm = (props) => {
         ...values,
       };
 
-      postDataApi('/api/contactApp/compose', infoViewActionsContext, {
+      postDataApi("/api/contactApp/compose", infoViewActionsContext, {
         contact: newContact,
       })
         .then(() => {
           reCallAPI();
-          infoViewActionsContext.showMessage('Contact created successfully!');
+          infoViewActionsContext.showMessage("Contact created successfully!");
         })
         .catch((error) => {
           infoViewActionsContext.fetchError(error.message);
@@ -97,20 +96,20 @@ const AddContactForm = (props) => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
 
-  console.log('selectContact: ', selectContact);
+  console.log("selectContact: ", selectContact);
   return (
     <StyledContactForm
-      name='basic'
+      name="basic"
       initialValues={
         selectContact
           ? {
               ...selectContact,
               birthday: selectContact.birthday
-                ? dayjs(selectContact.birthday, 'MMM DD,YYYY')
-                : '',
+                ? dayjs(selectContact.birthday, "MMM DD,YYYY")
+                : "",
             }
           : {}
       }
@@ -118,9 +117,9 @@ const AddContactForm = (props) => {
       onFinishFailed={onFinishFailed}
     >
       <StyledContactFormHeader>
-        <Form.Item {...getRootProps({ className: 'dropzone' })}>
+        <Form.Item {...getRootProps({ className: "dropzone" })}>
           <input {...getInputProps()} />
-          <label htmlFor='icon-button-file'>
+          <label htmlFor="icon-button-file">
             <StyledContactFormAvatar src={userImage} />
           </label>
         </Form.Item>
@@ -135,38 +134,38 @@ const AddContactForm = (props) => {
         <StyledContactFormContent>
           <StyledContactFormContentItem>
             <StyledContactFormItemTitle>
-              <IntlMessages id='contactApp.personalDetails' />
+              <IntlMessages id="contactApp.personalDetails" />
             </StyledContactFormItemTitle>
 
             <StyledContactFormContentField>
               <Form.Item
-                className='form-field'
-                name='name'
-                rules={[{ required: true, message: 'Please input your Name!' }]}
+                className="form-field"
+                name="name"
+                rules={[{ required: true, message: "Please input your Name!" }]}
               >
-                <Input placeholder={messages['common.name']} />
+                <Input placeholder={messages["common.name"]} />
               </Form.Item>
 
-              <Form.Item className='form-field' name='email'>
-                <Input placeholder={messages['common.email']} />
+              <Form.Item className="form-field" name="email">
+                <Input placeholder={messages["common.email"]} />
               </Form.Item>
 
               <Form.Item
-                className='form-field'
-                name='contact'
+                className="form-field"
+                name="contact"
                 rules={[
-                  { required: true, message: 'Please input your Phone!' },
+                  { required: true, message: "Please input your Phone!" },
                 ]}
               >
-                <Input placeholder={messages['common.phone']} />
+                <Input placeholder={messages["common.phone"]} />
               </Form.Item>
 
-              <Form.Item className='form-field' name='birthday'>
+              <Form.Item className="form-field" name="birthday">
                 <DatePicker />
               </Form.Item>
 
-              <Form.Item className='form-field' name='label'>
-                <Select placeholder='Select Label'>
+              <Form.Item className="form-field" name="label">
+                <Select placeholder="Select Label">
                   {labelList.map((label) => {
                     return (
                       <Option value={label.id} key={label.id}>
@@ -177,68 +176,68 @@ const AddContactForm = (props) => {
                 </Select>
               </Form.Item>
 
-              <Form.Item className='form-field' name='website'>
-                <Input placeholder={messages['common.website']} />
+              <Form.Item className="form-field" name="website">
+                <Input placeholder={messages["common.website"]} />
               </Form.Item>
             </StyledContactFormContentField>
           </StyledContactFormContentItem>
 
           <StyledContactFormContentItem>
             <StyledContactFormItemTitle>
-              <IntlMessages id='common.otherDetails' />
+              <IntlMessages id="common.otherDetails" />
             </StyledContactFormItemTitle>
 
             <StyledContactFormContentField>
-              <Form.Item className='form-field' name='company'>
-                <Input placeholder={messages['common.company']} />
+              <Form.Item className="form-field" name="company">
+                <Input placeholder={messages["common.company"]} />
               </Form.Item>
 
-              <Form.Item className='form-field' name='address'>
-                <Input placeholder={messages['common.address']} />
+              <Form.Item className="form-field" name="address">
+                <Input placeholder={messages["common.address"]} />
               </Form.Item>
             </StyledContactFormContentField>
           </StyledContactFormContentItem>
 
           <StyledContactFormContentItem>
             <StyledContactFormItemTitle>
-              <IntlMessages id='common.socialMedia' />
+              <IntlMessages id="common.socialMedia" />
             </StyledContactFormItemTitle>
 
             <StyledContactFormContentField>
-              <Form.Item className='form-field' name='facebookId'>
-                <Input placeholder={messages['common.facebookId']} />
+              <Form.Item className="form-field" name="facebookId">
+                <Input placeholder={messages["common.facebookId"]} />
               </Form.Item>
 
-              <Form.Item className='form-field' name='twitterId'>
-                <Input placeholder={messages['common.twitterId']} />
+              <Form.Item className="form-field" name="twitterId">
+                <Input placeholder={messages["common.twitterId"]} />
               </Form.Item>
             </StyledContactFormContentField>
           </StyledContactFormContentItem>
 
           <StyledContactFormContentItem>
             <StyledContactFormItemTitle>
-              <IntlMessages id='common.notes' />
+              <IntlMessages id="common.notes" />
             </StyledContactFormItemTitle>
 
-            <Form.Item className='form-field' name='notes'>
-              <Input.TextArea placeholder={messages['common.notes']} />
+            <Form.Item className="form-field" name="notes">
+              <Input.TextArea placeholder={messages["common.notes"]} />
             </Form.Item>
           </StyledContactFormContentItem>
         </StyledContactFormContent>
-
-        <StyledContactFormFooter>
-          <StyledContactFormBtn
-            type='primary'
-            ghost
-            onClick={handleAddContactClose}
-          >
-            <IntlMessages id='common.cancel' />
-          </StyledContactFormBtn>
-          <StyledContactFormBtn type='primary' htmlType='submit'>
-            <IntlMessages id='common.save' />
-          </StyledContactFormBtn>
-        </StyledContactFormFooter>
       </StyledContactModalScrollbar>
+
+      <StyledContactFormFooter>
+        <StyledContactFormBtn
+          type="primary"
+          ghost
+          onClick={handleAddContactClose}
+        >
+          <IntlMessages id="common.cancel" />
+        </StyledContactFormBtn>
+        <StyledContactFormBtn type="primary" htmlType="submit">
+          <IntlMessages id="common.save" />
+        </StyledContactFormBtn>
+      </StyledContactFormFooter>
     </StyledContactForm>
   );
 };

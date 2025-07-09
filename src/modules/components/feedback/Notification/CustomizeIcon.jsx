@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, notification, Space } from 'antd';
 import Icon from '@ant-design/icons';
 

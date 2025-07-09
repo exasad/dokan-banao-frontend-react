@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { AiFillHeart } from 'react-icons/ai';
 import Tag from '../Tag';
@@ -28,7 +27,6 @@ const BlogCard = ({ blog, onViewBlogDetail }) => {
   ];
 
   const onMenuClick = ({ item, key }) => {
-    console.log('item', item);
     switch (key) {
       case '311':
         onViewBlogDetail(blog);

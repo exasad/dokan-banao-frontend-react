@@ -1,4 +1,3 @@
-import React from 'react';
 import AccountGraph from './AccountGraph';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';

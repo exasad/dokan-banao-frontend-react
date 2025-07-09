@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Modal, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
-function getBase64(file) {
+const getBase64=(file)=> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -11,7 +11,7 @@ function getBase64(file) {
   });
 }
 
-class PicturesWall extends React.Component {
+class PicturesWall extends Component {
   state = {
     previewVisible: false,
     previewImage: '',

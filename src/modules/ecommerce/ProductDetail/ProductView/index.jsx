@@ -1,4 +1,3 @@
-import React from 'react';
 import ProductSpecification from './ProductSpecification';
 import ProductInfo from './ProductInfo';
 import DeliveryInfo from './DeliveryInfo';

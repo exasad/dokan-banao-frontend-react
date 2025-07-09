@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 import { Slider } from 'antd';
 import { FrownOutlined, SmileOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import { StyledIconWrapper } from './SliderWithIcon.styled';
 
-class SliderWithIcon extends React.Component {
+class SliderWithIcon extends Component {
   state = {
     value: 0,
   };

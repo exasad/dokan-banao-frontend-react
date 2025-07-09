@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Modal, Space } from 'antd';
 
-class Basic extends React.Component {
+class Basic extends Component {
   state = { visible: false };
   showModal = () => {
     this.setState({
@@ -9,13 +9,11 @@ class Basic extends React.Component {
     });
   };
   handleOk = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });
   };
   handleCancel = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });

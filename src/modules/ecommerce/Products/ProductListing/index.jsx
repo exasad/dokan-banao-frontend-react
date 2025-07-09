@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppsHeader from '@crema/components/AppsContainer/AppsHeader';
 import AppsContent from '@crema/components/AppsContainer/AppsContent';
 import {

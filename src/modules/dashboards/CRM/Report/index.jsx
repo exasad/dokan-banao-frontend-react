@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Typography } from 'antd';
 import { useIntl } from 'react-intl';
 import IntlMessages from '@crema/helpers/IntlMessages';

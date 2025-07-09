@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import TimesheetTable from './TimesheetTable';
 import PropTypes from 'prop-types';

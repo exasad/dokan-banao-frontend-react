@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Space, TreeSelect } from 'antd';
 
 const SHOW_PARENT = TreeSelect.SHOW_PARENT;
@@ -40,7 +40,7 @@ const treeData = [
   },
 ];
 
-class Checkable extends React.Component {
+class Checkable extends Component {
   state = {
     value: ['0-0-0'],
   };

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 export const useClickInside = (ref, callback) => {
   const handleClick = (e) => {
@@ -6,7 +6,7 @@ export const useClickInside = (ref, callback) => {
       callback();
     }
   };
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);

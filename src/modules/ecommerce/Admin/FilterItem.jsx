@@ -1,5 +1,4 @@
 import AppCard from '@crema/components/AppCard';
-import React from 'react';
 import { Col, DatePicker, Form, InputNumber, Select, Switch } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import PropTypes from 'prop-types';

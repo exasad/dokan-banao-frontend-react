@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import clsx from 'clsx';

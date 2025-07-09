@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Store } from 'react-notifications-component';
 import { Button } from 'antd';
 
@@ -14,7 +14,7 @@ import {
   StyledReactNotificationItem,
 } from '../index.styled';
 
-export default class CustomContentExample extends React.Component {
+export default class CustomContentExample extends Component {
   addCustomIcon = (type, iconClassName) => {
     let message =
       'Your agenda has been successfully synced with your Google Calendar.';

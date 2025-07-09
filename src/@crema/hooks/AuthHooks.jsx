@@ -92,7 +92,6 @@ export const useAuthMethod = () => {
 
 //For Auth0
 import { useAuth0 } from "@auth0/auth0-react";
-import { useMemo } from "react";
 import { getUserFromAuth0 } from "./helper/AuthHelper";
 
 export const useAuthUser = () => {
@@ -100,7 +99,7 @@ export const useAuthUser = () => {
   return {
     isLoading,
     isAuthenticated,
-    user: useMemo(() => getUserFromAuth0(user), []),
+    user: () => getUserFromAuth0(user),
   };
 };
 

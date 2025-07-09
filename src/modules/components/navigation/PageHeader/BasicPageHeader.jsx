@@ -1,7 +1,5 @@
 import { PageHeader } from '@ant-design/pro-layout';
 
-import React from 'react';
-
 const BasicPageHeader = () => {
   return (
     <PageHeader

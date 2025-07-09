@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, message, Space, Steps } from 'antd';
 
 import { StyledStepContent, StyledStepsAction } from './SwitchStep.styled';
@@ -21,7 +21,7 @@ const items = [
 ];
 
 const SwitchStep = () => {
-  const [current, setCurrent] = React.useState(0);
+  const [current, setCurrent] = useState(0);
 
   const next = () => {
     setCurrent(current + 1);

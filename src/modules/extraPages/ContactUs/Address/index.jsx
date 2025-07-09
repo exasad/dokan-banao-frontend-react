@@ -1,4 +1,3 @@
-import React from 'react';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { FiMail, FiPhone } from 'react-icons/fi';
 import {

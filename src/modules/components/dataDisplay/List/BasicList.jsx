@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, List, Space } from 'antd';
 
 const data = [

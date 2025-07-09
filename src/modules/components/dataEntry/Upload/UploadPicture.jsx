@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Modal, Space, Upload } from 'antd';
 import PlusOutlined from '@ant-design/icons/lib/icons/PlusOutlined';
 
-class UploadPicture extends React.Component {
+class UploadPicture extends Component {
   state = {
     previewVisible: false,
     previewImage: '',

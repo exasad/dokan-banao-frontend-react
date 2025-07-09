@@ -1,4 +1,3 @@
-import React from 'react';
 import AppList from '@crema/components/AppList';
 import SuggestionItem from './SuggestionItem';
 import { useIntl } from 'react-intl';

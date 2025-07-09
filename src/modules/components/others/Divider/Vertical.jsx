@@ -1,4 +1,3 @@
-import React from 'react';
 import { Divider, Space } from 'antd';
 
 const Vertical = () => {

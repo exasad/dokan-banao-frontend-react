@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Drawer, Radio, Space } from 'antd';
 
-class CustomPlacement extends React.Component {
+class CustomPlacement extends Component {
   state = { visible: false, placement: 'left' };
 
   showDrawer = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import MemberItem from './MemberItem';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';

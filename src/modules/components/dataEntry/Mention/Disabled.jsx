@@ -1,5 +1,4 @@
 import { Mentions } from 'antd';
-import React from 'react';
 
 const { Option } = Mentions;
 const getOptions = () =>

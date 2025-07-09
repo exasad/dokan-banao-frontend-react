@@ -1,4 +1,3 @@
-import React from 'react';
 import ReviewsGraph from './ReviewsGraph';
 import PropTypes from 'prop-types';
 import IntlMessages from '@crema/helpers/IntlMessages';

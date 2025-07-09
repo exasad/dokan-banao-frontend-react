@@ -1,12 +1,11 @@
-import React from 'react';
 import { Slider, Space } from 'antd';
 
 const SliderEvent = () => {
-  function onChange(value) {
+    const onChange=(value)=> {
     console.log('onChange: ', value);
   }
 
-  function onAfterChange(value) {
+    const onAfterChange=(value)=> {
     console.log('onAfterChange: ', value);
   }
 

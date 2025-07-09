@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { useEffect, useState } from 'react';
-import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import { isValidElement, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'antd';
 import AppAnimateGroup from '../AppAnimateGroup';
 import { useThemeContext } from '@crema/context/AppContextProvider/ThemeContextProvider';
 import { StyledGridColumnCount, StyledGridContainer } from './index.styled';
+import useBottomScrollListener from "@crema/hooks/useBottomScroller.jsx";
 
 const { useBreakpoint } = Grid;
 
 const getEmptyContainer = (ListEmptyComponent) => {
   if (ListEmptyComponent)
-    return React.isValidElement(ListEmptyComponent) ? (
+    return isValidElement(ListEmptyComponent) ? (
       ListEmptyComponent
     ) : (
       <ListEmptyComponent />
@@ -21,7 +21,7 @@ const getEmptyContainer = (ListEmptyComponent) => {
 
 const getFooterContainer = (ListFooterComponent) => {
   if (ListFooterComponent)
-    return React.isValidElement(ListFooterComponent) ? (
+    return isValidElement(ListFooterComponent) ? (
       ListFooterComponent
     ) : (
       <ListFooterComponent />
@@ -125,7 +125,7 @@ const GridView = ({
           ...style,
         }}
       >
-        {data.length > 0
+        {data?.length > 0
           ? data.map((item, index) => (
               <StyledGridColumnCount
                 key={'grid-' + index}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppConfirmationModal from '@crema/components/AppConfirmationModal';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

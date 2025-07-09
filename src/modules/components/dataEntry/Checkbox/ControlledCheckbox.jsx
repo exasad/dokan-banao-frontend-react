@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Button, Checkbox, Space } from 'antd';
 
 class ControlledCheckbox extends Component {

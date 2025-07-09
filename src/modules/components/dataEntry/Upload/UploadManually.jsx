@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
-class UploadManually extends React.Component {
+class UploadManually extends Component {
   state = {
     fileList: [],
     uploading: false,

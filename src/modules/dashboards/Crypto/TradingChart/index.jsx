@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import AppCard from '@crema/components/AppCard';
 import ChartHeader from './ChartHeader';

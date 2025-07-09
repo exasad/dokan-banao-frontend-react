@@ -1,5 +1,4 @@
 import AppCard from '@crema/components/AppCard';
-import React from 'react';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { List, Progress } from 'antd';

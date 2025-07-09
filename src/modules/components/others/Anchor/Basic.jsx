@@ -1,4 +1,3 @@
-import React from 'react';
 import { Anchor, Space } from 'antd';
 
 const { Link } = Anchor;

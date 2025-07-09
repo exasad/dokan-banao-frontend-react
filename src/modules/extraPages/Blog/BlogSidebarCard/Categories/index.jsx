@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import CategoriesItem from './CategoriesItem';
 import IntlMessages from '@crema/helpers/IntlMessages';

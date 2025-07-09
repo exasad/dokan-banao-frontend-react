@@ -1,4 +1,3 @@
-import React from 'react';
 import AppSelect from '@crema/components/AppSelect';
 import GradeGraph from './GradeGraph';
 import { useIntl } from 'react-intl';

@@ -1,13 +1,13 @@
 import { Select, Spin } from 'antd';
 import debounce from 'lodash/debounce';
-import React from 'react';
+import { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-function DebounceSelect({ fetchOptions, debounceTimeout = 800, ...props }) {
-  const [fetching, setFetching] = React.useState(false);
-  const [options, setOptions] = React.useState([]);
-  const fetchRef = React.useRef(0);
-  const debounceFetcher = React.useMemo(() => {
+const DebounceSelect=({ fetchOptions, debounceTimeout = 800, ...props })=> {
+  const [fetching, setFetching] = useState(false);
+  const [options, setOptions] = useState([]);
+  const fetchRef = useRef(0);
+  const debounceFetcher = () => {
     const loadOptions = (value) => {
       fetchRef.current += 1;
       const fetchId = fetchRef.current;
@@ -25,7 +25,7 @@ function DebounceSelect({ fetchOptions, debounceTimeout = 800, ...props }) {
     };
 
     return debounce(loadOptions, debounceTimeout);
-  }, [fetchOptions, debounceTimeout]);
+  };
   return (
     <Select
       labelInValue
@@ -38,7 +38,7 @@ function DebounceSelect({ fetchOptions, debounceTimeout = 800, ...props }) {
   );
 }
 
-async function fetchUserList() {
+const fetchUserList=async ()=> {
   return fetch('https://randomuser.me/api/?results=5')
     .then((response) => response.json())
     .then((body) =>
@@ -50,7 +50,7 @@ async function fetchUserList() {
 }
 
 const HideAlreadySelected = () => {
-  const [value, setValue] = React.useState([]);
+  const [value, setValue] = useState([]);
   return (
     <DebounceSelect
       mode='multiple'

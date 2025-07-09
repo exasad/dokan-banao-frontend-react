@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Modal, Space } from 'antd';
 
-class CutomizeFooter extends React.Component {
+class CutomizeFooter extends Component {
   state = {
     loading: false,
     visible: false,

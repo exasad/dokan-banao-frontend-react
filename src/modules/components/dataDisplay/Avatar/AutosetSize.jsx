@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Avatar, Button, Space } from 'antd';
 
 const UserList = ['U', 'Lucy', 'Tom', 'Edward'];

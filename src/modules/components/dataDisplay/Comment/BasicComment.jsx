@@ -1,4 +1,5 @@
-import React, { createElement, useState } from 'react';
+import { createElement, useState } from 'react';
+import * as React from 'react';
 import { Comment } from '@ant-design/compatible';
 import { Avatar, Tooltip } from 'antd';
 import dayjs from 'dayjs';

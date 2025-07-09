@@ -1,4 +1,3 @@
-import React from 'react';
 import ConnectionItem from './ConnectionItem';
 import PropTypes from 'prop-types';
 import AppList from '@crema/components/AppList';

@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { Col } from 'antd';

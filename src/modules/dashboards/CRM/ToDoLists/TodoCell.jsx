@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Typography } from 'antd';
 import { BiPencil } from 'react-icons/bi';

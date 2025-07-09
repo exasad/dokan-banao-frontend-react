@@ -1,4 +1,3 @@
-import React from 'react';
 import { Cascader, Space } from 'antd';
 
 const options = [
@@ -38,7 +37,7 @@ const options = [
   },
 ];
 
-function handleAreaClick(e) {
+const handleAreaClick=(e)=> {
   e.stopPropagation();
 }
 

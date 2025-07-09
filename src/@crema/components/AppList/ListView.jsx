@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React from 'react';
-import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import { isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import AppAnimateGroup from '../AppAnimateGroup';
 import { useThemeContext } from '@crema/context/AppContextProvider/ThemeContextProvider';
+import useBottomScrollListener from "@crema/hooks/useBottomScroller.jsx";
 
 const getEmptyContainer = (ListEmptyComponent) => {
   if (ListEmptyComponent)
-    return React.isValidElement(ListEmptyComponent) ? (
+    return isValidElement(ListEmptyComponent) ? (
       ListEmptyComponent
     ) : (
       <ListEmptyComponent />
@@ -17,7 +17,7 @@ const getEmptyContainer = (ListEmptyComponent) => {
 
 const getFooterContainer = (ListFooterComponent) => {
   if (ListFooterComponent)
-    return React.isValidElement(ListFooterComponent) ? (
+    return isValidElement(ListFooterComponent) ? (
       ListFooterComponent
     ) : (
       <ListFooterComponent />
@@ -60,7 +60,7 @@ const ListView = ({
       {...rest}
       enter={{ delay, duration, animation }}
     >
-      {data.length > 0
+      {data?.length > 0
         ? data.map((item, index) => {
             return (
               <div key={'listItem-' + item.id + '-' + index}>

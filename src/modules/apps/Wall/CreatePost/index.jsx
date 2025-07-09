@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useIntl } from 'react-intl';
 import { Avatar } from 'antd';
@@ -63,7 +63,6 @@ const CreatePost = ({ wallData, setPostList }) => {
         id: wallData.id,
       },
     };
-    console.log(post);
     postDataApi('/wall/posts', infoViewActionsContext, {
       post,
     })

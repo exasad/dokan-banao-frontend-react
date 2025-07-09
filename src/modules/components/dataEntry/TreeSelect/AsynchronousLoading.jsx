@@ -1,8 +1,8 @@
 import { TreeSelect } from 'antd';
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class AsynchronousLoading extends React.Component {
+class AsynchronousLoading extends Component {
   state = {
     value: undefined,
     treeData: [
@@ -38,7 +38,6 @@ class AsynchronousLoading extends React.Component {
     });
 
   onChange = (value) => {
-    console.log(value);
     this.setState({ value });
   };
 

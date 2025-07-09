@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as React from 'react';
 import dayjs from 'dayjs';
 import { useAuthUser } from '@crema/hooks/AuthHooks';
 import { useIntl } from 'react-intl';
@@ -90,7 +91,6 @@ const TaskDetailBody = (props) => {
       .catch((error) => {
         infoViewActionsContext.fetchError(error.message);
       });
-    console.log('onDoneEditing: ', task);
     setEdit(!isEdit);
   };
 

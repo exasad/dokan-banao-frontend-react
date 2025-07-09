@@ -1,4 +1,3 @@
-import React from 'react';
 import GraphFile from './GraphFile';
 import PropTypes from 'prop-types';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';

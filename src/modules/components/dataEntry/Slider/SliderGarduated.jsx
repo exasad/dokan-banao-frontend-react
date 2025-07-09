@@ -1,4 +1,3 @@
-import React from 'react';
 import { Slider, Space } from 'antd';
 
 const marks = {

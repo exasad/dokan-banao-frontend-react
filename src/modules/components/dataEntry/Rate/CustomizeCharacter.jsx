@@ -1,6 +1,5 @@
 import { Rate } from 'antd';
 import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const customIcons = {
   1: <FrownOutlined />,

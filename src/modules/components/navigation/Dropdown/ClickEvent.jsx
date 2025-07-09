@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown, message, Space } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 

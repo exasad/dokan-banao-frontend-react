@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import { Radio, Space } from 'antd';
 
 const RadioGroup = Radio.Group;
 
-class HorizontalRadio extends React.Component {
+class HorizontalRadio extends Component {
   state = {
     value: 1,
   };

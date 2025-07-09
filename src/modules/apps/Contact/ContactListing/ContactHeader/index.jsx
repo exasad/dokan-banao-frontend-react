@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import CheckBox from './CheckBox';
@@ -27,8 +26,6 @@ const ContactHeader = (props) => {
   const { page, pageView, contactList } = useContactContext();
   const { onPageChange, setPageView } = useContactActionsContext();
   const { messages } = useIntl();
-  console.log('page', page);
-  console.log('count', contactList?.count);
   return (
     <>
       <StyledContactContentHeader>

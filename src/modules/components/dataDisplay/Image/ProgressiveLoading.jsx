@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, Image, Space } from 'antd';
 import PropTypes from 'prop-types';
 
-function ProgressiveLoading() {
-  const [random, setRandom] = React.useState();
+const ProgressiveLoading=()=> {
+  const [random, setRandom] = useState();
   return (
     <Space size={12}>
       <Image

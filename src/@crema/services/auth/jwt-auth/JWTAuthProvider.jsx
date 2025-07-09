@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useInfoViewActionsContext } from '@crema/context/AppContextProvider/InfoViewContextProvider';
 import jwtAxios, { setAuthToken } from './index';
@@ -97,7 +97,6 @@ const JWTAuthAuthProvider = ({ children }) => {
         isAuthenticated: false,
         isLoading: false,
       });
-      console.log('error:', error.response.data.error);
       infoViewActionsContext.fetchError(
         error?.response?.data?.error || 'Something went wrong',
       );

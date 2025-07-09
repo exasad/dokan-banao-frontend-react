@@ -1,4 +1,3 @@
-import React from 'react';
 import TaskList from './TaskList';
 // import DateSelector from './DateSelector';
 import PropTypes from 'prop-types';

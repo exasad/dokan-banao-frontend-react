@@ -14,7 +14,7 @@ export const getDateObject = (dateObject) => {
 
 export const getFormattedDate = (dateObject, format = 'MMM DD,YYYY') => {
   if (dateObject) return dayjs(dateObject).format(format);
-  return '';
+  return dayjs().format(format);
 };
 
 export const getCurrentMonthDate = (date, format = 'MMM DD,YYYY') => {

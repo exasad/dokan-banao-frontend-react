@@ -1,4 +1,3 @@
-import React from 'react';
 import { FloatButton, Space } from 'antd';
 import { StyledSiteBackTopBasic } from './Basic.styled';
 

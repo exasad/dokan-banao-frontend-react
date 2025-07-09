@@ -1,10 +1,9 @@
-import React from 'react';
-import { momentLocalizer } from 'react-big-calendar';
+import { dayjsLocalizer } from 'react-big-calendar';
 import events from '../events';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { StyledCalendar } from '../index.styled';
 
-const localizer = momentLocalizer(moment);
+const localizer = dayjsLocalizer(dayjs);
 
 const Timeslots = () => {
   return (

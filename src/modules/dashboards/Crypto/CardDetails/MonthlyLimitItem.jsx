@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import AppCircularProgress from '@crema/components/AppCircularProgress';
 import { rgba } from 'polished';

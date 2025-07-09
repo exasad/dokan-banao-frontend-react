@@ -1,10 +1,9 @@
-import React from 'react';
 import { Button, Modal, Space } from 'antd';
 
 const confirm = Modal.confirm;
 
 const ConfirmationModal = () => {
-  function showConfirm() {
+  const showConfirm=()=> {
     confirm({
       title: 'Do you Want to delete these items?',
       content: 'Some descriptions',
@@ -17,7 +16,7 @@ const ConfirmationModal = () => {
     });
   }
 
-  function showDeleteConfirm() {
+  const showDeleteConfirm=()=> {
     confirm({
       title: 'Are you sure delete this task?',
       content: 'Some descriptions',

@@ -1,4 +1,3 @@
-import React from 'react';
 import ContactListing from './ContactListing';
 import { useIntl } from 'react-intl';
 import AppsContainer from '@crema/components/AppsContainer';

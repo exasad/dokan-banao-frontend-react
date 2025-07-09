@@ -1,4 +1,3 @@
-import React from 'react';
 import MessageItem from '@crema/components/AppMessages/MessageItem';
 import PropTypes from 'prop-types';
 import AppCard from '@crema/components/AppCard';

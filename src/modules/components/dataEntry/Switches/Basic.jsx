@@ -1,8 +1,7 @@
-import React from 'react';
 import { Space, Switch } from 'antd';
 
 const Basic = () => {
-  function onChange(checked) {
+  const onChange=(checked)=> {
     console.log(`switch to ${checked}`);
   }
 

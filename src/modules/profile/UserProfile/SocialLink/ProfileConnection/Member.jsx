@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Avatar, Button } from 'antd';
 import PropTypes from 'prop-types';
 import {

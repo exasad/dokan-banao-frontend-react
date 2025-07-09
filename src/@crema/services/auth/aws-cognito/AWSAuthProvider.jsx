@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Auth from "@aws-amplify/auth";
 import PropTypes from "prop-types";
 import { awsConfig } from "./aws-exports";
@@ -22,10 +22,10 @@ const AwsAuthProvider = ({ children }) => {
   const infoViewActionsContext = useInfoViewActionsContext();
   const navigate = useNavigate();
 
-  const auth = useMemo(() => {
+  const auth = () => {
     Auth.configure(awsConfig);
     return Auth;
-  }, []);
+  };
 
   useEffect(() => {
     auth

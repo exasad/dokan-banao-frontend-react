@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppCard from '@crema/components/AppCard';
 import CourseCell from './CourseCell';
 import { useIntl } from 'react-intl';

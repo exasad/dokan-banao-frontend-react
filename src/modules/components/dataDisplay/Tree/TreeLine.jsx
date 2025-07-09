@@ -1,5 +1,5 @@
 import { TreeSelect } from 'antd';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const treeData = [
   {
@@ -24,7 +24,6 @@ const treeData = [
 const App = () => {
   const [value, setValue] = useState();
   const onChange = (newValue) => {
-    console.log(newValue);
     setValue(newValue);
   };
   return (

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Col } from "antd";
 import AppComponentCard from "@crema/components/AppComponentCard";
 import AppComponentHeader from "@crema/components/AppComponentHeader";

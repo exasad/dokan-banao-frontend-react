@@ -1,8 +1,8 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Button = React.lazy(() => import('./Button'));
-const Typography = React.lazy(() => import('./Typography'));
-const Icon = React.lazy(() => import('./Icon'));
+const Button = lazy(() => import('./Button'));
+const Typography = lazy(() => import('./Typography'));
+const Icon = lazy(() => import('./Icon'));
 
 export const generalComponentConfigs = [
   {

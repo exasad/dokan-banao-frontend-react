@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space, Spin } from 'antd';
 
 const Size = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useSidebarContext } from '@crema/context/AppContextProvider/SidebarContextProvider';
 import { StyledAppLogo } from './index.styled';

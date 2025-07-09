@@ -1,4 +1,3 @@
-import React from 'react';
 import { GoogleOutlined } from '@ant-design/icons';
 import { Checkbox, Form, Input } from 'antd';
 import IntlMessages from '@crema/helpers/IntlMessages';

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { useDropzone } from 'react-dropzone';
 import { Button, Col, Divider, Form, Input, Space, Typography } from 'antd';

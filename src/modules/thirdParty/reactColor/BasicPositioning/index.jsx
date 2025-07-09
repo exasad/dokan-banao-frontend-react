@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { BlockPicker } from 'react-color';
 
 export const BasicPosition = () => {

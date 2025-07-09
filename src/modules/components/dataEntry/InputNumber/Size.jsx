@@ -1,8 +1,7 @@
-import React from 'react';
 import { InputNumber, Space } from 'antd';
 
 const Size = () => {
-  function onChange(value) {
+  const onChange=(value)=> {
     console.log('changed', value);
   }
 

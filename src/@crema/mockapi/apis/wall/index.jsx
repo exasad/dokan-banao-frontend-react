@@ -39,7 +39,6 @@ mock.onPut('/wall/posts').reply((request) => {
 mock.onPost('/wall/posts/comments').reply((request) => {
   const { postId, comment } = JSON.parse(request.data);
   const post = posts.find((item) => item.id === postId);
-  console.log('postId, comment', postId, comment);
   const newComment = {
     id: generateRandomUniqueNumber(),
     date: new Date().toString(),

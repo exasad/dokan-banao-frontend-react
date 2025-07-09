@@ -1,11 +1,11 @@
 import { Space, Switch, TreeSelect } from 'antd';
-import React from 'react';
+import { useState } from 'react';
 
 const { TreeNode } = TreeSelect;
 
 const ShowTreeLine = () => {
-  const [treeLine, setTreeLine] = React.useState(true);
-  const [showLeafIcon, setShowLeafIcon] = React.useState(false);
+  const [treeLine, setTreeLine] = useState(true);
+  const [showLeafIcon, setShowLeafIcon] = useState(false);
   return (
     <Space direction='vertical'>
       <Switch

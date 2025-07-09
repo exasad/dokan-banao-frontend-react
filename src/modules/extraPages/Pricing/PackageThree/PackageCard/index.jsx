@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { List } from 'antd';
 import { CheckOutlined } from '@ant-design/icons';

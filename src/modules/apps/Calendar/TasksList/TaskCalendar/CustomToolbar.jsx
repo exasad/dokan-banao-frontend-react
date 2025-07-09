@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import dayjs from 'dayjs';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import PropTypes from 'prop-types';
@@ -31,24 +31,22 @@ const CustomToolbar = (props) => {
   const [viewState, setViewState] = useState('month');
   const { messages } = useIntl();
 
-  function addMonths(date, months) {
+  const addMonths=(date, months)=> {
     const d = date.getDate();
     date.setMonth(date.getMonth() + months);
     if (date.getDate() !== d) {
       date.setDate(0);
     }
-    console.log(date);
     return date;
   }
 
-  function addWeeks(date, weeks) {
+  const addWeeks=(date, weeks)=> {
     date.setDate(date.getDate() + 7 * weeks);
     return date;
   }
 
-  function addDays(date, days) {
+  const addDays=(date, days)=> {
     date.setDate(date.getDate() + days);
-    console.log(date);
     return date;
   }
 
@@ -134,7 +132,7 @@ const CustomToolbar = (props) => {
           onClick={goToBack}
         />
         <Button style={{ maxHeight: 36 }} type='primary' onClick={goToToday}>
-          today
+          Today
         </Button>
         <StyledIconBtn
           title='Next'

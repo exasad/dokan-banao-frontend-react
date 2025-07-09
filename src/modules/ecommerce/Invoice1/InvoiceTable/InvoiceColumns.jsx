@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledInvoiceTruncateView } from './index.styled';
 
 const InvoiceColumns = [

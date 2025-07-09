@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledSecondaryText2, StyledText } from '../RecentPost/index.styled';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import TaskSideBar from './TaskSideBar/index';
 import TasksList from './TasksList';
 import TaskDetail from './TaskDetail';

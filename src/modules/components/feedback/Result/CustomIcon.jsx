@@ -1,8 +1,6 @@
 import { Button, Result } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 
-import React from 'react';
-
 const CustomIcon = () => {
   return (
     <Result

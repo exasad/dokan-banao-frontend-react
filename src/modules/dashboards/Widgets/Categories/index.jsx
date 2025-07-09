@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import CategoryItem from './CategoryItem';
 import AppCard from '@crema/components/AppCard';

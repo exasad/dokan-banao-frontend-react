@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'antd';
 import { StyledIconBtn } from './index.styled';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ColorItem from './ColorItem';
 import PropTypes from 'prop-types';
 import AppCard from '@crema/components/AppCard';

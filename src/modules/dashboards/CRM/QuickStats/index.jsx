@@ -1,4 +1,3 @@
-import React from 'react';
 import StatsCard from './StatsCard';
 import PropTypes from 'prop-types';
 import AppRowContainer from '@crema/components/AppRowContainer';

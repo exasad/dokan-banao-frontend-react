@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import ProductCell from './ProductCell';
 import PropTypes from 'prop-types';

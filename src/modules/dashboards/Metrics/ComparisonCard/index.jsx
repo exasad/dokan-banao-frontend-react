@@ -1,4 +1,3 @@
-import React from 'react';
 import ActiveUsersGraph from './ActiveUsersGraph';
 import ExtraRevenueGraph from './ExtraRevenueGraph';
 import TrafficRaiseGraph from './TrafficRaiseGraph';

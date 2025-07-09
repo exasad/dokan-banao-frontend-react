@@ -1,4 +1,3 @@
-import React from 'react';
 import { FormattedNumber, useIntl } from 'react-intl';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppCard from '@crema/components/AppCard';

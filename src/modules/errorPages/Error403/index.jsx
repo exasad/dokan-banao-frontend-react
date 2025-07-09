@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import IntlMessages from "@crema/helpers/IntlMessages";
 import AppAnimate from "@crema/components/AppAnimate";

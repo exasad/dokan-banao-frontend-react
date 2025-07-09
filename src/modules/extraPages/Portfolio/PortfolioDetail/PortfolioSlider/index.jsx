@@ -1,4 +1,3 @@
-import React from 'react';
 import MediaSlider from './MediaSlider';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';

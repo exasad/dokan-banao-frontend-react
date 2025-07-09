@@ -1,4 +1,3 @@
-import React from 'react';
 import StatGraphs from './StatGraphs';
 import PropTypes from 'prop-types';
 import { Button } from 'antd';

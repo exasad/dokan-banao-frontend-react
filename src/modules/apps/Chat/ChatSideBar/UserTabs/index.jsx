@@ -1,4 +1,3 @@
-import React from 'react';
 import ConnectionList from './ConnectionList';
 import ChatList from './ChatList';
 import PropTypes from 'prop-types';

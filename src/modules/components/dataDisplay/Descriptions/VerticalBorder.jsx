@@ -1,5 +1,4 @@
 import { Badge, Descriptions } from 'antd';
-import React from 'react';
 
 const VerticalBorder = () => {
   return (

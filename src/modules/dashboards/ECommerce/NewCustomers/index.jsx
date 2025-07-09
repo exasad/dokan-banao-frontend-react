@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import CustomerItem from './CustomerItem';
 import { List } from 'antd';

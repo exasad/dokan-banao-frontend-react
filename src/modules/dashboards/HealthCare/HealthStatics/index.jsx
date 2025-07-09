@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppCard from '@crema/components/AppCard';
 import AppSelect from '@crema/components/AppSelect';
 import { useIntl } from 'react-intl';

@@ -1,20 +1,20 @@
-import React from 'react';
+import { lazy } from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
-const HealthCare = React.lazy(() =>
+const HealthCare = lazy(() =>
   import('../../../modules/dashboards/HealthCare'),
 );
-const ECommerce = React.lazy(() =>
+const ECommerce = lazy(() =>
   import('../../../modules/dashboards/ECommerce'),
 );
-const CRM = React.lazy(() => import('../../../modules/dashboards/CRM'));
-const Crypto = React.lazy(() => import('../../../modules/dashboards/Crypto'));
-const Analytics = React.lazy(() =>
+const CRM = lazy(() => import('../../../modules/dashboards/CRM'));
+const Crypto = lazy(() => import('../../../modules/dashboards/Crypto'));
+const Analytics = lazy(() =>
   import('../../../modules/dashboards/Analytics'),
 );
-const Academy = React.lazy(() => import('../../../modules/dashboards/Academy'));
-const Metrics = React.lazy(() => import('../../../modules/dashboards/Metrics'));
-const Widgets = React.lazy(() => import('../../../modules/dashboards/Widgets'));
+const Academy = lazy(() => import('../../../modules/dashboards/Academy'));
+const Metrics = lazy(() => import('../../../modules/dashboards/Metrics'));
+const Widgets = lazy(() => import('../../../modules/dashboards/Widgets'));
 
 export const dashboardConfig = [
   {

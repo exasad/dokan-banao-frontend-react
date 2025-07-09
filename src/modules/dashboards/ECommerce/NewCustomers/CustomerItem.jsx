@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, Button } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';

@@ -1,7 +1,7 @@
 import { Slider, Switch } from 'antd';
-import React from 'react';
+import { Component } from 'react';
 
-class Reverse extends React.Component {
+class Reverse extends Component {
   state = {
     reverse: true,
   };

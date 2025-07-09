@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import IntlMessages from "@crema/helpers/IntlMessages";

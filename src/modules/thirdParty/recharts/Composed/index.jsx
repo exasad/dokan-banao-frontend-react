@@ -1,4 +1,3 @@
-import React from "react";
 import LineBarAreaComposedChart from "./Components/LineBarAreaComposedChart";
 import LineBarAreaComposedChartSource from "./Components/LineBarAreaComposedChart?raw";
 import VerticalComposedChart from "./Components/VerticalComposedChart";

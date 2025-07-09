@@ -1,4 +1,3 @@
-import React from 'react';
 import { Rate, Space } from 'antd';
 import HeartOutlined from '@ant-design/icons/lib/icons/HeartOutlined';
 

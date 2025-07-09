@@ -1,4 +1,3 @@
-import React from 'react';
 import FirebaseAuthProvider from '@crema/services/auth/firebase/FirebaseAuthProvider';
 import PropTypes from 'prop-types';
 

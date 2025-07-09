@@ -1,4 +1,3 @@
-import React from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { getFormattedDate } from '@crema/helpers/DateHelper';
 import { formatCurrency } from '@crema/helpers/StringHelper';
@@ -91,7 +90,6 @@ const EditInvoiceTable = ({
                   ]}
                   placeholder='From'
                   onChange={(value) => {
-                    console.log('From', value);
                     onChangeLineItems(index, 'from', value[0], 'duration');
                     onChangeLineItems(index, 'to', value[1], 'duration');
                   }}

@@ -1,10 +1,9 @@
-import React from 'react';
 import { Select, Space } from 'antd';
 
 const { Option, OptGroup } = Select;
 
 const SelectOption = () => {
-  function handleChange(value) {
+  const handleChange=(value)=> {
     console.log(`selected ${value}`);
   }
 

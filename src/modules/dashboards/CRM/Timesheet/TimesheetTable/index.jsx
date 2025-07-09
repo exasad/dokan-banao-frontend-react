@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledTicketSupportTable } from '../../TicketSupport/index.styled';
 import { StyledFlex, StyledNumberWrapper } from '../index.styled';

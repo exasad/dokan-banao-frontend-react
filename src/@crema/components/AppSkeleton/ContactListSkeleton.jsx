@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import ContentLoader from 'react-content-loader';
 
 export const ContactItem = (props) => (
@@ -15,7 +15,7 @@ export const ContactItem = (props) => (
 );
 const ContactListSkeleton = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <ContactItem />
       <ContactItem />
       <ContactItem />
@@ -26,7 +26,7 @@ const ContactListSkeleton = () => {
       <ContactItem />
       <ContactItem />
       <ContactItem />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

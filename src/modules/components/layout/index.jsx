@@ -1,7 +1,7 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Divider = React.lazy(() => import('./Divider'));
-const Space = React.lazy(() => import('./Space'));
+const Divider = lazy(() => import('./Divider'));
+const Space = lazy(() => import('./Space'));
 export const layoutComponentConfigs = [
   {
     path: '/components/layout/divider',

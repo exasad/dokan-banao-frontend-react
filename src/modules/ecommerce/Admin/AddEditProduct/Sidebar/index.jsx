@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import AppCard from '@crema/components/AppCard';
 import { productCategory } from '@crema/mockapi/fakedb/ecommerce/ecommerceData';
 import { useNavigate } from 'react-router-dom';
@@ -127,7 +127,7 @@ const BlogSidebar = ({
             <AppRowContainer>
               {productSpec.map((productItem, index) => {
                 return (
-                  <React.Fragment key={index}>
+                  <Fragment key={index}>
                     <Col xs={24} sm={12}>
                       <Input
                         className='mb-20'
@@ -154,7 +154,7 @@ const BlogSidebar = ({
                         }}
                       />
                     </Col>
-                  </React.Fragment>
+                  </Fragment>
                 );
               })}
             </AppRowContainer>
@@ -179,7 +179,7 @@ const BlogSidebar = ({
             <AppRowContainer>
               {productInfo.map((productItem, index) => {
                 return (
-                  <React.Fragment key={index}>
+                  <Fragment key={index}>
                     <Col xs={24} sm={12}>
                       <Input
                         className='mb-20'
@@ -206,7 +206,7 @@ const BlogSidebar = ({
                         }}
                       />
                     </Col>
-                  </React.Fragment>
+                  </Fragment>
                 );
               })}
             </AppRowContainer>

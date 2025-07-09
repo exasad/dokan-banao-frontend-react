@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { Badge, Space, Switch } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
 
 const StandAlone = () => {
-  const [show, setShow] = React.useState(true);
+  const [show, setShow] = useState(true);
 
   return (
     <Space>

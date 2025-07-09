@@ -1,7 +1,7 @@
 import { Button, Descriptions, Radio } from 'antd';
-import React from 'react';
+import { Component } from 'react';
 
-class CustomSize extends React.Component {
+class CustomSize extends Component {
   state = {
     size: 'default',
   };

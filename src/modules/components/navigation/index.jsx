@@ -1,12 +1,12 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Affix = React.lazy(() => import('./Affix'));
-const Breadcrumb = React.lazy(() => import('./Breadcrumb'));
-const Dropdown = React.lazy(() => import('./Dropdown'));
-const Menu = React.lazy(() => import('./Menu'));
-const Pagination = React.lazy(() => import('./Pagination'));
-const PageHeader = React.lazy(() => import('./PageHeader'));
-const Steps = React.lazy(() => import('./Steps'));
+const Affix = lazy(() => import('./Affix'));
+const Breadcrumb = lazy(() => import('./Breadcrumb'));
+const Dropdown = lazy(() => import('./Dropdown'));
+const Menu = lazy(() => import('./Menu'));
+const Pagination = lazy(() => import('./Pagination'));
+const PageHeader = lazy(() => import('./PageHeader'));
+const Steps = lazy(() => import('./Steps'));
 
 export const navigationComponentConfigs = [
   {

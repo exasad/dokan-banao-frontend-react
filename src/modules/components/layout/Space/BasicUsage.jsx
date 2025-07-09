@@ -1,8 +1,7 @@
 import { Button, Popconfirm, Space, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import React from 'react';
 
-function SpaceDemo() {
+const SpaceDemo=()=> {
   return (
     <Space>
       Space

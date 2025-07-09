@@ -1,6 +1,5 @@
 import { Timeline } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const RightAlternate = () => {
   return (

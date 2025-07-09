@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Space, Steps } from 'antd';
 
 const App = () => {
   const [current, setCurrent] = useState(0);
   const onChange = (value) => {
-    console.log('onChange:', value);
     setCurrent(value);
   };
   return (

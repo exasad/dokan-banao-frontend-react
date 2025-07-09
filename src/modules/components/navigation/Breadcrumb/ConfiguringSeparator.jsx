@@ -1,4 +1,3 @@
-import React from 'react';
 import { Breadcrumb, Space } from 'antd';
 
 const ConfiguringSeparator = () => {

@@ -14,7 +14,9 @@ export const StyledFlex = styled.div`
 `;
 
 export const StyledCalendar = styled(Calendar)`
-  & .rbc-event {
+  min-height: 600px;
+    
+    & .rbc-event {
     min-height: 30px;
     background-color: transparent;
   }

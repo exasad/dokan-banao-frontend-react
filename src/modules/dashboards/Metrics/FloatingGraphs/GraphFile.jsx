@@ -1,4 +1,3 @@
-import React from 'react';
 import { Area, AreaChart, ResponsiveContainer, Tooltip } from 'recharts';
 import PropTypes from 'prop-types';
 

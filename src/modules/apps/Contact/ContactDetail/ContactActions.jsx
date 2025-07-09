@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import AppsStarredIcon from '@crema/components/AppsStarredIcon';
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';

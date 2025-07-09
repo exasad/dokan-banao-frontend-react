@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { MessageOutlined } from '@ant-design/icons';
 import { StyledNoUserScreen } from '../index.styled';

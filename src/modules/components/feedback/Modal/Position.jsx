@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Modal, Space } from 'antd';
 
-class Position extends React.Component {
+class Position extends Component {
   state = {
     modal1Visible: false,
     modal2Visible: false,

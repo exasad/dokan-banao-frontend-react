@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Drawer, Radio, Space } from 'antd';
 
 const ExtraActions = () => {

@@ -1,6 +1,6 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const AppInfoViewContext = React.lazy(() => import('./ContextView'));
+const AppInfoViewContext = lazy(() => import('./ContextView'));
 // const AppInfoViewRedux = React.lazy(() => import('./ReduxView'));
 
 const AppInfoView = () => {

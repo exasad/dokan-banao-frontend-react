@@ -28,7 +28,7 @@ import {
   SearchOutlined as SearchIcon,
   SmileOutlined,
 } from '@ant-design/icons';
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const InputGroup = Input.Group;
@@ -89,7 +89,7 @@ const cascaderOptions = [
   },
 ];
 
-class Page extends React.Component {
+class Page extends Component {
   state = {
     currentStep: 0,
     modalVisible: false,
@@ -553,7 +553,7 @@ class Page extends React.Component {
   }
 }
 
-class App extends React.Component {
+class App extends Component {
   state = {
     direction: 'ltr',
     popupPlacement: 'bottomLeft',

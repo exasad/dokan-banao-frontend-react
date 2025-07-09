@@ -1,7 +1,6 @@
-import React from 'react';
 import { StyledHeaderAlertDark } from './index.styled';
 
-export default function NotificationBar() {
+const NotificationBar=()=> {
   const onClose = () => {
     console.log('I was closed.');
   };
@@ -15,3 +14,4 @@ export default function NotificationBar() {
     />
   );
 }
+export default NotificationBar;

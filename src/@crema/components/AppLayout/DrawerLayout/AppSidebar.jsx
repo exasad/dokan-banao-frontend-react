@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import PropsTypes from 'prop-types';
 import UserInfo from '../components/UserInfo';
@@ -14,7 +14,7 @@ import {
   StyledAppDrawerSidebarScrollbar,
 } from './index.styled';
 
-const AppSidebar = ({ visible, onClose }) => {
+const AppSidebar = ({ visible, onClose, routesConfig }) => {
   const { allowSidebarBgImage } = useSidebarContext();
   const { direction } = useLayoutContext();
   const { pathname } = useLocation();
@@ -38,7 +38,7 @@ const AppSidebar = ({ visible, onClose }) => {
       >
         <UserInfo hasColor />
         <StyledAppDrawerSidebarScrollbar scrollToTop={false}>
-          <AppVerticalMenu />
+          <AppVerticalMenu routesConfig={routesConfig}/>
         </StyledAppDrawerSidebarScrollbar>
       </StyledAppDrawerLayoutSidebar>
     </StyledAppDrawer>

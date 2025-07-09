@@ -1,5 +1,3 @@
-import React from 'react';
-
 import MyPicker from './MyPicker';
 
 export const CustomPicker = () => {

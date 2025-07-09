@@ -1,4 +1,4 @@
-import React from 'react';
+import { useReducer } from 'react';
 
 export const useAsync = (fn) => {
   const initialState = { loading: false, error: null, value: null };
@@ -13,7 +13,7 @@ export const useAsync = (fn) => {
     }
   };
 
-  const [state, dispatch] = React.useReducer(stateReducer, initialState);
+  const [state, dispatch] = useReducer(stateReducer, initialState);
 
   const run = async (args = null) => {
     try {

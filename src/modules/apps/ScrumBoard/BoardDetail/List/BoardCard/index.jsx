@@ -1,4 +1,3 @@
-import React from 'react';
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import Members from './Members';
@@ -27,6 +26,7 @@ const BoardCard = ({
   return (
     <StyledScrumBoardCardDetails
       onClick={(e) => {
+        e.stopPropagation();
         console.log('clicked');
         onClick(e);
       }}

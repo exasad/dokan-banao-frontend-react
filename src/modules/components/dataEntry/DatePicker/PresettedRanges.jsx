@@ -1,10 +1,9 @@
-import React from 'react';
 import { DatePicker, Space } from 'antd';
 import dayjs from 'dayjs';
 
 const { RangePicker } = DatePicker;
 
-function onChange(dates, dateStrings) {
+const onChange=(dates, dateStrings)=> {
   console.log(
     'From: ',
     dates[0],

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Area, AreaChart, CartesianGrid, Tooltip } from 'recharts';
 import PropTypes from 'prop-types';
 import { StyledResponsiveContainer } from './index.styled';

@@ -1,9 +1,9 @@
-import React from 'react';
+import { useRef, useState } from 'react';
 import { Button, Input, Space, Switch } from 'antd';
 
 const Focus = () => {
-  const inputRef = React.useRef(null);
-  const [input, setInput] = React.useState(true);
+  const inputRef = useRef(null);
+  const [input, setInput] = useState(true);
   const sharedProps = {
     style: {
       width: '100%',

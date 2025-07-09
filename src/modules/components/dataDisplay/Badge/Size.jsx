@@ -1,7 +1,5 @@
 import { Avatar, Badge } from 'antd';
 
-import React from 'react';
-
 const Size = () => {
   return (
     <div style={{ maxWidth: 200 }}>

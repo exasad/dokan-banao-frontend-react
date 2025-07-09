@@ -1,7 +1,6 @@
 import { Comment } from '@ant-design/compatible';
 import { List, Tooltip } from 'antd';
 import dayjs from 'dayjs';
-import React from 'react';
 
 const data = [
   {

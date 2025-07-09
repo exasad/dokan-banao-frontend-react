@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Space, TreeSelect } from 'antd';
 
 const treeData = [
@@ -26,7 +26,7 @@ const treeData = [
   },
 ];
 
-class GenerateTreeData extends React.Component {
+class GenerateTreeData extends Component {
   state = {
     value: undefined,
   };

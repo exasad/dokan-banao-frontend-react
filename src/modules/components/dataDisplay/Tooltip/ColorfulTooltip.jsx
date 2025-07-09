@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Button, Divider, Tooltip } from 'antd';
 
 const colors = [

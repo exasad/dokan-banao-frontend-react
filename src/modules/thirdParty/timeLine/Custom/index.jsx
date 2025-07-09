@@ -1,4 +1,3 @@
-import React from 'react';
 import data from './data';
 import TimelineItem from './Component/TimelineItem';
 import { StyledTimelineContainer, StyledTimelineCustom } from './index.styled';

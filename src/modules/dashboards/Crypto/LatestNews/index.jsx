@@ -1,4 +1,3 @@
-import React from 'react';
 import NewsList from './NewsList';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';

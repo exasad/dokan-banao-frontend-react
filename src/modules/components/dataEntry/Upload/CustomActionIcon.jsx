@@ -1,6 +1,5 @@
 import { Button, Upload } from 'antd';
 import { StarOutlined, UploadOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const props = {
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',

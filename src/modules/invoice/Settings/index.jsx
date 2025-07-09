@@ -1,4 +1,3 @@
-import React from 'react';
 import InvoiceSettings from './InvoiceSettings';
 import { putDataApi, useGetDataApi } from '@crema/hooks/APIHooks';
 import { useInfoViewActionsContext } from '@crema/context/AppContextProvider/InfoViewContextProvider';

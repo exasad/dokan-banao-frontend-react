@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import CreateContact from '../CreateContact';
 import AppsSideBarFolderItem from '@crema/components/AppsSideBarFolderItem';

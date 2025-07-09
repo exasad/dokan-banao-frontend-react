@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { Button, Col, Divider, Form, Input, Space, Typography } from 'antd';
 import { MdEdit } from 'react-icons/md';

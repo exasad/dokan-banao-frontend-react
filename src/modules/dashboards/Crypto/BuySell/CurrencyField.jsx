@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { StyledCurrencyWrapper, StyledInput } from './index.styled';
@@ -11,7 +11,7 @@ const CurrencyField = ({
   shortName,
   hideUSD = false,
 }) => {
-  const [active, setActive] = React.useState(false);
+  const [active, setActive] = useState(false);
 
   return (
     <StyledCurrencyWrapper className={active ? 'active' : ''}>

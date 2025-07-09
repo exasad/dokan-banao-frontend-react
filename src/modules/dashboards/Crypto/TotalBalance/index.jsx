@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import CoinsInfo from './CoinsInfo';
 import { Button } from 'antd';

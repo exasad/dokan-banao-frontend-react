@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import PropsTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';

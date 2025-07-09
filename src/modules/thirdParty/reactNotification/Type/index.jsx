@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Store } from 'react-notifications-component';
 import { Button } from 'antd';
 
@@ -9,7 +9,7 @@ import {
   StyledReactNotificationItem,
 } from '../index.styled';
 
-export default class TypeExample extends React.Component {
+export default class TypeExample extends Component {
   add = (type) => {
     return Store.addNotification(
       Object.assign({}, notification, {

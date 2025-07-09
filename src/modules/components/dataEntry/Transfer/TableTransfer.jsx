@@ -1,6 +1,6 @@
 import { Switch, Table, Tag, Transfer } from 'antd';
 import difference from 'lodash/difference';
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const TableTransfer = ({ leftColumns, rightColumns, ...restProps }) => (
@@ -92,7 +92,7 @@ const rightTableColumns = [
   },
 ];
 
-class TableTransferDemo extends React.Component {
+class TableTransferDemo extends Component {
   state = {
     targetKeys: originTargetKeys,
     disabled: false,

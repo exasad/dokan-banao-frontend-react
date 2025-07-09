@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Slider, Space } from 'antd';
 
-function SpaceCustomizeSize() {
+const SpaceCustomizeSize=()=> {
   const [size, setSize] = useState(8);
 
   return (

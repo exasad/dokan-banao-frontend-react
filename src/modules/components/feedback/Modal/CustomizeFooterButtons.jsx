@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Modal } from 'antd';
 
-class CustomizeFooterButtons extends React.Component {
+class CustomizeFooterButtons extends Component {
   state = { visible: false };
 
   showModal = () => {
@@ -11,14 +11,12 @@ class CustomizeFooterButtons extends React.Component {
   };
 
   handleOk = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });
   };
 
   handleCancel = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });

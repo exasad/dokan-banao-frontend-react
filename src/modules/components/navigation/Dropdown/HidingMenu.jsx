@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Dropdown, Space } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 

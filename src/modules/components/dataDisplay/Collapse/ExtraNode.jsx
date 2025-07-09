@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 import { Collapse, Select } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 
 const { Panel } = Collapse;
 const { Option } = Select;
 
-function callback(key) {
+const callback=(key)=> {
   console.log(key);
 }
 
@@ -24,7 +24,7 @@ const genExtra = () => (
   />
 );
 
-class ExtraNode extends React.Component {
+class ExtraNode extends Component {
   state = {
     expandIconPosition: 'start',
   };

@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import AppRowContainer from "@crema/components/AppRowContainer";
 import PackageOneNew from "./PackageOneNew";
 import LovePeople from "./LovePeople";
@@ -21,7 +21,7 @@ import {
 } from "./index.styled";
 
 const PricingDetail = () => {
-  const [billingFormat, setBillingFormat] = React.useState("month");
+  const [billingFormat, setBillingFormat] = useState("month");
 
   return (
     <AppRowContainer>

@@ -1,5 +1,4 @@
 import { Space, Table, Tag } from 'antd';
-import React from 'react';
 
 const { Column, ColumnGroup } = Table;
 

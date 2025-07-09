@@ -1,4 +1,3 @@
-import React from 'react';
 import { portfolioData } from '@crema/mockapi/fakedb/extraPages';
 import PortfolioDetail from './PortfolioDetail';
 

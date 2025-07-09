@@ -1,9 +1,8 @@
 import { Select } from 'antd';
-import React from 'react';
 
 const { Option } = Select;
 
-function handleChange(value) {
+const handleChange=(value)=> {
   console.log(`selected ${value}`);
 }
 

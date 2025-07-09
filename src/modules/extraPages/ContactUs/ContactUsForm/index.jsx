@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Col, Form, Input } from 'antd';
 import AppRowContainer from '@crema/components/AppRowContainer';
 

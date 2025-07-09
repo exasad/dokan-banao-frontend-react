@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Form, Input, Modal, Radio } from 'antd';
 import PropTypes from 'prop-types';
 

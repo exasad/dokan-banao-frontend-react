@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import { Rate, Space } from 'antd';
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
-class Rater extends React.Component {
+class Rater extends Component {
   state = {
     value: 3,
   };

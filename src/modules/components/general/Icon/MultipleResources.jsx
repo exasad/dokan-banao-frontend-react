@@ -1,5 +1,4 @@
 import { createFromIconfontCN } from '@ant-design/icons';
-import React from 'react';
 
 const IconFont = createFromIconfontCN({
   scriptUrl: [

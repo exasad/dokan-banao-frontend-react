@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, message, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 

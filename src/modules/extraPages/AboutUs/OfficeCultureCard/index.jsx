@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import AppCard from '@crema/components/AppCard';
 import { StyledOfcDesc, StyledTitle } from './index.styled';

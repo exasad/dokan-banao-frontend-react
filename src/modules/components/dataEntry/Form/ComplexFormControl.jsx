@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Form, Input, Select, Space, Tooltip, Typography } from 'antd';
 
 const { Option } = Select;

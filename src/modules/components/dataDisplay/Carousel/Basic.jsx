@@ -1,4 +1,3 @@
-import React from 'react';
 import { Carousel, Space } from 'antd';
 
 const Basic = () => {

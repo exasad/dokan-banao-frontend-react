@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, Image, Space } from 'antd';
 import UserOutlined from '@ant-design/icons/lib/icons/UserOutlined';
 

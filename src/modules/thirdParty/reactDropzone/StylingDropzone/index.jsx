@@ -1,4 +1,3 @@
-import React, { useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 const baseStyle = {
@@ -43,15 +42,13 @@ const StyledDropzone = () => {
     },
   });
 
-  const style = useMemo(
+  const style =
     () => ({
       ...baseStyle,
       ...(isDragActive ? activeStyle : {}),
       ...(isDragAccept ? acceptStyle : {}),
       ...(isDragReject ? rejectStyle : {}),
-    }),
-    [isDragActive, isDragAccept, isDragReject],
-  );
+    });
 
   return (
     <div className='container'>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import {
@@ -19,7 +19,7 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-function Quote({ quote, index }) {
+const Quote=({ quote, index })=> {
   return (
     <Draggable draggableId={quote.handle} index={index}>
       {(provided) => (
@@ -52,11 +52,11 @@ Quote.propTypes = {
   index: PropTypes.number,
 };
 
-const QuoteList = React.memo(function QuoteList({ quotes }) {
+const QuoteList = ({ quotes })=> {
   return quotes.map((quote, index) => (
     <Quote quote={quote} index={index} key={quote.id} />
   ));
-});
+}
 
 QuoteList.propTypes = {
   quotes: PropTypes.array,
@@ -65,7 +65,7 @@ QuoteList.propTypes = {
 const WithHooks = () => {
   const [state, setState] = useState({ quotes: dndData });
 
-  function onDragEnd(result) {
+  const onDragEnd=(result)=> {
     if (!result.destination) {
       return;
     }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { StarFilled, StarOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import AppIconButton from '../AppIconButton';

@@ -1,10 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import { Switch, Typography } from 'antd';
 
 const { Paragraph, Text } = Typography;
 
 const Ellipsis = () => {
-  const [ellipsis, setEllipsis] = React.useState(true);
+  const [ellipsis, setEllipsis] = useState(true);
 
   return (
     <div style={{ width: '100%' }}>

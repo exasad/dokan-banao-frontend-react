@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge, Space } from 'antd';
 
 const Status = () => {

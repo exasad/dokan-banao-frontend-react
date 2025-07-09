@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Button, Dropdown, Space } from 'antd';
 
-function handleMenuClick(e) {
+const handleMenuClick=(e)=> {
   console.log('click', e);
 }
 

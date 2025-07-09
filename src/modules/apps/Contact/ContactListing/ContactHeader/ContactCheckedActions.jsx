@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';
 import { AiOutlineDelete } from 'react-icons/ai';
@@ -28,7 +28,6 @@ const ContactCheckedActions = ({
   };
 
   const onSelectLabel = (key) => {
-    console.log('key', key);
     putDataApi('/api/contactApp/update/label', infoViewActionsContext, {
       contactIds: checkedContacts,
       type: +key,

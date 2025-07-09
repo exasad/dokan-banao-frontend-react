@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'antd';
 import { green, red } from '@ant-design/colors';

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import ContentLoader from 'react-content-loader';
 
 const PostItem = (props) => (
@@ -13,14 +13,14 @@ const PostItem = (props) => (
 );
 const FeedPlaceholder = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <PostItem />
       <PostItem />
       <PostItem />
       <PostItem />
       <PostItem />
       <PostItem />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

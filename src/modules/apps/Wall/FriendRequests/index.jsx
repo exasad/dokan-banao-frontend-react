@@ -1,4 +1,3 @@
-import React from 'react';
 import AppList from '@crema/components/AppList';
 import RequestItem from './RequestItem';
 import PropTypes from 'prop-types';

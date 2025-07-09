@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Button, Space } from 'antd';
 import { PoweroffOutlined } from '@ant-design/icons';
 

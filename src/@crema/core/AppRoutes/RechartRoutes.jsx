@@ -1,4 +1,3 @@
-import React from 'react';
 import AreaChart from '../../../modules/thirdParty/recharts/Area';
 import BarChart from '../../../modules/thirdParty/recharts/Bar';
 import ComposedChart from '../../../modules/thirdParty/recharts/Composed';

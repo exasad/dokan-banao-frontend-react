@@ -16,7 +16,7 @@ import enUS from 'antd/lib/locale/en_US';
 import zhCN from 'antd/lib/locale/zh_CN';
 import dayjs from 'dayjs';
 import 'moment/locale/zh-cn';
-import React from 'react';
+import { Component } from 'react';
 
 dayjs.locale('en');
 
@@ -40,7 +40,7 @@ const columns = [
   },
 ];
 
-class Page extends React.Component {
+class Page extends Component {
   state = {
     visible: false,
   };
@@ -116,7 +116,7 @@ class Page extends React.Component {
   }
 }
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {

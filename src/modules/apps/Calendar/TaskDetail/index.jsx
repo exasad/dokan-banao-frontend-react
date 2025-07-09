@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import TaskDetailHeader from './TaskDetailHeader';
 import TaskDetailBody from './TaskDetailBody';
 import { useParams } from 'react-router-dom';

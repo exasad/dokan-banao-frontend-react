@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Button, Tag } from 'antd';
 
-class Controlled extends React.Component {
+class Controlled extends Component {
   state = {
     visible: true,
   };

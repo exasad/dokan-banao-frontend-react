@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Radio, Tabs } from 'antd';
 
 const App = () => {

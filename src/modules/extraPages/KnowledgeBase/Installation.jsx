@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import KBItem from './KBItem';
 import PropTypes from 'prop-types';

@@ -1,4 +1,3 @@
-import React from 'react';
 import AppCard from '@crema/components/AppCard';
 import AppList from '@crema/components/AppList';
 import RecentActivityCell from './RecentActivityCell';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Simple from './Simple';
 import SimpleSource from './Simple?raw';
 import Horizontal from './Horizontal';

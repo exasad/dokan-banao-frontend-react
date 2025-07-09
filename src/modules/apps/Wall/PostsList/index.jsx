@@ -1,4 +1,3 @@
-import React from 'react';
 import PostItem from './PostItem';
 import { StyledPostList } from './index.styled';
 import PropTypes from 'prop-types';

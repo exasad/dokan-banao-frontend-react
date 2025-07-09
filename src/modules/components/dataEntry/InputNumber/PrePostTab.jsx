@@ -1,6 +1,5 @@
 import { Cascader, InputNumber, Select, Space } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const { Option } = Select;
 

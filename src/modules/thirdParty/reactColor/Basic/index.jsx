@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { SketchPicker } from 'react-color';
 
-class Basic extends React.Component {
+class Basic extends Component {
   state = {
     displayColorPicker: false,
     color: {

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AppInfoView from '../AppInfoView';
 import PropTypes from 'prop-types';
 import AppSidebar from './AppSidebar';
 import clsx from 'clsx';
 import { MenuOutlined } from '@ant-design/icons';
-import QueueAnim from 'rc-queue-anim';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLayoutContext } from '@crema/context/AppContextProvider/LayoutContextProvider';
 import {
   StyledAppContainer,
@@ -32,19 +32,20 @@ const AppsContainer = (props) => {
             <MenuOutlined className='menu-btn-icon' />
           </StyledMenuBtn>
         )}
-        <QueueAnim style={{ zIndex: 3, overflow: 'hidden' }} type='scale'>
-          <h2 className='text-truncate' key='title'>
+        <AnimatePresence style={{ zIndex: 3, overflow: 'hidden' }} type='scale'>
+          <motion.h2 className='text-truncate' key='title'>
             {title}
-          </h2>
-        </QueueAnim>
+          </motion.h2>
+        </AnimatePresence>
       </StyledAppWrapHeader>
 
       <StyledAppContainer>
         {sidebarContent ? (
-          <QueueAnim
+          <AnimatePresence
             style={{ zIndex: 3 }}
             type={props.type ? props.type : 'left'}
           >
+            <motion.div>
             <AppSidebar
               isAppDrawerOpen={isAppDrawerOpen}
               setAppDrawerOpen={setAppDrawerOpen}
@@ -55,7 +56,8 @@ const AppsContainer = (props) => {
               sidebarContent={sidebarContent}
               key='sidebar'
             />
-          </QueueAnim>
+            </motion.div>
+          </AnimatePresence>
         ) : null}
         <StyledMainContent
           className={clsx({
@@ -74,10 +76,11 @@ const AppsContainer = (props) => {
               {children}
             </StyledMainContentCard>
           ) : (
-            <QueueAnim
+            <AnimatePresence
               type={props.type ? props.type : 'right'}
               style={{ minHeight: '100%' }}
             >
+              <motion.div>
               <StyledMainContentCard
                 bordered={false}
                 key='content'
@@ -88,7 +91,8 @@ const AppsContainer = (props) => {
               >
                 {children}
               </StyledMainContentCard>
-            </QueueAnim>
+              </motion.div>
+            </AnimatePresence>
           )}
 
           <AppInfoView />

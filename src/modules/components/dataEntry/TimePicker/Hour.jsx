@@ -1,8 +1,7 @@
-import React from 'react';
 import { Space, TimePicker } from 'antd';
 
 const Hour = () => {
-  function onChange(time, timeString) {
+  const onChange=(time, timeString)=> {
     console.log(time, timeString);
   }
 

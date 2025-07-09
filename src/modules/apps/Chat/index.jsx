@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import AppsContainer from '@crema/components/AppsContainer';
 import AppPageMeta from '@crema/components/AppPageMeta';

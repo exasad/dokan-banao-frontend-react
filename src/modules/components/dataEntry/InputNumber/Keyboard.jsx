@@ -1,8 +1,8 @@
 import { Checkbox, InputNumber, Space } from 'antd';
-import React from 'react';
+import { useState } from 'react';
 
 const Keyboard = () => {
-  const [keyboard, setKeyboard] = React.useState(true);
+  const [keyboard, setKeyboard] = useState(true);
   return (
     <Space>
       <InputNumber min={1} max={10} keyboard={keyboard} defaultValue={3} />

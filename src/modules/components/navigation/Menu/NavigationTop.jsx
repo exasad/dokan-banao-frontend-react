@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -65,7 +65,6 @@ const items = [
 const App = () => {
   const [current, setCurrent] = useState('mail');
   const onClick = (e) => {
-    console.log('click ', e);
     setCurrent(e.key);
   };
   return (

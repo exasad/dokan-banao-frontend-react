@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
 import { StyledAntBadgeGroup } from './index.styled';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HiUser } from 'react-icons/hi';
 import { AiFillLock } from 'react-icons/ai';
 import { FaBandcamp, FaNetworkWired } from 'react-icons/fa';

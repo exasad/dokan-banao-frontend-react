@@ -1,4 +1,3 @@
-import React from 'react';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import AppCircularProgress from '@crema/components/AppCircularProgress';
 import { useIntl } from 'react-intl';

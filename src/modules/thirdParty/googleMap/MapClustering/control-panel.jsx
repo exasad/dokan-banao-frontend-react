@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-function ControlPanel() {
+const ControlPanel=()=> {
   return (
     <div className='control-panel'>
       <h3>Create and Style Clusters</h3>
@@ -19,4 +17,4 @@ function ControlPanel() {
   );
 }
 
-export default React.memo(ControlPanel);
+export default ControlPanel;

@@ -1,4 +1,3 @@
-import React from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

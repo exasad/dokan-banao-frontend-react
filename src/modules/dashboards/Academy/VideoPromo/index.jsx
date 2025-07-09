@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { ClockCircleOutlined, CloudDownloadOutlined } from '@ant-design/icons';
 
@@ -28,7 +27,7 @@ const tabs = [
 ];
 
 const VideoPromo = ({ videoPromo }) => {
-  function callback(key) {
+  const callback=(key)=> {
     console.log(key);
   }
 

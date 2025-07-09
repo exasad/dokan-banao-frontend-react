@@ -1,7 +1,5 @@
 import { Image } from 'antd';
 
-import React from 'react';
-
 const FaultTolerant = () => {
   return (
     <Image

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Avatar, Card, Skeleton, Space, Switch } from 'antd';
 import {
   EditOutlined,
@@ -9,7 +9,7 @@ import { StyledLoadingCard } from './loadingCard.styled';
 
 const { Meta } = Card;
 
-class LoadingCard extends React.Component {
+class LoadingCard extends Component {
   state = {
     loading: true,
   };

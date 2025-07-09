@@ -1,4 +1,3 @@
-import React from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 import Account from '../../../modules/account/MyProfile';
 

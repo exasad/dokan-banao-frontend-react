@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Dropdown } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';
@@ -19,7 +18,6 @@ const OrderActions = ({ id }) => {
   ];
 
   const onMenuClick = ({ item, key }) => {
-    console.log('item', item);
     switch (key) {
       case '1':
         navigate('/apps/ecommerce/orders');

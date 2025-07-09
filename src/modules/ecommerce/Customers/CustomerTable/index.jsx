@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { StarFilled } from '@ant-design/icons';
 import OrderActions from './OrderActions';

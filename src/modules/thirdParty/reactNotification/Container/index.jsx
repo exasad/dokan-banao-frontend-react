@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Store } from 'react-notifications-component';
 import { Button } from 'antd';
 import {
@@ -9,7 +9,7 @@ import {
 import notification from '../helpers/notification';
 import { getMessage, getTitle, getType } from '../helpers/randomize';
 
-export default class ContainerExample extends React.Component {
+export default class ContainerExample extends Component {
   add = (container) => {
     const type = getType();
 

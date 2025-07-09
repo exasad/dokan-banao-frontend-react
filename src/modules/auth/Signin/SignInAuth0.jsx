@@ -1,5 +1,3 @@
-import React from 'react';
-
 import IntlMessages from '@crema/helpers/IntlMessages';
 import { useAuthMethod } from '@crema/hooks/AuthHooks';
 import {

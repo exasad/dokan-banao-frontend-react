@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { momentLocalizer } from 'react-big-calendar';
+import { useState } from 'react';
+import {dayjsLocalizer} from 'react-big-calendar';
 import events from '../events';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { StyledCalendar } from '../index.styled';
 import styled from 'styled-components';
 
-const localizer = momentLocalizer(moment);
+const localizer = dayjsLocalizer(dayjs);
 
 export const AppCalendarWrapper = styled.div`
   font-family: 'Be Vietnam', serif;

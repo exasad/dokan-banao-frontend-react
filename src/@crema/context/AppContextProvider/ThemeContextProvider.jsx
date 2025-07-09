@@ -1,6 +1,5 @@
 import {
   createContext,
-  useCallback,
   useContext,
   useEffect,
   useState,
@@ -21,10 +20,10 @@ const ThemeContextProvider = ({ children }) => {
   const [themeMode, updateThemeMode] = useState(defaultConfig.themeMode);
   const [themeStyle, updateThemeStyle] = useState(defaultConfig.themeStyle);
 
-  const updateTheme = useCallback((theme) => {
+  const updateTheme = (theme) => {
     console.log("updateTheme th", theme);
     setTheme(theme);
-  }, []);
+  };
 
   useEffect(() => {
     if (theme.direction === LayoutDirection.RTL) {

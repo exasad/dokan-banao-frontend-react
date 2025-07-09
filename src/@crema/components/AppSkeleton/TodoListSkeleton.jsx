@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import ContentLoader from 'react-content-loader';
 
 export const TodoItem = (props) => (
@@ -13,7 +13,7 @@ export const TodoItem = (props) => (
 );
 const TodoListSkeleton = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <TodoItem />
       <TodoItem />
       <TodoItem />
@@ -24,7 +24,7 @@ const TodoListSkeleton = () => {
       <TodoItem />
       <TodoItem />
       <TodoItem />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

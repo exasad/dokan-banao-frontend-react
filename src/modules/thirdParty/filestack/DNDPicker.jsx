@@ -1,4 +1,3 @@
-import React from 'react';
 import { PickerDropPane } from 'filestack-react';
 import { fileStackKey } from '@crema/constants/AppConst';
 

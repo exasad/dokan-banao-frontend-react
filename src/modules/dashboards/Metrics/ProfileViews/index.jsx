@@ -1,4 +1,3 @@
-import React from 'react';
 import ProfileViewsGraph from './ProfileViewsGraph';
 import IntlMessages from '@crema/helpers/IntlMessages';
 import PropTypes from 'prop-types';

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
 import AppLoader from '@crema/components/AppLoader';
 import BlogDetail from './BlogDetail';

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useUrlSearchParams } from 'use-url-search-params';
 import AppContentView from '@crema/components/AppContentView';
 import generateRoutes from '@crema/helpers/RouteGenerator';

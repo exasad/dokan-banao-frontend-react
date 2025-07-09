@@ -1,4 +1,3 @@
-import React from 'react';
 import collapseMotion from 'antd/lib/_util/motion';
 import clsx from 'clsx';
 import AppVerticalMenu from '../components/AppVerticalNav';

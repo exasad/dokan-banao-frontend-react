@@ -1,10 +1,9 @@
-import React from 'react';
 import { Select, Space } from 'antd';
 
 const Option = Select.Option;
 
 const WithValue = () => {
-  function handleChange(value) {
+    const handleChange=(value)=> {
     console.log(value); // { key: "lucy", label: "Lucy (101)" }
   }
 

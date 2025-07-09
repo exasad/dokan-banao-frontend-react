@@ -1,8 +1,6 @@
 import { PageHeader } from '@ant-design/pro-layout';
 import { Button, Descriptions } from 'antd';
 
-import React from 'react';
-
 const WhiteBackgroundMode = () => {
   return (
     <div className='site-page-header-ghost-wrapper'>

@@ -1,5 +1,4 @@
 import { Progress } from 'antd';
-import React from 'react';
 
 const SquareLineCaps = () => {
   return (

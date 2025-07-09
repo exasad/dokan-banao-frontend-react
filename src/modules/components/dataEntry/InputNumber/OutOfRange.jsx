@@ -1,8 +1,8 @@
 import { Button, InputNumber, Space } from 'antd';
-import React from 'react';
+import { useState } from 'react';
 
 const OutOfRange = () => {
-  const [value, setValue] = React.useState('99');
+  const [value, setValue] = useState('99');
   return (
     <Space>
       <InputNumber min={1} max={10} value={value} onChange={setValue} />

@@ -1,8 +1,6 @@
 import { Col, Row, Statistic } from 'antd';
 import { LikeOutlined } from '@ant-design/icons';
 
-import React from 'react';
-
 const Unit = () => {
   return (
     <Row gutter={16}>

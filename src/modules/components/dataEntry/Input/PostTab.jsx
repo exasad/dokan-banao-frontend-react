@@ -1,4 +1,3 @@
-import React from 'react';
 import { Input, Select, Space } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 import { StyledSelectAfter, StyledSelectBefore } from './PostTab.styled';

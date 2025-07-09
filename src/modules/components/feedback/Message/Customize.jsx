@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, message, Space } from 'antd';
 
 const success = () => {

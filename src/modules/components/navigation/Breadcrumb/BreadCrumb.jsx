@@ -1,5 +1,4 @@
 import { Breadcrumb } from 'antd';
-import React from 'react';
 
 const items = [
   {

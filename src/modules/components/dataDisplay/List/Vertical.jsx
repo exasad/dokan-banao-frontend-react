@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, List, Space } from 'antd';
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
@@ -18,7 +18,7 @@ for (let i = 0; i < 23; i++) {
 
 const IconText = ({ icon, text }) => (
   <Space>
-    {React.createElement(icon)}
+    {createElement(icon)}
     {text}
   </Space>
 );

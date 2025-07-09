@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import StatGraphs from './StatGraphs';
 import AppCard from '@crema/components/AppCard';

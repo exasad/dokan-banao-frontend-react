@@ -1,6 +1,5 @@
 import { Button, Space, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import React from 'react';
 
 const MaxCount = () => {
   return (

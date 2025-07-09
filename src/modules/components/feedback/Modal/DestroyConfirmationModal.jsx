@@ -1,14 +1,13 @@
 import { Button, Modal } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import React from 'react';
 
-function destroyAll() {
+const destroyAll=() =>{
   Modal.destroyAll();
 }
 
 const { confirm } = Modal;
 
-function showConfirm() {
+const showConfirm=()=> {
   for (let i = 0; i < 3; i += 1) {
     setTimeout(() => {
       confirm({

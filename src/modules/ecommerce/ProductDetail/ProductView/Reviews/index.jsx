@@ -1,4 +1,3 @@
-import React from 'react';
 import AppList from '@crema/components/AppList';
 import ReviewCell from './ReviewCell';
 import { Divider } from 'antd';

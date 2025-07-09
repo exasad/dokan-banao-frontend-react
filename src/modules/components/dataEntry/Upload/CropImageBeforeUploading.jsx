@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Upload } from 'antd';
 import ImgCrop from 'antd-img-crop';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Alert, Space, Spin } from 'antd';
 
 const Customize = () => {

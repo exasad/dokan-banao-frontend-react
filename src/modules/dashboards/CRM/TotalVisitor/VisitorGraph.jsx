@@ -1,4 +1,3 @@
-import React from 'react';
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import PropTypes from 'prop-types';
 import { Fonts } from '@crema/constants/AppEnums';

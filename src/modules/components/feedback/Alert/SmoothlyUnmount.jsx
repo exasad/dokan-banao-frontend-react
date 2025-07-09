@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { Alert, Space } from 'antd';
 
-class SmoothlyUnmount extends React.Component {
+class SmoothlyUnmount extends Component {
   state = {
     visiable: true,
   };

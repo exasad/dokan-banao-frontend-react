@@ -1,5 +1,4 @@
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
-import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledMarketGraph } from './index.styled';
 

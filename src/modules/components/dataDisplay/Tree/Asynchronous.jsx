@@ -1,5 +1,5 @@
 import { TreeSelect } from 'antd';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Asynchronous = () => {
   const [value, setValue] = useState();
@@ -48,7 +48,6 @@ const Asynchronous = () => {
       }, 300);
     });
   const onChange = (newValue) => {
-    console.log(newValue);
     setValue(newValue);
   };
   return (

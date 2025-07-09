@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import PropTypes from 'prop-types';
 import { IoMdAttach } from 'react-icons/io';

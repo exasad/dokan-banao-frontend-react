@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Button } from 'antd';
 import { StyledContainer, StyledDialogDropzone } from './index.styled';

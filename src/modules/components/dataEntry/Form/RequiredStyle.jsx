@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Form, Input, Radio } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 

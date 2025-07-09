@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import AddContactForm from './AddContactForm';
 import { StyledContactModal } from './index.styled';
@@ -24,7 +24,6 @@ const CreateContact = ({
       onOk={isAddContact}
       footer={false}
       onCancel={handleAddContactClose}
-      bodyStyle={{ height: 600 }}
     >
       <AddContactForm
         selectContact={selectContact}

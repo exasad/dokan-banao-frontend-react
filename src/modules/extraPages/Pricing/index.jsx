@@ -1,4 +1,3 @@
-import React from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import PackageOne from './PackageOne';
 import PackageFour from './PackageFour';

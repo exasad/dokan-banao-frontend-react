@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   AppstoreOutlined,
   CalendarOutlined,
@@ -8,7 +8,7 @@ import {
 } from '@ant-design/icons';
 import { Divider, Menu, Switch } from 'antd';
 
-function getItem(label, key, icon, children) {
+const getItem=(label, key, icon, children)=> {
   return {
     key,
     icon,

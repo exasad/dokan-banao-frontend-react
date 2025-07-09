@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Switch } from 'antd';
 import PropTypes from 'prop-types';
 import IntlMessages from '@crema/helpers/IntlMessages';
@@ -20,7 +19,7 @@ const Notification = ({ notification }) => {
     console.log('Failed:', errorInfo);
   };
 
-  function onChange(checked) {
+  const onChange=(checked)=> {
     console.log(`switch to ${checked}`);
   }
 

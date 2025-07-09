@@ -1,5 +1,5 @@
 import { Radio, Space, Table, Tag } from 'antd';
-import React from 'react';
+import { Component } from 'react';
 
 const topOptions = [
   { label: 'topLeft', value: 'topLeft' },
@@ -88,7 +88,7 @@ const data = [
   },
 ];
 
-class Demo extends React.Component {
+class Demo extends Component {
   state = {
     top: 'topLeft',
     bottom: 'bottomRight',

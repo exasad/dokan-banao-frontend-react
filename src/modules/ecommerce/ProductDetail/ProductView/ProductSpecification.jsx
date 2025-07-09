@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import AppRowContainer from '@crema/components/AppRowContainer';
 import { Col } from 'antd';
 import {
@@ -13,14 +13,14 @@ const ProductSpecification = ({ productSpec }) => {
       <StyledProductDetailItemTitle>Specification</StyledProductDetailItemTitle>
       <AppRowContainer>
         {productSpec.map((data, index) => (
-          <React.Fragment key={index}>
+          <Fragment key={index}>
             <Col xs={8}>
               <p className='text-secondary'> {data.title}</p>
             </Col>
             <Col xs={16}>
               <p> {data.desc}</p>
             </Col>
-          </React.Fragment>
+          </Fragment>
         ))}
       </AppRowContainer>
     </StyledProductDetailSpecification>

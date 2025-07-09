@@ -1,4 +1,3 @@
-import React from "react";
 import SimpleScatterChart from "./Components/SimpleScatterChart";
 import SimpleScatterChartSource from "./Components/SimpleScatterChart?raw";
 import ThreeDimScatterChart from "./Components/ThreeDimScatterChart";

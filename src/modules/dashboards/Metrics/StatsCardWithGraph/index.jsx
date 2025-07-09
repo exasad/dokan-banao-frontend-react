@@ -1,4 +1,3 @@
-import React from 'react';
 import IncomeGraph from './IncomeGraph';
 import WebTrafficGraph from './WebTrafficGraph';
 import RevenueGrowthGraph from './RevenueGrowthGraph';

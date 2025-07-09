@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsLink45Deg } from 'react-icons/bs';
 import { FiPhone } from 'react-icons/fi';

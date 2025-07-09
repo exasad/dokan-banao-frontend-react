@@ -1,4 +1,3 @@
-import React from 'react';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/js/plugins/align.min.js';
 import 'froala-editor/js/froala_editor.pkgd.min.js';

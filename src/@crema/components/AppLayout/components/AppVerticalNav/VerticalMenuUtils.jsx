@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
+import { isValidElement } from 'react';
 import { useIntl } from 'react-intl';
 import { allowMultiLanguage } from '@crema/constants/AppConst';
 
@@ -12,7 +12,7 @@ const MenuItemChildren = (item) => {
       key: item.id,
       icon:
         icon &&
-        (React.isValidElement(icon) ? (
+        (isValidElement(icon) ? (
           <span id={url} className='ant-menu-item-icon'>
             {icon}
           </span>
@@ -32,7 +32,7 @@ const MenuItemChildren = (item) => {
       key: item.id,
       icon:
         icon &&
-        (React.isValidElement(icon) ? (
+        (isValidElement(icon) ? (
           <span id={url} className='ant-menu-item-icon'>
             {icon}
           </span>

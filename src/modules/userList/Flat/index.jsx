@@ -1,4 +1,3 @@
-import React from 'react';
 import AppInfoView from '@crema/components/AppInfoView';
 import { StyledUserFlat } from './index.styled';
 import { useGetDataApi } from '@crema/hooks/APIHooks';

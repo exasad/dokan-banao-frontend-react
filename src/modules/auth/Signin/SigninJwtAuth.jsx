@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import { Checkbox, Form, Input } from 'antd';
@@ -28,7 +27,7 @@ const SignInJwtAuth = () => {
     navigate('/forget-password', { tab: 'jwtAuth' });
   };
 
-  function onRememberMe(e) {
+  const  onRememberMe=(e)=> {
     console.log(`checked = ${e.target.checked}`);
   }
 

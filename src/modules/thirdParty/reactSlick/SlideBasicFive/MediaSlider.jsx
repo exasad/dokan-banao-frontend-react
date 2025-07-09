@@ -1,4 +1,3 @@
-import React from 'react';
 import PropsTypes from 'prop-types';
 import { StyledSlideBasic5Wrapper } from './index.styled';
 

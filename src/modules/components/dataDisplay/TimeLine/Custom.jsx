@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space, Timeline } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Divider, notification, Space } from 'antd';
 import {
   RadiusBottomleftOutlined,

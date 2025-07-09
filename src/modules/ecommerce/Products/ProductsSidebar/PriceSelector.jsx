@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { Slider } from 'antd';
 import { StyledProductSidebarPriceSelector } from './index.styled';
 
 const PriceSelector = () => {
-  const [value, setValue] = React.useState([50, 400]);
+  const [value, setValue] = useState([50, 400]);
 
   const handleChange = (value) => {
     setValue(value);

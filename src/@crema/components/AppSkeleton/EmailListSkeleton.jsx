@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import ContentLoader from 'react-content-loader';
 
 export const MailItem = () => (
@@ -12,7 +12,7 @@ export const MailItem = () => (
 );
 const EmailListSkeleton = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <MailItem />
       <MailItem />
       <MailItem />
@@ -23,7 +23,7 @@ const EmailListSkeleton = () => {
       <MailItem />
       <MailItem />
       <MailItem />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

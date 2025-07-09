@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Select, Space } from 'antd';
 
 const { Option } = Select;
@@ -9,8 +9,8 @@ const cityData = {
 };
 
 const SelectCoordinate = () => {
-  const [cities, setCities] = React.useState(cityData[provinceData[0]]);
-  const [secondCity, setSecondCity] = React.useState(
+  const [cities, setCities] = useState(cityData[provinceData[0]]);
+  const [secondCity, setSecondCity] = useState(
     cityData[provinceData[0]][0],
   );
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import PropTypes from 'prop-types';
 
 import { Collapse, Progress } from 'antd';
@@ -12,7 +10,7 @@ import {
   StyledTicketSupportOpen,
 } from './index.styled';
 
-function callback(key) {
+const callback=(key)=> {
   console.log(key);
 }
 

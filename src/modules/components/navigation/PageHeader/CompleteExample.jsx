@@ -1,4 +1,3 @@
-import React from 'react';
 import { PageHeader } from '@ant-design/pro-layout';
 import { Button, Dropdown, Row, Tag, Typography } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';

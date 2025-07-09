@@ -1,4 +1,3 @@
-import React from 'react';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';

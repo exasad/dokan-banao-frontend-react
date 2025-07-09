@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledChatContentScreen, StyledChatNoScreen } from './index.styled';
 import PropTypes from 'prop-types';
 import NoUserScreen from './NoUserScreen';

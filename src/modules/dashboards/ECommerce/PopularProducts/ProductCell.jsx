@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar } from 'antd';
 import PropTypes from 'prop-types';
 import { StyledProductCell, StyledProductCellContent } from './index.styled';

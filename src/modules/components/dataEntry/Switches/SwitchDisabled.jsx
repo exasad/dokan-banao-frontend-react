@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, Space, Switch } from 'antd';
 
 const SwitchDisabled = () => {
-  const [disabled, setDisabled] = React.useState(true);
+  const [disabled, setDisabled] = useState(true);
 
   const toggle = () => {
     setDisabled(!disabled);

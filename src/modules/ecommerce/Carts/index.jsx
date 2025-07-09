@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import OrderSummary from '../OrderSummary';
 
@@ -8,7 +7,7 @@ import AppRowContainer from '@crema/components/AppRowContainer';
 import { Button, Col } from 'antd';
 import AppAnimate from '@crema/components/AppAnimate';
 import AppPageMeta from '@crema/components/AppPageMeta';
-import QueueAnim from 'rc-queue-anim';
+import { motion, AnimatePresence } from 'framer-motion';
 import { StyledCartsFooter } from './index.styled';
 import { useGetDataApi } from '@crema/hooks/APIHooks';
 import CartTable from './CartTable';
@@ -25,11 +24,11 @@ const Carts = () => {
   return (
     <>
       <AppPageMeta title='Carts' />
-      <QueueAnim style={{ zIndex: 3 }} type='scale'>
-        <h2 className='page-title' key='title'>
+      <AnimatePresence style={{ zIndex: 3 }} type='scale'>
+        <motion.h2 className='page-title' key='title'>
           <IntlMessages id='sidebar.ecommerce.cart' />
-        </h2>
-      </QueueAnim>
+        </motion.h2>
+      </AnimatePresence>
       <AppRowContainer>
         <Col xs={24} lg={16}>
           <AppAnimate animation='transition.slideLeftIn' delay={200}>

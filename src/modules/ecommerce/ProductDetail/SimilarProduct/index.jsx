@@ -1,4 +1,3 @@
-import React from 'react';
 import Slider from 'react-slick';
 import GridItem from '../../Products/ProductListing/ProductGrid/GridItem';
 import 'slick-carousel/slick/slick.css';

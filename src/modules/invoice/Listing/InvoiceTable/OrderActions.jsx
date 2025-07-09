@@ -1,6 +1,5 @@
 import { MoreOutlined } from '@ant-design/icons';
 import { Button, Dropdown } from 'antd';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 

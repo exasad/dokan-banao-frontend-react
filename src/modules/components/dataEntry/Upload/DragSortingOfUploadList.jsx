@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button, Tooltip, Upload } from 'antd';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const type = 'DragableUploadList';
 
 const DragableUploadListItem = ({ originNode, moveRow, file, fileList }) => {
-  const ref = React.useRef();
+  const ref = useRef();
   const index = fileList.indexOf(file);
   const [{ isOver, dropClassName }, drop] = useDrop({
     accept: type,
@@ -85,7 +85,7 @@ const DragSortingUpload = () => {
     },
   ]);
 
-  const moveRow = useCallback(
+  const moveRow =
     (dragIndex, hoverIndex) => {
       const dragRow = fileList[dragIndex];
       setFileList(
@@ -96,9 +96,7 @@ const DragSortingUpload = () => {
           ],
         }),
       );
-    },
-    [fileList],
-  );
+    };
 
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);

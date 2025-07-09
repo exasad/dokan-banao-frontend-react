@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import { Dropdown } from 'antd';
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai';
 import PropTypes from 'prop-types';
@@ -28,7 +28,7 @@ const AppHeader = ({ isCollapsed, onToggleSidebar }) => {
 
   return (
     <StyledHeaderMiniSidebar className='app-header-mini-sidebar'>
-      {React.createElement(
+      {createElement(
         isCollapsed ? AiOutlineMenuUnfold : AiOutlineMenuFold,
         {
           className: 'trigger',

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Select } from 'antd';
 import jsonp from 'fetch-jsonp';
 import querystring from 'querystring';
@@ -9,14 +9,14 @@ const { Option } = Select;
 let timeout;
 let currentValue;
 
-function fetch(value, callback) {
+const fetch=(value, callback)=> {
   if (timeout) {
     clearTimeout(timeout);
     timeout = null;
   }
   currentValue = value;
 
-  function fake() {
+  const fake=()=> {
     const str = querystring.encode({
       code: 'utf-8',
       q: value,
@@ -46,7 +46,7 @@ fetch.propTypes = {
   callback: PropTypes.any,
 };
 
-class SearchField extends React.Component {
+class SearchField extends Component {
   state = {
     data: [],
     value: undefined,

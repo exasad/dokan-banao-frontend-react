@@ -1,4 +1,3 @@
-import React from 'react';
 import { Select, Space } from 'antd';
 
 const { Option } = Select;
@@ -8,7 +7,7 @@ for (let i = 10; i < 36; i++) {
   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }
 
-function handleChange(value) {
+const handleChange=(value)=> {
   console.log(`selected ${value}`);
 }
 

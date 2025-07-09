@@ -1,14 +1,14 @@
-import React from 'react';
+import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
-const Mail = React.lazy(() => import('../../../modules/apps/Mail'));
-const ToDo = React.lazy(() => import('../../../modules/apps/ToDo'));
-const Calendar = React.lazy(() => import('../../../modules/apps/Calendar'));
-const Contact = React.lazy(() => import('../../../modules/apps/Contact'));
-const ScrumBoard = React.lazy(() => import('../../../modules/apps/ScrumBoard'));
-const Chat = React.lazy(() => import('../../../modules/apps/Chat'));
-const Wall = React.lazy(() => import('../../../modules/apps/Wall'));
+const Mail = lazy(() => import('../../../modules/apps/Mail'));
+const ToDo = lazy(() => import('../../../modules/apps/ToDo'));
+const Calendar = lazy(() => import('../../../modules/apps/Calendar'));
+const Contact = lazy(() => import('../../../modules/apps/Contact'));
+const ScrumBoard = lazy(() => import('../../../modules/apps/ScrumBoard'));
+const Chat = lazy(() => import('../../../modules/apps/Chat'));
+const Wall = lazy(() => import('../../../modules/apps/Wall'));
 
 export const appsConfig = [
   {

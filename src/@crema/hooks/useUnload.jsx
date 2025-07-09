@@ -1,9 +1,9 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 
 export const useUnload = (fn) => {
-  const cb = React.useRef(fn);
+  const cb = useRef(fn);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onUnload = cb.current;
     window.addEventListener('beforeunload', onUnload);
     return () => {

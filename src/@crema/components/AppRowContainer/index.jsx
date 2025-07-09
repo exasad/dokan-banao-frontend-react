@@ -1,4 +1,3 @@
-import React from 'react';
 import { Row } from 'antd';
 import PropTypes from 'prop-types';
 import { StyledAppRowContainer } from './index.styled';

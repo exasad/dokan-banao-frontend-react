@@ -1,9 +1,9 @@
-import React from 'react';
+import { lazy } from 'react';
 
-const Anchor = React.lazy(() => import('./Anchor'));
-const FloatButton = React.lazy(() => import('./BackTop'));
-const Divider = React.lazy(() => import('./Divider'));
-const ConfigProvider = React.lazy(() => import('./ConfigProvider'));
+const Anchor = lazy(() => import('./Anchor'));
+const FloatButton = lazy(() => import('./BackTop'));
+const Divider = lazy(() => import('./Divider'));
+const ConfigProvider = lazy(() => import('./ConfigProvider'));
 
 export const otherComponentConfigs = [
   {
