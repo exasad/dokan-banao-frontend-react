@@ -1,14 +1,28 @@
 import {useState, useEffect} from 'react';
 import {
-  Typography, Card, Form, Input, Switch, Button, Upload, message, Image, Space, Spin, Row, Col, Divider,
+  Typography, Card, Form, Input, Switch, Button, Upload, message, Image, Space, Spin, Row, Col, Divider, Radio, Tooltip,
 } from 'antd';
 import {
-  UploadOutlined, DeleteOutlined, SaveOutlined, SettingOutlined, GiftOutlined, NotificationOutlined,
+  UploadOutlined, DeleteOutlined, SaveOutlined, SettingOutlined, GiftOutlined, NotificationOutlined, BgColorsOutlined, CheckCircleFilled,
 } from '@ant-design/icons';
 import adminAxios from '../../services/adminAxios';
 
 const {Title, Text} = Typography;
 const {TextArea} = Input;
+
+// Theme configurations for preview
+const THEMES = [
+  { id: 'default', name: 'Default', desc: 'Modern indigo design', primary: '#4f46e5', bg: '#ffffff', text: '#111827' },
+  { id: 'gadget', name: 'Gadget', desc: 'Dark tech theme', primary: '#00d4ff', bg: '#0f172a', text: '#f1f5f9' },
+  { id: 'fashion', name: 'Fashion', desc: 'Elegant pink theme', primary: '#be185d', bg: '#fffbfc', text: '#1f2937' },
+  { id: 'grocery', name: 'Grocery', desc: 'Fresh green theme', primary: '#16a34a', bg: '#ffffff', text: '#14532d' },
+  { id: 'luxury', name: 'Luxury', desc: 'Premium dark gold', primary: '#d4af37', bg: '#0a0a0a', text: '#fafafa' },
+  { id: 'kids', name: 'Kids', desc: 'Fun colorful theme', primary: '#f97316', bg: '#fffbeb', text: '#1c1917' },
+  { id: 'minimal', name: 'Minimal', desc: 'Ultra-clean design', primary: '#171717', bg: '#ffffff', text: '#171717' },
+  { id: 'beauty', name: 'Beauty', desc: 'Soft pink theme', primary: '#ec4899', bg: '#fefefe', text: '#1f2937' },
+  { id: 'sports', name: 'Sports', desc: 'Dynamic red theme', primary: '#dc2626', bg: '#ffffff', text: '#0f172a' },
+  { id: 'ocean', name: 'Ocean', desc: 'Calming blue theme', primary: '#0891b2', bg: '#f0fdff', text: '#164e63' },
+];
 
 const Settings = () => {
   const [form] = Form.useForm();
@@ -20,6 +34,7 @@ const Settings = () => {
   const [faviconFile, setFaviconFile] = useState(null);
   const [removeLogo, setRemoveLogo] = useState(false);
   const [removeFavicon, setRemoveFavicon] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState('default');
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -29,6 +44,7 @@ const Settings = () => {
           site_title: res.data.site_title || '',
           site_description: res.data.site_description || '',
           enable_guest_checkout: res.data.enable_guest_checkout === '1',
+          theme: res.data.theme || 'default',
           announcement_enabled: res.data.announcement_enabled === '1',
           announcement_text: res.data.announcement_text || 'Free delivery on orders over ৳1,000 | Cash on Delivery Available',
           feature_1_title: res.data.feature_1_title || 'Free Shipping',
@@ -42,6 +58,7 @@ const Settings = () => {
         });
         setLogoUrl(res.data.logo || null);
         setFaviconUrl(res.data.favicon || null);
+        setSelectedTheme(res.data.theme || 'default');
       } catch {
         message.error('Failed to load settings');
       } finally {
@@ -59,6 +76,7 @@ const Settings = () => {
       formData.append('site_title', values.site_title || '');
       formData.append('site_description', values.site_description || '');
       formData.append('enable_guest_checkout', values.enable_guest_checkout ? '1' : '0');
+      formData.append('theme', selectedTheme || 'default');
       formData.append('feature_1_title', values.feature_1_title || '');
       formData.append('feature_1_desc', values.feature_1_desc || '');
       formData.append('feature_2_title', values.feature_2_title || '');
@@ -131,6 +149,51 @@ const Settings = () => {
                 extra='Allow customers to place orders without creating an account'>
                 <Switch checkedChildren='Enabled' unCheckedChildren='Disabled' />
               </Form.Item>
+            </Card>
+
+            <Card title={<><BgColorsOutlined style={{marginRight: 8}} />Storefront Theme</>} style={{marginBottom: 24}}>
+              <Text type='secondary' style={{display: 'block', marginBottom: 16}}>
+                Choose a theme for your storefront. Each theme is designed for different store types.
+              </Text>
+              <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 12}}>
+                {THEMES.map((theme) => (
+                  <Tooltip key={theme.id} title={theme.desc}>
+                    <div
+                      onClick={() => setSelectedTheme(theme.id)}
+                      style={{
+                        cursor: 'pointer',
+                        border: selectedTheme === theme.id ? '2px solid #1677ff' : '1px solid #d9d9d9',
+                        borderRadius: 8,
+                        padding: 8,
+                        transition: 'all 0.2s',
+                        position: 'relative',
+                        background: selectedTheme === theme.id ? '#f0f5ff' : '#fff',
+                      }}
+                    >
+                      {selectedTheme === theme.id && (
+                        <CheckCircleFilled style={{position: 'absolute', top: 6, right: 6, color: '#1677ff', fontSize: 16}} />
+                      )}
+                      <div style={{
+                        height: 60,
+                        borderRadius: 4,
+                        marginBottom: 8,
+                        background: theme.bg,
+                        border: '1px solid #e5e7eb',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        overflow: 'hidden',
+                      }}>
+                        <div style={{display: 'flex', alignItems: 'center', gap: 8}}>
+                          <div style={{width: 24, height: 24, borderRadius: 4, background: theme.primary}} />
+                          <div style={{width: 40, height: 6, borderRadius: 2, background: theme.text, opacity: 0.7}} />
+                        </div>
+                      </div>
+                      <Text strong style={{fontSize: 12, display: 'block', textAlign: 'center'}}>{theme.name}</Text>
+                    </div>
+                  </Tooltip>
+                ))}
+              </div>
             </Card>
 
             <Card title={<><NotificationOutlined style={{marginRight: 8}} />Announcement Bar</>} style={{marginBottom: 24}}>
