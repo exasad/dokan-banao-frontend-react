@@ -220,7 +220,7 @@ const ProductsList = () => {
 
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
         <Title level={3} style={{margin: 0}}>Products {isTrashed && <Tag color='red'>Trash</Tag>}</Title>
         {!isTrashed && (
           <Button type='primary' icon={<PlusOutlined />} onClick={() => navigate('/products/create')}>
@@ -228,14 +228,14 @@ const ProductsList = () => {
           </Button>
         )}
       </div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 8}}>
-        <Space wrap>
+      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
+        <Space wrap style={{flex: 1}}>
           <Input
             placeholder='Search by name or SKU...'
             prefix={<SearchOutlined />}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            style={{width: 250}}
+            style={{width: 250, minWidth: 150, maxWidth: '100%'}}
             allowClear
           />
           <Select
@@ -243,7 +243,7 @@ const ProductsList = () => {
             value={statusFilter}
             onChange={setStatusFilter}
             allowClear
-            style={{width: 130}}
+            style={{width: 130, minWidth: 100}}
             options={[
               {value: '1', label: 'Active'},
               {value: '0', label: 'Inactive'},
@@ -257,7 +257,7 @@ const ProductsList = () => {
               allowClear
               showSearch
               optionFilterProp='label'
-              style={{width: 180}}
+              style={{width: 180, minWidth: 120}}
               options={categories.map((c) => ({value: String(c.id), label: c.name}))}
             />
           )}
@@ -267,7 +267,7 @@ const ProductsList = () => {
               value={stockFilter}
               onChange={setStockFilter}
               allowClear
-              style={{width: 140}}
+              style={{width: 140, minWidth: 100}}
               options={[
                 {value: 'in_stock', label: 'In Stock'},
                 {value: 'out_of_stock', label: 'Out of Stock'},
@@ -279,7 +279,7 @@ const ProductsList = () => {
             value={trashedFilter}
             onChange={(v) => { setTrashedFilter(v); setSelectedRowKeys([]); }}
             allowClear
-            style={{width: 140}}
+            style={{width: 140, minWidth: 100}}
             options={[{value: 'only', label: 'Trashed'}]}
           />
         </Space>

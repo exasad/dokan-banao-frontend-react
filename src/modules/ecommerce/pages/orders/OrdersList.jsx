@@ -163,7 +163,7 @@ const OrdersList = () => {
 
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
         <Title level={3} style={{margin: 0}}>Orders</Title>
       </div>
 
@@ -188,14 +188,14 @@ const OrdersList = () => {
         </Col>
       </Row>
 
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 8}}>
-        <Space wrap>
-          <Input placeholder='Order no, name, phone...' prefix={<SearchOutlined />} value={search} onChange={(e) => setSearch(e.target.value)} style={{width: 240}} allowClear />
-          <Select placeholder='Status' value={statusFilter} onChange={setStatusFilter} allowClear style={{width: 140}}
+      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
+        <Space wrap style={{flex: 1}}>
+          <Input placeholder='Order no, name, phone...' prefix={<SearchOutlined />} value={search} onChange={(e) => setSearch(e.target.value)} style={{width: 240, minWidth: 150, maxWidth: '100%'}} allowClear />
+          <Select placeholder='Status' value={statusFilter} onChange={setStatusFilter} allowClear style={{width: 140, minWidth: 100}}
             options={statuses.map((s) => ({value: s, label: s.charAt(0).toUpperCase() + s.slice(1)}))} />
-          <Select placeholder='Payment Status' value={paymentFilter} onChange={setPaymentFilter} allowClear style={{width: 150}}
+          <Select placeholder='Payment Status' value={paymentFilter} onChange={setPaymentFilter} allowClear style={{width: 150, minWidth: 100}}
             options={[{value: 'pending', label: 'Pending'}, {value: 'paid', label: 'Paid'}, {value: 'failed', label: 'Failed'}, {value: 'refunded', label: 'Refunded'}]} />
-          <Select placeholder='Payment Method' value={paymentMethodFilter} onChange={setPaymentMethodFilter} allowClear style={{width: 160}}
+          <Select placeholder='Payment Method' value={paymentMethodFilter} onChange={setPaymentMethodFilter} allowClear style={{width: 160, minWidth: 100}}
             options={paymentMethods.map((m) => ({value: m.toLowerCase().replace(/\s+/g, '_'), label: m}))} />
         </Space>
         {selectedRowKeys.length > 0 && (

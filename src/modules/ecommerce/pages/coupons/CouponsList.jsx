@@ -149,7 +149,7 @@ const CouponsList = () => {
 
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
         <Title level={3} style={{margin: 0}}>
           <GiftOutlined style={{marginRight: 8}} />
           Coupons {isTrashed && <Tag color='red'>Trash</Tag>}
@@ -157,13 +157,13 @@ const CouponsList = () => {
         {!isTrashed && <Button type='primary' icon={<PlusOutlined />} onClick={openAdd}>Add Coupon</Button>}
       </div>
 
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 8}}>
-        <Space wrap>
-          <Input placeholder='Search code or name...' prefix={<SearchOutlined />} value={search} onChange={(e) => setSearch(e.target.value)} style={{width: 220}} allowClear />
-          <Select placeholder='Status' value={statusFilter} onChange={setStatusFilter} allowClear style={{width: 130}} options={[{value: '1', label: 'Active'}, {value: '0', label: 'Inactive'}]} />
-          <Select placeholder='Discount Type' value={discountTypeFilter} onChange={setDiscountTypeFilter} allowClear style={{width: 150}} options={[{value: 'fixed', label: 'Fixed'}, {value: 'percentage', label: 'Percentage'}]} />
-          <Select placeholder='Coupon Status' value={couponStatus} onChange={setCouponStatus} allowClear style={{width: 140}} options={[{value: 'active', label: 'Valid'}, {value: 'expired', label: 'Expired'}, {value: 'scheduled', label: 'Scheduled'}, {value: 'used_up', label: 'Used Up'}]} />
-          <Select placeholder='Show' value={trashedFilter} onChange={(v) => { setTrashedFilter(v); setSelectedRowKeys([]); }} allowClear style={{width: 130}} options={[{value: 'only', label: 'Trashed'}]} />
+      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
+        <Space wrap style={{flex: 1}}>
+          <Input placeholder='Search code or name...' prefix={<SearchOutlined />} value={search} onChange={(e) => setSearch(e.target.value)} style={{width: 220, minWidth: 150, maxWidth: '100%'}} allowClear />
+          <Select placeholder='Status' value={statusFilter} onChange={setStatusFilter} allowClear style={{width: 130, minWidth: 100}} options={[{value: '1', label: 'Active'}, {value: '0', label: 'Inactive'}]} />
+          <Select placeholder='Discount Type' value={discountTypeFilter} onChange={setDiscountTypeFilter} allowClear style={{width: 150, minWidth: 100}} options={[{value: 'fixed', label: 'Fixed'}, {value: 'percentage', label: 'Percentage'}]} />
+          <Select placeholder='Coupon Status' value={couponStatus} onChange={setCouponStatus} allowClear style={{width: 140, minWidth: 100}} options={[{value: 'active', label: 'Valid'}, {value: 'expired', label: 'Expired'}, {value: 'scheduled', label: 'Scheduled'}, {value: 'used_up', label: 'Used Up'}]} />
+          <Select placeholder='Show' value={trashedFilter} onChange={(v) => { setTrashedFilter(v); setSelectedRowKeys([]); }} allowClear style={{width: 130, minWidth: 100}} options={[{value: 'only', label: 'Trashed'}]} />
         </Space>
         {selectedRowKeys.length > 0 && <Dropdown menu={bulkMenuItems}><Button>Bulk Actions ({selectedRowKeys.length}) <DownOutlined /></Button></Dropdown>}
       </div>

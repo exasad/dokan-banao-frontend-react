@@ -171,7 +171,7 @@ const TenantsList = () => {
 
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
         <Title level={3} style={{margin: 0}}>Tenants</Title>
         <Button
           type='primary'
@@ -181,14 +181,14 @@ const TenantsList = () => {
           Add Tenant
         </Button>
       </div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
-        <Space>
+      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
+        <Space wrap style={{flex: 1}}>
           <Input
             placeholder='Search tenants...'
             prefix={<SearchOutlined />}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            style={{width: 250}}
+            style={{width: 250, minWidth: 150, maxWidth: '100%'}}
             allowClear
           />
           <Select
@@ -196,7 +196,7 @@ const TenantsList = () => {
             value={statusFilter}
             onChange={setStatusFilter}
             allowClear
-            style={{width: 140}}
+            style={{width: 140, minWidth: 100}}
             options={[
               {value: 'active', label: 'Active'},
               {value: 'suspended', label: 'Suspended'},

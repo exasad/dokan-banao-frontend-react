@@ -132,17 +132,17 @@ const PayoutsList = () => {
 
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
         <Title level={3} style={{margin: 0}}>Payouts</Title>
       </div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
-        <Space>
+      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
+        <Space wrap style={{flex: 1}}>
           <Select
             placeholder='Status'
             value={statusFilter}
             onChange={setStatusFilter}
             allowClear
-            style={{width: 140}}
+            style={{width: 140, minWidth: 100}}
             options={[
               {value: 'pending', label: 'Pending'},
               {value: 'completed', label: 'Completed'},
@@ -156,7 +156,7 @@ const PayoutsList = () => {
             allowClear
             showSearch
             optionFilterProp='label'
-            style={{width: 200}}
+            style={{width: 200, minWidth: 120}}
             options={affiliates.map((a) => ({value: a.id, label: a.name}))}
           />
         </Space>

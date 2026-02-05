@@ -143,17 +143,17 @@ const TicketsList = () => {
 
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
         <Title level={3} style={{margin: 0}}>Support Tickets</Title>
       </div>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16}}>
-        <Space>
+      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 12}}>
+        <Space wrap style={{flex: 1}}>
           <Input
             placeholder='Search by ticket # or subject...'
             prefix={<SearchOutlined />}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            style={{width: 280}}
+            style={{width: 280, minWidth: 150, maxWidth: '100%'}}
             allowClear
           />
           <Select
@@ -161,7 +161,7 @@ const TicketsList = () => {
             value={statusFilter}
             onChange={setStatusFilter}
             allowClear
-            style={{width: 140}}
+            style={{width: 140, minWidth: 100}}
             options={[
               {value: 'open', label: 'Open'},
               {value: 'in_progress', label: 'In Progress'},
@@ -174,7 +174,7 @@ const TicketsList = () => {
             value={priorityFilter}
             onChange={setPriorityFilter}
             allowClear
-            style={{width: 140}}
+            style={{width: 140, minWidth: 100}}
             options={[
               {value: 'low', label: 'Low'},
               {value: 'medium', label: 'Medium'},
@@ -189,7 +189,7 @@ const TicketsList = () => {
             allowClear
             showSearch
             optionFilterProp='label'
-            style={{width: 200}}
+            style={{width: 200, minWidth: 120}}
             options={affiliates.map((a) => ({value: a.id, label: a.name}))}
           />
         </Space>
