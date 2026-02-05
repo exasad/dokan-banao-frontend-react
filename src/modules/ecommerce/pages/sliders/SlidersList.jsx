@@ -201,7 +201,8 @@ const SlidersList = () => {
       <Table rowSelection={{selectedRowKeys, onChange: setSelectedRowKeys}} columns={columns}
         dataSource={sliders} rowKey='id' loading={loading}
         pagination={{...pagination, onChange: (page, pageSize) => fetchSliders(page, pageSize),
-          showSizeChanger: true, showTotal: (total) => `Total ${total} sliders`}} />
+          showSizeChanger: true, showTotal: (total) => `Total ${total} sliders`}}
+        scroll={{ x: 'max-content' }} />
       <SliderForm open={formOpen} onClose={() => { setFormOpen(false); setEditingSlider(null); }}
         onSuccess={handleFormSuccess} editingSlider={editingSlider} />
     </div>

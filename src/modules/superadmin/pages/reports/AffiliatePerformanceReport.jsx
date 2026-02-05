@@ -74,6 +74,7 @@ const AffiliatePerformanceReport = () => {
             dataSource={affiliates}
             rowKey='id'
             pagination={false}
+            scroll={{ x: 'max-content' }}
           />
         </Card>
       )}

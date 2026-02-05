@@ -106,7 +106,8 @@ const DeliveryChargesList = () => {
         {selectedRowKeys.length > 0 && <Dropdown menu={bulkMenuItems}><Button>Bulk Actions ({selectedRowKeys.length}) <DownOutlined /></Button></Dropdown>}
       </div>
       <Table rowSelection={{selectedRowKeys, onChange: setSelectedRowKeys}} columns={columns} dataSource={charges} rowKey='id' loading={loading}
-        pagination={{...pagination, onChange: (page, pageSize) => fetchCharges(page, pageSize), showSizeChanger: true, showTotal: (total) => `Total ${total} delivery charges`}} />
+        pagination={{...pagination, onChange: (page, pageSize) => fetchCharges(page, pageSize), showSizeChanger: true, showTotal: (total) => `Total ${total} delivery charges`}}
+        scroll={{ x: 'max-content' }} />
       <DeliveryChargeForm open={formOpen} onClose={() => { setFormOpen(false); setEditingCharge(null); }} onSuccess={handleFormSuccess} editingCharge={editingCharge} />
     </div>
   );

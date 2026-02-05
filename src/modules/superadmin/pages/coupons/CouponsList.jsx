@@ -229,6 +229,7 @@ const CouponsList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} coupons`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );

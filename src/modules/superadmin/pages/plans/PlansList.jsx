@@ -179,6 +179,7 @@ const PlansList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} plans`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );

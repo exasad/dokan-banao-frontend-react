@@ -248,6 +248,7 @@ const TenantDetail = () => {
           dataSource={tenant.invoices || []}
           rowKey='id'
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
       </Card>
     </div>

@@ -254,6 +254,7 @@ const SeedDataList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} items`,
         }}
+        scroll={{ x: 'max-content' }}
       />
       <SeedDataForm
         open={modalOpen}

@@ -88,6 +88,7 @@ const CouponPerformanceReport = () => {
             dataSource={coupons}
             rowKey='id'
             pagination={false}
+            scroll={{ x: 'max-content' }}
           />
         </Card>
       )}

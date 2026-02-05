@@ -229,6 +229,7 @@ const CommissionsList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} commissions`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );

@@ -310,7 +310,7 @@ const OrderEdit = () => {
                 </Space>
               }
             >
-              <Table columns={itemColumns} dataSource={order.items || []} rowKey='id' pagination={false} size='small' />
+              <Table columns={itemColumns} dataSource={order.items || []} rowKey='id' pagination={false} size='small' scroll={{ x: 'max-content' }} />
 
               <div style={{marginTop: 16, padding: '16px', background: '#fafafa', borderRadius: 8}}>
                 <Row justify='end'>

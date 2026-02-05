@@ -172,6 +172,7 @@ const PayoutsList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} payouts`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );

@@ -180,7 +180,7 @@ const CouponsList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} coupons`,
         }}
-        scroll={{x: 900}}
+        scroll={{ x: 'max-content' }}
       />
 
       <CouponForm

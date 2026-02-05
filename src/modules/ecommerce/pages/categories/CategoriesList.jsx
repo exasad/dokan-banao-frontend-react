@@ -119,7 +119,8 @@ const CategoriesList = () => {
         {selectedRowKeys.length > 0 && <Dropdown menu={bulkMenuItems}><Button>Bulk Actions ({selectedRowKeys.length}) <DownOutlined /></Button></Dropdown>}
       </div>
       <Table rowSelection={{selectedRowKeys, onChange: setSelectedRowKeys}} columns={columns} dataSource={categories} rowKey='id' loading={loading}
-        pagination={{...pagination, onChange: (page, pageSize) => fetchCategories(page, pageSize), showSizeChanger: true, showTotal: (total) => `Total ${total} categories`}} />
+        pagination={{...pagination, onChange: (page, pageSize) => fetchCategories(page, pageSize), showSizeChanger: true, showTotal: (total) => `Total ${total} categories`}}
+        scroll={{ x: 'max-content' }} />
       <CategoryForm open={formOpen} onClose={() => { setFormOpen(false); setEditingCategory(null); }} onSuccess={handleFormSuccess} editingCategory={editingCategory} />
     </div>
   );

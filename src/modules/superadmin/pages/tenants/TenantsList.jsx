@@ -228,6 +228,7 @@ const TenantsList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} tenants`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );

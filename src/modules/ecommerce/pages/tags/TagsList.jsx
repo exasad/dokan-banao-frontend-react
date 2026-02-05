@@ -107,7 +107,8 @@ const TagsList = () => {
         {selectedRowKeys.length > 0 && <Dropdown menu={bulkMenuItems}><Button>Bulk Actions ({selectedRowKeys.length}) <DownOutlined /></Button></Dropdown>}
       </div>
       <Table rowSelection={{selectedRowKeys, onChange: setSelectedRowKeys}} columns={columns} dataSource={tags} rowKey='id' loading={loading}
-        pagination={{...pagination, onChange: (page, pageSize) => fetchTags(page, pageSize), showSizeChanger: true, showTotal: (total) => `Total ${total} tags`}} />
+        pagination={{...pagination, onChange: (page, pageSize) => fetchTags(page, pageSize), showSizeChanger: true, showTotal: (total) => `Total ${total} tags`}}
+        scroll={{ x: 'max-content' }} />
       <TagForm open={formOpen} onClose={() => { setFormOpen(false); setEditingTag(null); }} onSuccess={handleFormSuccess} editingTag={editingTag} />
     </div>
   );

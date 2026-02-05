@@ -136,6 +136,7 @@ const CommissionReport = () => {
               dataSource={data.top_affiliates || []}
               rowKey='affiliate_id'
               pagination={false}
+              scroll={{ x: 'max-content' }}
             />
           </Card>
 
@@ -145,6 +146,7 @@ const CommissionReport = () => {
               dataSource={data.monthly || []}
               rowKey='month'
               pagination={false}
+              scroll={{ x: 'max-content' }}
             />
           </Card>
         </>

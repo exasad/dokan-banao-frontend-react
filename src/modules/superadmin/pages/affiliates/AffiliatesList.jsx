@@ -247,6 +247,7 @@ const AffiliatesList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} affiliates`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );

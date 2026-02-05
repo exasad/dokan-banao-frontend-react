@@ -218,6 +218,7 @@ const InvoicesList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} invoices`,
         }}
+        scroll={{ x: 'max-content' }}
       />
 
       <RecordPaymentModal

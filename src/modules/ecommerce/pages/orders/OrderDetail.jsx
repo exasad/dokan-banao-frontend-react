@@ -138,7 +138,7 @@ const OrderDetail = () => {
         <Col xs={24} lg={16}>
           {/* Order Items */}
           <Card title='Order Items' style={{marginBottom: 24}}>
-            <Table columns={itemColumns} dataSource={order.items || []} rowKey='id' pagination={false} size='small' />
+            <Table columns={itemColumns} dataSource={order.items || []} rowKey='id' pagination={false} size='small' scroll={{ x: 'max-content' }} />
             <div style={{marginTop: 16, padding: '16px', background: '#fafafa', borderRadius: 8}}>
               <Row justify='end'>
                 <Col xs={24} sm={12} md={8}>

@@ -225,6 +225,7 @@ const DomainSettings = () => {
                 rowKey="id"
                 pagination={false}
                 size="middle"
+                scroll={{ x: 'max-content' }}
               />
             )}
           </Card>

@@ -211,7 +211,7 @@ const OrdersList = () => {
         dataSource={orders}
         rowKey='id'
         loading={loading}
-        scroll={{x: 1100}}
+        scroll={{ x: 'max-content' }}
         onRow={(record) => ({onClick: () => navigate(`/orders/${record.id}`), style: {cursor: 'pointer'}})}
         pagination={{
           ...pagination,

@@ -118,6 +118,7 @@ const RevenueReport = () => {
             dataSource={data.monthly || []}
             rowKey='month'
             pagination={false}
+            scroll={{ x: 'max-content' }}
           />
         </>
       )}

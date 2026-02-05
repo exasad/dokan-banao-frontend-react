@@ -216,6 +216,7 @@ const TicketsList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} tickets`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );

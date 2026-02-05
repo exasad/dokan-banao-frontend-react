@@ -484,6 +484,7 @@ const AdminDashboard = () => {
                 onClick: () => navigate(`/orders/${record.id}`),
                 style: { cursor: 'pointer' },
               })}
+              scroll={{ x: 'max-content' }}
             />
           </Card>
         </>

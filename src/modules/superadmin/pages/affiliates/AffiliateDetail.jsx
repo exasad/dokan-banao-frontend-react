@@ -158,6 +158,7 @@ const AffiliateDetail = () => {
           dataSource={affiliate.coupons || []}
           rowKey='id'
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
       ),
     },
@@ -170,6 +171,7 @@ const AffiliateDetail = () => {
           dataSource={affiliate.commissions || []}
           rowKey='id'
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
       ),
     },
@@ -182,6 +184,7 @@ const AffiliateDetail = () => {
           dataSource={affiliate.payouts || []}
           rowKey='id'
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
       ),
     },

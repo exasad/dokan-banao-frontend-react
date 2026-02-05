@@ -118,6 +118,7 @@ const PayoutReport = () => {
                   dataSource={data.status_breakdown || []}
                   rowKey='status'
                   pagination={false}
+                  scroll={{ x: 'max-content' }}
                 />
               </Card>
             </Col>
@@ -128,6 +129,7 @@ const PayoutReport = () => {
                   dataSource={data.top_affiliates || []}
                   rowKey='affiliate_id'
                   pagination={false}
+                  scroll={{ x: 'max-content' }}
                 />
               </Card>
             </Col>

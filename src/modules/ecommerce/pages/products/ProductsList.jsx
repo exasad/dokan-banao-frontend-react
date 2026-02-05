@@ -303,6 +303,7 @@ const ProductsList = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} products`,
         }}
+        scroll={{ x: 'max-content' }}
       />
     </div>
   );
