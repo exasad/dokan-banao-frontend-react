@@ -110,7 +110,7 @@ const menuItems = [
   },
 ];
 
-const SuperAdminSidebar = ({collapsed, isDark}) => {
+const SuperAdminSidebar = ({collapsed, isDark, isMobile, onMenuClick}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const {getSetting} = useSettings();
@@ -125,6 +125,61 @@ const SuperAdminSidebar = ({collapsed, isDark}) => {
   const selectedKey =
     allKeys.find((key) => location.pathname.startsWith(key)) ||
     '/superadmin/dashboard';
+
+  const handleClick = ({key}) => {
+    navigate(key);
+    if (onMenuClick) onMenuClick();
+  };
+
+  // For mobile drawer, render without Sider wrapper
+  if (isMobile) {
+    return (
+      <div style={{height: '100%', background: sidebarColor}}>
+        <div
+          style={{
+            height: 64,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 8,
+            borderBottom: '1px solid rgba(255,255,255,0.1)',
+            padding: '0 16px',
+          }}
+        >
+          {siteLogo ? (
+            <img
+              src={siteLogo}
+              alt='Logo'
+              style={{
+                height: 32,
+                maxWidth: 140,
+                objectFit: 'contain',
+              }}
+            />
+          ) : (
+            <h2
+              style={{
+                color: '#fff',
+                margin: 0,
+                fontSize: 18,
+                fontWeight: 700,
+              }}
+            >
+              {siteTitle}
+            </h2>
+          )}
+        </div>
+        <Menu
+          theme='dark'
+          mode='inline'
+          selectedKeys={[selectedKey]}
+          items={menuItems}
+          onClick={handleClick}
+          style={{background: sidebarColor, borderRight: 0}}
+        />
+      </div>
+    );
+  }
 
   return (
     <Sider
@@ -184,7 +239,7 @@ const SuperAdminSidebar = ({collapsed, isDark}) => {
         mode='inline'
         selectedKeys={[selectedKey]}
         items={menuItems}
-        onClick={({key}) => navigate(key)}
+        onClick={handleClick}
         style={{background: sidebarColor}}
       />
     </Sider>
