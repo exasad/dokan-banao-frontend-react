@@ -1,35 +1,65 @@
-import { BrowserRouter } from 'react-router-dom';
-import AppContextProvider from '@crema/context/AppContextProvider';
-import AppThemeProvider from '@crema/context/AppThemeProvider';
-import AppLocaleProvider from '@crema/context/AppLocaleProvider';
-import AppAuthProvider from '@crema/core/AppAuthProvider';
-import AuthRoutes from '@crema/components/AuthRoutes';
-import AppLayout from '@crema/core/AppLayout';
-import '@crema/mockapi';
-import { GlobalStyles } from '@crema/core/theme/GlobalStyle';
-import { Normalize } from 'styled-normalize';
+import {lazy, Suspense} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './styles/index.css';
+import {Spin, App as AntApp} from 'antd';
 
+const SuperAdminApp = lazy(() => import('./modules/superadmin/SuperAdminApp'));
+const AffiliateApp = lazy(() => import('./modules/affiliate/AffiliateApp'));
+const AdminApp = lazy(() => import('./modules/ecommerce/AdminApp'));
 
-const App=()=> {
+const SuspenseLoader = ({children}) => (
+  <Suspense
+    fallback={
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#0a0a0a',
+        }}
+      >
+        <Spin size='large' />
+      </div>
+    }
+  >
+    {children}
+  </Suspense>
+);
 
+const App = () => {
   return (
-      <AppContextProvider>
-          <AppThemeProvider>
-              <AppLocaleProvider>
-                  <BrowserRouter>
-                      <AppAuthProvider>
-                          <AuthRoutes>
-                              <GlobalStyles />
-                              <Normalize />
-                              <AppLayout />
-                          </AuthRoutes>
-                      </AppAuthProvider>
-                  </BrowserRouter>
-              </AppLocaleProvider>
-          </AppThemeProvider>
-      </AppContextProvider>
-  )
-}
+    <AntApp>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path='/superadmin/*'
+          element={
+            <SuspenseLoader>
+              <SuperAdminApp />
+            </SuspenseLoader>
+          }
+        />
+        <Route
+          path='/affiliate/*'
+          element={
+            <SuspenseLoader>
+              <AffiliateApp />
+            </SuspenseLoader>
+          }
+        />
+        <Route
+          path='/*'
+          element={
+            <SuspenseLoader>
+              <AdminApp />
+            </SuspenseLoader>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+    </AntApp>
+  );
+};
 
-export default App
+export default App;
