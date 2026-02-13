@@ -10,6 +10,7 @@ import {
   FacebookOutlined,
   MessageOutlined,
   PictureOutlined,
+  SearchOutlined,
   SettingOutlined,
   ShoppingCartOutlined,
   ShoppingOutlined,
@@ -91,6 +92,11 @@ const menuItems = [
         key: '/settings/sms',
         icon: <MessageOutlined />,
         label: 'SMS Gateway',
+      },
+      {
+        key: '/settings/seo',
+        icon: <SearchOutlined />,
+        label: 'SEO',
       },
       {
         key: '/settings/facebook',

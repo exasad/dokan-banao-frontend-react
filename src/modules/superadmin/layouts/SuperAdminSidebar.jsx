@@ -12,6 +12,8 @@ import {
   CustomerServiceOutlined,
   BarChartOutlined,
   DatabaseOutlined,
+  GlobalOutlined,
+  MailOutlined,
 } from '@ant-design/icons';
 import {useNavigate, useLocation} from 'react-router-dom';
 import {useSettings} from '../context/SettingsContext';
@@ -72,6 +74,11 @@ const menuItems = [
     ],
   },
   {
+    key: '/superadmin/contact-messages',
+    icon: <MailOutlined />,
+    label: 'Contact Messages',
+  },
+  {
     key: '/superadmin/tickets',
     icon: <CustomerServiceOutlined />,
     label: 'Support',
@@ -101,6 +108,19 @@ const menuItems = [
         key: '/superadmin/reports/coupons',
         label: 'Coupons',
       },
+    ],
+  },
+  {
+    key: 'landing-group',
+    icon: <GlobalOutlined />,
+    label: 'Landing Page',
+    children: [
+      { key: '/superadmin/landing/hero', label: 'Hero Section' },
+      { key: '/superadmin/landing/features', label: 'Features' },
+      { key: '/superadmin/landing/stats', label: 'Stats' },
+      { key: '/superadmin/landing/cta', label: 'CTA' },
+      { key: '/superadmin/landing/footer', label: 'Footer' },
+      { key: '/superadmin/landing/analytics', label: 'Analytics & SEO' },
     ],
   },
   {

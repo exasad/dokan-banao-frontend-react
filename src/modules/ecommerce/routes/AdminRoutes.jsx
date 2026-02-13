@@ -18,6 +18,7 @@ import FacebookSettings from '../pages/settings/FacebookSettings';
 import PaymentSettings from '../pages/settings/PaymentSettings';
 import Settings from '../pages/settings/Settings';
 import SmsSettings from '../pages/settings/SmsSettings';
+import SeoSettings from '../pages/settings/SeoSettings';
 import SmtpSettings from '../pages/settings/SmtpSettings';
 import SlidersList from '../pages/sliders/SlidersList';
 import TagsList from '../pages/tags/TagsList';
@@ -44,6 +45,7 @@ const AdminRoutes = () => {
         <Route path='settings/couriers' element={<CourierSettings />} />
         <Route path='settings/payments' element={<PaymentSettings />} />
         <Route path='settings/sms' element={<SmsSettings />} />
+        <Route path='settings/seo' element={<SeoSettings />} />
         <Route path='settings/facebook' element={<FacebookSettings />} />
         <Route path='settings/smtp' element={<SmtpSettings />} />
         <Route path='settings/domains' element={<DomainSettings />} />

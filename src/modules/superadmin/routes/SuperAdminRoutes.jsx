@@ -11,6 +11,14 @@ import InvoicesList from '../pages/invoices/InvoicesList';
 import InvoiceForm from '../pages/invoices/InvoiceForm';
 import InvoiceDetail from '../pages/invoices/InvoiceDetail';
 import SettingsPage from '../pages/settings/SettingsPage';
+import {
+  LandingHero,
+  LandingFeatures,
+  LandingStats,
+  LandingCta,
+  LandingFooter,
+  LandingAnalytics,
+} from '../pages/landing/LandingPageSettings';
 import AffiliatesList from '../pages/affiliates/AffiliatesList';
 import AffiliateForm from '../pages/affiliates/AffiliateForm';
 import AffiliateDetail from '../pages/affiliates/AffiliateDetail';
@@ -27,6 +35,7 @@ import PayoutReport from '../pages/reports/PayoutReport';
 import AffiliatePerformanceReport from '../pages/reports/AffiliatePerformanceReport';
 import CouponPerformanceReport from '../pages/reports/CouponPerformanceReport';
 import SeedDataList from '../pages/seed-data/SeedDataList';
+import ContactMessagesList from '../pages/contact/ContactMessagesList';
 
 const SuperAdminRoutes = () => {
   return (
@@ -62,6 +71,13 @@ const SuperAdminRoutes = () => {
         <Route path='reports/affiliates' element={<AffiliatePerformanceReport />} />
         <Route path='reports/coupons' element={<CouponPerformanceReport />} />
         <Route path='seed-data' element={<SeedDataList />} />
+        <Route path='landing/hero' element={<LandingHero />} />
+        <Route path='landing/features' element={<LandingFeatures />} />
+        <Route path='landing/stats' element={<LandingStats />} />
+        <Route path='landing/cta' element={<LandingCta />} />
+        <Route path='landing/footer' element={<LandingFooter />} />
+        <Route path='landing/analytics' element={<LandingAnalytics />} />
+        <Route path='contact-messages' element={<ContactMessagesList />} />
         <Route path='settings' element={<SettingsPage />} />
         <Route index element={<Navigate to='dashboard' replace />} />
       </Route>
