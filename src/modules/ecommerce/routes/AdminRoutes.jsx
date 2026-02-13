@@ -20,6 +20,7 @@ import Settings from '../pages/settings/Settings';
 import SmsSettings from '../pages/settings/SmsSettings';
 import SeoSettings from '../pages/settings/SeoSettings';
 import SmtpSettings from '../pages/settings/SmtpSettings';
+import HomepageBuilder from '../pages/page-builder/HomepageBuilder';
 import SlidersList from '../pages/sliders/SlidersList';
 import TagsList from '../pages/tags/TagsList';
 
@@ -29,6 +30,7 @@ const AdminRoutes = () => {
       <Route path='login' element={<AdminLogin />} />
       <Route element={<AdminLayout />}>
         <Route path='dashboard' element={<AdminDashboard />} />
+        <Route path='page-builder' element={<HomepageBuilder />} />
         <Route path='sliders' element={<SlidersList />} />
         <Route path='categories' element={<CategoriesList />} />
         <Route path='tags' element={<TagsList />} />
