@@ -110,7 +110,7 @@ export const SECTION_TYPES = [
     name: 'Categories',
     icon: AppstoreOutlined,
     description: 'Scrollable category carousel',
-    defaultSettings: { title: 'Shop by Category', itemsPerView: 10, layout: 'horizontal' },
+    defaultSettings: { title: 'Shop by Category', itemsPerView: 10 },
   },
   {
     type: 'product_grid',

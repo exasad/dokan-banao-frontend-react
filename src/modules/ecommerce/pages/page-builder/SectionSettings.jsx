@@ -23,20 +23,12 @@ function HeroSliderSettings({ settings, onChange }) {
 function FeaturedCategoriesSettings({ settings, onChange }) {
   return (
     <>
-      <Form.Item label="Layout">
-        <Radio.Group value={settings.layout || 'horizontal'} onChange={(e) => onChange({ ...settings, layout: e.target.value })}>
-          <Radio.Button value="horizontal">Horizontal</Radio.Button>
-          <Radio.Button value="vertical">Vertical</Radio.Button>
-        </Radio.Group>
-      </Form.Item>
       <Form.Item label="Title">
         <Input value={settings.title || ''} onChange={(e) => onChange({ ...settings, title: e.target.value })} />
       </Form.Item>
-      {(settings.layout || 'horizontal') === 'horizontal' && (
-        <Form.Item label="Items Per View">
-          <InputNumber min={3} max={15} value={settings.itemsPerView || 10} onChange={(v) => onChange({ ...settings, itemsPerView: v })} style={{ width: '100%' }} />
-        </Form.Item>
-      )}
+      <Form.Item label="Items Per View">
+        <InputNumber min={3} max={15} value={settings.itemsPerView || 10} onChange={(v) => onChange({ ...settings, itemsPerView: v })} style={{ width: '100%' }} />
+      </Form.Item>
     </>
   );
 }

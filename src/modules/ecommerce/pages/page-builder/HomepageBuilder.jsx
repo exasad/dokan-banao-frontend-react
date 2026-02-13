@@ -7,15 +7,11 @@ import {
   ColumnHeightOutlined,
   CopyOutlined,
   DeleteOutlined,
-  DesktopOutlined,
-  EditOutlined,
   EyeInvisibleOutlined,
   EyeOutlined,
   HolderOutlined,
   PlusOutlined,
   RedoOutlined,
-  ReloadOutlined,
-  RobotOutlined,
   SaveOutlined,
   SettingOutlined,
   UndoOutlined,
@@ -40,7 +36,6 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { Button, ColorPicker, Drawer, InputNumber, Modal, Radio, Space, Spin, Tag, Tooltip, Typography, message } from 'antd';
 import { createElement, useCallback, useEffect, useRef, useState } from 'react';
-import { useAdminAuth } from '../../context/AdminAuthContext';
 import adminAxios from '../../services/adminAxios';
 import {
   DEFAULT_HOMEPAGE_CONFIG,
@@ -52,7 +47,6 @@ import {
 } from './constants';
 import SectionPreview from './SectionPreview';
 import SectionSettings from './SectionSettings';
-import ChatPanel from './ChatPanel';
 import useHistory from './useHistory';
 
 const { Title, Text } = Typography;
@@ -671,7 +665,6 @@ export default function HomepageBuilder() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [hasUnsaved, setHasUnsaved] = useState(false);
-  const [chatOpen, setChatOpen] = useState(false);
   const savedRef = useRef(null);
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }));
@@ -821,52 +814,6 @@ export default function HomepageBuilder() {
     Modal.confirm({ title: 'Restore Default', content: 'Reset to default layout? Save afterward to persist.', okText: 'Restore', onOk: () => { setSections(JSON.parse(JSON.stringify(DEFAULT_HOMEPAGE_CONFIG.sections))); setSelectedId(null); setDrawerOpen(false); } });
   };
 
-  const [previewMode, setPreviewMode] = useState(false);
-  const iframeRef = useRef(null);
-  const { user } = useAdminAuth();
-  const storefrontBaseUrl = import.meta.env.VITE_STOREFRONT_URL || 'http://localhost:3000';
-
-  // Build preview URL with tenant subdomain so storefront resolves the correct store
-  const storefrontUrl = (() => {
-    const tenantDomain = user?.tenant?.domain;
-    if (!tenantDomain) return storefrontBaseUrl;
-    try {
-      const url = new URL(storefrontBaseUrl);
-      if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
-        return `${url.protocol}//${tenantDomain}.lvh.me${url.port ? ':' + url.port : ''}`;
-      }
-      return storefrontBaseUrl;
-    } catch {
-      return storefrontBaseUrl;
-    }
-  })();
-
-  const refreshPreview = useCallback(() => {
-    if (iframeRef.current) {
-      iframeRef.current.src = iframeRef.current.src;
-    }
-  }, []);
-
-  const handleApplyAiLayout = useCallback(async ({ sections: newSections, settings }) => {
-    setSections(newSections);
-    setSelectedId(null);
-    setDrawerOpen(false);
-    // Save both sections AND store settings (theme, announcement) before refreshing
-    try {
-      const saves = [adminAxios.put('/settings/page-builder', { sections: newSections })];
-      if (settings && Object.keys(settings).length > 0) {
-        saves.push(adminAxios.put('/settings', settings));
-      }
-      await Promise.all(saves);
-      savedRef.current = JSON.stringify(newSections);
-      setHasUnsaved(false);
-      // Refresh storefront preview after both saves complete
-      setTimeout(refreshPreview, 500);
-    } catch {
-      message.warning('Layout applied locally. Click Save to persist.');
-    }
-  }, [setSections, refreshPreview]);
-
   const selectedSection = sections.find((s) => s.id === selectedId) || null;
   const selectedTypeInfo = selectedSection ? getSectionType(selectedSection.type) : null;
   const isDragging = !!activeItem;
@@ -890,41 +837,13 @@ export default function HomepageBuilder() {
         <Space wrap>
           <Tooltip title="Undo (Ctrl+Z)"><Button icon={<UndoOutlined />} disabled={!canUndo} onClick={undo} /></Tooltip>
           <Tooltip title="Redo (Ctrl+Y)"><Button icon={<RedoOutlined />} disabled={!canRedo} onClick={redo} /></Tooltip>
-          <Button icon={<RobotOutlined />} onClick={() => setChatOpen(true)}>AI Designer</Button>
-          <Button
-            icon={previewMode ? <EditOutlined /> : <DesktopOutlined />}
-            onClick={() => { if (!previewMode) refreshPreview(); setPreviewMode(!previewMode); }}
-            type={previewMode ? 'primary' : 'default'}
-          >
-            {previewMode ? 'Edit' : 'Preview'}
-          </Button>
-          {previewMode && <Tooltip title="Refresh preview"><Button icon={<ReloadOutlined />} onClick={refreshPreview} /></Tooltip>}
           <Button onClick={handleRestore}>Restore Default</Button>
           <Button type="primary" icon={<SaveOutlined />} loading={saving} onClick={handleSave}>Save</Button>
         </Space>
       </div>
 
-      {/* Storefront live preview */}
-      {previewMode && (
-        <div style={{ border: '1px solid #e8e8e8', borderRadius: 12, overflow: 'hidden', background: '#fff', height: 'calc(100vh - 180px)', minHeight: 500 }}>
-          <div style={{ background: '#f7f8fa', padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6, borderBottom: '1px solid #eee' }}>
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#ff5f57' }} />
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#febc2e' }} />
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#28c840' }} />
-            <div style={{ flex: 1, textAlign: 'center', background: '#fff', borderRadius: 4, padding: '2px 0', fontSize: 11, color: '#aaa', marginLeft: 8 }}>{storefrontUrl}</div>
-            <Button size="small" type="text" icon={<ReloadOutlined style={{ fontSize: 12 }} />} onClick={refreshPreview} />
-          </div>
-          <iframe
-            ref={iframeRef}
-            src={storefrontUrl}
-            style={{ width: '100%', height: 'calc(100% - 34px)', border: 'none' }}
-            title="Storefront Preview"
-          />
-        </div>
-      )}
-
       {/* Main layout */}
-      <div style={{ display: previewMode ? 'none' : 'flex', border: '1px solid #e8e8e8', borderRadius: 12, overflow: 'hidden', background: '#fff', height: 'calc(100vh - 180px)', minHeight: 500 }}>
+      <div style={{ display: 'flex', border: '1px solid #e8e8e8', borderRadius: 12, overflow: 'hidden', background: '#fff', height: 'calc(100vh - 180px)', minHeight: 500 }}>
         <Sidebar />
         <div style={{ flex: 1, overflow: 'auto', background: '#f0f2f5', padding: 20 }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
@@ -985,13 +904,6 @@ export default function HomepageBuilder() {
       >
         <SectionSettings section={selectedSection} onChange={updateSection} />
       </Drawer>
-
-      <ChatPanel
-        open={chatOpen}
-        onClose={() => setChatOpen(false)}
-        currentSections={sections}
-        onApplyLayout={handleApplyAiLayout}
-      />
 
       <style>{`
         .pb-section-toolbar { pointer-events: auto; }
