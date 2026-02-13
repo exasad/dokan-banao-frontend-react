@@ -24,6 +24,27 @@ function HeroSliderPreview({ settings }) {
 }
 
 function FeaturedCategoriesPreview({ settings }) {
+  const isVertical = settings.layout === 'vertical';
+
+  if (isVertical) {
+    const count = 6;
+    return (
+      <div style={{ padding: '8px 0' }}>
+        <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 8, color: '#1a1a2e' }}>{settings.title || 'Shop by Category'}</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          {Array.from({ length: count }).map((_, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '5px 8px', borderRadius: 6, background: i === 0 ? '#e6f7ff' : 'transparent' }}>
+              <div style={{ width: 28, height: 28, borderRadius: '50%', background: `hsl(${i * 40 + 200}, 55%, 91%)`, border: '1px solid #e8e8e8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <AppstoreOutlined style={{ fontSize: 11, color: `hsl(${i * 40 + 200}, 45%, 45%)` }} />
+              </div>
+              <div style={{ fontSize: 11, color: '#555', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Category {i + 1}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   const count = Math.min(settings.itemsPerView || 6, 8);
   return (
     <div style={{ padding: '12px 0' }}>
