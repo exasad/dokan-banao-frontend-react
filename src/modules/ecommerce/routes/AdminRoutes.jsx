@@ -20,8 +20,20 @@ import Settings from '../pages/settings/Settings';
 import SmsSettings from '../pages/settings/SmsSettings';
 import SeoSettings from '../pages/settings/SeoSettings';
 import SmtpSettings from '../pages/settings/SmtpSettings';
+import LanguageSettings from '../pages/settings/LanguageSettings';
 import SlidersList from '../pages/sliders/SlidersList';
 import TagsList from '../pages/tags/TagsList';
+import ReviewsList from '../pages/reviews/ReviewsList';
+import ReturnsList from '../pages/returns/ReturnsList';
+import FlashSalesList from '../pages/flash-sales/FlashSalesList';
+import FlashSaleForm from '../pages/flash-sales/FlashSaleForm';
+import BlogList from '../pages/blog/BlogList';
+import BlogForm from '../pages/blog/BlogForm';
+import BlogCategories from '../pages/blog/BlogCategories';
+import PagesList from '../pages/pages/PagesList';
+import PageForm from '../pages/pages/PageForm';
+import AbandonedCartsList from '../pages/abandoned-carts/AbandonedCartsList';
+import TranslationManager from '../pages/translations/TranslationManager';
 
 const AdminRoutes = () => {
   return (
@@ -41,6 +53,20 @@ const AdminRoutes = () => {
         <Route path='orders/:id/edit' element={<OrderEdit />} />
         <Route path='coupons' element={<CouponsList />} />
         <Route path='delivery-charges' element={<DeliveryChargesList />} />
+        <Route path='reviews' element={<ReviewsList />} />
+        <Route path='returns' element={<ReturnsList />} />
+        <Route path='flash-sales' element={<FlashSalesList />} />
+        <Route path='flash-sales/create' element={<FlashSaleForm />} />
+        <Route path='flash-sales/:id/edit' element={<FlashSaleForm />} />
+        <Route path='blog' element={<BlogList />} />
+        <Route path='blog/create' element={<BlogForm />} />
+        <Route path='blog/:id/edit' element={<BlogForm />} />
+        <Route path='blog/categories' element={<BlogCategories />} />
+        <Route path='pages' element={<PagesList />} />
+        <Route path='pages/create' element={<PageForm />} />
+        <Route path='pages/:id/edit' element={<PageForm />} />
+        <Route path='abandoned-carts' element={<AbandonedCartsList />} />
+        <Route path='translations' element={<TranslationManager />} />
         <Route path='settings' element={<Settings />} />
         <Route path='settings/couriers' element={<CourierSettings />} />
         <Route path='settings/payments' element={<PaymentSettings />} />
@@ -49,6 +75,7 @@ const AdminRoutes = () => {
         <Route path='settings/facebook' element={<FacebookSettings />} />
         <Route path='settings/smtp' element={<SmtpSettings />} />
         <Route path='settings/domains' element={<DomainSettings />} />
+        <Route path='settings/languages' element={<LanguageSettings />} />
         <Route path='profile' element={<Profile />} />
         <Route index element={<Navigate to='dashboard' replace />} />
       </Route>

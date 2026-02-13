@@ -20,6 +20,7 @@ import {
   Select,
   Space,
   Spin,
+  Switch,
   Tag,
   Typography
 } from 'antd';
@@ -50,7 +51,13 @@ const SmtpSettings = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [testing, setTesting] = useState(false);
-  const [testResult, setTestResult] = useState(null); // {status, message}
+  const [testResult, setTestResult] = useState(null);
+  const [notifSettings, setNotifSettings] = useState({
+    email_order_confirmation: true,
+    email_order_status_update: true,
+    email_welcome: true,
+    email_cart_abandonment: false,
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -65,6 +72,12 @@ const SmtpSettings = () => {
           smtp_encryption: res.data.smtp_encryption || 'tls',
           smtp_from_address: res.data.smtp_from_address || '',
           smtp_from_name: res.data.smtp_from_name || '',
+        });
+        setNotifSettings({
+          email_order_confirmation: res.data.email_order_confirmation !== '0',
+          email_order_status_update: res.data.email_order_status_update !== '0',
+          email_welcome: res.data.email_welcome !== '0',
+          email_cart_abandonment: res.data.email_cart_abandonment === '1',
         });
       } catch {
         message.error('Failed to load SMTP settings');
@@ -90,7 +103,13 @@ const SmtpSettings = () => {
     const values = await form.validateFields();
     setSaving(true);
     try {
-      await adminAxios.put('/settings/smtp', values);
+      await adminAxios.put('/settings/smtp', {
+        ...values,
+        email_order_confirmation: notifSettings.email_order_confirmation ? '1' : '0',
+        email_order_status_update: notifSettings.email_order_status_update ? '1' : '0',
+        email_welcome: notifSettings.email_welcome ? '1' : '0',
+        email_cart_abandonment: notifSettings.email_cart_abandonment ? '1' : '0',
+      });
       message.success('SMTP settings saved successfully');
     } catch (err) {
       const errors = err.response?.data?.errors;
@@ -201,6 +220,40 @@ const SmtpSettings = () => {
                 </Col>
               </Row>
             </Form>
+          </Card>
+
+          {/* Email Notification Toggles */}
+          <Card title='Email Notifications' style={{marginBottom: 24}}>
+            <Space direction='vertical' size={16} style={{width: '100%'}}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <div>
+                  <Text strong>Order Confirmation</Text>
+                  <br /><Text type='secondary' style={{fontSize: 12}}>Send email when order is placed</Text>
+                </div>
+                <Switch checked={notifSettings.email_order_confirmation} onChange={(v) => setNotifSettings(p => ({...p, email_order_confirmation: v}))} />
+              </div>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <div>
+                  <Text strong>Order Status Updates</Text>
+                  <br /><Text type='secondary' style={{fontSize: 12}}>Send email when order status changes</Text>
+                </div>
+                <Switch checked={notifSettings.email_order_status_update} onChange={(v) => setNotifSettings(p => ({...p, email_order_status_update: v}))} />
+              </div>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <div>
+                  <Text strong>Welcome Email</Text>
+                  <br /><Text type='secondary' style={{fontSize: 12}}>Send email when customer registers</Text>
+                </div>
+                <Switch checked={notifSettings.email_welcome} onChange={(v) => setNotifSettings(p => ({...p, email_welcome: v}))} />
+              </div>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <div>
+                  <Text strong>Cart Abandonment</Text>
+                  <br /><Text type='secondary' style={{fontSize: 12}}>Send reminder for abandoned carts</Text>
+                </div>
+                <Switch checked={notifSettings.email_cart_abandonment} onChange={(v) => setNotifSettings(p => ({...p, email_cart_abandonment: v}))} />
+              </div>
+            </Space>
           </Card>
 
           {/* Provider Tips */}

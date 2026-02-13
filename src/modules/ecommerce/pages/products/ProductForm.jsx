@@ -16,6 +16,7 @@ import {
   Col,
   Image,
   Spin,
+  Tabs,
 } from 'antd';
 import {
   UploadOutlined,
@@ -59,6 +60,7 @@ const ProductForm = () => {
   const [existingImages, setExistingImages] = useState([]);
   const [removeImageIds, setRemoveImageIds] = useState([]);
   const [description, setDescription] = useState('');
+  const [translations, setTranslations] = useState({});
   const [variants, setVariants] = useState([]);
   const [features, setFeatures] = useState([]);
   const descriptionRef = useRef(null);
@@ -111,6 +113,16 @@ const ProductForm = () => {
               description: f.description || '',
             })) || [],
           );
+
+          // Fetch translations
+          adminAxios
+            .get(`/translations/content/product/${id}`)
+            .then((tRes) => {
+              if (tRes.data?.translations) {
+                setTranslations(tRes.data.translations);
+              }
+            })
+            .catch(() => {});
         })
         .catch(() => message.error('Failed to fetch product'))
         .finally(() => setFetching(false));
@@ -168,6 +180,7 @@ const ProductForm = () => {
         formData.append(`features[${i}][description]`, f.description || '');
       });
 
+      let productId = id;
       if (isEdit) {
         formData.append('_method', 'PUT');
         await adminAxios.post(`/products/${id}`, formData, {
@@ -175,11 +188,22 @@ const ProductForm = () => {
         });
         message.success('Product updated');
       } else {
-        await adminAxios.post('/products', formData, {
+        const res = await adminAxios.post('/products', formData, {
           headers: {'Content-Type': 'multipart/form-data'},
         });
+        productId = res.data?.id || res.data?.data?.id;
         message.success('Product created');
       }
+
+      // Save translations
+      if (productId && Object.keys(translations).length > 0) {
+        try {
+          await adminAxios.put(`/translations/content/product/${productId}`, {translations});
+        } catch {
+          message.warning('Product saved but translations failed to save');
+        }
+      }
+
       navigate('/products');
     } catch (err) {
       const errors = err.response?.data?.errors;
@@ -255,6 +279,46 @@ const ProductForm = () => {
                   onBlur={(content) => setDescription(content)}
                 />
               </Form.Item>
+            </Card>
+
+            {/* Translations */}
+            <Card title='Translations' style={{marginBottom: 24}}>
+              <Tabs
+                items={[
+                  {
+                    key: 'bn',
+                    label: 'Bengali (বাংলা)',
+                    children: (
+                      <>
+                        <Form.Item label='Name (বাংলা)'>
+                          <Input
+                            placeholder='পণ্যের নাম'
+                            value={translations.bn?.name || ''}
+                            onChange={(e) =>
+                              setTranslations((prev) => ({
+                                ...prev,
+                                bn: {...(prev.bn || {}), name: e.target.value},
+                              }))
+                            }
+                          />
+                        </Form.Item>
+                        <Form.Item label='Description (বাংলা)'>
+                          <JoditEditor
+                            value={translations.bn?.description || ''}
+                            config={editorConfig}
+                            onBlur={(content) =>
+                              setTranslations((prev) => ({
+                                ...prev,
+                                bn: {...(prev.bn || {}), description: content},
+                              }))
+                            }
+                          />
+                        </Form.Item>
+                      </>
+                    ),
+                  },
+                ]}
+              />
             </Card>
 
             {/* Images */}

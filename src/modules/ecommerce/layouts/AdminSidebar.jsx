@@ -4,17 +4,24 @@ import {
   CarOutlined,
   CreditCardOutlined,
   DashboardOutlined,
+  FileTextOutlined,
+  FileOutlined,
   GiftOutlined,
   GlobalOutlined,
+  HeartOutlined,
   MailOutlined,
   FacebookOutlined,
   MessageOutlined,
   PictureOutlined,
+  RollbackOutlined,
   SearchOutlined,
   SettingOutlined,
   ShoppingCartOutlined,
   ShoppingOutlined,
+  StarOutlined,
   TagOutlined,
+  ThunderboltOutlined,
+  TranslationOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
@@ -54,14 +61,61 @@ const menuItems = [
     label: 'Orders',
   },
   {
+    key: '/reviews',
+    icon: <StarOutlined />,
+    label: 'Reviews',
+  },
+  {
+    key: '/returns',
+    icon: <RollbackOutlined />,
+    label: 'Returns',
+  },
+  {
     key: '/coupons',
     icon: <GiftOutlined />,
     label: 'Coupons',
   },
   {
+    key: '/flash-sales',
+    icon: <ThunderboltOutlined />,
+    label: 'Flash Sales',
+  },
+  {
     key: '/delivery-charges',
     icon: <CarOutlined />,
     label: 'Delivery Charges',
+  },
+  {
+    key: '/abandoned-carts',
+    icon: <ShoppingCartOutlined />,
+    label: 'Abandoned Carts',
+  },
+  {
+    key: 'content-group',
+    icon: <FileTextOutlined />,
+    label: 'Content',
+    children: [
+      {
+        key: '/blog',
+        icon: <FileTextOutlined />,
+        label: 'Blog Posts',
+      },
+      {
+        key: '/blog/categories',
+        icon: <AppstoreOutlined />,
+        label: 'Blog Categories',
+      },
+      {
+        key: '/pages',
+        icon: <FileOutlined />,
+        label: 'Pages',
+      },
+    ],
+  },
+  {
+    key: '/translations',
+    icon: <TranslationOutlined />,
+    label: 'Translations',
   },
   {
     key: '/profile',
@@ -112,6 +166,11 @@ const menuItems = [
         key: '/settings/domains',
         icon: <GlobalOutlined />,
         label: 'Storefront Domain',
+      },
+      {
+        key: '/settings/languages',
+        icon: <GlobalOutlined />,
+        label: 'Languages',
       },
     ],
   }

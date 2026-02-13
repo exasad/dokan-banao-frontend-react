@@ -9,6 +9,7 @@ import {
   Upload,
   Button,
   message,
+  Divider,
 } from 'antd';
 import {UploadOutlined} from '@ant-design/icons';
 import adminAxios from '../../services/adminAxios';
@@ -18,6 +19,7 @@ const CategoryForm = ({open, onClose, onSuccess, editingCategory}) => {
   const [loading, setLoading] = useState(false);
   const [fileList, setFileList] = useState([]);
   const [parentOptions, setParentOptions] = useState([]);
+  const [translations, setTranslations] = useState({bn: {name: '', description: ''}});
   const isEdit = !!editingCategory;
 
   useEffect(() => {
@@ -38,9 +40,20 @@ const CategoryForm = ({open, onClose, onSuccess, editingCategory}) => {
           is_active: editingCategory.is_active,
         });
         setFileList([]);
+
+        // Fetch translations
+        adminAxios
+          .get(`/translations/content/category/${editingCategory.id}`)
+          .then((tRes) => {
+            if (tRes.data?.translations) {
+              setTranslations(tRes.data.translations);
+            }
+          })
+          .catch(() => {});
       } else {
         form.resetFields();
         setFileList([]);
+        setTranslations({bn: {name: '', description: ''}});
       }
     }
   }, [open, editingCategory, form]);
@@ -59,18 +72,31 @@ const CategoryForm = ({open, onClose, onSuccess, editingCategory}) => {
         formData.append('image', fileList[0].originFileObj);
       }
 
+      let categoryId;
       if (isEdit) {
         formData.append('_method', 'PUT');
         await adminAxios.post(`/categories/${editingCategory.id}`, formData, {
           headers: {'Content-Type': 'multipart/form-data'},
         });
+        categoryId = editingCategory.id;
         message.success('Category updated');
       } else {
-        await adminAxios.post('/categories', formData, {
+        const res = await adminAxios.post('/categories', formData, {
           headers: {'Content-Type': 'multipart/form-data'},
         });
+        categoryId = res.data?.id || res.data?.data?.id;
         message.success('Category created');
       }
+
+      // Save translations
+      if (categoryId && Object.keys(translations).length > 0) {
+        try {
+          await adminAxios.put(`/translations/content/category/${categoryId}`, {translations});
+        } catch {
+          message.warning('Category saved but translations failed to save');
+        }
+      }
+
       onSuccess();
     } catch (err) {
       const errors = err.response?.data?.errors;
@@ -115,6 +141,35 @@ const CategoryForm = ({open, onClose, onSuccess, editingCategory}) => {
         <Form.Item name='description' label='Description'>
           <Input.TextArea rows={3} placeholder='Optional description' />
         </Form.Item>
+
+        <Divider style={{marginBottom: 16}}>Bengali Translation (বাংলা অনুবাদ)</Divider>
+
+        <Form.Item label='Name (বাংলা)'>
+          <Input
+            placeholder='ক্যাটাগরির নাম'
+            value={translations.bn?.name || ''}
+            onChange={(e) =>
+              setTranslations((prev) => ({
+                ...prev,
+                bn: {...(prev.bn || {}), name: e.target.value},
+              }))
+            }
+          />
+        </Form.Item>
+        <Form.Item label='Description (বাংলা)'>
+          <Input.TextArea
+            rows={3}
+            placeholder='ঐচ্ছিক বিবরণ'
+            value={translations.bn?.description || ''}
+            onChange={(e) =>
+              setTranslations((prev) => ({
+                ...prev,
+                bn: {...(prev.bn || {}), description: e.target.value},
+              }))
+            }
+          />
+        </Form.Item>
+
         <Form.Item name='image' label='Image'>
           <Upload
             beforeUpload={() => false}
