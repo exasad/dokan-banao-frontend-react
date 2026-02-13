@@ -6,7 +6,6 @@ import {
   DashboardOutlined,
   GiftOutlined,
   GlobalOutlined,
-  LayoutOutlined,
   MailOutlined,
   FacebookOutlined,
   MessageOutlined,
@@ -28,11 +27,6 @@ const menuItems = [
     key: '/dashboard',
     icon: <DashboardOutlined />,
     label: 'Dashboard',
-  },
-  {
-    key: '/page-builder',
-    icon: <LayoutOutlined />,
-    label: 'Page Builder',
   },
   {
     key: '/sliders',
