@@ -44,7 +44,7 @@ const FlashSaleForm = () => {
       } else {
         const res = await adminAxios.post('/flash-sales', data);
         message.success('Created');
-        navigate(`/flash-sales/${res.data.id}/edit`);
+        navigate(`/flash-sales/${res.data.flash_sale.id}/edit`);
       }
     } catch (err) { message.error(err.response?.data?.message || 'Failed'); } finally { setSaving(false); }
   };
@@ -52,7 +52,7 @@ const FlashSaleForm = () => {
   const addProduct = async () => {
     if (!newProduct.product_id || !id) return;
     try {
-      await adminAxios.post(`/flash-sales/${id}/products`, newProduct);
+      await adminAxios.post(`/flash-sales/${id}/products`, {products: [newProduct]});
       message.success('Product added');
       const res = await adminAxios.get(`/flash-sales/${id}`);
       setProducts(res.data.products || []);
@@ -62,7 +62,7 @@ const FlashSaleForm = () => {
 
   const removeProduct = async (productId) => {
     try {
-      await adminAxios.delete(`/flash-sales/${id}/products`, {data: {product_id: productId}});
+      await adminAxios.delete(`/flash-sales/${id}/products`, {data: {product_ids: [productId]}});
       setProducts(prev => prev.filter(p => p.product_id !== productId));
       message.success('Removed');
     } catch { message.error('Failed'); }

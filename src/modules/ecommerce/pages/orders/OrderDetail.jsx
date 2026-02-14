@@ -99,6 +99,168 @@ const OrderDetail = () => {
 
   const formatDate = (d) => new Date(d).toLocaleString('en-GB', {day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'});
 
+  const formatCurrency = (v) => `৳${Number(v || 0).toLocaleString('en-BD')}`;
+
+  const printInvoice = () => {
+    const printWindow = window.open('', '_blank', 'width=800,height=900');
+    if (!printWindow) return;
+
+    const itemsRows = (order.items || []).map((item, i) => `
+      <tr>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center;">${i + 1}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;">${item.product_name || ''}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;">${item.variant_name || '-'}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:right;">${formatCurrency(item.price)}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center;">${item.quantity}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:right;">${formatCurrency(item.total)}</td>
+      </tr>
+    `).join('');
+
+    const orderDate = new Date(order.created_at).toLocaleDateString('en-GB', {day: '2-digit', month: 'short', year: 'numeric'});
+
+    const discountRow = Number(order.discount) > 0 ? `
+      <tr>
+        <td style="padding:6px 12px;text-align:right;color:#666;">Discount${order.coupon_code ? ` (${order.coupon_code})` : ''}</td>
+        <td style="padding:6px 12px;text-align:right;">-${formatCurrency(order.discount)}</td>
+      </tr>
+    ` : '';
+
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice - ${order.order_number}</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; padding: 40px; max-width: 800px; margin: 0 auto; }
+    .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 2px solid #333; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+    .header .invoice-label { font-size: 24px; color: #555; font-weight: 600; text-align: right; }
+    .meta-section { display: flex; justify-content: space-between; margin-bottom: 32px; }
+    .meta-block { flex: 1; }
+    .meta-block h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 8px; font-weight: 600; }
+    .meta-block p { font-size: 13px; line-height: 1.6; color: #444; }
+    table.items { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    table.items thead th { background: #f5f5f5; padding: 10px 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #555; font-weight: 600; border-bottom: 2px solid #ddd; }
+    table.items thead th:first-child { text-align: center; }
+    table.items thead th:nth-child(4),
+    table.items thead th:last-child { text-align: right; }
+    table.items thead th:nth-child(5) { text-align: center; }
+    table.items tbody td { font-size: 13px; }
+    .totals { display: flex; justify-content: flex-end; margin-bottom: 32px; }
+    .totals table { min-width: 280px; }
+    .totals td { font-size: 13px; }
+    .totals .grand-total td { font-size: 16px; font-weight: 700; padding-top: 10px; border-top: 2px solid #333; }
+    .payment-info { background: #f9f9f9; padding: 16px 20px; border-radius: 4px; margin-bottom: 32px; display: flex; gap: 40px; }
+    .payment-info .info-item { font-size: 13px; }
+    .payment-info .info-item span { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
+    .footer { text-align: center; padding-top: 24px; border-top: 1px solid #eee; }
+    .footer p { font-size: 13px; color: #888; }
+    .footer p.thank-you { font-size: 15px; color: #333; font-weight: 500; margin-bottom: 4px; }
+    @media print {
+      body { padding: 20px; }
+      @page { margin: 15mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>INVOICE</h1>
+    </div>
+    <div class="invoice-label">
+      <div style="font-size:14px;color:#444;margin-bottom:4px;"><strong>Order:</strong> ${order.order_number}</div>
+      <div style="font-size:13px;color:#666;"><strong>Date:</strong> ${orderDate}</div>
+    </div>
+  </div>
+
+  <div class="meta-section">
+    <div class="meta-block">
+      <h3>Bill To</h3>
+      <p>
+        <strong>${order.name || ''}</strong><br/>
+        ${order.phone ? order.phone + '<br/>' : ''}
+        ${order.email ? order.email + '<br/>' : ''}
+      </p>
+    </div>
+    <div class="meta-block">
+      <h3>Ship To</h3>
+      <p>
+        ${order.address || ''}<br/>
+        ${[order.area, order.city, order.postal_code].filter(Boolean).join(', ')}
+      </p>
+    </div>
+  </div>
+
+  <table class="items">
+    <thead>
+      <tr>
+        <th style="width:40px;">#</th>
+        <th style="text-align:left;">Product</th>
+        <th style="text-align:left;">Variant</th>
+        <th style="text-align:right;">Price</th>
+        <th style="width:60px;">Qty</th>
+        <th style="text-align:right;">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${itemsRows}
+    </tbody>
+  </table>
+
+  <div class="totals">
+    <table>
+      <tr>
+        <td style="padding:6px 12px;text-align:right;color:#666;">Subtotal</td>
+        <td style="padding:6px 12px;text-align:right;">${formatCurrency(order.subtotal)}</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 12px;text-align:right;color:#666;">Shipping</td>
+        <td style="padding:6px 12px;text-align:right;">${formatCurrency(order.delivery_charge)}</td>
+      </tr>
+      ${discountRow}
+      <tr class="grand-total">
+        <td style="padding:6px 12px;text-align:right;">Total</td>
+        <td style="padding:6px 12px;text-align:right;">${formatCurrency(order.total)}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="payment-info">
+    <div class="info-item">
+      <span>Payment Method</span>
+      ${(order.payment_method || 'COD').toUpperCase()}
+    </div>
+    <div class="info-item">
+      <span>Payment Status</span>
+      ${(order.payment_status || 'pending').toUpperCase()}
+    </div>
+    <div class="info-item">
+      <span>Order Status</span>
+      ${(order.status || '').charAt(0).toUpperCase() + (order.status || '').slice(1)}
+    </div>
+  </div>
+
+  ${order.notes ? `<div style="margin-bottom:24px;padding:12px 16px;background:#fafafa;border-left:3px solid #ddd;font-size:13px;color:#555;"><strong>Notes:</strong> ${order.notes}</div>` : ''}
+
+  <div class="footer">
+    <p class="thank-you">Thank you for your order!</p>
+    <p>If you have any questions, feel free to contact us.</p>
+  </div>
+
+  <script>
+    window.onload = function() {
+      window.print();
+      window.onafterprint = function() { window.close(); };
+    };
+  </script>
+</body>
+</html>`;
+
+    printWindow.document.write(html);
+    printWindow.document.close();
+  };
+
   return (
     <div>
       {/* Header */}
@@ -111,7 +273,7 @@ const OrderDetail = () => {
           </Tag>
         </Space>
         <Space>
-          <Button icon={<PrinterOutlined />} onClick={() => window.print()}>Print Invoice</Button>
+          <Button icon={<PrinterOutlined />} onClick={printInvoice}>Print Invoice</Button>
           <Button type='primary' icon={<EditOutlined />} onClick={() => navigate(`/orders/${order.id}/edit`)}>Edit Order</Button>
         </Space>
       </div>

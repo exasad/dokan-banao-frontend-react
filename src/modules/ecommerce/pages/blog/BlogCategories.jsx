@@ -65,7 +65,7 @@ const BlogCategories = () => {
       <Table columns={columns} dataSource={categories} rowKey='id' loading={loading} pagination={false} />
       <Modal title={editing ? 'Edit Category' : 'Add Category'} open={modalOpen} onOk={handleSubmit} onCancel={() => setModalOpen(false)}>
         <Form form={form} layout='vertical' initialValues={{is_active: true, sort_order: 0}}>
-          <Form.Item name='name' label='Name' rules={[{required: true}]}><Input /></Form.Item>
+          <Form.Item name='name' label='Name' rules={[{required: true}]}><Input placeholder='Enter category name' /></Form.Item>
           <Form.Item name='slug' label='Slug'><Input placeholder='Auto-generated if empty' /></Form.Item>
           <Form.Item name='is_active' label='Active' valuePropName='checked'><Switch /></Form.Item>
           <Form.Item name='sort_order' label='Sort Order'><InputNumber min={0} /></Form.Item>
